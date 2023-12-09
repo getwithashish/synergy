@@ -1,1 +1,3 @@
 # synergy
+
+Created homepage
