@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Lateef', cursive, Arial, sans-serif; /* Use 'Lateef' font */
+    }
+
+    .popup-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      background-color: #ffffff;
+    }
+
+    .popup {
+      display: none;
+      text-align: center;
+      animation: popupAnimation 3s ease-out;
+    }
+
+    h1 {
+      font-size: 8em; /* Adjust the font size as needed */
+      font-weight: 400; /* Slightly less bold */
+      margin-bottom: -20px; /* Reduce the gap between IRCTC and the tagline */
+    }
+
+    p {
+      font-size: 1em; /* Adjust the font size for the tagline */
+      margin-top: 1px; /* Reduce the gap between IRCTC and the tagline */
+    }
+
+    @keyframes popupAnimation {
+      0% {
+        transform: scale(0.1);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0; /* Fade out at the end */
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="popup-container">
+  <div class="popup" id="myPopup">
+    <h1>IRCTC</h1>
+    <p>Lifeline of the nation</p>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.getElementById('myPopup');
+
+    // Show the popup initially
+    popup.style.display = 'block';
+
+    // Hide the popup after 2 seconds
+    setTimeout(function() {
+      popup.style.display = 'none';
+      
+      // Show the popup again after another 2 seconds
+      setTimeout(function() {
+        popup.style.display = 'block';
+      }, 2000);
+    }, 2000);
+  });
+</script>
+
+</body>
+</html>

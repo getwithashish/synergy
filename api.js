@@ -22,7 +22,7 @@ async function getRequest(apiUrl, parameters, headers) {
     }
   }
 
- 
+
 //POST
 
 async function postRequest(apiUrl, postData, headers) {
