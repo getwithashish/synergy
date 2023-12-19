@@ -1,0 +1,13 @@
+# .gitignore
+
+# Ignore Node.js-related files and directories
+node_modules/
+package-lock.json
+
+# Ignore Parcel cache and build artifacts
+.parcel-cache/
+dist/
+
+# Ignore specific files
+index.html
+

@@ -1,7 +1,8 @@
 // validation.ts
-function validateUsername(username) {
-    const regex = /^[a-zA-Z0-9_-]{4,20}$/;
-    return regex.test(username);
+function validateFullName(fullName) {
+    // Allow letters, spaces, and optional hyphens or apostrophes
+    const regex = /^[a-zA-Z' -]+$/;
+    return regex.test(fullName);
 }
 // It uses a regular expression (regex) to check if the username consists of alphanumeric 
 // characters, underscores, or hyphens, and has a length between 4 and 20 characters.

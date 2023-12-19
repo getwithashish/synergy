@@ -47,7 +47,7 @@
     const username = usernameInput.value;
     const password = passwordInput.value;
     const email = emailInput.value;
-    if (!validateUsername(username)) usernameError.innerText = "Invalid username";
+    if (!validateFullName(username)) usernameError.innerText = "Invalid username";
     if (!validatePassword(password)) passwordError.innerText = "Invalid password";
     if (!validateEmail(email)) emailError.innerText = "Invalid email address";
 }
