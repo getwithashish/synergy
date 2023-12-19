@@ -1,4 +1,3 @@
-// validation.ts
 function validateFullName(fullName: string): boolean {
   // Allow letters, spaces, and optional hyphens or apostrophes
   const regex = /^[a-zA-Z' -]+$/;
@@ -31,7 +30,9 @@ function validateEmail(email: string): boolean {
 // \.: Matches a literal dot (period).
 // [^\s@]+$: Matches one or more characters that are not whitespace (\s) or the at symbol (@) until the end of the string ($).
 
-let result : boolean = validateUsername("arjunnnnnnn");
+
+// Example usage:
+let result: boolean = validateFullName("arjunnnnnnn");
 
 if(result==true) {
   console.log("valid username");
