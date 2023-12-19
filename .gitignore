@@ -5,7 +5,7 @@ node_modules/
 package-lock.json
 
 # Ignore Parcel cache and build artifacts
-.parcel-cache/
+.parcel-cache/  
 dist/
 
 # Ignore specific files
