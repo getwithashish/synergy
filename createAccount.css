@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+    background-color: #f5f5f5;
+  }
+  
+  .create-account-container {
+    position: relative;
+    width: 450px;
+    height: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #create-account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  
+  .create-account-form h2 {
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+  }
+  
+  #closeBtn {
+    background: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    line-height: 1;
+  }
+
+  .valid-feedback {
+    display: none; /* initially hide */
+    color: green;
+  }
+  .invalid-feedback {
+    display: none; /* initially hide */
+    color: red;
+  }
+  
+  
+  #signInBtn {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #cf2550;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 7px;
+  }
+  
+  #signInGoogleBtn {
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    margin-bottom: 7px;
+  }
+  
+  #signInBtn:hover {
+    background-color: #a11034;
+  }
+  
