@@ -24,11 +24,11 @@
     
             <div class="mb-6" id="name-input-group">
                 <label for="userName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="userName" placeholder="Full Name"   name="userName" required>
+                <input type="text" class="form-control" id="signupuserName" placeholder="Full Name"   name="userName" required>
                 <div class="valid-feedback" id="nameValidFeedback">
                   Looks good!
                 </div>
-                <div class="invalid-feedback" id="nameInValidFeedback">
+                <div class="invalid-feedback" id="signupnameInValidFeedback">
                   Please enter a valid name.
                 </div>
                 
@@ -36,11 +36,11 @@
 
             <div class="mb-6" id="email-input-group">
                   <label for="userEmail" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="userEmail" placeholder="Enter your mail" aria-describedby="emailHelp"  name="userEmail" required>
+                  <input type="email" class="form-control" id="signupuserEmail" placeholder="Enter your mail" aria-describedby="emailHelp"  name="userEmail" required>
                   <div class="valid-feedback" id="emailValidFeedback">
                     Looks good!
                   </div>
-                  <div class="invalid-feedback" id="emailInValidFeedback">
+                  <div class="invalid-feedback" id="signupemailInValidFeedback">
                     Please enter a valid email.
                   </div>
                   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
@@ -48,29 +48,26 @@
         
             <div class="mb-6" id="password-input-group">
                   <label for="userPassword" class="form-label" id="passwordLabel">Password</label>
-                  <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                  <input type="password" id="signupinputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
                   <div id="passwordHelpBlock" class="form-text">
                     Your password must be 8-20 characters long 
                   </div>
                   <div class="valid-feedback" id="passwordValidFeedback">
                     Password looks good!
                 </div>
-                <div class="invalid-feedback" id="passwordInvalidFeedback">
+                <div class="invalid-feedback" id="signuppasswordInvalidFeedback">
                     Please provide a valid password.
                 </div>
-                <div id="messageContainer">
+                <div id="signupmessageContainer">
                   
                 </div>
             </div>          
             
-            <button onclick="submitForm()" type="submit" class="btn btn-primary"  id="signInBtn">Sign in</button>
+            <button onclick="submit_signup_Form()" type="submit" class="btn btn-primary"  id="signInBtn">Sign in</button>
             <button type="submit" class="btn btn-primary"  id="signInGoogleBtn">
               <img src="assets/icons8-google-48.png" alt="googleLogo" style="height: 25px; margin-right: 10px;">Sign in with Google</button>
           </form>
 
-
-         
-    
       </div>
     
       </div>
