@@ -1,51 +1,53 @@
 // Function to submit form
-function submitForm() {
+function submit_signup_Form() {
   // Get form data
-  const name = document.getElementById("userName").value;
-  const email = document.getElementById("userEmail").value;
-  const password = document.getElementById("inputPassword5").value;
+  const sign_up_name = document.getElementById("signupuserName").value;
+  const sign_up_email = document.getElementById("signupuserEmail").value;
+  const sign_up_password = document.getElementById("signupinputPassword5").value;
 
   // Validate form data
-  const isValidName = validateFullName(name);
-  const isValidPassword = validatePassword(password);
-  const isValidEmail = validateEmail(email);
+  const isValidSignUpName = validateFullName(sign_up_name);
+  const isValidSignUpPassword = validatePassword(sign_up_password);
+  const isValidSignUpEmail = validateEmail(sign_up_email);
 
-  console.log(isValidName, isValidPassword, isValidEmail);
+  console.log(isValidSignUpName, isValidSignUpPassword, isValidSignUpEmail);
 
-  if (isValidName && isValidPassword && isValidEmail) {
+  if (isValidSignUpName && isValidSignUpPassword && isValidSignUpEmail) {
     // Check if all fields are valid
     // Prepare data object
-    const data = {
-      name: name,
-      email: email,
-      password: password,
+    const signupdata = {
+      name: sign_up_name,
+      email: sign_up_email,
+      password: sign_up_password,
     };
 
-    console.log("inside authentication.js", data);
+    console.log("inside authentication.js", signupdata);
 
     // Clear previous validation feedback
-    document.getElementById("nameInValidFeedback").innerHTML = "";
-    document.getElementById("passwordInvalidFeedback").innerHTML = "";
-    document.getElementById("emailInValidFeedback").innerHTML = "";
+    document.getElementById("signupnameInValidFeedback").innerHTML = "";
+    document.getElementById("signuppasswordInvalidFeedback").innerHTML = "";
+    document.getElementById("signupemailInValidFeedback").innerHTML = "";
 
     // Remove is-invalid class
-    document.getElementById("userName").classList.remove("is-invalid");
-    document.getElementById("inputPassword5").classList.remove("is-invalid");
-    document.getElementById("userEmail").classList.remove("is-invalid");
+    document.getElementById("signupuserName").classList.remove("is-invalid");
+    document.getElementById("signupinputPassword5").classList.remove("is-invalid");
+    document.getElementById("signupuserEmail").classList.remove("is-invalid");
 
     // Call the external function to submit data
-    submitData(data)
+    submitData(signupdata)
       .then((response) => {
         // Handle the response here
-        const messageContainer = document.getElementById("messageContainer");
+        const signupmessageContainer = document.getElementById(
+          "signupmessageContainer"
+        );
 
         if (response.success) {
           // Show success message
-          messageContainer.innerHTML =
+          signupmessageContainer.innerHTML =
             '<p style="color: green;">Registration successful!</p>';
         } else {
           // Show failure message
-          messageContainer.innerHTML =
+          signupmessageContainer.innerHTML =
             '<p style="color: red;">Registration failed. Please try again.</p>';
         }
       })
@@ -54,28 +56,32 @@ function submitForm() {
         console.error("Error in submitData:", error);
 
         // Show error message
-        const messageContainer = document.getElementById("messageContainer");
-        messageContainer.innerHTML =
+        const signupmessageContainer = document.getElementById(
+          "signupmessageContainer"
+        );
+        signupmessageContainer.innerHTML =
           '<p style="color: red;">An error occurred. Please try again later.</p>';
       });
   } else {
     // Display validation error messages
-    if (!isValidName) {
-      document.getElementById("nameInValidFeedback").innerHTML =
+    if (!isValidSignUpName) {
+      document.getElementById("signupnameInValidFeedback").innerHTML =
         '<p style="color: red;">Invalid name entered!</p>';
-      document.getElementById("userName").classList.add("is-invalid");
+      document.getElementById("signupuserName").classList.add("is-invalid");
     }
 
-    if (!isValidPassword) {
-      document.getElementById("passwordInvalidFeedback").innerHTML =
+    if (!isValidSignUpPassword) {
+      document.getElementById("signuppasswordInvalidFeedback").innerHTML =
         '<span style="color: red;">Invalid password entered!</span>';
-      document.getElementById("inputPassword5").classList.add("is-invalid");
+      document
+        .getElementById("signupinputPassword5")
+        .classList.add("is-invalid");
     }
 
-    if (!isValidEmail) {
-      document.getElementById("emailInValidFeedback").innerHTML =
+    if (!isValidSignUpEmail) {
+      document.getElementById("signupemailInValidFeedback").innerHTML =
         '<p style="color: red;">Invalid email entered!</p>';
-      document.getElementById("userEmail").classList.add("is-invalid");
+      document.getElementById("signupuserEmail").classList.add("is-invalid");
     }
   }
 }
