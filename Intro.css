@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Lateef', cursive, Arial, sans-serif; /* Use 'Lateef' font */
+  }
+
+  .popup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+  }
+
+  .popup {
+    display: none;
+    color: white;
+    text-align: center;
+    text-shadow: #c4c4c4;
+    animation: popupAnimation 1s ease-out;
+  }
+
+  h1 {
+    font-size: 8em; /* Adjust the font size as needed */
+    font-weight: 400; /* Slightly less bold */
+    margin-bottom: -20px; /* Reduce the gap between IRCTC and the tagline */
+  }
+
+  p {
+    font-size: 2em; /* Adjust the font size for the tagline */
+    margin-top: 1px; /* Reduce the gap between IRCTC and the tagline */
+  }
+
+  @keyframes popupAnimation {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0; /* Fade out at the end */
+    }
+  }
+  .hidden-popup {
+    display: none; /* or opacity: 0; if using opacity animation */
+  }
