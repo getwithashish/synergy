@@ -6,7 +6,15 @@ Created homepage
 
 This project uses TypeScript with Parcel for a simple and efficient development workflow.
 
-## Getting Started
+## Setting up API Server
+
+1. Open terminal (in vscode)
+2. Make sure you are inside "server" directory
+3. Run: npm install
+4. Run: node app.js
+5. API server is up and running
+
+## Getting Started With Typescript
 
 ### 1. Initialize npm Project:
 
