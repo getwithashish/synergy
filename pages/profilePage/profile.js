@@ -9,7 +9,7 @@ function fetchUserData() {
   // Make an API request using Axios
   // Replace the URL with your actual API endpoint
   axios
-    .get("https://your-api-endpoint.com/user")
+    .get("http://localhost:3000/getUserData?email=ashish@gmail.com")
     .then((response) => {
       // Update HTML content with user information
       updateProfile(response.data);
