@@ -1,7 +1,94 @@
-let value = getRequest("https://irctc1.p.rapidapi.com/api/v1/searchTrain", {query: "12565"}, {
-    'X-RapidAPI-Key': 'ae31c5b095msh519c31e639f1181p18fa6ejsn34d5b508ca52',
+const rapidapiHeaders = {
+    'X-RapidAPI-Key': 'd4056bf21dmsh0598b6653ebc55bp1c0c6ejsn2975fb152d2a',
     'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
-  })
+};
 
-  console.log(value);
+const searchStationUrl = "https://irctc1.p.rapidapi.com/api/v1/searchStation";
+const searchTrainUrl = "https://irctc1.p.rapidapi.com/api/v1/searchTrain";
+const trainBetweenStationsUrl = "https://irctc1.p.rapidapi.com/api/v3/trainBetweenStations";
+const liveTrainStatusUrl = "https://irctc1.p.rapidapi.com/api/v1/liveTrainStatus";
+const trainScheduleUrl = "https://irctc1.p.rapidapi.com/api/v1/getTrainSchedule";
+const pnrStatusUrl = "https://irctc1.p.rapidapi.com/api/v3/getPNRStatus";
+const seatAvailabilityUrl = "https://irctc1.p.rapidapi.com/api/v1/checkSeatAvailability";
+const trainClassesUrl = "https://irctc1.p.rapidapi.com/api/v1/getTrainClasses";
+const trainFareUrl = "https://irctc1.p.rapidapi.com/api/v2/getFare";
+const trainByStationUrl = "https://irctc1.p.rapidapi.com/api/v3/getTrainsByStation";
+const liveStationUrl = "https://irctc1.p.rapidapi.com/api/v3/getLiveStation";
+
+const searchStation = async (params) => {
+    return getRequest(searchStationUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
+};
+
+const searchTrain = async (params) => {
+    return getRequest(searchTrainUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
+};
+
+const trainsBetweenStations = async (params) => {
+    return getRequest(trainBetweenStationsUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
+};
+
+const getTrainLiveStatus = async (params) => {
+    return getRequest(liveTrainStatusUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
+};
+
+const getTrainSchedule = async (params) => {
+    return getRequest(trainScheduleUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
+};
+
+const getPNRStatus = async (params) => {
+    return getRequest(pnrStatusUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
+};
+
+const checkSeatAvailability = async (params) => {
+    return getRequest(seatAvailabilityUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
+};
+
+const getTrainClasses = async (params) => {
+    return getRequest(trainClassesUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
+};
+
+const getTrainFare = async (params) => {
+    return getRequest(trainFareUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
+};
+
+const getTrainsByStation = async (params) => {
+    return getRequest(trainByStationUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
+};
+
+const getLiveStation = async (params) => {
+    return getRequest(liveStationUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
+};
   
