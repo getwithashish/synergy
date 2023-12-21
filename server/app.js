@@ -118,3 +118,67 @@ app.post("/signin", (request, response) => {
     response.status(status).send(respObject);
 });
 
+
+// User Details
+const userDetails = [
+    {
+        name: "Ashish Sam T George",
+        gender: "Male",
+        dob: "02-06-2010",
+        mobile: "9446837231",
+        country: "India",
+        residentialAddress: "Good House, Trivandrum",
+        officeAddress: "Experion Hall, Kazhakkoottam",
+        email: "ashish@gmail.com",
+    },
+    {
+        name: "Arjun",
+        gender: "Male",
+        dob: "03-04-2023",
+        mobile: "9446837201",
+        country: "India",
+        residentialAddress: "Good House, Trivandrum",
+        officeAddress: "Experion Hall, Kazhakkoottam",
+        email: "arjun@gmail.com",
+    },
+    {
+        name: "Devapriya",
+        gender: "Female",
+        dob: "02-10-2019",
+        mobile: "944687231",
+        country: "India",
+        residentialAddress: "Good House, Trivandrum",
+        officeAddress: "Experion Hall, Kazhakkoottam",
+        email: "devapriya@gmail.com",
+    },
+    {
+        name: "Archa",
+        gender: "Female",
+        dob: "12-03-2018",
+        mobile: "9446837232",
+        country: "India",
+        residentialAddress: "Good House, Trivandrum",
+        officeAddress: "Experion Hall, Kazhakkoottam",
+        email: "archa@gmail.com",
+    },
+    {
+        name: "Dantus",
+        gender: "Male",
+        dob: "02-03-2001",
+        mobile: "9946837231",
+        country: "India",
+        residentialAddress: "Good House, Trivandrum",
+        officeAddress: "Experion Hall, Kazhakkoottam",
+        email: "dantus@gmail.com",
+    },
+
+];
+
+// Get User Data
+app.get("/getUserData", (request, response) => {
+    let email = request.query.email;
+    let user = userDetails.find(el => el.email === email);
+
+    response.status(200).send(user);
+});
+
