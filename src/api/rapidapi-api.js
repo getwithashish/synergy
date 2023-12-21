@@ -16,57 +16,79 @@ const trainByStationUrl = "https://irctc1.p.rapidapi.com/api/v3/getTrainsByStati
 const liveStationUrl = "https://irctc1.p.rapidapi.com/api/v3/getLiveStation";
 
 const searchStation = async (params) => {
-    let response = await getRequest(searchStationUrl, params, rapidapiHeaders);
-    return response.data;
+    return getRequest(searchStationUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
 };
 
 const searchTrain = async (params) => {
-    let response = await getRequest(searchTrainUrl, params, rapidapiHeaders);
-    return response.data;
+    return getRequest(searchTrainUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
 };
 
 const trainsBetweenStations = async (params) => {
-    let response = await getRequest(trainBetweenStationsUrl, params, rapidapiHeaders);
-    return response.data;
+    return getRequest(trainBetweenStationsUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
 };
 
 const getTrainLiveStatus = async (params) => {
-    let response = await getRequest(liveTrainStatusUrl, params, rapidapiHeaders);
-    return response.data;
+    return getRequest(liveTrainStatusUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
 };
 
 const getTrainSchedule = async (params) => {
-    let response = await getRequest(trainScheduleUrl, params, rapidapiHeaders);
-    return response.data;
+    return getRequest(trainScheduleUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
 };
 
 const getPNRStatus = async (params) => {
-    let response = await getRequest(pnrStatusUrl, params, rapidapiHeaders);
-    return response.data;
+    return getRequest(pnrStatusUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
 };
 
 const checkSeatAvailability = async (params) => {
-    let response = await getRequest(seatAvailabilityUrl, params, rapidapiHeaders);
-    return response.data;
+    return getRequest(seatAvailabilityUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
 };
 
 const getTrainClasses = async (params) => {
-    let response = await getRequest(trainClassesUrl, params, rapidapiHeaders);
-    return response.data;
+    return getRequest(trainClassesUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
 };
 
 const getTrainFare = async (params) => {
-    let response = await getRequest(trainFareUrl, params, rapidapiHeaders);
-    return response.data;
+    return getRequest(trainFareUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
 };
 
 const getTrainsByStation = async (params) => {
-    let response = await getRequest(trainByStationUrl, params, rapidapiHeaders);
-    return response.data;
+    return getRequest(trainByStationUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
 };
 
 const getLiveStation = async (params) => {
-    let response = await getRequest(liveStationUrl, params, rapidapiHeaders);
-    return response.data;
+    return getRequest(liveStationUrl, params, rapidapiHeaders)
+    .then((response) => {
+        return response.data;
+    });
 };
   
