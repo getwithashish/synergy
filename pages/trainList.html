@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Train List</title>
+  <link rel="stylesheet" href="trainList.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../src/api/api.js"></script> 
+  <script src="../src/api/rapidapi-api.js"></script> 
+
+  <script src="trainList.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Train List</h1>
+    <input type="text" id="searchInput" placeholder="Enter train name or number">
+    <button onclick="searchTrain1()">Search</button>
+    <ul id="trainList"></ul>
+    <div id="printContent"></div>
+  </div> 
+
+</body>
+</html>
