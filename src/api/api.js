@@ -75,5 +75,3 @@ async function putRequest(apiUrl, putData, headers) {
       throw error; // Optionally rethrow the error
     }
   }
-  
-  
