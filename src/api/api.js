@@ -1,6 +1,4 @@
-const axios = require('axios');
-
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+// process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
 //GET
 
@@ -13,7 +11,7 @@ async function getRequest(apiUrl, parameters, headers) {
       });
   
       // Handle the response data as needed
-      console.log('Response:', response.data);
+      console.log('GET Response:', response.data);
       return response.data;
     } catch (error) {
       // Handle errors
@@ -31,7 +29,7 @@ async function postRequest(apiUrl, postData, headers) {
       const response = await axios.post(apiUrl, postData, { headers });
   
       // Handle the response data as needed
-      console.log('Response:', response.data);
+      console.log('POST Response:', response.data);
       return response.data;
     } catch (error) {
       // Handle errors
@@ -49,7 +47,7 @@ async function deleteRequest(apiUrl, headers) {
       const response = await axios.delete(apiUrl, { headers });
   
       // Handle the response data as needed
-      console.log('Response:', response.data);
+      console.log('DELETE Response:', response.data);
       return response.data;
     } catch (error) {
       // Handle errors
@@ -67,7 +65,7 @@ async function putRequest(apiUrl, putData, headers) {
       const response = await axios.put(apiUrl, putData, { headers });
   
       // Handle the response data as needed
-      console.log('Response:', response.data);
+      console.log('PUT Response:', response.data);
       return response.data;
     } catch (error) {
       // Handle errors
