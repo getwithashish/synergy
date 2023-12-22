@@ -34,6 +34,8 @@ function updateProfile(user) {
 }
 
 
+// from below functions editing user account details starts
+
 function saveOfficeAddress() {
   // Get the new office address from the input field
   const newOfficeAddress = document.getElementById("newOfficeAddress").value;
