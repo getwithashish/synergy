@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Profile</title>
+    
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Add this line inside the <head> section to include Axios via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="profile.js"></script>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">ALICE</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <!-- <div class="sidebar-heading">
+                Interface
+            </div> -->
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Update Profile</span>
+                </a>
+               
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Change Password</span>
+                </a>
+              
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Update travel history</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+           
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="#" >
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Feedback</span>
+                </a>
+            </li>
+            <hr class="sidebar-divider">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Log Out</span>
+                </a>
+            </li>     
+
+           
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- Sidebar Message -->
+          
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+<!-- Nav Item - User Information -->
+<li class="nav-item dropdown no-arrow">
+    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small" >ALICE</span>
+        <img class="assets-profile rounded-circle ml-1" src="assets/undraw_profile.svg">
+    </a>
+    <!-- Dropdown - User Information -->
+    <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div> -->
+</li>
+
+                    </div>
+                    
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <a href="#myBookingsSection" class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                My Bookings
+                                            </a>
+
+                                            <!-- <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div> -->
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                <a href="#cancellationHistorySection" class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                    Cancellation History
+                                                </a></div>
+                                            <!-- <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div> -->
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1"><a href="#refundHistorySection" class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                Refund History
+                                            </a>
+                                            </div>
+                                            <!-- <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                    <a href="#failedTransactionsSection" class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                        Failed Transactions
+                                                    </a></div>
+                                            <!-- <div class="h5 mb-0 font-weight-bold text-gray-800">18</div> -->
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-7 col-lg-7 ">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">ACCOUNT INFORMATION</h6>   
+                                </div>
+
+                                <!-- Card Body -->
+                                
+                                <div class="card-body ">
+                                    <div class="chart-area">
+                                        <h1 class="small font-weight-bold">Passenger Name : <span id="passengerName" class="float-centre"></span>
+                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editPassengerNameModal">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a></h1>
+                                            <!-- class="float-right">Alice</span></h1> -->
+
+                                        <h1  class="small font-weight-bold">Gender :<span id="gender" class="float-centre"></span>
+                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editGenderModal">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a></h1>
+
+                                        <h1  class="small font-weight-bold">Date of Birth :<span id="dateOfBirth" class="float-centre"></span>
+                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editDOBModal">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a></h1>
+
+                                        <h1  class="small font-weight-bold">ISD-Mobile :<span id="isdMobile" class="float-centre"></span>
+                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editMobileModal">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a></h1>
+
+                                        <h1  class="small font-weight-bold">Country :<span id="country" class="float-centre"></span>
+                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editCountryModal">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a></h1>
+
+                                        <h1  class="small font-weight-bold">Email :<span id="email" class="float-centre"></span>
+                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editEmailAddressModal">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a></h1>
+
+                                        <h1  class="small font-weight-bold">Residential Address :<span id="residentialAddress" class="float-centre"></span>
+                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editResidentialAddressModal">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a></h1>
+
+                                        <h1 class="small font-weight-bold">Office Address:
+                                            <span id="officeAddress" class="float-centre"></span>
+                                            <a href="#" class="edit-icon" data-toggle="modal" data-target="#editOfficeAddressModal">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>
+                                        </h1>
+
+                                            
+                                        <!-- <h1 class="small font-weight-bold">Date of Birth :<span
+                                            class="float-right">dd-mm-yyyy</span></h1>  
+                                            
+                                        <h1 class="small font-weight-bold">ISD-Mobile :<span
+                                            class="float-right">+91-6666666666</span></h1>   
+                                            
+                                        <h1 class="small font-weight-bold">Gender :<span
+                                            class="float-right">Female</span></h1>  
+                                          
+                                        <h1 class="small font-weight-bold">Country :<span
+                                            class="float-right">India</span></h1>  
+                                            
+                                        <h1 class="small font-weight-bold">Email :<span
+                                            class="float-right">name@gmail.com</span></h1>
+
+                                        <h1 class="small font-weight-bold">Residential Address :<span
+                                            class="float-right">address</span></h1>  
+
+                                        <h1 class="small font-weight-bold">Office Address :<span
+                                            class="float-right">address</span></h1>   -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pie Chart -->
+                        <div class="col-xl-5 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div id="myBookingsSection"
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">UPDATE DETAILS</h6>
+                                  
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                                                <div class="card shadow mb-4 card-horizontal">
+
+                                                                    <div class="card-body">
+                                                                        <form class="user" id="updateProfileForm">
+                                                                            <div class="form-group">
+                                                                                <label for="name">Name:</label>
+                                                                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="email">Email:</label>
+                                                                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                                                            </div>
+
+                                                                            <div class="form-group">
+                                                                                <label for="email">Email:</label>
+                                                                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                                                            </div>
+                                                                
+                                                                            <!-- Add more form fields as needed -->
+                                                                
+                                                                            <button type="button" class="btn btn-danger" onclick="updateProfile()">Update
+                                                                                Profile</button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Content Column -->
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+    
+                                    <div id="cancellationHistorySection"
+                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">CANCELLATION HISTORY</h6>
+
+                                </div>
+                                <div class="card-body">
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- Illustrations -->
+                            <div class="card shadow mb-4">
+                                    <div id="refundHistorySection" class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">REFUND HISTORY</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        Hi
+                                    </div>
+                                   
+                                </div>
+                            </div>
+
+                            <!-- Approach -->
+                            <div class="card shadow mb-4">
+                                <div id="failedTransactionsSection" class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">FAILED TRANSACTIONS</h6>
+                                </div>
+                                <div class="card-body">
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                   
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Editing Office Address -->
+    <div class="modal fade" id="editOfficeAddressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
+        aria-hidden="true"> 
+        <!-- This creates a modal with a unique ID (editOfficeAddressModal) and sets its initial state as hidden (fade class). The
+        tabindex="-1" is used to prevent the modal from being focused when opened. -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Office Address</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="newOfficeAddress">New Office Address:</label>
+                    <input type="text" class="form-control" id="newOfficeAddress">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="saveOfficeAddress()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Editing Residential Address -->
+    <div class="modal fade" id="editResidentialAddressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <!-- This creates a modal with a unique ID (editOfficeAddressModal) and sets its initial state as hidden (fade class). The
+            tabindex="-1" is used to prevent the modal from being focused when opened. -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Residential Address</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="newResidentialAddress">New Residential Address:</label>
+                    <input type="text" class="form-control" id="newResidentialAddress">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="saveResidentialAddress()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Editing Email Address -->
+    <div class="modal fade" id="editEmailAddressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <!-- This creates a modal with a unique ID (editOfficeAddressModal) and sets its initial state as hidden (fade class). The
+                tabindex="-1" is used to prevent the modal from being focused when opened. -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Email Address</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="newEmailAddress">New Email Address:</label>
+                    <input type="text" class="form-control" id="newEmailAddress">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="saveEmailAddress()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Editing Country Address -->
+    <div class="modal fade" id="editCountryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <!-- This creates a modal with a unique ID (editOfficeAddressModal) and sets its initial state as hidden (fade class). The
+                tabindex="-1" is used to prevent the modal from being focused when opened. -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Country Address</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="newCountryAddress">New Country Address:</label>
+                    <input type="text" class="form-control" id="newCountryAddress">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="saveCountryAddress()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Editing Mobile phone Address -->
+    <div class="modal fade" id="editMobileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <!-- This creates a modal with a unique ID (editOfficeAddressModal) and sets its initial state as hidden (fade class). The
+                tabindex="-1" is used to prevent the modal from being focused when opened. -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Mobile Phone number</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="newMobileAddress">New Mobile Phone number:</label>
+                    <input type="text" class="form-control" id="newMobileAddress">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="saveMobileAddress()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Editing DOB Address -->
+    <div class="modal fade" id="editDOBModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <!-- This creates a modal with a unique ID (editOfficeAddressModal) and sets its initial state as hidden (fade class). The
+                tabindex="-1" is used to prevent the modal from being focused when opened. -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Date of Birth</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="newDOBAddress">New Date of Birth:</label>
+                    <input type="text" class="form-control" id="newDOBAddress">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="saveDOBAddress()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Editing Gender Address -->
+    <div class="modal fade" id="editGenderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <!-- This creates a modal with a unique ID (editOfficeAddressModal) and sets its initial state as hidden (fade class). The
+                tabindex="-1" is used to prevent the modal from being focused when opened. -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Gender Address</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="newGenderAddress">New Gender Address:</label>
+                    <input type="text" class="form-control" id="newGenderAddress">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="saveGenderAddress()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Editing Passenger Name Address -->
+    <div class="modal fade" id="editPassengerNameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <!-- This creates a modal with a unique ID (editOfficeAddressModal) and sets its initial state as hidden (fade class). The
+                tabindex="-1" is used to prevent the modal from being focused when opened. -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Passenger Name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="newPassengerName">New Passenger Name:</label>
+                    <input type="text" class="form-control" id="newPassengerName">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="savePassengerName()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>
