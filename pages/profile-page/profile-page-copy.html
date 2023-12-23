@@ -25,6 +25,10 @@
 
     <script src="profile.js"></script>
 
+    <script src="booking_history.js"></script>
+
+    <script src="change_password.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -72,7 +76,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="#" data-toggle="modal" data-target="#changePasswordModal">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Change Password</span>
                 </a>
@@ -98,7 +102,7 @@
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a id="logoutLink" class="nav-link" href="#">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Log Out</span>
                 </a>
@@ -136,7 +140,7 @@
 <li class="nav-item dropdown no-arrow">
     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small" >ALICE</span>
+        <span class="mr-0 d-none d-lg-inline text-gray-600 small" >ALICE</span>
         <img class="assets-profile rounded-circle ml-1" src="assets/undraw_profile.svg">
     </a>
     <!-- Dropdown - User Information -->
@@ -265,7 +269,7 @@
                     <div class="row">
 
                         <!-- Area Chart -->
-                        <div class="col-xl-7 col-lg-7 ">
+                        <div class="col-xl-6 col-lg-6 ">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -275,115 +279,117 @@
 
                                 <!-- Card Body -->
                                 
-                                <div class="card-body ">
-                                    <div class="chart-area">
-                                        <h1 class="small font-weight-bold">Passenger Name : <span id="passengerName" class="float-centre"></span>
-                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editPassengerNameModal">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </a></h1>
-                                            <!-- class="float-right">Alice</span></h1> -->
+                                <div class="card-body overflow-auto">
+                                    <div class="chart-area" style="height: auto;">
+                                        
+                                        <div class="list-group">
+                                            <div class="list-group-item">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">Passenger Name</h6>
+                                                    <span id="passengerName" class="font-weight-bold d-flex justify-content-end"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editPassengerNameModal">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">Gender</h6>
+                                                    <span id="gender" class="font-weight-bold d-flex justify-content-end"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editGenderModal">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
 
-                                        <h1  class="small font-weight-bold">Gender :<span id="gender" class="float-centre"></span>
-                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editGenderModal">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </a></h1>
-
-                                        <h1  class="small font-weight-bold">Date of Birth :<span id="dateOfBirth" class="float-centre"></span>
-                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editDOBModal">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </a></h1>
-
-                                        <h1  class="small font-weight-bold">ISD-Mobile :<span id="isdMobile" class="float-centre"></span>
-                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editMobileModal">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </a></h1>
-
-                                        <h1  class="small font-weight-bold">Country :<span id="country" class="float-centre"></span>
-                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editCountryModal">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </a></h1>
-
-                                        <h1  class="small font-weight-bold">Email :<span id="email" class="float-centre"></span>
-                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editEmailAddressModal">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </a></h1>
-
-                                        <h1  class="small font-weight-bold">Residential Address :<span id="residentialAddress" class="float-centre"></span>
-                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editResidentialAddressModal">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </a></h1>
-
-                                        <h1 class="small font-weight-bold">Office Address:
-                                            <span id="officeAddress" class="float-centre"></span>
-                                            <a href="#" class="edit-icon" data-toggle="modal" data-target="#editOfficeAddressModal">
-                                                <i class="fas fa-pencil-alt"></i>
-                                            </a>
-                                        </h1>
-
+                                            <div class="list-group-item">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">Date Of Birth</h6>
+                                                    <span id="dateOfBirth" class="font-weight-bold d-flex justify-content-end"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editDOBModal">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
                                             
-                                        <!-- <h1 class="small font-weight-bold">Date of Birth :<span
-                                            class="float-right">dd-mm-yyyy</span></h1>  
-                                            
-                                        <h1 class="small font-weight-bold">ISD-Mobile :<span
-                                            class="float-right">+91-6666666666</span></h1>   
-                                            
-                                        <h1 class="small font-weight-bold">Gender :<span
-                                            class="float-right">Female</span></h1>  
-                                          
-                                        <h1 class="small font-weight-bold">Country :<span
-                                            class="float-right">India</span></h1>  
-                                            
-                                        <h1 class="small font-weight-bold">Email :<span
-                                            class="float-right">name@gmail.com</span></h1>
+                                                </div>
+                                            </div>
 
-                                        <h1 class="small font-weight-bold">Residential Address :<span
-                                            class="float-right">address</span></h1>  
+                                            <div class="list-group-item">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">ISD-Mobile</h6>
+                                                    <span id="isdMobile" class="font-weight-bold d-flex justify-content-end"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editMobileModal">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                            
+                                                </div>
+                                            </div>
 
-                                        <h1 class="small font-weight-bold">Office Address :<span
-                                            class="float-right">address</span></h1>   -->
+                                            <div class="list-group-item">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">Country</h6>
+                                                    <span id="country" class="font-weight-bold d-flex justify-content-end"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editCountryModal">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                            
+                                                </div>
+                                            </div>
+
+                                            <div class="list-group-item">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">Email</h6>
+                                                    <span id="email" class="font-weight-bold d-flex justify-content-end"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editEmailAddressModal">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                            
+                                                </div>
+                                            </div>
+
+                                            <div class="list-group-item">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">Residential Address</h6>
+                                                    <span id="residentialAddress" class="font-weight-bold d-flex justify-content-end"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editResidentialAddressModal">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                            
+                                                </div>
+                                            </div>
+
+                                            <div class="list-group-item">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">Office Address</h6>
+                                                    <span id="officeAddress" class="font-weight-bold justify-content-end"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editOfficeAddressModal">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                            
+                                                </div>
+                                            </div>
+                                            <!-- Add similar structure for other key-value pairs -->
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Pie Chart -->
-                        <div class="col-xl-5 col-lg-5">
+                        <!-- My Bookings -->
+                        <div class="col-xl-6 col-lg-6">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div id="myBookingsSection"
+                                <div id="cancellationHistorySection"
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">UPDATE DETAILS</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">CANCELLATION SECTION</h6>
                                   
                                 </div>
                                 <!-- Card Body -->
-                                <div class="card-body">
-                                                                <div class="card shadow mb-4 card-horizontal">
-
-                                                                    <div class="card-body">
-                                                                        <form class="user" id="updateProfileForm">
-                                                                            <div class="form-group">
-                                                                                <label for="name">Name:</label>
-                                                                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="email">Email:</label>
-                                                                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                                                                            </div>
-
-                                                                            <div class="form-group">
-                                                                                <label for="email">Email:</label>
-                                                                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                                                                            </div>
+                                <!-- <div class="card-body">
                                                                 
-                                                                            <!-- Add more form fields as needed -->
-                                                                
-                                                                            <button type="button" class="btn btn-danger" onclick="updateProfile()">Update
-                                                                                Profile</button>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
                                    
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -392,22 +398,26 @@
                     <div class="row">
 
                         <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
+                        <div class="col-lg-12 mb-4">
 
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
     
-                                    <div id="cancellationHistorySection"
+                                    <div id="myBookingsSection"
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">CANCELLATION HISTORY</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">MY BOOKINGS</h6>
 
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body" id="bookingsCardBody">
+                                    
                                    
                                 </div>
                             </div>
 
                         </div>
+                    </div>
+
+                    <div class="row">
 
                         <div class="col-lg-6 mb-4">
 
@@ -415,14 +425,16 @@
                             <div class="card shadow mb-4">
                                     <div id="refundHistorySection" class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                         <h6 class="m-0 font-weight-bold text-primary">REFUND HISTORY</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        Hi
                                     </div>
+                                <div class="card-body">
+
+
+                                </div>
                                    
                                 </div>
                             </div>
+
+                        <div class="col-lg-6 mb-4">
 
                             <!-- Approach -->
                             <div class="card shadow mb-4">
@@ -436,6 +448,7 @@
 
                         </div>
                     </div>
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -463,7 +476,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -476,11 +489,11 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-danger" href="login.html">Logout</a>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- Modal for Editing Office Address -->
@@ -689,6 +702,63 @@
             </div>
         </div>
     </div>
+
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a id ="confirmLogoutBtn" class="btn btn-danger" href="../loginPage.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Change Password Modal -->
+        <div class="modal" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Form for entering old and new passwords -->
+                        <form id="changePasswordForm">
+                            <div class="form-group">
+                                <label for="oldPassword">Old Password:</label>
+                                <input type="password" class="form-control" id="oldPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password:</label>
+                                <input type="password" class="form-control" id="newPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Change Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="logout.js"></script>
+    
+    <!-- include this in end then only will work -->
+
 
 
 
