@@ -264,6 +264,8 @@ function updateServerWithNewPassengerName(newPassengerName) {
   //   });
 }
 
+
+// when edit icon is pressed we get the content displayed in the span in input box
     function prepareModalContent(spanId, newId) {
       // Get the content from the span
       var spanContent = document.getElementById(spanId).textContent.trim();
@@ -272,5 +274,4 @@ function updateServerWithNewPassengerName(newPassengerName) {
 
       // Set the content in the modal input field
       document.getElementById(newId).value = spanContent;
-      ;;;;;;;
     }
