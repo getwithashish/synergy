@@ -38,3 +38,36 @@ body {
     border: 1px solid #ccc;
   }
   
+  #liveStatusContainer{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto;
+    gap:5px;
+  }
+
+  #liveStatus{
+    align-items: center;
+  }
+
+  #liveStatuscontainer input[type="text"],
+#liveStatusContainer button {
+  margin-right: 10px;
+}
+
+#seatAvailability{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  max-width: 700px; /* Adjust as needed */
+  margin: 0 auto;
+  gap:5px;
+}
+#seatAvailability input,
+#seatAvailability button {
+  margin: 5px;
+}

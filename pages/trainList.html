@@ -13,13 +13,77 @@
 
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="trainContainer">
     <h1>Train List</h1>
     <input type="text" id="searchInput" placeholder="Enter train name or number">
     <button onclick="searchTrain1()">Search</button>
-    <ul id="trainList"></ul>
-    <div id="printContent"></div>
+
+        <div class="container" id="trainIfoContainer">
+          <h3>Train Details</h3>
+          <ul id="trainDetails"></ul>
+        </div>
+         
+          <hr>
+        <div class="container" id="runDaysContainer">
+          <h3>Running Days</h3>
+          <ul id="trainRunDay"></ul>
+        </div>  
+
+        <hr>
+        <div class="container" id="quotaContainer">
+          <h3>Quota</h3>
+          <ul id="trainQuota"></ul>
+        </div>  
+          
+          <hr>
+        <div class="container" id="classContainer">
+          <h3>Classes</h3>
+          <ul id="trainList"></ul>
+        </div>  
+          
+          <hr>
+        <div class="container" id="routeContainer">
+          <h1>Train Route</h1>
+          <ul id="trainRoute"></ul>
+        </div>  
+  
   </div> 
+
+  <h1 style="text-align: center;">Live Status</h1>
+  <div class="container" id="liveStatusContainer">
+    <!-- <input type="text" id="searchInput2" placeholder="Enter train name or number"> -->
+    <input type="text" id="searchInput3" placeholder="yyyy-mm-dd">
+    <button onclick="liveStatus()">Search</button>
+        <div class="container" id="liveStatus">
+          <ul id="trainLiveStatusList"></ul>
+        </div>
+  </div>
+  
+
+  <h1 style="text-align: center;">Seat Availability</h1>
+  <div class="container" id="seatAvailabilityContainer">
+      <form id="seatAvailability">
+        <!-- <label for="from">From:</label> -->
+        <input type="text" id="from" placeholder="From" name="from" required><br><br>
+        
+        <!-- <label for="to">To:</label> -->
+        <input type="text" id="to" placeholder="To" name="to" required><br><br>
+        
+        <!-- <label for="date">Enter date:</label> -->
+        <input type="text" id="searchInputDate" placeholder="yyyy-mm-dd" required><br><br>
+        
+        <!-- <label for="classType">Class Type:</label> -->
+        <select id="classSeatContainer" placeholder="Choose class type" name="classType">
+        </select><br><br>
+        <select id="seatQuotaContainer" placeholder="Choose class type" name="classType">
+        </select><br><br>
+      </form>
+      <button onclick="searchSeat()">Search</button>
+      <div class="container" id="searchSeatAvailability">
+        <ul id="seatAvailability"></ul>
+      </div>
+
+  </div>
 
 </body>
 </html>
