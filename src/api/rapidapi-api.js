@@ -1,5 +1,5 @@
 const rapidapiHeaders = {
-    'X-RapidAPI-Key': 'd4056bf21dmsh0598b6653ebc55bp1c0c6ejsn2975fb152d2a',
+    'X-RapidAPI-Key': 'd39b90bf5dmsh60499bd97690781p16b250jsn354093f07e87',
     'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
 };
 
