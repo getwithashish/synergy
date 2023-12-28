@@ -234,5 +234,14 @@ app.get("/getAllBookings", (request, response) => {
 });
 
 
+//feedback form submission
+app.post("/submit-feedback", (req, res) => {
+  const feedback = req.body.feedback;
+  // Handle the feedback (e.g., store it in a database)
+  console.log("Received feedback:", feedback);
+  res.send("Feedback received successfully!");
+});
 
-
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+});

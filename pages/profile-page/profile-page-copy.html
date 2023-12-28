@@ -29,6 +29,37 @@
 
     <script src="change_password.js"></script>
 
+
+    <style>
+
+            /* Default styles for larger screens */
+#accordionSidebar {
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#content-wrapper {
+    margin-left: 220px; 
+    transition: margin 0.3s ease;
+}
+/* Responsive styles for smaller screens */
+    @media (max-width: 768px) {
+        #accordionSidebar {
+            width: 100%;
+            padding-top: 56px;
+        }
+
+        #content-wrapper {
+            margin-left: 0;
+        }
+    }
+       
+    </style>
+
 </head>
 
 <body id="page-top">
@@ -67,7 +98,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="#update-profile">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Update Profile</span>
                 </a>
@@ -82,11 +113,11 @@
                 </a>
               
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Update travel history</span></a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -95,11 +126,12 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="#" >
+                <a class="nav-link" href="#feedbackSection"">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Feedback</span>
                 </a>
             </li>
+
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a id="logoutLink" class="nav-link" href="#">
@@ -114,9 +146,9 @@
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
+            <!-- <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            </div> -->
 
             <!-- Sidebar Message -->
           
@@ -129,6 +161,10 @@
             <!-- Main Content -->
             <div id="content">
 
+                <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -141,29 +177,20 @@
     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         <span class="mr-0 d-none d-lg-inline text-gray-600 small" >ALICE</span>
-        <img class="assets-profile rounded-circle ml-1" src="assets/undraw_profile.svg">
+        <img class="assets-profile rounded-circle ml-2" src="assets/undraw_profile.svg" id="profileImage">
     </a>
     <!-- Dropdown - User Information -->
-    <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div> -->
+                            <label class="dropdown-item" for="photoUpload">
+                                <input type="file" id="photoUpload" style="display: none;" accept="image/*" onchange="uploadProfilePhoto()">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Upload photo
+                            </label>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                            </a>
+                            </div>
 </li>
 
                     </div>
@@ -200,7 +227,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 <a href="#cancellationHistorySection" class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                    Cancellation History
+                                                    Cancellation Section 
                                                 </a></div>
                                             <!-- <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div> -->
                                         </div>
@@ -218,8 +245,8 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1"><a href="#refundHistorySection" class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                                Refund History
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1"><a href="#failedTransactionsSection" class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                Failed Transactions
                                             </a>
                                             </div>
                                             <!-- <div class="row no-gutters align-items-center">
@@ -250,8 +277,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                    <a href="#failedTransactionsSection" class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                        Failed Transactions
+                                                    <a href="#feedbackSection" class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                        Feedback section
                                                     </a></div>
                                             <!-- <div class="h5 mb-0 font-weight-bold text-gray-800">18</div> -->
                                         </div>
@@ -272,9 +299,9 @@
                         <div class="col-xl-6 col-lg-6 ">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div
+                                <div id = "update-profile"
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">ACCOUNT INFORMATION</h6>   
+                                    <h6 class="m-0 font-weight-bold text-primary">UPDATE PROFILE</h6>   
                                 </div>
 
                                 <!-- Card Body -->
@@ -285,86 +312,118 @@
                                         <div class="list-group">
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
-                                                    <h6 class="mb-1">Passenger Name</h6>
-                                                    <span id="passengerName" class="font-weight-bold d-flex justify-content-end"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editPassengerNameModal">
-                                                        <i class="fas fa-pencil-alt"></i>
-                                                    </a>
+                                                    <div>
+                                                        <h6 class="mb-1" style="border-right: 1px solid #ccc; padding-right: 10px;" >Passenger Name</h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <span style=" padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="passengerName"
+                                                            class="font-weight-bold d-flex justify-content-start"></span>
+                                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editPassengerNameModal" onclick="prepareModalContent('passengerName','newPassengerName')">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
-                                                    <h6 class="mb-1">Gender</h6>
-                                                    <span id="gender" class="font-weight-bold d-flex justify-content-end"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editGenderModal">
+                                                    <div>
+                                                        <h6 class="mb-1" style="border-right: 1px solid #ccc; padding-right: 10px;">Gender</h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="gender" class="font-weight-bold  justify-content-start"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editGenderModal" onclick="prepareModalContent('gender','newGenderAddress')">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
+                                                    </div>
                                                     
                                                 </div>
                                             </div>
 
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
-                                                    <h6 class="mb-1">Date Of Birth</h6>
-                                                    <span id="dateOfBirth" class="font-weight-bold d-flex justify-content-end"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editDOBModal">
+                                                    <div>
+                                                        <h6 class="mb-1" style="border-right: 1px solid #ccc; padding-right: 10px;">Date Of Birth</h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="dateOfBirth" class="font-weight-bold justify-content-start"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editDOBModal" onclick="prepareModalContent('dateOfBirth','newDOBAddress')">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
+                                                    </div>
                                             
                                                 </div>
                                             </div>
 
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
-                                                    <h6 class="mb-1">ISD-Mobile</h6>
-                                                    <span id="isdMobile" class="font-weight-bold d-flex justify-content-end"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editMobileModal">
+                                                    <div>
+                                                        <h6 class="mb-1" style="border-right: 1px solid #ccc; padding-right: 10px;">ISD-Mobile</h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="isdMobile" class="font-weight-bold  justify-content-start"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editMobileModal" onclick="prepareModalContent('isdMobile','newMobileAddress')">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
+                                                    </div>
                                             
                                                 </div>
                                             </div>
 
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
-                                                    <h6 class="mb-1">Country</h6>
-                                                    <span id="country" class="font-weight-bold d-flex justify-content-end"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editCountryModal">
+                                                    <div>
+                                                        <h6 class="mb-1" style="border-right: 1px solid #ccc; padding-right: 10px;">Country</h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="country" class="font-weight-bold justify-content-start"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editCountryModal" onclick="prepareModalContent('country','newCountryAddress')">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
+                                                    </div>
                                             
                                                 </div>
                                             </div>
 
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
-                                                    <h6 class="mb-1">Email</h6>
-                                                    <span id="email" class="font-weight-bold d-flex justify-content-end"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editEmailAddressModal">
+                                                    <div>
+                                                        <h6 class="mb-1" style="border-right: 1px solid #ccc; padding-right: 10px;">Email</h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"id="email" class="font-weight-bold justify-content-start"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editEmailAddressModal" onclick="prepareModalContent('email','newEmailAddress')">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="list-group-item">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <div>
+                                                        <h6 class="mb-1" style="border-right: 1px solid #ccc; padding-right: 10px;">Residential Address</h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="residentialAddress" class="font-weight-bold justify-content-start"></span>
+                                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editResidentialAddressModal" onclick="prepareModalContent('residentialAddress','newResidentialAddress')">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
+                                                    </div>
                                             
                                                 </div>
                                             </div>
 
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
-                                                    <h6 class="mb-1">Residential Address</h6>
-                                                    <span id="residentialAddress" class="font-weight-bold d-flex justify-content-end"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editResidentialAddressModal">
+                                                    <div>
+                                                        <h6 class="mb-1" style="border-right: 1px solid #ccc; padding-right: 10px;">Office Address</h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="officeAddress" class="font-weight-bold justify-content-start"></span>
+                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editOfficeAddressModal" onclick="prepareModalContent('officeAddress','newOfficeAddress')">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
-                                            
-                                                </div>
-                                            </div>
-
-                                            <div class="list-group-item">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <h6 class="mb-1">Office Address</h6>
-                                                    <span id="officeAddress" class="font-weight-bold justify-content-end"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editOfficeAddressModal">
-                                                        <i class="fas fa-pencil-alt"></i>
-                                                    </a>
+                                                    </div>
                                             
                                                 </div>
                                             </div>
@@ -376,7 +435,7 @@
                             </div>
                         </div>
 
-                        <!-- My Bookings -->
+                        <!-- Cancellation-->
                         <div class="col-xl-6 col-lg-6">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
@@ -386,10 +445,43 @@
                                   
                                 </div>
                                 <!-- Card Body -->
-                                <!-- <div class="card-body">
-                                                                
-                                   
-                                </div> -->
+                                <div class="card-body">
+                                    <form id="cancellationForm">
+                                        <div class="form-group">
+                                            <label for="pnrNumber">PNR Number:</label>
+                                            <input type="text" class="form-control" id="pnrNumber" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="trainNumber">Train Number:</label>
+                                            <input type="text" class="form-control" id="trainNumber" required>
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <label for="journeyDetails">Journey Details:</label>
+                                            <input type="text" class="form-control" id="journeyDetails" required>
+                                        </div> -->
+                                        <!-- <div class="form-group">
+                                            <label for="passengerDetails">Passenger Details:</label>
+                                            <input type="text" class="form-control" id="passengerDetails" required>
+                                        </div> -->
+                                        <!-- <div class="form-group">
+                                            <label for="classOfTravel">Class of Travel:</label>
+                                            <input type="text" class="form-control" id="classOfTravel" required>
+                                        </div> -->
+                                        <div class="form-group">
+                                            <label for="reasonForCancellation">Reason for Cancellation:</label>
+                                            <input type="text" class="form-control" id="reasonForCancellation" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contactInformation">Contact Email:</label>
+                                            <input type="text" class="form-control" id="contactInformation" required>
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <label for="paymentDetails">Payment Details:</label>
+                                            <input type="text" class="form-control" id="paymentDetails" required>
+                                        </div> -->
+                                        <button type="button" class="btn btn-danger mb-2 " onclick="submitCancellation()">Submit Cancellation</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -419,9 +511,8 @@
 
                     <div class="row">
 
-                        <div class="col-lg-6 mb-4">
+                        <!-- <div class="col-lg-6 mb-4">
 
-                            <!-- Illustrations -->
                             <div class="card shadow mb-4">
                                     <div id="refundHistorySection" class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                         <h6 class="m-0 font-weight-bold text-primary">REFUND HISTORY</h6>
@@ -431,10 +522,11 @@
 
                                 </div>
                                    
-                                </div>
                             </div>
 
-                        <div class="col-lg-6 mb-4">
+                        </div> -->
+
+                        <div class="col-lg-12 mb-4">
 
                             <!-- Approach -->
                             <div class="card shadow mb-4">
@@ -448,6 +540,69 @@
 
                         </div>
                     </div>
+
+                                        <!-- Content Row -->
+                                        <div class="row">
+                                        
+                                            <!-- Content Column -->
+                                            <div class="col-lg-12 mb-4">
+                                        
+                                                <!-- Project Card Example -->
+                                                <div class="card shadow mb-4">
+                                        
+                                                    <div id="feedbackSection"
+                                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                        <h6 class="m-0 font-weight-bold text-primary">FEEDBACK</h6>
+
+                                                    </div>
+                                                    <!-- Add this within the card-body of your existing code -->
+                                                    <div class="card-body" id="bookingsCardBody">
+                                                        <!-- Feedback Form -->
+                                                        <form id="feedbackForm">
+                                                            <div class="form-group">
+                                                                <label for="feedbackText">Feedback:</label>
+                                                                <textarea class="form-control" id="feedbackText" rows="4" maxlength="100"></textarea>
+                                                            </div>
+                                                    
+                                                            <!-- Example Questions -->
+                                                            <div class="form-group">
+                                                                <label>Rate your experience:</label>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="experienceRating" id="ratingExcellent"
+                                                                        value="Excellent">
+                                                                    <label class="form-check-label" for="ratingExcellent">
+                                                                        Excellent
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="experienceRating" id="ratingGood" value="Good">
+                                                                    <label class="form-check-label" for="ratingGood">
+                                                                        Good
+                                                                    </label>
+                                                                </div>
+                                                                <!-- Add more questions as needed -->
+                                                    
+                                                            </div>
+                                                    
+                                                            <!-- File Upload -->
+                                                            <div class="form-group">
+                                                                <label for="fileUpload">Upload Image (if any):</label>
+                                                                <input type="file" class="form-control-file" id="fileUpload">
+                                                            </div>
+                                                    
+                                                            <button type="button" class="btn btn-danger" onclick="submitFeedback()">Submit Feedback</button>
+                                                        </form>
+                                                    
+                                                        <!-- Notification -->
+                                                        <div id="notification" class="alert alert-success mt-3" style="display: none;">
+                                                            Feedback submitted successfully!
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                        
+                                            </div>
+                                        </div>
 
 
                 </div>
@@ -754,8 +909,27 @@
             </div>
         </div>
 
+    <!-- chatbot added -->
+    <script type="text/javascript">
+        (function (d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function () {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '65897052f4e7556c56088363' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+
 
     <script src="logout.js"></script>
+
+    <script src ="feedback.js"></script>
+
+    <script src ="upload-profile-photo.js"></script>
     
     <!-- include this in end then only will work -->
 
@@ -770,7 +944,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="nav_tog.js"></script>
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
