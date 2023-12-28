@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    margin: 10px 0;
+    width: 60%;
+  }
+  
+  button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  #liveStatusContainer{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto;
+    gap:5px;
+  }
+
+  #liveStatus{
+    align-items: center;
+  }
+
+  #liveStatuscontainer input[type="text"],
+#liveStatusContainer button {
+  margin-right: 10px;
+}
+
+#seatAvailability{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  max-width: 700px; /* Adjust as needed */
+  margin: 0 auto;
+  gap:5px;
+}
+#seatAvailability input,
+#seatAvailability button {
+  margin: 5px;
+}

@@ -95,7 +95,7 @@ app.post("/signin", (request, response) => {
     
     let respObject = {};
     let status = 200;
-    if(Object.keys(user).length !== 0){
+    if(user !== undefined && Object.keys(user).length !== 0){
         if(user.pass === userCred.pass){
             status = 200;
             respObject = {
