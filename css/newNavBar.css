@@ -71,7 +71,7 @@ body{
     display: none;
 }
 
-.navbar a{
+.newnavbar a{
   font-size:1.15rem;
   color:#fff;
   text-decoration: none;
@@ -107,7 +107,7 @@ body{
   display:block;
   }
 
-  .navbar{
+  .newnavbar{
     position:absolute;
     top: 100%;
     left: 0;
@@ -120,11 +120,11 @@ body{
     transition: .3s ease;
   }
 
-  #check:checked~.navbar{
+  #check:checked~.newnavbar{
     height: 17.7rem;
   }
 
-  .navbar a{
+  .newnavbar a{
     display: block;
     font-size: 1.1rem;
     margin: 1.5rem 0;
@@ -134,7 +134,7 @@ body{
     transition:.3s ease;
   }
 
-  #check:checked~.navbar a{
+  #check:checked~.newnavbar a{
     transform: translateY(0);
     opacity:1;
     transition-delay:calc(.15s * var(--i));
