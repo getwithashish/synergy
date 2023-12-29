@@ -1,5 +1,5 @@
 async function searchTrain1() {
-  const trainInput = document.getElementById("searchInput").value.trim();
+  const trainInput = document.getElementById("topbarInputIconLeft").value.trim();
   const trainList = document.getElementById("trainList");
   trainList.innerHTML = ""; // Clear previous search results
 
@@ -12,6 +12,7 @@ async function searchTrain1() {
       let routeArray  = response.route;
       let runDayArray = response.runDays;
       let quotaArray = response.quota;
+
       let listName = response.trainName;
       let listNumber = response.trainNumber;
       let listType = response.trainType;
@@ -23,86 +24,84 @@ async function searchTrain1() {
       displayTrainDetail(trainDetails, listName, listNumber, listType);
       
     })  
-     
-
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-async function searchSeat(){
-  seatAvailability.innerhtml = "";
-  const fromInput = document.getElementById("from").value.trim();
-  const toInput = document.getElementById("to").value.trim();
-  const dateInput = document.getElementById("searchInputDate").value.trim();
-  const trainNoInput = document.getElementById("searchInput").value.trim();
+// async function searchSeat(){
+//   seatAvailability.innerhtml = "";
+//   const fromInput = document.getElementById("from").value.trim();
+//   const toInput = document.getElementById("to").value.trim();
+//   const dateInput = document.getElementById("searchInputDate").value.trim();
+//   const trainNoInput = document.getElementById("searchInput").value.trim();
   
   
-  const enteredDate = new Date(searchInput3);
-  const currentDate = new Date();
-  const differenceInTime = currentDate.getTime() - enteredDate.getTime();
-  const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+//   const enteredDate = new Date(searchInput3);
+//   const currentDate = new Date();
+//   const differenceInTime = currentDate.getTime() - enteredDate.getTime();
+//   const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
 
-  // Map the difference in days to the startDay range (0-4)
-  let startDay = 0;
-  if (differenceInDays === 0) {
-    startDay = 0;
-  } else if (differenceInDays >= 1 && differenceInDays <= 4) {
-    startDay = differenceInDays;
-  } else {
-    // Handle cases where the entered date is more than 4 days ago
-    startDay = 4;
-  }
+//   // Map the difference in days to the startDay range (0-4)
+//   let startDay = 0;
+//   if (differenceInDays === 0) {
+//     startDay = 0;
+//   } else if (differenceInDays >= 1 && differenceInDays <= 4) {
+//     startDay = differenceInDays;
+//   } else {
+//     // Handle cases where the entered date is more than 4 days ago
+//     startDay = 4;
+//   }
 
-  const selectClassSeat = await getTrainClasses({trainNo:trainNoInput })
-  .then((response) => {
+//   const selectClassSeat = await getTrainClasses({trainNo:trainNoInput })
+//   .then((response) => {
 
-    let classArraySeat = response.class;
-    let seatQuotaArray = response.quota;
-    displayClassSeat(classArraySeat,classSeatContainer);
-    displayQuotaSeat(seatQuotaArray,seatQuotaContainer);
-  })
+//     let classArraySeat = response.class;
+//     let seatQuotaArray = response.quota;
+//     displayClassSeat(classArraySeat,classSeatContainer);
+//     displayQuotaSeat(seatQuotaArray,seatQuotaContainer);
+//   })
 
-  //display class
-  function displayClassSeat(classArraySeat, classSeatContainer) {
-    let selectClassList = document.createElement('select'); // Create a <select> element
+//   //display class
+//   function displayClassSeat(classArraySeat, classSeatContainer) {
+//     let selectClassList = document.createElement('select'); // Create a <select> element
   
-    for (let c = 0; c < classArraySeat.length; c++) {
-      let optionItem = document.createElement('option'); // Create an <option> for each object
-      optionItem.value = classArraySeat[c].value;
-      optionItem.textContent = `Value: ${classArraySeat[c].value}, Name: ${classArraySeat[c].name}`;
-      selectClassList.appendChild(optionItem); // Append the <option> to the <select>
-    }
-    classSeatContainer.appendChild(selectClassList);
+//     for (let c = 0; c < classArraySeat.length; c++) {
+//       let optionItem = document.createElement('option'); // Create an <option> for each object
+//       optionItem.value = classArraySeat[c].value;
+//       optionItem.textContent = `Value: ${classArraySeat[c].value}, Name: ${classArraySeat[c].name}`;
+//       selectClassList.appendChild(optionItem); // Append the <option> to the <select>
+//     }
+//     classSeatContainer.appendChild(selectClassList);
   
   
-    classSeatContainer.appendChild(selectClassList);
-  }
+//     classSeatContainer.appendChild(selectClassList);
+//   }
 
 
-  function displayQuotaSeat(seatQuotaArray, seatQuotaContainer){
-    let selectQuotaList = document.createElement('select');
+//   function displayQuotaSeat(seatQuotaArray, seatQuotaContainer){
+//     let selectQuotaList = document.createElement('select');
 
-    for (let d = 0; d < classArraySeat.length; d++) {
-      let optionQuota = document.createElement('option'); // Create an <option> for each object
-      optionQuota.value = seatQuotaArray[d].value;
-      optionQuota.textContent = `Value: ${seatQuotaArray[d].value}, Name: ${seatQuotaArray[d].name}`;
-      selectQuotaList.appendChild(optionQuota); // Append the <option> to the <select>
-    }
+//     for (let d = 0; d < classArraySeat.length; d++) {
+//       let optionQuota = document.createElement('option'); // Create an <option> for each object
+//       optionQuota.value = seatQuotaArray[d].value;
+//       optionQuota.textContent = `Value: ${seatQuotaArray[d].value}, Name: ${seatQuotaArray[d].name}`;
+//       selectQuotaList.appendChild(optionQuota); // Append the <option> to the <select>
+//     }
 
-    seatQuotaContainer.appendChild(selectQuotaList);
+//     seatQuotaContainer.appendChild(selectQuotaList);
   
-  }
-  const classInput = document.getElementById("classSeatContainer").value.trim();
-  const quotaInput = document.getElementById("seatQuotaContainer").value.trim();
+//   }
+//   const classInput = document.getElementById("classSeatContainer").value.trim();
+//   const quotaInput = document.getElementById("seatQuotaContainer").value.trim();
 
-  //search seat 
-  const seatAva = await checkSeatAvailability({ fromStationCode:fromInput, toStationCode:toInput, date:dateInput, trainNo:trainNoInput, classType:classInput, quota:quotaInput})
-  .then((response) => {
+//   //search seat 
+//   const seatAva = await checkSeatAvailability({ fromStationCode:fromInput, toStationCode:toInput, date:dateInput, trainNo:trainNoInput, classType:classInput, quota:quotaInput})
+//   .then((response) => {
 
-    console.log("Inside seat availability: ", response);
-  })
-}
+//     console.log("Inside seat availability: ", response);
+//   })
+// }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // function searchSeat(){
@@ -121,7 +120,7 @@ async function searchSeat(){
 async function liveStatus(){
   const trainLiveStatusList = document.getElementById("trainLiveStatusList");
   trainLiveStatusList.innerHTML = "";
-  const trainInput2 = document.getElementById("searchInput").value.trim();
+  const trainInput2 = document.getElementById("topbarInputIconLeft").value.trim();
   const trainInput3 = document.getElementById("searchInput3").value.trim();
 
   const enteredDate = new Date(trainInput3);
@@ -140,52 +139,69 @@ async function liveStatus(){
     startDay = 4;
   }
 
-  const someLiveStatus = await getTrainSchedule({trainNo: trainInput2, date:trainInput3, startDay: startDay})
+  const someLiveStatus = await getTrainLiveStatus({trainNo: trainInput2, date:trainInput3, startDay: startDay})
   .then ((response) => {
 
     console.log("live status of train:", response);
-    let liveStatusArray  = response.route;
+    //let liveStatusArray  = response.data;
+    let trainStartDate = response.train_start_date;
+    let newMessage = response.new_message;
+    let spentTime = response.spent_time;
 
-    displayLiveStatus(liveStatusArray,liveStatusContainer)
+    displayLiveStatus(liveStatusContainer,trainStartDate,newMessage,spentTime);
   })
 
 }
 
-  ///////////////////////////////////////////////////////////////////////////////////////////////
+//   ///////////////////////////////////////////////////////////////////////////////////////////////
 
-function displayLiveStatus(liveStatusArray,liveStatusContainer){
+ function displayLiveStatus(liveStatusContainer,trainStartDate,newMessage,spentTime){
   let trainLiveStatusList = document.createElement('ul');
 
-  for (let l=0; l<liveStatusArray.length; l++){
-    let listLiveStatus = document.createElement('li');
-    listLiveStatus.textContent = `Station Code:${liveStatusArray[l].station_code}, Station Name: ${liveStatusArray[l].station_name},Platform No: ${liveStatusArray[l].platform_number}`;
-    trainLiveStatusList.appendChild(listLiveStatus);
-  }
+//   for (let l=0; l<liveStatusArray.length; l++){
+//     let listLiveStatus = document.createElement('li');
+//     listLiveStatus.textContent = `Station Code:${liveStatusArray[l].station_code}, Station Name: ${liveStatusArray[l].station_name},Platform No: ${liveStatusArray[l].platform_number}`;
+//     trainLiveStatusList.appendChild(listLiveStatus);
+//   }
+
+    const startDateListItem = document.createElement('li');
+    startDateListItem.textContent = `Train Name: ${trainStartDate}`;
+    trainDetails.appendChild(nameListItem);
+
+    const newMsgListItem = document.createElement('li');
+    newMsgListItem.textContent = `Train Number: ${newMessage}`;
+    trainDetails.appendChild(numberListItem);
+
+    const timeListItem = document.createElement('li');
+    timeListItem.textContent = `Train Type: ${spentTime}`;
+    trainDetails.appendChild(typeListItem);
+
   liveStatusContainer.appendChild(trainLiveStatusList);
-}
+ }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function displayClass(classArray,trainContainer) { 
+function displayClass(classArray,classContainer) { 
   let trainList = document.createElement('ul'); // Create a <ul> element
 
   for (let i = 0; i < classArray.length; i++) {
     let listItem = document.createElement('li'); // Create a <li> for each object
-    listItem.textContent = `Value: ${classArray[i].value}, Name: ${classArray[i].name}`;
+    listItem.textContent = `${classArray[i].value}`;
+   // Value: ${classArray[i].value}, Name: ${classArray[i].name}
     trainList.appendChild(listItem); // Append the <li> to the <ul>
   }
-  trainContainer.appendChild(trainList);
+  classContainer.appendChild(trainList);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-function displayQuota(quotaArray,trainContainer){
+function displayQuota(quotaArray,quotaContainer){
   let trainQuota = document.createElement('ul');
    for (let n=0; n < quotaArray.length; n++){
     let listQuota = document.createElement('li');
     listQuota.textContent = `Value: ${quotaArray[n].value}, Name: ${quotaArray[n].name}`;
     trainQuota.appendChild(listQuota);
    }
-   trainContainer.appendChild(trainQuota);
+   quotaContainer.appendChild(trainQuota);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -211,7 +227,7 @@ function displayTrainDetail(trainContainer, listName, listNumber, listType){
 /////////////////////////////////////////////////////////////////////////////////////////////
  
  
-function displayRoute(routeArray,trainContainer){
+function displayRoute(routeArray,routeContainer){
   // let trainRoute = document.createElement('ul');
 
   // for(let j = 0; j < routeArray.length; j++ ){
@@ -272,11 +288,11 @@ function displayRoute(routeArray,trainContainer){
     }
   }
 
-  trainContainer.appendChild(trainRoute);
+  routeContainer.appendChild(trainRoute);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-function displayRunDay(runDayArray,trainContainer){
+function displayRunDay(runDayArray,runDaysContainer){
   let trainRunDay =  document.createElement('ul');
     Object.entries(runDayArray).forEach(([day,value]) => {
       if (value === true) {
@@ -285,7 +301,7 @@ function displayRunDay(runDayArray,trainContainer){
         trainRunDay.appendChild(listRunDay);
       }
     });
-  trainContainer.appendChild(trainRunDay);
+  runDaysContainer.appendChild(trainRunDay);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////

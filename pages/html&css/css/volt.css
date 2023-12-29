@@ -23015,7 +23015,8 @@ textarea.form-control-lg {
 
 @media (min-width: 992px) {
     .content {
-        margin-left: 260px;
+        margin-left: 60px;
+        margin-right: 60px;
     }
 }
 
@@ -25527,8 +25528,8 @@ label {
 }
 
 .icon-shape {
-    width: 4rem;
-    height: 4rem;
+    width: 2.5rem;
+    height: 2.5rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
