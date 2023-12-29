@@ -23,20 +23,21 @@ body {
   }
 
   .signup-container {
-        display: none;
-        z-index: 1000;
-        position: relative;
-        width: 350px;
-        height: 510px;
-        background-color: #fff;
-        padding: 20px;
-        border: 2px solid black;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        height: auto;       /* Use auto to allow dynamic height based on content */
-        max-height: 600px;  /* Set your maximum height */
-        min-height: 200px;  /* Set your minimum height if needed */
-        overflow-y: auto;   /* Add overflow-y: auto to enable vertical scrollbar if content overflows */
+         position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: auto;
+  max-height: 600px;
+  min-height: 200px;
+  overflow-y: auto;
   }
 
   /* .mb-3 {
