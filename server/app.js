@@ -95,7 +95,7 @@ app.post("/signin", (request, response) => {
     
     let respObject = {};
     let status = 200;
-    if(Object.keys(user).length !== 0){
+    if(user !== undefined && Object.keys(user).length !== 0){
         if(user.pass === userCred.pass){
             status = 200;
             respObject = {
@@ -185,3 +185,63 @@ app.get("/getUserData", (request, response) => {
     response.status(200).send(user);
 });
 
+
+const bookingDetails = {
+  upcomingJourneys: [
+    {
+      from: "Source1",
+      to: "Destination1",
+      date: "2023-01-01",
+      trainName: "Train1",
+      trainNumber: "12345",
+      pnr: "ABC123",
+      bookingDate: "2023-01-01",
+      reservationStatus: "Confirmed",
+    },
+    // Additional upcoming journey entries...
+  ],
+  completedJourneys: [
+    {
+      from: "Source2",
+      to: "Destination2",
+      date: "2023-02-01",
+      trainName: "Train2",
+      trainNumber: "67890",
+      pnr: "XYZ456",
+      bookingDate: "2023-01-15",
+      reservationStatus: "Cancelled",
+    },
+    // Additional completed journey entries...
+  ],
+};
+
+
+// Get User Bookings
+// app.get("/getUserBookings", (request, response) => {
+//     let userId = request.query.userId; // Assuming you have a userId associated with bookings
+//     let userBookings = bookingDetails[userId];
+
+//     if (userBookings) {
+//         response.status(200).send(userBookings);
+//     } else {
+//         response.status(404).send({ status: "Failure", msg: "User bookings not found" });
+//     }
+// });
+
+// Get All Bookings
+app.get("/getAllBookings", (request, response) => {
+    response.status(200).send(bookingDetails);
+});
+
+
+//feedback form submission
+app.post("/submit-feedback", (req, res) => {
+  const feedback = req.body.feedback;
+  // Handle the feedback (e.g., store it in a database)
+  console.log("Received feedback:", feedback);
+  res.send("Feedback received successfully!");
+});
+
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+});
