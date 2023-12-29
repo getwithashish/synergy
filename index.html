@@ -3,25 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet"> 
+  
+  <!-- CSS -->
   <link href="css/landingPage.css" rel="stylesheet">
-
-
-
   <link rel="stylesheet" href="css/loginPage.css">
-  <link rel="stylesheet" href="css/navBar.css">
+  <!-- <link rel="stylesheet" href="css/navBar.css"> -->
   <link rel="stylesheet" href="css/createAccount.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+      <link rel="stylesheet" href="css/map.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link
+      rel="stylesheet"
+      href="https://openlayers.org/en/v3.20.1/css/ol.css"
+      type="text/css"/>
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/newNavBar.css">
+
+    <style>
+      .map {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+
+    <!-- JS -->
     <script src="src/authenticate_login.js"></script>
     <script src="src/validation.js"></script>
 
-    <link rel="stylesheet" href="css/map.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 
@@ -35,114 +50,28 @@
       </div>
     </div>
     <div id="main-container">
-        <div class="navBar">  
-            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
-              <nav class="navbar navbar-expand-lg ">
-              <div class="container-fluid glass">
-                <a class="navbar-brand" href="#" style="margin-right: 150px;margin-left: 15px; padding-top: 40px;">
-                  <i class="bi bi-emoji-heart-eyes-fill"></i> Logo
-                </a>
-                <!-- <div class="d-flex flex-grow-1 justify-content-center align-items-center">
-                  <form class="w-100">
-                    <div class="input-group">
-                      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit" style="margin-right: 100px;"><i class="bi bi-search"></i></button>
-                    </div>
-                  </form>
-                </div> -->
-                
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav w-100 d-flex justify-content-center" style="padding-top: 20px;">
-                    <!-- <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-newspaper"></i>PNR Status</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-newspaper"></i>PNR Status</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="bi bi-train-front"></i>Coach Position</a>
-                    </li> -->
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="bi bi-geo-alt"></i>Running Status</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">
-                        <i class="fas fa-person-seat"></i>Seat Availability</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Train Facts
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#" style="margin-right: 100px;">My Bookings</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#" onclick="toggleLoginForm()">Log in <i class="bi bi-person"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-            
-        
-            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="container-fluid">
-                
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                  <ul class="navbar-nav w-100 d-flex justify-content-between">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-newspaper"></i>PNR Status</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="bi bi-train-front"></i>Coach Position</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="bi bi-geo-alt"></i>Running Status</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">
-                        <i class="fas fa-person-seat"></i>Seat Availability</a>
-                    </li>
-        
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Train Facts
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        More Features
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav> -->
-            
-            
-          </div>
-        
 
-          <!-- ======================================================================== -->
-            <!-- Archa -->
-            <!-- ======================================================================== -->
+      <!-- <div class="navBar"> -->
+      <header class="header">
 
+        <a href="#" class="logo">Logo</a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+        <nav class="newnavbar">
+            <a href="#" style="--i:0;">PNR Status</a>
+            <a href="#" style="--i:1;">About</a>
+            <a href="#" style="--i:2;">Gallery</a>
+            <a href="#" style="--i:3;">Services</a>
+            <a href="#" style="--i:4;">Contact</a>
+        </nav>
+
+    </header>
+  <!-- </div> -->
         
           <div>
           <div class="login-container">
@@ -187,7 +116,7 @@
                 <!-- <button type="submit" class="btn btn-primary"  id="signInGoogleBtn">
                   <img src="assets/icons8-google-48.png" alt="googleLogo" style="height: 25px; margin-right: 10px;">Sign in with Google</button> -->
               </form>
-            <p style="text-align: center;">Don't have an account? <span <span style="color:#cf2550; cursor: pointer;" onclick="toggleLoginForm()">Sign up for free!</span></p>
+            <p style="text-align: center;">Don't have an account? <span style="color:#cf2550; cursor: pointer;" onclick="toggleLoginForm()">Sign up for free!</span></p>
         
         
           </div>
@@ -252,23 +181,20 @@
               
               </div>
             </div>
-
-            <!-- ======================================================================== -->
-            <!-- Ashish -->
-            <!-- ======================================================================== -->
-
-
-              <div class="img_map">
+            
+              <!-- <div class="img_map">
                 <iframe width="425" height="350" src="
 https://www.openstreetmap.org/export/embed.html?bbox=27.597656250000004%2C-14.604847155053898%2C125.68359375000001%2C31.353636941500987&amp;layer=mapnik&amp;marker=9.102096738726456%2C76.640625"
 style="border: 1px solid black"></iframe><br/><small><a href="
 https://www.openstreetmap.org/?mlat=9.10&amp;mlon=76.64#map=4/9.10/76.64">View
 Larger Map</a></small>
-           </div>
+           </div> -->
 
-           <!-- ======================================================================== -->
-            <!-- Dantus -->
-            <!-- ======================================================================== -->
+           <div id="map" class="map"></div>
+
+           <script src="https://openlayers.org/en/v3.20.1/build/ol.js"></script>
+
+    <script src="src/map.js"></script>
 
 
            <div class="container">
