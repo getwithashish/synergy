@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navBar.css">
+  <title>FAQ</title>
+</head>
+
+<body style="margin-top: 5rem; margin: 0;
+background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;height: 100vh;background-attachment: fixed;"">
+
+<div class="bgimage" style="background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;height: 100vh;background-attachment: fixed;">
+
+
+
+	<header class="header" style="margin-bottom: 20px;">
+    
+        <a href="#" class="logo">Logo</a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+        <nav class="newnavbar">
+            <a href="#" style="--i:0;">PNR Status</a>
+            <a href="#" style="--i:1;">About</a>
+            <a href="#" style="--i:2;">Gallery</a>
+            <a href="#" style="--i:3;">Services</a>
+            <a href="#" style="--i:4;">Contact</a>
+        </nav>
+
+    </header>
+<div class="notNav">
+
+	<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
+
+	<ul class="cd-faq__categories" style="position: fixed; top: 5rem;">
+		<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#basics">PNR </a></li>
+		<li><a class="cd-faq__category truncate" href="#mobile">Booking</a></li>
+		<li><a class="cd-faq__category truncate" href="#account">Account</a></li>
+		<li><a class="cd-faq__category truncate" href="#payments">Payments</a></li>
+		<li><a class="cd-faq__category truncate" href="#privacy">Privacy</a></li>
+		<li><a class="cd-faq__category truncate" href="#delivery">Delivery</a></li>
+	</ul> <!-- cd-faq__categories -->
+
+	<div class="cd-faq__items" style="padding-left: 15rem;">
+		<ul id="basics" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>PNR</h2></li>
+			<br>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" ><span>What is a PNR?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>
+				PNR - Passenger Name Record is an unique number that recognizes your booking.<br>
+	PNR is a travel record of an individual or a group of individuals, maintained in CRS (Central Reservation System) database.<br>
+	This code is generated only when the CRS gets full data of journey like passenger's name, gender, age, train number, journey class, berth preference, contact link, etc
+	PNR is per ticket and not for person. If multiple members are booked together on one ticket, then Only one PNR number will be allocated for it.
+	Indian Railways has a 10-digit numerical PNR number.
+			</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>What use is of PNR?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>PNR is utilized to get the Confirmed or Waitlisted status of your booking along with the coach and seat numbers.
+				Basically PNR is used in "follow-up" process by which passengers are able to get updates about the status of their journey.
+				This 10-digit numerical PNR number of Indian Railways is of great use to passengers, whose tickets are not confirmed.
+				PNR helps passengers to check whether their tickets got confirmed or not.</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Where would I find PNR?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>On a paper ticket released in a railway booking counter, the PNR number is on the top left of the ticket.
+				The PNR number on ticket might be split right into 3-7(digits) form (e.g. 890-1234567) on paper ticket.
+				On IRCTC e-ticket or any other agency e-ticket the PNR number can be on the top left of the ticket.
+				PNR might also be on SMS alert on your mobile if you have booked e-ticket and provided your mobile number.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How to get PNR Status via SMS on mobile?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>PNR <10-digit PNR Number> to 139
+				PNR <10-digit PNR Number> to 54959
+				PNR <10-digit PNR number> to 5676747
+				IRPNR <10-digit PNR Number> to 57886</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Why am I getting errors while checking PNR?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>There could be 3 possible reasons
+				1. You entered wrong PNR number(Please check PNR then try again ).
+				2. Web servers are down.(In this case check again couple of minutes).
+				3 Indian Railways Servers Maintenance happens at 11:30pm - 12:30am (Check again after 12:30 AM).</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="mobile" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Mobile</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>What is "Chart Not Prepared" status?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>The last booking chart for a train will be done at least 4hrs prior to the schedule departure of the train at origination station.
+				But in reality charts have been getting prepared 1 or 2 hrs prior to the actual departure of the train.
+				In situation of early morning or late evening trains, this might be prepped considerably earlier during the previous night itself.
+				Your booking standing might change any time till chart is prepared.
+				Though quite uncommon, it is possible that an RAC ticket can change to wait-listed status.
+				It is also possible that booking relocated from WL to CNF can return to RAC or WL.
+				However none of this will certainly not happen for a ticket which was CNF while Booking itself.</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>What are different type of Class Codes and their meaning?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p><h2>Train Classes</h2>
+
+				<table border="1]">
+					<tr>
+						<th>Code</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>1A</td>
+						<td>AC First class (Air-Conditioned)</td>
+					</tr>
+					<tr>
+						<td>2A</td>
+						<td>AC 2 Tier Sleeper (Air-Conditioned)</td>
+					</tr>
+					<tr>
+						<td>3A</td>
+						<td>AC 3 Tier (Air-Conditioned)</td>
+					</tr>
+					<tr>
+						<td>3E</td>
+						<td>AC 3 Tier Economy (Air-Conditioned)</td>
+					</tr>
+					<tr>
+						<td>CC</td>
+						<td>AC Chair Car (Air-Conditioned)</td>
+					</tr>
+					<tr>
+						<td>FC</td>
+						<td>First class</td>
+					</tr>
+					<tr>
+						<td>SL</td>
+						<td>Sleeper Class</td>
+					</tr>
+					<tr>
+						<td>2S</td>
+						<td>Second Sitting</td>
+					</tr>
+				</table></p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Below is the list of various Quota Codes and their meanings.</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<h2>Reservation Quotas</h2>
+
+				<table border="1">
+					<tr>
+						<th>Code</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>GN</td>
+						<td>General Quota</td>
+					</tr>
+					<tr>
+						<td>CK</td>
+						<td>Tatkal Quota</td>
+					</tr>
+					<tr>
+						<td>PT</td>
+						<td>Premium Tatkal Quota</td>
+					</tr>
+					<tr>
+						<td>RC(RAC)</td>
+						<td>Reservation Against Cancellation</td>
+					</tr>
+					<tr>
+						<td>LB</td>
+						<td>Lower Berth</td>
+					</tr>
+					<tr>
+						<td>PQ</td>
+						<td>Pooled Quota</td>
+					</tr>
+					<tr>
+						<td>OS</td>
+						<td>Out Station</td>
+					</tr>
+					<tr>
+						<td>RS</td>
+						<td>Road Side</td>
+					</tr>
+					<tr>
+						<td>GNRS</td>
+						<td>General Quota Road Side</td>
+					</tr>
+					<tr>
+						<td>LD</td>
+						<td>Ladies Quota</td>
+					</tr>
+					<tr>
+						<td>SS</td>
+						<td>Female(above 45 Year)/Senior Citizen/Travelling alone</td>
+					</tr>
+					<tr>
+						<td>HP</td>
+						<td>Physically Handicapped Quota</td>
+					</tr>
+					<tr>
+						<td>YU</td>
+						<td>Yuva</td>
+					</tr>
+					<tr>
+						<td>HO</td>
+						<td>Head quarters/high official Quota</td>
+					</tr>
+					<tr>
+						<td>DF</td>
+						<td>Defence Quota</td>
+					</tr>
+					<tr>
+						<td>PH</td>
+						<td>Parliament house Quota</td>
+					</tr>
+					<tr>
+						<td>FT</td>
+						<td>Foreign Tourist Quota</td>
+					</tr>
+					<tr>
+						<td>DP</td>
+						<td>Duty Pass Quota</td>
+					</tr>
+					<tr>
+						<td>RE</td>
+						<td>Railway Employee Staff on Duty for the train same as above</td>
+					</tr>
+				</table>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="account" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Account</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>What are different type of Coach Codes and their meaning?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			 <h2>Coach Information</h2>
+    
+				<table class="class_information">
+					<tr>
+						<th>Coach Code</th>
+						<th>Description</th>
+						<th>Details</th>
+					</tr>
+					<tr>
+						<td>A</td>
+						<td>2-Tier Air Conditioned Coach</td>
+						<td>There are total 6 berths in coupe among which 2 berth are facing each other i.e Lower and Upper side. These berths are bigger and wider than 3-Tier Berths.</td>
+					</tr>
+					<tr>
+						<td>B</td>
+						<td>3-Tier Air Conditioned Coach</td>
+						<td>There are total 8 berths in a coupe among which 3 berths are facing each other i.e Lower, Middle, and Upper and two side berth. Basically this is similar to sleeper Coach.</td>
+					</tr>
+					<tr>
+						<td>C</td>
+						<td>Air Conditioned Chair Car</td>
+						<td>These are generally day trains where the arrangement of seats is made in 3+3 or 3+2 configuration which can be pushed back and also have an aisle (walkaway) in between.</td>
+					</tr>
+					<tr>
+						<td>D</td>
+						<td>Second Class seats which can be booked</td>
+						<td>These are the same 3+3 seats with an aisle in between, but these seats are pre-reservable. i.e they are pre-booked before the train is boarded.</td>
+					</tr>
+					<tr>
+						<td>E</td>
+						<td>Executive Chair Car</td>
+						<td>These seats are wider and more spacious than normal Chair Car.</td>
+					</tr>
+					<tr>
+						<td>EXT</td>
+						<td>Extra Coach</td>
+						<td>Sometimes in some festival season or during vacation, the number of commuters increases, so extra Coaches are added. Generally, these extra Coaches are of lower Classes.</td>
+					</tr>
+					<tr>
+						<td>DE</td>
+						<td>Combination of Executive Class and Second Class</td>
+						<td>Some Coaches are divided in the middle, mostly Executive Class only. So some seats / berths are of Executive Class in one half and Second Class in another half.</td>
+					</tr>
+					<tr>
+						<td>F</td>
+						<td>Non-A.C First Class</td>
+						<td>These are coupe with doors. There are no side berths and these have the capability to accommodate 2-4 persons.</td>
+					</tr>
+					<tr>
+						<td>G</td>
+						<td>3-Tier Air Conditioned (Garib Rath)</td>
+						<td>It is the symbol which is used for indicating the Class S (Sleeper Coach) of Garib Rath.</td>
+					</tr>
+					<tr>
+						<td>H</td>
+						<td>First Class Air Conditioned</td>
+						<td>It is similar in layout to the F Class, and is Air Conditioned.</td>
+					</tr>
+					<tr>
+						<td>HA</td>
+						<td>Combination of H & A Class</td>
+						<td>It is a combination of two types. Half Coach is of first Class Air Conditioned which is of type H and the other half is 2-Tier Air Conditioned which is of Type A.</td>
+					</tr>
+					<tr>
+						<td>HB</td>
+						<td>Combination of H & B Class</td>
+						<td>It is a combination of two types. Half Coach is of first Class Air Conditioned which is of type H and the other half is 3-Tier Air Conditioned which is of Type B.</td>
+					</tr>
+					<tr>
+						<td>J</td>
+						<td>Garib Rath Chair Car</td>
+						<td>It is the Garib Rath version of the Chair Car sitting.</td>
+					</tr>
+					<tr>
+						<td>RA</td>
+						<td>2-Tier Air Conditioned RAC</td>
+						<td>It is RAC in Coach type A.</td>
+					</tr>
+					<tr>
+						<td>RB</td>
+						<td>3-Tier Air Conditioned RAC</td>
+						<td>It is RAC in Coach type B.</td>
+					</tr>
+					<tr>
+						<td>RG</td>
+						<td>3-Tier Air Conditioned RAC Garib Rath</td>
+						<td>It is RAC in Coach type G.</td>
+					</tr>
+					<tr>
+						<td>RS</td>
+						<td>Sleeper Class RAC</td>
+						<td>It is RAC in Coach type S.</td>
+					</tr>
+					<tr>
+						<td>S</td>
+						<td>Sleeper Class version</td>
+						<td>It is Sleeper Coach. It has a group of 8 berths with 3 berths facing each other i.e Upper, Middle, and Lower and 2 berths on the side. Sometimes it also has 9 berths, in which case the side layout has 3 berths.</td>
+					</tr>
+					<tr>
+						<td>SE</td>
+						<td>Second Class Executive Chair</td>
+						<td>It is a non-Air-conditioned version of Class E.</td>
+					</tr>
+				</table>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How does Railway Reservations work and Booking Status changed ?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>When all available seats on a train are sold, Indian Railway or IRCTC releases RACs for railway reservations.
+				Once all of those are sold, WL tickets are released.
+				On almost every train, tickets are canceled for a variety of reasons.
+				These cancellations can get you on the train if you bought an RAC or WL ticket.
+				When the reservation chart of a particular train is ready (usually meaning that the train is due to depart in a few hours) and there are still some available tickets in different quotas, those will be given to RAC/WL ticket holders.
+				Usually booking are upgraded step by step.</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>What is TATKAL Booking and how it is done?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>Tatkal booking is meant for immediate travel plans.
+				Tatkal booking for every train opens 1 days in advance at 10 am for AC (Air conditioned Class) and at 11 Am for Non-Ac.
+				You can book tatkal e-ticket online irctc.co.in or any other online booking agency.
+				Every train and class has a defined tatkal quota and it varies from station to station.</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>What are TATKAL Charges?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p><h2>Tatkal Charges</h2>
+    
+				<table>
+					<tr>
+						<th>Class of Travel</th>
+						<th>Minimum Tatkal Charges (in Rs.)</th>
+						<th>Maximum Tatkal Charges (in Rs.)</th>
+					</tr>
+					<tr>
+						<td>Second (sitting)</td>
+						<td>10.00</td>
+						<td>15.00</td>
+					</tr>
+					<tr>
+						<td>Sleeper</td>
+						<td>90.00</td>
+						<td>175.00</td>
+					</tr>
+					<tr>
+						<td>AC Chair Car</td>
+						<td>100.00</td>
+						<td>200.00</td>
+					</tr>
+					<tr>
+						<td>AC 3Tier</td>
+						<td>250.00</td>
+						<td>350.00</td>
+					</tr>
+					<tr>
+						<td>AC 2Tier</td>
+						<td>300.00</td>
+						<td>400.00</td>
+					</tr>
+					<tr>
+						<td>Executive</td>
+						<td>300.00</td>
+						<td>400.00</td>
+					</tr>
+				</table>
+			</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="payments" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Payments</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>What are TATKAL Booking conditions?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>Voter Photo identity card issued by Election Commision of India.
+				Passport
+				PAN Card issued by Income Tax Department.
+				Driving Licence issued by RTO.
+				Photo identity card having serial number issued by Central/State Government.
+				Student Identity Card with photograph issued by recognized School/College for their students.
+				Nationalized Bank Passbok with photograph.
+				Credit cards issued by banks with laminated photograph.
+				Unique Identification Card "Aadhaar".</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Cancellation Rules & Refunds</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<h1>Cancellation Charges</h1>
+
+  <h2>Cancellation Charges before Chart Preparation:</h2>
+
+  <p>The amount deducted is based on the time of cancellation and the status of your ticket.</p>
+
+  <h3>1. For cancellation of confirmed tickets more than one day in advance...</h3>
+  <p>
+    Flat Cancellation charges per passenger - Class of Travel
+    <ul>
+      <li>120.00 - AC First/Executive Class</li>
+      <li>100.00 - First Class/AC 2 Tier</li>
+      <li>90.00 - AC Chair Car / AC 3 Tier/AC 3 Economy</li>
+      <li>60.00 - Sleeper Class</li>
+      <li>30.00 - Second Class</li>
+    </ul>
+  </p>
+
+  <h3>2. For cancellation of confirmed tickets less than 24 hrs and up to four hours...</h3>
+  <p>The cancellation charges will be 25% of the total fare paid by you, subject to flat minimum cancellation charges for each class.</p>
+
+  <h3>3. For cancellation of confirmed tickets less than four hours before the scheduled...</h3>
+  <p>
+    The cancellation charges will be 50% of the fare paid by you, subject to flat minimum cancellation charges for each class.
+    <br>
+    <strong>Distance of Journey - Time limit for cancellation after departure of the train:</strong>
+    <ul>
+      <li>Upto 200 Kms. - 3 Hrs.</li>
+      <li>From 201 Kms. To 500 Kms. - 6 Hrs.</li>
+      <li>Over 500 Kms. - 12 Hrs.</li>
+    </ul>
+  </p>
+
+  <h2>I-Ticket (Paper Ticket)</h2>
+
+  <p>Cancellation is not possible on the Internet. To cancel a ticket, the customer will have to submit the ticket at any computerized reservation (PRS) counter.</p>
+
+  <p>The fare paid by the customer will be refunded electronically (as credit to the relevant credit/debit card account used for the transaction) after deducting cancellation charges. Bank charges & IRCTC service charge are not refunded.</p>
+
+  <p>PRS counter will issue a cancellation ticket/receipt, and IRCTC will credit the amount of refund due to the customer's account. No cash refund will be given to the Customer. I-Ticket can be canceled up to 72 hrs after the scheduled departure of the train at any computerized reservation counter.</p>
+
+  <h3>A. For Train running Late by More than Three hours And Passenger Not Travelled:</h3>
+  <p>In case of train running late by more than three hours & the passenger not traveling, full refund is permitted. The ticket is surrendered/TDR obtained in case of I-ticket.</p>
+
+  <h2>E-Ticket (Continued)</h2>
+
+  <p>
+    E-Ticket can be canceled till the time of chart preparation for the train through the Internet.
+    Cancellation would be confirmed online, and the refund would be credited back to the account used for booking.
+    There will be no cash refund at any stage.
+  </p>
+
+  <h3>A. Cancellation before Chart Preparation:</h3>
+  <p>The customers are requested to use the online cancel facility provided by IRCTC.</p>
+
+  <h3>B. Cancellation after Chart Preparation:</h3>
+
+  <h4>For Confirmed Tickets:</h4>
+  <p>
+    The customers are requested to use the online TDR Filing & Status tracking service provided by IRCTC.
+    Railways will process the refund, and money of the refund amount will be credited back to the same account.
+  </p>
+
+  <h4>For Train running Late by More than Three hours And Passenger Not Traveled:</h4>
+  <p>
+    In case of train running late by more than three hours & the passenger not traveling, full refund is permitted.
+    Customer should file TDR online or mail to IRCTC within the prescribed time limits which are as under:
+    <br>
+    <strong>Distance of Journey - Time limit for cancellation after departure of the train:</strong>
+    <ul>
+      <li>Upto 200 Kms. - 3 Hrs.</li>
+      <li>From 201 Kms. To 500 Kms. - 6 Hrs.</li>
+      <li>Over 500 Kms. - 12 Hrs.</li>
+    </ul>
+  </p>
+
+  <h3>Fully Wait Listed Tickets:</h3>
+  <p>
+    Such passengers are not required to send an online request for cancellation.
+    Tickets will be canceled automatically, and money will be refunded in the respective account electronically.
+  </p>
+
+  <h3>Part Confirm/RAC/Waiting List:</h3>
+  <p>
+    If on PNR with more than one passenger and one passenger is having confirmed/RAC status and the rest is on the waiting list or vice-versa,
+    names of all the passengers booked on such PNR will appear in the chart.
+    A certificate can be obtained from the Ticket Checking staff in the train regarding non-traveling of wait-listed passengers on such tickets.
+    Refund will be processed through TDR refund only after receiving the original certificate.
+  </p>
+
+  <p>
+    If one or all such passengers do not want to travel:
+    <br>
+    Before chart preparation, online cancellation can be done.
+    After chart preparation, an online request can be sent to IRCTC through TDR refund for seeking a refund.
+  </p>
+
+  <h2>TATKAL Tickets</h2>
+
+  <p>
+    Full refund of fare and tatkal charges will be granted on the tickets booked under Tatkal scheme only in the following circumstances:
+    <ul>
+      <li>If the train is delayed by more than 3 hours at the journey originating point of the passenger & not the boarding point if the passenger's journey originating point and boarding point are different.</li>
+      <li>If the train is to run on a diverted route and the passenger is not willing to travel.</li>
+      <li>If the train is to run on a diverted route and boarding station or the destination or both the stations are not on the diverted route.</li>
+      <li>In case of non-attachment of the coach in which Tatkal accommodation has been earmarked and the passenger has not been provided accommodation in the same class.</li>
+      <li>If the party has been accommodated in a lower class and does not want to travel. In case the party travels in a lower class, the passenger will be given a refund of the difference in fare and also the difference in Tatkal charges, if any.</li>
+    </ul>
+  </p>
+
+  <p>Other than the above conditions, no refund will be granted on the cancellation of confirmed Tatkal tickets/duplicate Tatkal ticket.</p>
+
+  <h2>WL and RAC Refunds</h2>
+
+  <p>
+    If your train is ready for departure and its reservation chart is finalized, the cost of your WL ticket will be automatically refunded to your bank account.
+  </p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Any special precaution while providing details during Ticket Booking?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>Passengers have to be careful about their details provided while booking train tickets.
+				Your personal information could be stolen as they were publicly pasted on rail coaches after chart preparation.
+				The only way to protect yourself from fraudulent transactions, is to avoid quoting PAN details for identity proof.
+				Don't mention your PAN card as ID proof while booking train tickets</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="privacy" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Privacy</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Am I Insured while Travelling on Railways?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>Indian Railways provides free insurance to the passengers.<br>
+				In case of death railways pays Rs. 4 Lakhs and in case of injury the minimum amount is Rs. 32000/- and maximum can be Rs. 4 Lakhs depending upon the severity.
+				On the accident spot railway pays ex-gratia amount Rs. 15000/- to the dependents of the dead passenger and Rs. 5000/- to the injured and Rs. 500/- less injured passengers for immediate needs.
+				The insurance not only covers the travelling passenger, it covers the person who came to receive someone with valid platform ticket.
+				If you have a valid platform or travel ticket and you get insured or dead because of any terror or due to railway negligence, you are covered under insurance.
+				Railway Claim Tribunal will decide the amount you are liable for insurance depends upon severity.</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>What age is it compulsory to buy a train ticket for children?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p> It is compulsory for children aged between the ages 5 to 12 years to buy a train ticket.</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How can I access my account data?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus magni vero deserunt enim et quia in aliquam, rem tempore voluptas illo nisi veritatis quas quod placeat ipsa! Error qui harum accusamus incidunt at libero ipsum, suscipit dolorum esse explicabo in eius voluptates quidem voluptatem inventore amet eaque deserunt veniam dignissimos excepturi? Dolore, quo amet nostrum autem nemo. Sit nam assumenda, corporis ea sunt distinctio nostrum doloribus alias, beatae nesciunt dolore saepe consequuntur minima eveniet porro dolor officiis maiores ab obcaecati officia enim aliquam. Itaque fuga molestiae hic accusantium atque corporis quia id sequi enim vero? Hic aperiam sint facilis aliquam quia, accusamus tenetur earum totam enim est, error. Iusto, reiciendis necessitatibus molestias. Voluptatibus eos explicabo repellat nesciunt nam vero minima.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How can I control if other search engines can link to my profile?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="delivery" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Tatkal</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>What are the various classes of travel available in Tatkal?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>Tatkal bookings are allowed in all classes except First AC and Executive class.</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Can I select ladies or general quota along with tatkal quota?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>Ladies and general quota cannot be opted for along with Tatkal quota</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Can I book tatkal ticket from all locations?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>Tatkal tickets will be issued for actual distance of travel, instead of end-to-end, subject to the distance restriction applicable to the train. The same Tatkal berth/seat may be booked in multiple legs till preparation of charts.For some trains/class/locations Tatkal quota may not be available. Please check the availability before booking.	 
+			</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>What are the rules for cancellation?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>No refund will be granted on cancellation of confirmed Tatkal tickets. For contingent cancellation & waitlisted Tatkal ticket cancellations, charges will be deducted as per existing Railway rules.</p>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How much extra should I pay for my ticket?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			<p>Tatkal charges per passenger in addition to normal ticket.
+
+				The Tatkal Charges have been fixed as a percentage of fare at the rate of 10% of basic fare for second class and 30% of basic fare for all other classes subject to minimum and maximum as given in the table below:-
+			</p>
+			<table>
+				<tr>
+				  <th>Class of Travel</th>
+				  <th>Minimum Tatkal Charges (in Rs.)</th>
+				  <th>Maximum Tatkal Charges (in Rs.)</th>
+				</tr>
+				<tr>
+				  <td>Second (sitting)</td>
+				  <td>10</td>
+				  <td>15</td>
+				</tr>
+				<tr>
+				  <td>Sleeper</td>
+				  <td>100</td>
+				  <td>200</td>
+				</tr>
+				<tr>
+				  <td>AC Chair Car</td>
+				  <td>125</td>
+				  <td>225</td>
+				</tr>
+				<tr>
+				  <td>AC 3 Tier</td>
+				  <td>300</td>
+				  <td>400</td>
+				</tr>
+				<tr>
+				  <td>AC 2 Tier</td>
+				  <td>400</td>
+				  <td>500</td>
+				</tr>
+				<tr>
+				  <td>Executive</td>
+				  <td>400</td>
+				  <td>500</td>
+				</tr>
+			  </table>
+		</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How does your UK Next Day Delivery service work?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How does your Next Day Delivery service work?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>When will my order arrive?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>When will my order ship?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+          </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+	</div> <!-- cd-faq__items -->
+
+
+	<a href="#0" class="cd-faq__close-panel text-replace">Close</a>
+  
+  <div class="cd-faq__overlay" aria-hidden="true"></div>
+
+	</section> <!-- cd-faq -->
+
+</div>
+
+</div>
+
+
+<script src="js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+<script src="js/main.js"></script> 
+</body>
+</html>
