@@ -33,7 +33,7 @@ body{
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,.1);
+  background: #212529;
   backdrop-filter: blur(50px);
   z-index:-1;
 }
@@ -41,14 +41,14 @@ body{
 .header::after{
   content:'';
   position: absolute;
-  top: 0;
+  top: 0; 
   left: -100%;
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
   backdrop-filter: blur(50px);
   z-index:-1;
-  transition: .5s;
+  transition: 2s;
 }
 
 .header:hover::after{
@@ -91,8 +91,13 @@ body{
 
 @media (max-width :768px){
 
-  .icons{
+  .icons {
     display:inline-flex;
+    /* right: auto; */
+  }
+
+  .logo{
+    margin-left:150px;
   }
 
   #check:checked~.icons #menu-icon{
