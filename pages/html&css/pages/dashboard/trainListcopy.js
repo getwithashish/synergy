@@ -260,9 +260,6 @@ function displayTrainDetail(trainContainer, listName, listNumber, listType, jour
   trainDuration.id = "duration";
   trainDuration.textContent = journeyTime;
 
-  
-
-  
   trainContainer.appendChild(trainDetails);
 
 }

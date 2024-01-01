@@ -13,13 +13,17 @@ body {
   .create-account-container {
     position: relative;
     width: 950px;
-    height: auto;
+    height: 210px;
     background-color: #fff;
     padding: 20px;
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     
+  }
+
+  #name-input-group{
+    margin-left: 10px;
   }
 
   .signup-container {
@@ -81,7 +85,7 @@ body {
   }
   
   
-  #signInBtn {
+  #checkpnrBtn {
     padding: 5px;
     border: none;
     /* border-radius: 10px; */
@@ -102,9 +106,13 @@ body {
    
   }
   
-  #signInBtn:hover {
+  #checkpnrBtn:hover {
     background-color: #a11034;
   }
+
+  /* #closeContainer{
+    height: 60px;
+  } */
 
   #pnrResultContainer{
     margin-top: 20px;
@@ -128,5 +136,11 @@ body {
     text-align: left; /* Optional: to center-align text within each span */
     margin-left: 70px;
   }
+
+  .create-account-container {
+    overflow: hidden;
+    height: 210px;
+    transition: height 0.5s ease; /* Set the transition property for the height */
+}
 
   

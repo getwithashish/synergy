@@ -12,10 +12,13 @@
     <script src="../src/authentication.js"></script>
     <script src="../src/validation.js"></script>
     <script src="pnr_status.js"></script>
+    <script src="../src/api/api.js"></script>
+    <script src="../src/api/rapidapi-api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="create-account-container">
-        <div class="close-btn">
+        <div class="close-btn" id="closeContainer">
           <button type="button" class="btn-close" aria-label="Close"></button>
           </div>
           <div class="row">
@@ -27,8 +30,8 @@
               <div class="mb-6" id="name-input-group">
                   <label for="userName" class="form-label">PNR number</label>
                   <div class="input-group">
-                      <input type="text" class="form-control" id="signupuserName" placeholder="Enter your 10 digit PNR number"   name="userName" required>
-                      <button onclick="checkPnr()" type="submit" class="btn btn-primary"  id="signInBtn">Search</button>
+                      <input type="text" class="form-control" id="checkPNR" placeholder="Enter your 10 digit PNR number"   name="userName" required>
+                      <a href="#" onclick="checkPnr();expandBox();" class="btn btn-primary"  id="checkpnrBtn">Search</a>
                     </div>    
                   <div class="valid-feedback" id="nameValidFeedback">
                     Looks good!
@@ -45,11 +48,11 @@
                 <div class="row" id="first">
                 
                   <div class="col-md-6">
-                    <span class="word1" id="trainNumber">trainNo</span>
+                    <span class="word1" id="trainNumber"></span>
                   </div> 
 
                   <div class="col-md-6">
-                    <span class="word" id="trainName">trainName</span>
+                    <span class="word" id="trainName"></span>
                   </div>
 
                 </div>
@@ -57,11 +60,11 @@
                 <div class="row" id="second">
 
                   <div class="col-md-6">
-                    <span class="word1" id="boardingStation">bstation</span>
+                    <span class="word1" id="boardingStation"></span>
                   </div>
 
                   <div class="col-md-6">  
-                    <span class="word" id="reservUpto">reservupto</span>
+                    <span class="word" id="reservUpto"></span>
                   </div>  
 
                 </div>
@@ -69,11 +72,11 @@
                 <div class="row" id="three">
 
                   <div class="col-md-6">
-                    <span class="word1" id="passStatus">passenger</span>
+                    <span class="word1" id="passStatus"></span>
                   </div>
 
                   <div class="col-md-6">  
-                    <span class="word" id="timeTaken">time</span>
+                    <span class="word" id="timeTaken"></span>
                   </div>  
 
                 </div>
@@ -81,22 +84,22 @@
                 <div class="row" id="four">
 
                   <div class="col-md-6">
-                    <span class="word1" id="departureTime">departuretime</span>
+                    <span class="word1" id="departureTime"></span>
                   </div>
 
                   <div class="col-md-6">  
-                    <span class="word" id="arrivalTime">arrivaltime</span>
+                    <span class="word" id="arrivalTime"></span>
                   </div>  
 
                 </div>
                 <div class="row" id="five">
 
                   <div class="col-md-6">
-                    <span class="word1" id="bookingFare">bookingfare</span>
+                    <span class="word1" id="bookingFare"></span>
                   </div>
 
                   <div class="col-md-6">  
-                    <span class="word" id="ticketFare">ticketfare</span>
+                    <span class="word" id="ticketFare"></span>
                   </div>  
 
                 </div>
@@ -104,16 +107,16 @@
                 <div class="row" id="six">
 
                   <div class="col-md-6">
-                    <span class="word1" id="coachPostn">coachPostn</span>
+                    <span class="word1" id="coachPostn"></span>
                   </div>
 
                   <div class="col-md-6">  
-                    <span class="word" id="quota">quota</span>
+                    <span class="word" id="quota"></span>
                   </div>
 
-                  <div class="col-md-6">  
+                  <!-- <div class="col-md-6">  
                     <span class="word" id="platform">platform</span>
-                  </div> 
+                  </div>  -->
 
                 </div>
                 
