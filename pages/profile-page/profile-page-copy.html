@@ -35,15 +35,30 @@
 
     <style>
 
+        @media (max-width: 768px){
+            .text-gray-800{
+                padding-top: 0px;
+            } 
+
+            .container-fluid{
+                padding-top: 34px;
+                margin-top: 50px;
+            }
+        }
+
         @media (min-width: 768px) {
   /* Override the left and right padding of container-fluid */
   .container-fluid {
     padding-right: 1.5rem;
     padding-left: 7.5rem;
+    padding-top: 45px;
   }
 }
-        .container-fluid {
-            margin-top: 100px;
+        .container-fluid{
+            margin-top: 52px;
+            background: linear-gradient(to right,
+                    #12c2e9, #c471ed, #f64f59);
+            
         }
 
         /* #sidebarToggleTop{
@@ -65,9 +80,25 @@
     .sidebar{
         position: fixed;
         margin-top: 90px;
-        background: #212529;
+        /* background: #212529; */
         opacity: 0.6;
         
+        
+    }
+
+    .sidebar {
+            background: linear-gradient(to right,
+                    #12c2e9, #c471ed, #f64f59);
+        }
+
+    .card{
+        background: linear-gradient(to right,
+                    #12c2e9, #c471ed, #f64f59);
+    }
+
+    footer{
+        background: linear-gradient(to right,
+                    #12c2e9, #c471ed, #f64f59);
     }
 
     </style>
@@ -656,7 +687,7 @@
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">FAILED TRANSACTIONS</h6>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body table-responsive" id="failedTransactionsTableContainer">
 
                                 </div>
                             </div>
@@ -704,6 +735,18 @@
                                                     Good
                                                 </label>
                                             </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="experienceRating" id="ratingBad" value="Bad">
+                                                <label class="form-check-label" for="ratingBad">
+                                                    Bad
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="experienceRating" id="ratingWorst" value="Worst">
+                                                <label class="form-check-label" for="ratingWorst">
+                                                    Worst
+                                                </label>
+                                            </div>
                                             <!-- Add more questions as needed -->
 
                                         </div>
@@ -739,7 +782,8 @@
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
-
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright Synergy IRCTC 2024</span>
                 </div>
             </footer>
             <!-- End of Footer -->
@@ -844,7 +888,9 @@
                 </div>
                 <div class="modal-body">
                     <label for="newEmailAddress">New Email Address:</label>
-                    <input type="text" class="form-control" id="newEmailAddress">
+                    <input type="text" class="form-control" id="newEmailAddress" oninput="validateEmail()">
+                    <!-- <input type="email" id="newEmailAddress" oninput="validateEmail()" /> -->
+                    <span id="emailError" class="text-danger"></span>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -974,7 +1020,8 @@
                 </div>
                 <div class="modal-body">
                     <label for="newPassengerName">New Passenger Name:</label>
-                    <input type="text" class="form-control" id="newPassengerName">
+                    <input type="text" class="form-control" id="newPassengerName" oninput="validateFullName()">
+                    <span id="fullNameError" class="text-danger"></span>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -1026,9 +1073,16 @@
                         </div>
                         <div class="form-group">
                             <label for="newPassword">New Password:</label>
-                            <input type="password" class="form-control" id="newPassword" required>
+                            <input type="password" class="form-control" id="newPassword" oninput="validatePassword()" required>
+                            <div id="passwordValidationMessage" class="validation-message"></div>
+                            <!-- <span id="newPasswordFeedback" class="text-danger"></span> -->
                         </div>
-                        <button type="submit" class="btn btn-danger">Change Password</button>
+                        <button type="submit" class="btn btn-danger" onclick="changePassword()">Change Password</button>
+
+                        <!-- Notification -->
+                        <div id="passnotification" class="alert alert-success mt-3" style="display: none;">
+                            Feedback submitted successfully!
+                        </div>
                     </form>
                 </div>
             </div>
@@ -1056,6 +1110,8 @@
     <script src="feedback.js"></script>
 
     <script src="upload-profile-photo.js"></script>
+
+    <script src="failed_transactions.js"></script>
 
     <!-- include this in end then only will work -->
 

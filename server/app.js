@@ -293,7 +293,25 @@ app.post("/submit-feedback", feedback_upload.single("fileUpload"), (req, res) =>
   res.send("Feedback received successfully!");
 });
 
+// Dummy failed transactions data
+const failedTransactions = [
+  {
+    transactionId: '1',
+    amount: 100,
+    reason: 'Insufficient funds',
+    timestamp: '2023-01-01T12:00:00',
+  },
+  {
+    transactionId: '2',
+    amount: 50,
+    reason: 'Invalid recipient',
+    timestamp: '2023-01-02T14:30:00',
+  },
+  // Add more dummy data as needed
+];
 
-// app.listen(PORT, () => {
-//   console.log(`Server is running at http://localhost:${PORT}`);
-// });
+// Endpoint to get failed transactions
+app.get('/failedTransactions', (req, res) => {
+  res.status(200).json(failedTransactions);
+});
+
