@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/pnr_status.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <script src="../src/authentication.js"></script>
+    <script src="../src/validation.js"></script>
+    <script src="pnr_status.js"></script>
+</head>
+<body>
+    <div class="create-account-container">
+        <div class="close-btn">
+          <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="row">
+            <form onsubmit="event.preventDefault();" class="row g-3 needs-validation " id="create-account-form" novalidate>
+          
+              <h3 style="text-align: center;">PNR STATUS</h3>
+              <!-- <P style="color: gray;text-align: center;">Welcome!</P> -->
+      
+              <div class="mb-6" id="name-input-group">
+                  <label for="userName" class="form-label">PNR number</label>
+                  <div class="input-group">
+                      <input type="text" class="form-control" id="signupuserName" placeholder="Enter your 10 digit PNR number"   name="userName" required>
+                      <button onclick="checkPnr()" type="submit" class="btn btn-primary"  id="signInBtn">Search</button>
+                    </div>    
+                  <div class="valid-feedback" id="nameValidFeedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback" id="signupnameInValidFeedback">
+                    Please enter a valid PNR number.
+                  </div>
+                </div>   
+            </form>
+            <div class="row mb-4" id="pnrResultContainer">
+
+              <div class="col-md-12 mb-4" id="pnrResult">
+
+                <div class="row" id="first">
+                
+                  <div class="col-md-6">
+                    <span class="word1" id="trainNumber">trainNo</span>
+                  </div> 
+
+                  <div class="col-md-6">
+                    <span class="word" id="trainName">trainName</span>
+                  </div>
+
+                </div>
+
+                <div class="row" id="second">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="boardingStation">bstation</span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="reservUpto">reservupto</span>
+                  </div>  
+
+                </div>
+
+                <div class="row" id="three">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="passStatus">passenger</span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="timeTaken">time</span>
+                  </div>  
+
+                </div>
+
+                <div class="row" id="four">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="departureTime">departuretime</span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="arrivalTime">arrivaltime</span>
+                  </div>  
+
+                </div>
+                <div class="row" id="five">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="bookingFare">bookingfare</span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="ticketFare">ticketfare</span>
+                  </div>  
+
+                </div>
+
+                <div class="row" id="six">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="coachPostn">coachPostn</span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="quota">quota</span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="platform">platform</span>
+                  </div> 
+
+                </div>
+                
+              </div>
+            </div>  
+          </div>  
+
+      </div>
+      </div>
+    
+</body>
+</html>
