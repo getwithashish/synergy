@@ -32,30 +32,31 @@
 
     <style>
         /* Default styles for larger screens */
-        /* #accordionSidebar {
-    position: fixed;
-    height: 100%;
-    width: 250px;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-} */
-
-        /* #content-wrapper {
-    margin-left: 220px; 
-    transition: margin 0.3s ease;
-} */
-        /* Responsive styles for smaller screens */
-        /* @media (max-width: 768px) {
         #accordionSidebar {
-            width: 100%;
-            padding-top: 56px;
+            position: fixed;
+            height: 100%;
+            width: 250px;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         #content-wrapper {
-            margin-left: 0;
+            margin-left: 220px;
+            transition: margin 0.3s ease;
         }
-    } */
+
+        /* Responsive styles for smaller screens */
+        @media (max-width: 768px) {
+            #accordionSidebar {
+                width: 100%;
+                padding-top: 56px;
+            }
+
+            #content-wrapper {
+                margin-left: 0;
+            }
+        }
     </style>
 
 </head>
@@ -96,7 +97,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="#update-profile">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Update Profile</span>
                 </a>
@@ -111,11 +112,11 @@
                 </a>
 
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Update travel history</span></a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -144,9 +145,9 @@
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
+            <!-- <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            </div> -->
 
             <!-- Sidebar Message -->
 
@@ -175,7 +176,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-0 d-none d-lg-inline text-gray-600 small">ALICE</span>
-                                <img class="assets-profile rounded-circle ml-1" src="assets/undraw_profile.svg"
+                                <img class="assets-profile rounded-circle ml-2" src="assets/undraw_profile.svg"
                                     id="profileImage">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -249,9 +250,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1"><a
-                                                    href="#refundHistorySection"
+                                                    href="#failedTransactionsSection"
                                                     class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                                    Refund History
+                                                    Failed Transactions
                                                 </a>
                                             </div>
                                             <!-- <div class="row no-gutters align-items-center">
@@ -306,9 +307,9 @@
                         <div class="col-xl-6 col-lg-6 ">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div
+                                <div id="update-profile"
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">ACCOUNT INFORMATION</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">UPDATE PROFILE</h6>
                                 </div>
 
                                 <!-- Card Body -->
@@ -320,9 +321,8 @@
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <div>
-                                                        <h6 class="mb-1"
-                                                            style="border-right: 1px solid #ccc; padding-right: 10px;">
-                                                            Passenger Name</h6>
+                                                        <h6 class="mb-1" style=" padding-right: 10px;">Passenger Name
+                                                        </h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <span
@@ -340,9 +340,7 @@
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <div>
-                                                        <h6 class="mb-1"
-                                                            style="border-right: 1px solid #ccc; padding-right: 10px;">
-                                                            Gender</h6>
+                                                        <h6 class="mb-1" style="padding-right: 10px;">Gender</h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <span
@@ -362,9 +360,8 @@
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <div>
-                                                        <h6 class="mb-1"
-                                                            style="border-right: 1px solid #ccc; padding-right: 10px;">
-                                                            Date Of Birth</h6>
+                                                        <h6 class="mb-1" style=" padding-right: 10px;">Date Of Birth
+                                                        </h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <span
@@ -384,9 +381,7 @@
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <div>
-                                                        <h6 class="mb-1"
-                                                            style="border-right: 1px solid #ccc; padding-right: 10px;">
-                                                            ISD-Mobile</h6>
+                                                        <h6 class="mb-1" style=" padding-right: 10px;">ISD-Mobile</h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <span
@@ -406,9 +401,7 @@
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <div>
-                                                        <h6 class="mb-1"
-                                                            style="border-right: 1px solid #ccc; padding-right: 10px;">
-                                                            Country</h6>
+                                                        <h6 class="mb-1" style="padding-right: 10px;">Country</h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <span
@@ -428,9 +421,7 @@
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <div>
-                                                        <h6 class="mb-1"
-                                                            style="border-right: 1px solid #ccc; padding-right: 10px;">
-                                                            Email</h6>
+                                                        <h6 class="mb-1" style="padding-right: 10px;">Email</h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <span
@@ -449,9 +440,8 @@
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <div>
-                                                        <h6 class="mb-1"
-                                                            style="border-right: 1px solid #ccc; padding-right: 10px;">
-                                                            Residential Address</h6>
+                                                        <h6 class="mb-1" style=" padding-right: 10px;">Residential
+                                                            Address</h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <span
@@ -471,9 +461,8 @@
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <div>
-                                                        <h6 class="mb-1"
-                                                            style="border-right: 1px solid #ccc; padding-right: 10px;">
-                                                            Office Address</h6>
+                                                        <h6 class="mb-1" style=" padding-right: 10px;">Office Address
+                                                        </h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <span
@@ -574,23 +563,22 @@
 
                     <div class="row">
 
-                        <div class="col-lg-6 mb-4">
+                        <!-- <div class="col-lg-6 mb-4">
 
-                            <!-- Illustrations -->
                             <div class="card shadow mb-4">
-                                <div id="refundHistorySection"
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">REFUND HISTORY</h6>
-                                </div>
+                                    <div id="refundHistorySection" class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">REFUND HISTORY</h6>
+                                    </div>
                                 <div class="card-body">
 
 
                                 </div>
-
+                                   
                             </div>
-                        </div>
 
-                        <div class="col-lg-6 mb-4">
+                        </div> -->
+
+                        <div class="col-lg-12 mb-4">
 
                             <!-- Approach -->
                             <div class="card shadow mb-4">
@@ -605,7 +593,6 @@
 
                         </div>
                     </div>
-
                     <!-- Content Row -->
                     <div class="row">
 
@@ -977,6 +964,21 @@
             </div>
         </div>
     </div>
+
+    <!-- chatbot added -->
+    <script type="text/javascript">
+        (function (d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function () {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '65897052f4e7556c56088363' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
 
 
     <script src="logout.js"></script>

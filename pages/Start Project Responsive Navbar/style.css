@@ -48,7 +48,7 @@ body{
   background: linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
   backdrop-filter: blur(50px);
   z-index:-1;
-  transition: .5s;
+  transition: 2s;
 }
 
 .header:hover::after{
@@ -137,6 +137,6 @@ body{
   #check:checked~.navbar a{
     transform: translateY(0);
     opacity:1;
-    transition-delay:calc(.15s * var(--i));
+    transition-delay:calc(.5s * var(--i));
   }
 }
