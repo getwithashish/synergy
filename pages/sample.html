@@ -1,43 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        h1 {
+            color: green;
+        }
+
         body {
-            margin: 0;
-            overflow: hidden;
+            background: linear-gradient(to right,
+                    #12c2e9, #c471ed, #f64f59);
         }
 
-        .background-icon {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 50px;
-            color: #007bff;
-            animation: rotate 5s linear infinite;
+        .form {
+            width: 300px;
+            height: 300px;
+            display: grid;
+            place-content: center;
+
+            /* Add a transparency to the background
+			using rgba value */
+            background: rgba(255, 255, 255, 0.1);
+
+            /* Add a transparency to shadow */
+            box-shadow: 0 26px 42px rgba(0, 0, 0, 0.1);
         }
 
-        @keyframes rotate {
-            0% {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-
-            100% {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
+        input,
+        button {
+            box-sizing: border-box;
+            width: 100%;
+            margin: 20px auto;
+            padding: 12px 20px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 13px 21px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
 
 <body>
-    <!-- Your web page content here -->
+    <center>
+        <h1>GeeksforGeeks</h1>
 
-        <!-- Animated rotating icon -->
-        <i class="fas fa-cog background-icon"></i>
+        <form class="form">
+            <input type="text" placeholder="xyz@gmail.com" /><br>
+            <input type="password" placeholder="Enter Password" />
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </center>
 </body>
 
 </html>

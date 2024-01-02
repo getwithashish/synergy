@@ -212,16 +212,66 @@ function displayTrainDetail(trainContainer, listName, listNumber, listType){
  
  
 function displayRoute(routeArray,trainContainer){
-  let trainRoute = document.createElement('ul');
+  // let trainRoute = document.createElement('ul');
 
-  for(let j = 0; j < routeArray.length; j++ ){
-    if (routeArray[j].stop === true){
-      let listRoute = document.createElement('li');
-      let listPlatform = document.createElement('li');
-    listRoute.textContent = `Station Code:${routeArray[j].station_code}, Station Name: ${routeArray[j].station_name},Platform No: ${routeArray[j].platform_number}`;
-    trainRoute.appendChild(listRoute);
+  // for(let j = 0; j < routeArray.length; j++ ){
+  //   if (routeArray[j].stop === true){
+  //     let listRoute = document.createElement('li');
+  //     let listPlatform = document.createElement('li');
+  //   listRoute.textContent = `Station Code:${routeArray[j].station_code}, Station Name: ${routeArray[j].station_name},Platform No: ${routeArray[j].platform_number}`;
+  //   trainRoute.appendChild(listRoute);
+  //   }
+  // }
+  // trainContainer.appendChild(trainRoute);
+  let trainRoute = document.createElement('div');
+  trainRoute.classList.add('list-group', 'list-group-flush', 'list-group-timeline');
+
+  for (let j = 0; j < routeArray.length; j++) {
+    if (routeArray[j].stop === true) {
+      let listItem = document.createElement('div');
+      listItem.classList.add('list-group-item', 'border-0');
+
+      let rowDiv = document.createElement('div');
+      rowDiv.classList.add('row', 'ps-lg-1');
+
+      let colAutoDiv = document.createElement('div');
+      colAutoDiv.classList.add('col-auto');
+      let iconShapeDiv = document.createElement('div');
+      iconShapeDiv.classList.add('icon-shape', 'icon-xs');
+      let iconImage = document.createElement('img');
+      iconImage.src = "icons8-round-48.png";
+      iconShapeDiv.appendChild(iconImage);
+      colAutoDiv.appendChild(iconShapeDiv);
+
+      let colContentDiv = document.createElement('div');
+      colContentDiv.classList.add('col', 'ms-n2', 'mb-3');
+      let stationCode = document.createElement('h3');
+      stationCode.classList.add('fs-6', 'fw-bold', 'mb-1');
+      stationCode.textContent = `Station Code: ${routeArray[j].station_code}`;
+      let stationName = document.createElement('p');
+      stationName.classList.add('mb-1');
+      stationName.textContent = `Station Name: ${routeArray[j].station_name}`;
+      let dFlexDiv = document.createElement('div');
+      dFlexDiv.classList.add('d-flex', 'align-items-center');
+      let flagImage = document.createElement('img');
+      flagImage.src = "icons8-flag-30.png";
+      let platformSpan = document.createElement('span');
+      platformSpan.classList.add('small');
+      platformSpan.textContent = `Platform: ${routeArray[j].platform_number}`;
+      dFlexDiv.appendChild(flagImage);
+      dFlexDiv.appendChild(platformSpan);
+      colContentDiv.appendChild(stationCode);
+      colContentDiv.appendChild(stationName);
+      colContentDiv.appendChild(dFlexDiv);
+
+      rowDiv.appendChild(colAutoDiv);
+      rowDiv.appendChild(colContentDiv);
+      listItem.appendChild(rowDiv);
+
+      trainRoute.appendChild(listItem);
     }
   }
+
   trainContainer.appendChild(trainRoute);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////

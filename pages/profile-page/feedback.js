@@ -8,18 +8,22 @@ function submitFeedback() {
   // Simulate sending feedback data to the server (replace this with actual server-side logic)
   // For file upload, you would use FormData and send it using XMLHttpRequest or fetch
   // Example with Axios:
-  // var formData = new FormData();
-  // formData.append('feedbackText', feedbackText);
-  // formData.append('rating', rating);
-  // formData.append('fileUpload', fileUpload);
-  // axios.post('/submit-feedback', formData)
-  //   .then(response => {
-  //     console.log(response.data);
-  //     showNotification();
-  //   })
-  //   .catch(error => {
-  //     console.error(error);
-  //   });
+  var formData = new FormData();
+  formData.append('feedbackText', feedbackText);
+  formData.append('rating', rating);
+  formData.append('fileUpload', fileUpload);
+
+  console.log("formdata is",formData);
+
+  axios
+    .post("http://localhost:3000/submit-feedback", formData)
+    .then((response) => {
+      console.log(response.data);
+      showNotification();
+    })
+    .catch((error) => {
+      console.error("error posting user data ",error);
+    });
 
   // Simulate success for demonstration purposes
   showNotification();
