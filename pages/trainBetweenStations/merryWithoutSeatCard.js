@@ -6,11 +6,11 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
         method: 'GET',
         url: 'https://irctc1.p.rapidapi.com/api/v3/trainBetweenStations',
         params: {
-            fromStationCode: 'BVI',
-            toStationCode: 'NDLS',
-            dateOfJourney: '2023-12-27'
+            fromStationCode: 'CGY',
+            toStationCode: 'KZK',
+            dateOfJourney: '2024-01-04'
         },
-        headers: {
+         headers: {
             'X-RapidAPI-Key': '19c525f862msh163c37232a972aep132fd7jsn76b66f818ea2',
             'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
         }
@@ -18,15 +18,18 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
 
 
     try {
+
         const response = await axios.request(options);
         const trainDetails = response.data;
         console.log(trainDetails);
+        
 
         // Assuming the container element where you want to display trainDetails has the ID "trainDetailsContainer"
         const container = document.getElementById('trainDetailsContainer');
 
         // Clear existing content
         container.innerHTML = '';
+        
 
         // Loop through each train in trainDetails.data
         trainDetails.data.forEach(train => {
@@ -58,18 +61,19 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
         const nameAndNumberText = document.createElement('p');
         nameAndNumberText.textContent = `${train.train_name} | ${train.train_number}`;
         nameAndNumber.appendChild(nameAndNumberText);
+        nameAndNumber.style.fontStyle = 'bold';
 
         // Create time and to/from
         const timeAndToFrom = document.createElement('div');
         timeAndToFrom.classList.add('timeandtofro');
-
+        
         const timeAndToFromText = document.createElement('p');
         timeAndToFromText.textContent = `${train.from_std} - ${train.to_sta}`;
             
         const stationText = document.createElement('p');
         stationText.textContent = `${train.from_station_name} - ${train.to_station_name}`;
-
-
+        
+        
         timeAndToFrom.appendChild(timeAndToFromText);
         timeAndToFrom.appendChild(stationText);
 
