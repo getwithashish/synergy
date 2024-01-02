@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Profile</title>
-    
+
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -20,8 +20,12 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link href="/css/newNavBar.css" rel="stylesheet">
+
     <!-- Add this line inside the <head> section to include Axios via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <script src="profile.js"></script>
 
@@ -29,46 +33,142 @@
 
     <script src="change_password.js"></script>
 
-
     <style>
 
-            /* Default styles for larger screens */
-#accordionSidebar {
-    position: fixed;
-    height: 100%;
-    width: 250px;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
+        @media (max-width: 768px){
+            .text-gray-800{
+                padding-top: 0px;
+            } 
 
-#content-wrapper {
-    margin-left: 220px; 
-    transition: margin 0.3s ease;
-}
-/* Responsive styles for smaller screens */
-    @media (max-width: 768px) {
-        #accordionSidebar {
-            width: 100%;
-            padding-top: 56px;
+            .container-fluid{
+                padding-top: 34px;
+                margin-top: 50px;
+            }
         }
 
-        #content-wrapper {
-            margin-left: 0;
+        @media (min-width: 768px) {
+  /* Override the left and right padding of container-fluid */
+  .container-fluid {
+    padding-right: 1.5rem;
+    padding-left: 7.5rem;
+    padding-top: 45px;
+  }
+}
+        .container-fluid{
+            margin-top: 52px;
+            background: linear-gradient(to right,
+                    #12c2e9, #c471ed, #f64f59);
+            
         }
+
+        /* #sidebarToggleTop{
+            position: fixed;
+            z-index: 1000;
+            padding-top: 19px;
+            padding-left:30px;
+            font-size: 30px;
+        } */
+
+        img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    width: 30px; /* Adjust the width of the image */
+    height: 30px; /* Adjust the height of the image */
+    margin-right: 100px;
+}
+
+    .sidebar{
+        position: fixed;
+        margin-top: 90px;
+        /* background: #212529; */
+        opacity: 0.6;
+        
+        
     }
-       
+
+    .sidebar {
+            background: linear-gradient(to right,
+                    #12c2e9, #c471ed, #f64f59);
+        }
+
+    .card{
+        background: linear-gradient(to right,
+                    #12c2e9, #c471ed, #f64f59);
+    }
+
+    footer{
+        background: linear-gradient(to right,
+                    #12c2e9, #c471ed, #f64f59);
+    }
+
     </style>
 
 </head>
 
 <body id="page-top">
 
+        <header class="header">
+        
+            <a href="#" class="logo">Logo</a>
+        
+            <input type="checkbox" id="check">
+            <label for="check" class="icons">
+                <i class="bx bx-menu" id="menu-icon"></i>
+                <i class="bx bx-x" id="close-icon"></i>
+            </label>
+        
+            <nav class="newnavbar">
+                <a href="#" style="--i:0;">Home</a>
+                <a href="#" style="--i:1;">About</a>
+                <a href="#" style="--i:2;">Gallery</a>
+                <a href="#" style="--i:3;">Services</a>
+                <a href="#" style="--i:4;">Contact</a>
+            </nav>
+<!-- 
+            <li class="nav-item dropdown no-arrow">
+                                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="mr-0 d-none d-lg-inline text-gray-600 small">ALICE</span>
+                                            <img class="assets-profile rounded-circle ml-2" src="assets/undraw_profile.svg"
+                                                id="profileImage">
+                                        </a> -->
+            <!-- Dropdown - User Information -->
+            <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                            aria-labelledby="userDropdown">
+                                            <label class="dropdown-item" for="photoUpload">
+                                                <input type="file" id="photoUpload" style="display: none;" accept="image/*"
+                                                    onchange="uploadProfilePhoto()">
+                                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Upload photo
+                                            </label>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                                            </a>
+                                        </div>
+                                    </li> -->
+
+                    <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <!-- <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span> -->
+                        <img class="img-profile rounded-circle" src="assets/undraw_profile.svg" id="profileImage">
+                    </a>
+                    <div class="dropdown-menu " aria-labelledby="userDropdown">
+                        <label class="dropdown-item" for="photoUpload">
+                            <input type="file" id="photoUpload" style="display: none;" accept="image/*" onchange="uploadProfilePhoto()">
+                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Upload photo
+                        </label>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                        </a>
+                    </div>
+        </header>
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -102,7 +202,7 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Update Profile</span>
                 </a>
-               
+
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -111,7 +211,7 @@
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Change Password</span>
                 </a>
-              
+
             </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -122,12 +222,12 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-           
+
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="#feedbackSection"">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class=" fas fa-fw fa-folder"></i>
                     <span>Feedback</span>
                 </a>
             </li>
@@ -138,9 +238,9 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Log Out</span>
                 </a>
-            </li>     
+            </li>
 
-           
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -151,7 +251,7 @@
             </div> -->
 
             <!-- Sidebar Message -->
-          
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -162,9 +262,9 @@
             <div id="content">
 
                 <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars side_bar_button"></i>
+                </button>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -172,29 +272,31 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-<!-- Nav Item - User Information -->
-<li class="nav-item dropdown no-arrow">
-    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        <span class="mr-0 d-none d-lg-inline text-gray-600 small" >ALICE</span>
-        <img class="assets-profile rounded-circle ml-2" src="assets/undraw_profile.svg" id="profileImage">
-    </a>
-    <!-- Dropdown - User Information -->
-    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        <!-- Nav Item - User Information -->
+                        <!-- <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-0 d-none d-lg-inline text-gray-600 small">ALICE</span>
+                                <img class="assets-profile rounded-circle ml-2" src="assets/undraw_profile.svg"
+                                    id="profileImage">
+                            </a> -->
+                            <!-- Dropdown - User Information -->
+                            <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                            <label class="dropdown-item" for="photoUpload">
-                                <input type="file" id="photoUpload" style="display: none;" accept="image/*" onchange="uploadProfilePhoto()">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Upload photo
-                            </label>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
-                            </a>
+                                <label class="dropdown-item" for="photoUpload">
+                                    <input type="file" id="photoUpload" style="display: none;" accept="image/*"
+                                        onchange="uploadProfilePhoto()">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Upload photo
+                                </label>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                                </a>
                             </div>
-</li>
+                        </li> -->
 
                     </div>
-                    
+
 
                     <!-- Content Row -->
                     <div class="row">
@@ -205,7 +307,8 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <a href="#myBookingsSection" class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            <a href="#myBookingsSection"
+                                                class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 My Bookings
                                             </a>
 
@@ -226,9 +329,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                <a href="#cancellationHistorySection" class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                    Cancellation Section 
-                                                </a></div>
+                                                <a href="#cancellationHistorySection"
+                                                    class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                    Cancellation Section
+                                                </a>
+                                            </div>
                                             <!-- <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div> -->
                                         </div>
                                         <div class="col-auto">
@@ -245,9 +350,11 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1"><a href="#failedTransactionsSection" class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                                Failed Transactions
-                                            </a>
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1"><a
+                                                    href="#failedTransactionsSection"
+                                                    class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                    Failed Transactions
+                                                </a>
                                             </div>
                                             <!-- <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
@@ -277,9 +384,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                    <a href="#feedbackSection" class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                        Feedback section
-                                                    </a></div>
+                                                <a href="#feedbackSection"
+                                                    class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                    Feedback section
+                                                </a>
+                                            </div>
                                             <!-- <div class="h5 mb-0 font-weight-bold text-gray-800">18</div> -->
                                         </div>
                                         <div class="col-auto">
@@ -299,26 +408,31 @@
                         <div class="col-xl-6 col-lg-6 ">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div id = "update-profile"
+                                <div id="update-profile"
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">UPDATE PROFILE</h6>   
+                                    <h6 class="m-0 font-weight-bold text-primary">UPDATE PROFILE</h6>
                                 </div>
 
                                 <!-- Card Body -->
-                                
+
                                 <div class="card-body overflow-auto">
                                     <div class="chart-area" style="height: auto;">
-                                        
+
                                         <div class="list-group">
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <div>
-                                                        <h6 class="mb-1" style=" padding-right: 10px;" >Passenger Name</h6>
+                                                        <h6 class="mb-1" style=" padding-right: 10px;">Passenger Name
+                                                        </h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
-                                                        <span style=" padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="passengerName"
+                                                        <span
+                                                            style=" padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                                                            id="passengerName"
                                                             class="font-weight-bold d-flex justify-content-start"></span>
-                                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editPassengerNameModal" onclick="prepareModalContent('passengerName','newPassengerName')">
+                                                        <a href="#" class="edit-icon" data-toggle="modal"
+                                                            data-target="#editPassengerNameModal"
+                                                            onclick="prepareModalContent('passengerName','newPassengerName')">
                                                             <i class="fas fa-pencil-alt"></i>
                                                         </a>
                                                     </div>
@@ -330,27 +444,38 @@
                                                         <h6 class="mb-1" style="padding-right: 10px;">Gender</h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
-                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="gender" class="font-weight-bold  justify-content-start"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editGenderModal" onclick="prepareModalContent('gender','newGenderAddress')">
-                                                        <i class="fas fa-pencil-alt"></i>
-                                                    </a>
+                                                        <span
+                                                            style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                                                            id="gender"
+                                                            class="font-weight-bold  justify-content-start"></span>
+                                                        <a href="#" class="edit-icon" data-toggle="modal"
+                                                            data-target="#editGenderModal"
+                                                            onclick="prepareModalContent('gender','newGenderAddress')">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
 
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <div>
-                                                        <h6 class="mb-1" style=" padding-right: 10px;">Date Of Birth</h6>
+                                                        <h6 class="mb-1" style=" padding-right: 10px;">Date Of Birth
+                                                        </h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
-                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="dateOfBirth" class="font-weight-bold justify-content-start"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editDOBModal" onclick="prepareModalContent('dateOfBirth','newDOBAddress')">
-                                                        <i class="fas fa-pencil-alt"></i>
-                                                    </a>
+                                                        <span
+                                                            style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                                                            id="dateOfBirth"
+                                                            class="font-weight-bold justify-content-start"></span>
+                                                        <a href="#" class="edit-icon" data-toggle="modal"
+                                                            data-target="#editDOBModal"
+                                                            onclick="prepareModalContent('dateOfBirth','newDOBAddress')">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
                                                     </div>
-                                            
+
                                                 </div>
                                             </div>
 
@@ -360,12 +485,17 @@
                                                         <h6 class="mb-1" style=" padding-right: 10px;">ISD-Mobile</h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
-                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="isdMobile" class="font-weight-bold  justify-content-start"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editMobileModal" onclick="prepareModalContent('isdMobile','newMobileAddress')">
-                                                        <i class="fas fa-pencil-alt"></i>
-                                                    </a>
+                                                        <span
+                                                            style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                                                            id="isdMobile"
+                                                            class="font-weight-bold  justify-content-start"></span>
+                                                        <a href="#" class="edit-icon" data-toggle="modal"
+                                                            data-target="#editMobileModal"
+                                                            onclick="prepareModalContent('isdMobile','newMobileAddress')">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
                                                     </div>
-                                            
+
                                                 </div>
                                             </div>
 
@@ -375,12 +505,17 @@
                                                         <h6 class="mb-1" style="padding-right: 10px;">Country</h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
-                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="country" class="font-weight-bold justify-content-start"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editCountryModal" onclick="prepareModalContent('country','newCountryAddress')">
-                                                        <i class="fas fa-pencil-alt"></i>
-                                                    </a>
+                                                        <span
+                                                            style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                                                            id="country"
+                                                            class="font-weight-bold justify-content-start"></span>
+                                                        <a href="#" class="edit-icon" data-toggle="modal"
+                                                            data-target="#editCountryModal"
+                                                            onclick="prepareModalContent('country','newCountryAddress')">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
                                                     </div>
-                                            
+
                                                 </div>
                                             </div>
 
@@ -390,41 +525,58 @@
                                                         <h6 class="mb-1" style="padding-right: 10px;">Email</h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
-                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"id="email" class="font-weight-bold justify-content-start"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editEmailAddressModal" onclick="prepareModalContent('email','newEmailAddress')">
-                                                        <i class="fas fa-pencil-alt"></i>
-                                                    </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="list-group-item">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <div>
-                                                        <h6 class="mb-1" style=" padding-right: 10px;">Residential Address</h6>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="residentialAddress" class="font-weight-bold justify-content-start"></span>
-                                                        <a href="#" class="edit-icon" data-toggle="modal" data-target="#editResidentialAddressModal" onclick="prepareModalContent('residentialAddress','newResidentialAddress')">
+                                                        <span
+                                                            style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                                                            id="email"
+                                                            class="font-weight-bold justify-content-start"></span>
+                                                        <a href="#" class="edit-icon" data-toggle="modal"
+                                                            data-target="#editEmailAddressModal"
+                                                            onclick="prepareModalContent('email','newEmailAddress')">
                                                             <i class="fas fa-pencil-alt"></i>
                                                         </a>
                                                     </div>
-                                            
                                                 </div>
                                             </div>
 
                                             <div class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <div>
-                                                        <h6 class="mb-1" style=" padding-right: 10px;">Office Address</h6>
+                                                        <h6 class="mb-1" style=" padding-right: 10px;">Residential
+                                                            Address</h6>
                                                     </div>
                                                     <div class="d-flex align-items-center">
-                                                    <span style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="officeAddress" class="font-weight-bold justify-content-start"></span>
-                                                    <a href="#" class="edit-icon" data-toggle="modal" data-target="#editOfficeAddressModal" onclick="prepareModalContent('officeAddress','newOfficeAddress')">
-                                                        <i class="fas fa-pencil-alt"></i>
-                                                    </a>
+                                                        <span
+                                                            style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                                                            id="residentialAddress"
+                                                            class="font-weight-bold justify-content-start"></span>
+                                                        <a href="#" class="edit-icon" data-toggle="modal"
+                                                            data-target="#editResidentialAddressModal"
+                                                            onclick="prepareModalContent('residentialAddress','newResidentialAddress')">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
                                                     </div>
-                                            
+
+                                                </div>
+                                            </div>
+
+                                            <div class="list-group-item">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <div>
+                                                        <h6 class="mb-1" style=" padding-right: 10px;">Office Address
+                                                        </h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <span
+                                                            style="padding-right: 10px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                                                            id="officeAddress"
+                                                            class="font-weight-bold justify-content-start"></span>
+                                                        <a href="#" class="edit-icon" data-toggle="modal"
+                                                            data-target="#editOfficeAddressModal"
+                                                            onclick="prepareModalContent('officeAddress','newOfficeAddress')">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <!-- Add similar structure for other key-value pairs -->
@@ -442,7 +594,7 @@
                                 <div id="cancellationHistorySection"
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">CANCELLATION SECTION</h6>
-                                  
+
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -479,7 +631,8 @@
                                             <label for="paymentDetails">Payment Details:</label>
                                             <input type="text" class="form-control" id="paymentDetails" required>
                                         </div> -->
-                                        <button type="button" class="btn btn-danger mb-2 " onclick="submitCancellation()">Submit Cancellation</button>
+                                        <button type="button" class="btn btn-danger mb-2 "
+                                            onclick="submitCancellation()">Submit Cancellation</button>
                                     </form>
                                 </div>
                             </div>
@@ -494,15 +647,15 @@
 
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
-    
-                                    <div id="myBookingsSection"
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">MY BOOKINGS</h6>
+
+                                <div id="myBookingsSection"
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">MY BOOKINGS</h6>
 
                                 </div>
                                 <div class="card-body" id="bookingsCardBody">
-                                    
-                                   
+
+
                                 </div>
                             </div>
 
@@ -530,78 +683,94 @@
 
                             <!-- Approach -->
                             <div class="card shadow mb-4">
-                                <div id="failedTransactionsSection" class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div id="failedTransactionsSection"
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">FAILED TRANSACTIONS</h6>
                                 </div>
-                                <div class="card-body">
-                                    
+                                <div class="card-body table-responsive" id="failedTransactionsTableContainer">
+
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                                        <!-- Content Row -->
-                                        <div class="row">
-                                        
-                                            <!-- Content Column -->
-                                            <div class="col-lg-12 mb-4">
-                                        
-                                                <!-- Project Card Example -->
-                                                <div class="card shadow mb-4">
-                                        
-                                                    <div id="feedbackSection"
-                                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                                        <h6 class="m-0 font-weight-bold text-primary">FEEDBACK</h6>
+                    <!-- Content Row -->
+                    <div class="row">
 
-                                                    </div>
-                                                    <!-- Add this within the card-body of your existing code -->
-                                                    <div class="card-body" id="bookingsCardBody">
-                                                        <!-- Feedback Form -->
-                                                        <form id="feedbackForm">
-                                                            <div class="form-group">
-                                                                <label for="feedbackText">Feedback:</label>
-                                                                <textarea class="form-control" id="feedbackText" rows="4" maxlength="100"></textarea>
-                                                            </div>
-                                                    
-                                                            <!-- Example Questions -->
-                                                            <div class="form-group">
-                                                                <label>Rate your experience:</label>
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="experienceRating" id="ratingExcellent"
-                                                                        value="Excellent">
-                                                                    <label class="form-check-label" for="ratingExcellent">
-                                                                        Excellent
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="experienceRating" id="ratingGood" value="Good">
-                                                                    <label class="form-check-label" for="ratingGood">
-                                                                        Good
-                                                                    </label>
-                                                                </div>
-                                                                <!-- Add more questions as needed -->
-                                                    
-                                                            </div>
-                                                    
-                                                            <!-- File Upload -->
-                                                            <div class="form-group">
-                                                                <label for="fileUpload">Upload Image (if any):</label>
-                                                                <input type="file" class="form-control-file" id="fileUpload">
-                                                            </div>
-                                                    
-                                                            <button type="button" class="btn btn-danger" onclick="submitFeedback()">Submit Feedback</button>
-                                                        </form>
-                                                    
-                                                        <!-- Notification -->
-                                                        <div id="notification" class="alert alert-success mt-3" style="display: none;">
-                                                            Feedback submitted successfully!
-                                                        </div>
-                                                    </div>
+                        <!-- Content Column -->
+                        <div class="col-lg-12 mb-4">
 
-                                                </div>
-                                        
-                                            </div>
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+
+                                <div id="feedbackSection"
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">FEEDBACK</h6>
+
+                                </div>
+                                <!-- Add this within the card-body of your existing code -->
+                                <div class="card-body" id="bookingsCardBody">
+                                    <!-- Feedback Form -->
+                                    <form id="feedbackForm">
+                                        <div class="form-group">
+                                            <label for="feedbackText">Feedback:</label>
+                                            <textarea class="form-control" id="feedbackText" rows="4"
+                                                maxlength="100"></textarea>
                                         </div>
+
+                                        <!-- Example Questions -->
+                                        <div class="form-group">
+                                            <label>Rate your experience:</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="experienceRating"
+                                                    id="ratingExcellent" value="Excellent">
+                                                <label class="form-check-label" for="ratingExcellent">
+                                                    Excellent
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="experienceRating"
+                                                    id="ratingGood" value="Good">
+                                                <label class="form-check-label" for="ratingGood">
+                                                    Good
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="experienceRating" id="ratingBad" value="Bad">
+                                                <label class="form-check-label" for="ratingBad">
+                                                    Bad
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="experienceRating" id="ratingWorst" value="Worst">
+                                                <label class="form-check-label" for="ratingWorst">
+                                                    Worst
+                                                </label>
+                                            </div>
+                                            <!-- Add more questions as needed -->
+
+                                        </div>
+
+                                        <!-- File Upload -->
+                                        <div class="form-group">
+                                            <label for="fileUpload">Upload Image (if any):</label>
+                                            <input type="file" class="form-control-file" id="fileUpload">
+                                        </div>
+
+                                        <button type="button" class="btn btn-danger" onclick="submitFeedback()">Submit
+                                            Feedback</button>
+                                    </form>
+
+                                    <!-- Notification -->
+                                    <div id="notification" class="alert alert-success mt-3" style="display: none;">
+                                        Feedback submitted successfully!
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
 
 
                 </div>
@@ -613,7 +782,8 @@
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
-                   
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright Synergy IRCTC 2024</span>
                 </div>
             </footer>
             <!-- End of Footer -->
@@ -651,8 +821,8 @@
 
 
     <!-- Modal for Editing Office Address -->
-    <div class="modal fade" id="editOfficeAddressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
-        aria-hidden="true"> 
+    <div class="modal fade" id="editOfficeAddressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <!-- This creates a modal with a unique ID (editOfficeAddressModal) and sets its initial state as hidden (fade class). The
         tabindex="-1" is used to prevent the modal from being focused when opened. -->
         <div class="modal-dialog" role="document">
@@ -677,8 +847,8 @@
 
 
     <!-- Modal for Editing Residential Address -->
-    <div class="modal fade" id="editResidentialAddressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="editResidentialAddressModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
         <!-- This creates a modal with a unique ID (editOfficeAddressModal) and sets its initial state as hidden (fade class). The
             tabindex="-1" is used to prevent the modal from being focused when opened. -->
         <div class="modal-dialog" role="document">
@@ -695,7 +865,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger" onclick="saveResidentialAddress()">Save changes</button>
+                    <button type="button" class="btn btn-danger" onclick="saveResidentialAddress()">Save
+                        changes</button>
                 </div>
             </div>
         </div>
@@ -717,7 +888,9 @@
                 </div>
                 <div class="modal-body">
                     <label for="newEmailAddress">New Email Address:</label>
-                    <input type="text" class="form-control" id="newEmailAddress">
+                    <input type="text" class="form-control" id="newEmailAddress" oninput="validateEmail()">
+                    <!-- <input type="email" id="newEmailAddress" oninput="validateEmail()" /> -->
+                    <span id="emailError" class="text-danger"></span>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -847,7 +1020,8 @@
                 </div>
                 <div class="modal-body">
                     <label for="newPassengerName">New Passenger Name:</label>
-                    <input type="text" class="form-control" id="newPassengerName">
+                    <input type="text" class="form-control" id="newPassengerName" oninput="validateFullName()">
+                    <span id="fullNameError" class="text-danger"></span>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -858,55 +1032,62 @@
     </div>
 
 
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a id ="confirmLogoutBtn" class="btn btn-danger" href="../loginPage.html">Logout</a>
-                    </div>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a id="confirmLogoutBtn" class="btn btn-danger" href="../loginPage.html">Logout</a>
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <!-- Change Password Modal -->
-        <div class="modal" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Form for entering old and new passwords -->
-                        <form id="changePasswordForm">
-                            <div class="form-group">
-                                <label for="oldPassword">Old Password:</label>
-                                <input type="password" class="form-control" id="oldPassword" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="newPassword">New Password:</label>
-                                <input type="password" class="form-control" id="newPassword" required>
-                            </div>
-                            <button type="submit" class="btn btn-danger">Change Password</button>
-                        </form>
-                    </div>
+    <!-- Change Password Modal -->
+    <div class="modal" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form for entering old and new passwords -->
+                    <form id="changePasswordForm">
+                        <div class="form-group">
+                            <label for="oldPassword">Old Password:</label>
+                            <input type="password" class="form-control" id="oldPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password:</label>
+                            <input type="password" class="form-control" id="newPassword" oninput="validatePassword()" required>
+                            <div id="passwordValidationMessage" class="validation-message"></div>
+                            <!-- <span id="newPasswordFeedback" class="text-danger"></span> -->
+                        </div>
+                        <button type="submit" class="btn btn-danger" onclick="changePassword()">Change Password</button>
+
+                        <!-- Notification -->
+                        <div id="passnotification" class="alert alert-success mt-3" style="display: none;">
+                            Feedback submitted successfully!
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
     <!-- chatbot added -->
     <script type="text/javascript">
@@ -926,10 +1107,12 @@
 
     <script src="logout.js"></script>
 
-    <script src ="feedback.js"></script>
+    <script src="feedback.js"></script>
 
-    <script src ="upload-profile-photo.js"></script>
-    
+    <script src="upload-profile-photo.js"></script>
+
+    <script src="failed_transactions.js"></script>
+
     <!-- include this in end then only will work -->
 
 

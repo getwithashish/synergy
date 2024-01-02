@@ -29,6 +29,7 @@ function uploadProfilePhoto() {
 function updateProfilePhoto(photoUrl) {
   // Update the <img> element with the new photo URL
   var profileImage = document.getElementById("profileImage");
+  console.log("profileImage is" , profileImage);
   profileImage.src = photoUrl;
 
   // Apply styles to the image to fit into the small rounded circle
