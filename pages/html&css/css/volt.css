@@ -39,7 +39,7 @@ p {
   }
   
   .line {
-    border-bottom: 2px solid black; /* Style the line */
+    border-bottom: 2px solid rgb(250, 249, 249); /* Style the line */
     padding-bottom: 5px;
     width: 250px; /* Adjust the width of the line */
     display: inline-block;
@@ -12683,8 +12683,8 @@ textarea.form-control-lg {
 }
 
 .bg-white {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+    /* --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important; */
 }
 
 .bg-indigo {
@@ -25184,8 +25184,9 @@ label {
  */
 .card {
     position: relative;
-    backdrop-filter: blur(16px) saturate(171%);
-    -webkit-backdrop-filter: blur(26px) saturate(171%);
+    backdrop-filter: blur(6px) saturate(171%);
+    -webkit-backdrop-filter: blur(6px) saturate(171%);
+    -moz-backdrop-filter: blur(6px) saturate(171%);
     background-color:transparent;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);

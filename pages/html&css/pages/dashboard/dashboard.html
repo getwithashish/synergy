@@ -317,7 +317,7 @@ type="text/css"/>
 
 <div class="bg-white rounded shadow p-5 mb-4 mt-4" id="seatForm">
   <div class="row" >
-    <h1 class="fs-5 fw-extrabold mb-3" >Seat Availability</h1>   
+    <h1 class="fs-5 fw-extrabold mb-3" style="color:rgb(250, 249, 249)">Seat Availability</h1>   
   </div>
 
   <div class="row mb-3">
@@ -346,26 +346,63 @@ type="text/css"/>
   <div class="row justify-content-center">
     <a href="#" class="btn btn-sm btn-primary ms-2"  onclick="searchSeat()" id="seatButton">Search</a> 
   </div>
-    <div class="row">
-        <!-- <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
-            <p class="mb-0 text-center text-lg-start">© 2019-<span class="current-year"></span> <a class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Themesberg</a></p>
-        </div> -->
-        <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
-            <!-- List -->
-            <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0" id="seatAvailability">
-                <!-- <li class="list-inline-item px-0 px-sm-2">
-                    <a href="">About</a>
-                </li>
-                <li class="list-inline-item px-0 px-sm-2">
-                    <a href="">Themes</a>
-                </li>
-                <li class="list-inline-item px-0 px-sm-2">
-                    <a href="">Blog</a>
-                </li>
-                <li class="list-inline-item px-0 px-sm-2">
-                    <a href="">Contact</a>
-                </li> -->
-            </ul>
+  <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start "></div>
+        <div class="row justify-content-center" id="cardContainer">
+            <!-- <div class="row mb-4"> -->
+                <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">
+                    <div class="card" id="day1">
+                        <h5><span class="word" id="day1seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability" style="color:rgb(250, 249, 249)">probability</span>
+                        <span class="word" id="current_stat" style="color:rgb(250, 249, 249)">current status</span>
+                    </div>
+                </div>  
+                <div class="col-12 col-sm-6 col-xl-4 col-md-4 mb-4">
+                    <div class="card" id="day2">
+                        <h5><span class="word" id="day2seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat2" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare2" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability2" style="color:rgb(250, 249, 249)">probability</span>
+                        <span class="word" id="current_stat2" style="color:rgb(250, 249, 249)">current status</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-xl-4 col-md-4 mb-4">
+                    <div class="card" id="day3">
+                        <h5><span class="word" id="day3seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat3" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare3" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability3" style="color:rgb(250, 249, 249)">probability</span>
+                        <span class="word" id="current_stat3" style="color:rgb(250, 249, 249)">current status</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
+                    <div class="card" id="day4">
+                        <h5><span class="word" id="day4seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat4" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare4" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability4" style="color:rgb(250, 249, 249)">probability</span>
+                        <span class="word" id="current_stat4" style="color:rgb(250, 249, 249)">current status</span>
+                    </div>
+                </div>    
+                <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
+                    <div class="card" id="day4">
+                        <h5><span class="word" id="day5seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat5" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare5" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability5" style="color:rgb(250, 249, 249)">probability</span>
+                        <span class="word" id="current_stat5" style="color:rgb(250, 249, 249)">current status</span>
+                    </div>
+                </div>  
+                <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
+                    <div class="card" id="day4">
+                        <h5><span class="word" id="day6seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat6" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare6" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability6" style="color:rgb(250, 249, 249)">probability</span>
+                        <span class="word" id="current_stat6" style="color:rgb(250, 249, 249)">current status</span>
+                    </div>
+                </div>  
         </div>
     </div>
 </div>
