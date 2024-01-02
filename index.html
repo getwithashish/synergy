@@ -30,6 +30,18 @@
         width: 100%;
         height: 100%;
       }
+
+      .topbar .nav-item .nav-link .img-profile {
+        height: 2rem;
+        width: 2rem;
+      }
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    width: 30px; /* Adjust the width of the image */
+    height: 30px; /* Adjust the height of the image */
+}
     </style>
 
     <!-- JS -->
@@ -74,6 +86,14 @@
             <a href="#" style="--i:4;">Contact</a>
             <a href="#" style="--i:5;" onclick="toggleLoginForm()">LogIn/SignUp</a>
         </nav>
+
+        <!-- class="nav-link dropdown-toggle" -->
+
+        <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <!-- <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span> -->
+          <img class="img-profile rounded-circle" src="assets/undraw_profile.svg">
+        </a>
 
     </header>
   <!-- </div> -->
@@ -210,7 +230,7 @@ Larger Map</a></small>
             <div class="row">
               <div class="col-lg-6 col-md-8 col-sm-12 col-12">
                 <div class="form-container">
-                <form class="form border p-3 ">
+                <form class="form p-3 ">
                   <div class="mb-3">
                     <label for="departure from" class="form-label">Depart from</label>
                     <input type="text" class="form-control" id="departure from" placeholder="Enter departure place" required>

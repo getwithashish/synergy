@@ -92,9 +92,29 @@ function updateServerWithNewResidentialAddress(newResidentialAddress) {
   //   });
 }
 
+function validateEmail() {
+  const emailInput = document.getElementById("newEmailAddress");
+  const emailError = document.getElementById("emailError");
+
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+
+  if (!isValidEmail) {
+    emailError.textContent = "Invalid email address";
+  } else {
+    emailError.textContent = "";
+  }
+}
 
 
 function saveEmailAddress() {
+
+  const emailError = document.getElementById("emailError").textContent;
+  
+    if (emailError) {
+        // Display an alert or handle the invalid case
+        console.log("Invalid email. Please correct before saving.");
+        return;
+    }
   // Get the new office address from the input field
   const newEmailAddress = document.getElementById("newEmailAddress").value;
 
@@ -236,8 +256,36 @@ function updateServerWithNewGenderAddress(newGenderAddress) {
   //   });
 }
 
+function validateFullName() {
+  const fullNameInput = document.getElementById("newPassengerName");
+  const fullNameError = document.getElementById("fullNameError");
+
+  // Add your full name validation logic here
+  // Example: Check for minimum length
+  const isValidLength = fullNameInput.value.trim().length >= 3;
+
+  // Check if the full name contains numbers
+  const containsNumbers = /\d/.test(fullNameInput.value);
+
+    if (!isValidLength) {
+      fullNameError.textContent =
+        "Full name must be at least 3 characters long";
+    } else if (containsNumbers) {
+      fullNameError.textContent = "Full name should not contain numbers";
+    } else {
+      fullNameError.textContent = "";
+    }
+}
+
 
 function savePassengerName() {
+
+   const fullNameError = document.getElementById("fullNameError").textContent;
+   if (fullNameError) {
+     // Display an alert or handle the invalid case
+     console.log("Invalid full name. Please correct before saving.");
+     return;
+   }
   // Get the new office address from the input field
   const newPassengerName = document.getElementById("newPassengerName").value;
 

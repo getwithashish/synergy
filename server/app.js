@@ -1,12 +1,25 @@
 const express = require('express');
 
+const multer = require("multer");
+
 const cors = require('cors');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Set up multer to handle file uploads
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
 const PORT = 3000;
+
+// Route to get all feedback entries
+//Ensure that this code is placed after the initialization of your app and before the app.listen statement.
+app.get("/allFeedback", (req, res) => {
+  res.status(200).send(feedbackData);
+});
+
 
 app.listen(PORT, () => {
     console.log("Server listening on PORT: ", PORT);
@@ -235,13 +248,70 @@ app.get("/getAllBookings", (request, response) => {
 
 
 //feedback form submission
-app.post("/submit-feedback", (req, res) => {
-  const feedback = req.body.feedback;
+
+// Set up the "uploads" directory to store uploaded files
+const feedback_storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/'); // Files will be saved in the "uploads" directory
+  },
+  filename: function (req, file, cb) {
+    // Use the original name of the file
+    cb(null, file.originalname);
+  },
+});
+
+const feedback_upload = multer({ storage: feedback_storage });
+
+// Array to store feedback data
+const feedbackData = [];
+
+//upload.single("fileUpload") middleware is used to handle a single file upload with the field name "fileUpload". The file data is then available in req.file.
+app.post("/submit-feedback", feedback_upload.single("fileUpload"), (req, res) => {
+  const feedbackText = req.body.feedbackText;
+  const rating = req.body.rating;
+  const fileUpload = req.file; // This will contain the file data
   // Handle the feedback (e.g., store it in a database)
-  console.log("Received feedback:", feedback);
+  console.log("Received feedback text:", feedbackText);
+  console.log("Received rating:", rating);
+  console.log("Received file:", fileUpload);
+
+  // Store feedback data in the array
+  const feedbackEntry = {
+    feedbackText: feedbackText,
+    rating: rating,
+    file: {
+      originalname: fileUpload.originalname,
+      destination: fileUpload.destination,
+      filename: fileUpload.filename,
+    },
+  };
+  feedbackData.push(feedbackEntry);
+
+  console.log()
+
+  // Send a response back to the client
   res.send("Feedback received successfully!");
 });
 
-// app.listen(port, () => {
-//   console.log(`Server is running at http://localhost:${port}`);
-// });
+// Dummy failed transactions data
+const failedTransactions = [
+  {
+    transactionId: '1',
+    amount: 100,
+    reason: 'Insufficient funds',
+    timestamp: '2023-01-01T12:00:00',
+  },
+  {
+    transactionId: '2',
+    amount: 50,
+    reason: 'Invalid recipient',
+    timestamp: '2023-01-02T14:30:00',
+  },
+  // Add more dummy data as needed
+];
+
+// Endpoint to get failed transactions
+app.get('/failedTransactions', (req, res) => {
+  res.status(200).json(failedTransactions);
+});
+
