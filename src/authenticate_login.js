@@ -186,3 +186,98 @@ function closesignupForm() {
 
   signupContainer.style.display = "none";
 }
+
+
+
+
+/////////POST FOR CREATE ACCOUNT
+
+function submitCreateAccountData(signupdata) {
+  return fetch('URL', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(signupdata),
+  })
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+    
+  })
+  .then((signupdata) => {
+    console.log(signupdata);
+    // Check if the response contains a token field
+    if (signupdata.token) {
+      // parse jwt token
+      const parsedToken = parseJwt(signupdata.token);
+      for (const key in parsedToken) {
+        if (parsedToken.hasOwnProperty(key)) {
+          localStorage.setItem(key, parsedToken[key]);
+        }
+      }
+    }
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    throw new Error('Failed to send data to the server');
+  });
+}
+
+
+
+
+
+/////POST FOR  LOGIN
+function submitLoginData(data) {
+  return fetch('URL', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    // console.log(data);
+    return response.json();
+    
+  })
+  .then((data) => {
+    console.log(data);
+    // Check if the response contains a token field
+    if (data.token) {
+      // parse the token
+      const parsedToken = parseJwt(data.token);
+
+// Store the payload in local storage as key-value pairs
+for (const key in parsedToken) {
+  if (parsedToken.hasOwnProperty(key)) {
+    localStorage.setItem(key, parsedToken[key]);
+  }
+}
+    }
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    throw new Error('Failed to send data to the server');
+  });
+}
+
+
+
+
+//function to parse jwt
+
+function parseJwt(token) {
+  const base64Url = token.split('.')[1];
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+  return JSON.parse(jsonPayload);
+}
