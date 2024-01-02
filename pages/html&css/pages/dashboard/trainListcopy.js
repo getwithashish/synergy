@@ -1,6 +1,8 @@
 async function searchTrain1() {
   const trainInput = document.getElementById("topbarInputIconLeft").value.trim();
   const trainList = document.getElementById("trainList");
+  const trainDetails = document.getElementById("trainDetails");
+  trainDetails.innerHTML = "";
   trainList.innerHTML = ""; // Clear previous search results
   // const trainSource = document.getElementById("source");
   // const trainDest = document.getElementById("destination");
