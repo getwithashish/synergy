@@ -1,5 +1,5 @@
-// Function to submit form
-function submit_signup_Form() {
+// Submit Signup Form
+function submitSignupForm() {
   // Get form data
   const sign_up_name = document.getElementById("signupuserName").value;
   const sign_up_email = document.getElementById("signupuserEmail").value;
@@ -37,35 +37,37 @@ function submit_signup_Form() {
       .classList.remove("is-invalid");
     document.getElementById("signupuserEmail").classList.remove("is-invalid");
 
-    // Call the external function to submit data
-    submitData(signupdata)
-      .then((response) => {
-        // Handle the response here
-        const signupmessageContainer = document.getElementById(
-          "signupmessageContainer"
-        );
+    signup(signupdata)
+    .then((response) => {
+      // Handle the response here
+      const signupmessageContainer = document.getElementById(
+        "signupmessageContainer"
+      );
 
-        if (response.success) {
-          // Show success message
-          signupmessageContainer.innerHTML =
-            '<p style="color: green;">Registration successful!</p>';
-        } else {
-          // Show failure message
-          signupmessageContainer.innerHTML =
-            '<p style="color: red;">Registration failed. Please try again.</p>';
-        }
-      })
-      .catch((error) => {
-        // Handle error
-        console.error("Error in submitData:", error);
-
-        // Show error message
-        const signupmessageContainer = document.getElementById(
-          "signupmessageContainer"
-        );
+      if (response.status == "Success") {
+        // Show success message
         signupmessageContainer.innerHTML =
-          '<p style="color: red;">An error occurred. Please try again later.</p>';
-      });
+          '<p style="color: green;">Registration successful!</p>';
+          closesignupForm();
+      } else {
+        // Show failure message
+        signupmessageContainer.innerHTML =
+          '<p style="color: red;">Registration failed. Please try again.</p>';
+      }
+    })
+    .catch((error) => {
+      // Handle error
+      console.error("Error in submitData:", error);
+
+      // Show error message
+      const signupmessageContainer = document.getElementById(
+        "signupmessageContainer"
+      );
+      signupmessageContainer.innerHTML =
+        '<p style="color: red;">An error occurred. Please try again later.</p>';
+    });
+
+    
   } else {
     // Display validation error messages
     if (!isValidSignUpName) {
@@ -91,7 +93,7 @@ function submit_signup_Form() {
 }
 
 // Function to submit form
-function submitForm() {
+function submitLoginForm() {
   // Get form data
   const email = document.getElementById("userEmail").value;
   const password = document.getElementById("userPassword").value;
@@ -105,12 +107,12 @@ function submitForm() {
   if (isValidPassword && isValidEmail) {
     // Check if all fields are valid
     // Prepare data object
-    const data = {
+    const loginData = {
       email: email,
       password: password,
     };
 
-    console.log("inside authenticate_login.js", data);
+    console.log("inside authenticate_login.js", loginData);
 
     // Clear previous validation feedback
     document.getElementById("passwordInvalidFeedback").innerHTML = "";
@@ -120,31 +122,56 @@ function submitForm() {
     document.getElementById("userPassword").classList.remove("is-invalid");
     document.getElementById("userEmail").classList.remove("is-invalid");
 
-    // Call the external function to submit data
-    submitData(data)
-      .then((response) => {
-        // Handle the response here
-        const messageContainer = document.getElementById("messageContainer");
+    signin(loginData)
+    .then((response) => {
+      // Handle the response here
+      const messageContainer = document.getElementById("loginmessageContainer");
 
-        if (response.success) {
-          // Show success message
-          messageContainer.innerHTML =
-            '<p style="color: green;">Registration successful!</p>';
-        } else {
-          // Show failure message
-          messageContainer.innerHTML =
-            '<p style="color: red;">Registration failed. Please try again.</p>';
-        }
-      })
-      .catch((error) => {
-        // Handle error
-        console.error("Error in submitData:", error);
-
-        // Show error message
-        const messageContainer = document.getElementById("messageContainer");
+      if (response.status == "Success") {
+        // Show success message
         messageContainer.innerHTML =
-          '<p style="color: red;">An error occurred. Please try again later.</p>';
-      });
+          '<p style="color: green;">Registration successful!</p>';
+      } else {
+        // Show failure message
+        messageContainer.innerHTML =
+          '<p style="color: red;">Registration failed. Please try again.</p>';
+      }
+    })
+    .catch((error) => {
+      // Handle error
+      console.error("Error in submitData:", error);
+
+      // Show error message
+      const messageContainer = document.getElementById("messageContainer");
+      messageContainer.innerHTML =
+        '<p style="color: red;">An error occurred. Please try again later.</p>';
+    });
+
+    // Call the external function to submit data
+    // submitData(data)
+    //   .then((response) => {
+    //     // Handle the response here
+    //     const messageContainer = document.getElementById("messageContainer");
+
+    //     if (response.success) {
+    //       // Show success message
+    //       messageContainer.innerHTML =
+    //         '<p style="color: green;">Registration successful!</p>';
+    //     } else {
+    //       // Show failure message
+    //       messageContainer.innerHTML =
+    //         '<p style="color: red;">Registration failed. Please try again.</p>';
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     // Handle error
+    //     console.error("Error in submitData:", error);
+
+    //     // Show error message
+    //     const messageContainer = document.getElementById("messageContainer");
+    //     messageContainer.innerHTML =
+    //       '<p style="color: red;">An error occurred. Please try again later.</p>';
+    //   });
   } else {
     // Display validation error messages
 

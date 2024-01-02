@@ -242,6 +242,6 @@ app.post("/submit-feedback", (req, res) => {
   res.send("Feedback received successfully!");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server is running at http://localhost:${port}`);
+// });
