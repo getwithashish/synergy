@@ -17,111 +17,57 @@
 */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
-.trainContainer{
-    display: flex;
-    width:100%;
+
+body {
+    background-image: url('/assets/darkabstract.jpg');  /* Replace 'your-image-url.jpg' with the actual URL or path to your image file */
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust the background size as needed, 'cover' ensures the image covers the entire container */
+    background-position: center center; /* Center the background image horizontally and vertically */
+    background-attachment: fixed; /* Fixed background to prevent scrolling */
+    /* You can add more background properties or adjust these according to your design needs */
+
 }
 
-.trainDetailsFlex{
-    flex:1;
+
+.bookingForm{
+    background: transparent;
+
+
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 }
 
-.trainSrc{
-    flex:1;
+#bookingBox{
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: white;
+    font-family:monospace;
 }
 
-p {
-    font-size: 18px; /* Adjust font size as needed */
-  }
-  
-  .word {
-    padding: 0 8px; /* Add space around the words */
-  }
-  
-  .line {
-    border-bottom: 2px solid rgb(250, 249, 249); /* Style the line */
-    padding-bottom: 5px;
-    width: 250px; /* Adjust the width of the line */
-    display: inline-block;
-    margin: 0 10px; /* Adjust spacing between words and line */
-  }
- 
-#routeContainer{
-    height: 600px;
-    overflow: auto;
-}
-#routeContainer::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for webkit-based browsers */
-}
-#lvsContainer{
-    height: 600px;
-    overflow: auto;
-    
-}
-#liveStatusContainer::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for webkit-based browsers */
-}
-#runDaysContainer{
-    height: 180px;
-    overflow: auto;
-}
-#runDaysContainer::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for webkit-based browsers */
-}
-#classContainer{
-    height: 180px;
-    overflow: auto; 
-}
-#classContainer::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for webkit-based browsers */
+#bookYourTrain{
+    text-align: center;
+    color: rgb(255, 255, 255); 
+    font-family: 'Poppins', sans-serif;
+    font-weight:bolder;
+    text-shadow: 2px 2px 3px #ffffff;
 }
 
-#quotaContainer{
-    height: 180px;
-    overflow: auto; 
-}
-#quotaContainer::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for webkit-based browsers */
-}
-#tr{
-    width: 550px;
-    margin-right: 15px;
-    margin-left: 25px;
-}
-#lvs{
-    margin-left: 15px;
-    width: 550px;
+#submitButton{
+    width: 170px;
+    height: 40px;
+    font-size: 20px;
+    padding: 0px;
+    background-color:#4bbb5a;
+    opacity: 100px;border: none;
 }
 
-#seatButton {
-    width: 200px; /* Adjust the width as needed */  
-}
-
-#navbar-search-main{
-    padding-top: 140px;
-}
-#dashb{
-    background-image: url('../../../assets/pawel-czerwinski-JgWp9DNib3k-unsplash.jpg');
-    /* Other background properties to control size, position, etc. */
-    background-size: cover; /* Cover the entire body */
-    background-attachment: fixed;
-    background-repeat: no-repeat; /* No repeating of the image */
-}
-#seatForm{
-    backdrop-filter: blur(6px) saturate(171%);
-    -webkit-backdrop-filter: blur(6px) saturate(171%);
-    -moz-backdrop-filter: blur(6px) saturate(171%);
-    background-color: transparent;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-}
-#day3,
-#day4,
-#day1,#day2
-/* Add more IDs if needed */
-{
- box-shadow:0 8px 8px 0 rgba(0, 0, 0, 0.2);  
-}
 .datepicker {
     display: none;
 }
@@ -169,10 +115,10 @@ p {
     padding: 2px;
 }
 
-/* .datepicker-footer {
+.datepicker-footer {
     box-shadow: inset 0 1px 1px rgba(17, 24, 39, 0.1);
     background-color: #9CA3AF;
-} */
+}
 
 .datepicker-grid, .datepicker-view .days-of-week, .datepicker-view, .datepicker-controls {
     display: flex;
@@ -1187,7 +1133,6 @@ body {
     background-color: var(--bs-body-bg);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(17, 24, 39, 0);
-    
 }
 
 hr {
@@ -2506,7 +2451,6 @@ progress {
     .col-md-6 {
         flex: 0 0 auto;
         width: 50%;
-        margin-top: 20px;
     }
 
     .col-md-7 {
@@ -2516,8 +2460,7 @@ progress {
 
     .col-md-8 {
         flex: 0 0 auto;
-        width: 80%;
-        margin-top: 40px;
+        width: 66.66666667%;
     }
 
     .col-md-9 {
@@ -4532,10 +4475,7 @@ textarea.form-control-lg {
     flex-wrap: wrap;
     align-items: stretch;
     width: 100%;
-    /* padding-top: 180px; */
-    padding-left: 20px;
 }
-
 
 .input-group > .form-control,
 .input-group > .form-select {
@@ -7524,7 +7464,6 @@ textarea.form-control-lg {
     background-clip: border-box;
     border: 0.0625rem solid rgba(17, 24, 39, 0.125);
     border-radius: 0.5rem;
-    
 }
 
 .card > hr {
@@ -12691,8 +12630,8 @@ textarea.form-control-lg {
 }
 
 .bg-white {
-    /* --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important; */
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-indigo {
@@ -23127,8 +23066,7 @@ textarea.form-control-lg {
 
 @media (min-width: 992px) {
     .content {
-        margin-left: 60px;
-        margin-right: 60px;
+        margin-left: 260px;
     }
 }
 
@@ -25192,12 +25130,6 @@ label {
  */
 .card {
     position: relative;
-    backdrop-filter: blur(6px) saturate(171%);
-    -webkit-backdrop-filter: blur(6px) saturate(171%);
-    -moz-backdrop-filter: blur(6px) saturate(171%);
-    background-color:transparent;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 .card .card-header {
@@ -25646,8 +25578,8 @@ label {
 }
 
 .icon-shape {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 4rem;
+    height: 4rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -28877,3 +28809,18 @@ article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
     z-index: 9999;
 }
 /*# sourceMappingURL=volt.css.map */
+
+input[type="radio"] {
+    margin-right: 10px; /* Adjust the value as needed */
+  } 
+body{ 
+      margin:50px;
+      background-color:#ea4a4a83;
+      
+  }
+  .card{
+      border-color:  #b02f38;
+      border-width: 4px;
+      background-color: #f5e7e8;;
+      
+  }
