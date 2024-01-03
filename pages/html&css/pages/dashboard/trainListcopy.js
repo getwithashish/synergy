@@ -67,11 +67,11 @@ function searchSeatAvail(data){
     card.classList.add('col-12', 'col-sm-6', 'col-xl-4', 'col-md-3', 'mb-4');
     card.innerHTML = `
         <div class="card" id="day${index + 1}">
-            <h5><span class="word" id="day${index + 1}seat" style="color:black">${item.date}</span></h5>
-            <span class="word" id="cnf_seat${index + 1}" style="color:black">${item.confirm_probability}</span>
-            <span class="word" id="tot_fare${index + 1}" style="color:black">${item.total_fare}</span>
-            <span class="word" id="probability${index + 1}" style="color:black">${item.confirm_probability_percent}</span>
-            <span class="word" id="current_stat${index + 1}" style="color:black">${item.current_status}</span>
+            <h5><span class="word" id="day${index + 1}seat" style="color:rgb(250, 249, 249)">${item.date}</span></h5>
+            <span class="word" id="cnf_seat${index + 1}" style="color:rgb(250, 249, 249)">${item.confirm_probability}</span>
+            <span class="word" id="tot_fare${index + 1}" style="color:rgb(250, 249, 249)">${item.total_fare}</span>
+            <span class="word" id="probability${index + 1}" style="color:rgb(250, 249, 249)">${item.confirm_probability_percent}</span>
+            <span class="word" id="current_stat${index + 1}" style="color:rgb(250, 249, 249)">${item.current_status}</span>
         </div>
     `;
     cardContainer.appendChild(card);

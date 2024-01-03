@@ -9,6 +9,7 @@ body{
 	margin-top: 7rem;
 }
 
+
 .cd-faq__categories {
 	@media (min-width: 768px) {
 	  position: sticky;
@@ -20,6 +21,7 @@ body{
 	  margin-top: var(--space-md);
 	}
   
+	
 	@media (min-width: 1200px) {
 	  width: 200px;
 	}

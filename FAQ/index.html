@@ -11,8 +11,12 @@
 
 </head>
 
+
+
 <body style="margin-top: 5rem; margin: 0;
 background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;height: 100vh;background-attachment: fixed;"">
+
+
 
 <div class="bgimage" style="background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;height: 100vh;background-attachment: fixed;">
 
@@ -20,7 +24,7 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 
 	<header class="header" style="margin-bottom: 20px;">
     
-        <a href="#" class="logo">Logo</a>
+        <a href="http://127.0.0.1:5503/index.html" class="logo">Logo</a>
 
         <input type="checkbox" id="check">
         <label for="check" class="icons">
@@ -41,21 +45,19 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 
 	<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
 
-	<ul class="cd-faq__categories" style="position: fixed; top: 5rem;">
-		<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#PNR">PNR </a></li>
-		<li><a class="cd-faq__category truncate" href="#Codes">Codes</a></li>
-		<li><a class="cd-faq__category truncate" href="#Tatkal">Tatkal</a></li>
-		<li><a class="cd-faq__category truncate" href="#Booking">Booking</a></li>
-		<!-- <li><a class="cd-faq__category truncate" href="#privacy">Privacy</a></li>
-		<li><a class="cd-faq__category truncate" href="#delivery">Delivery</a></li> -->
-	</ul> <!-- cd-faq__categories -->
+		<ul class="cd-faq__categories" style="position: fixed; top: 5rem;">
+			<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#PNR" >PNR</a></li>
+			<li><a class="cd-faq__category truncate"  href="#Codes">Codes</a></li>
+			<li><a class="cd-faq__category truncate"  href="#Tatkal">Tatkal</a></li>
+			<li><a class="cd-faq__category truncate" href="#Booking">Booking</a></li>
+		</ul>
 
 	<div class="cd-faq__items" style="padding-left: 15rem;">
-		<ul id="PNR" class="cd-faq__group">
+		<ul  class="cd-faq__group">
 			<!-- <li class="cd-faq__title"><h2>PNR</h2></li> -->
 			<br>
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" ><span>What is a PNR?</span></a>
+				<a class="cd-faq__trigger" ><span id="PNR">What is a PNR?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
             <p>
@@ -118,10 +120,10 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 			</li>
 		</ul> <!-- cd-faq__group -->
 
-		<ul id="mobile" class="cd-faq__group">
+		<ul id="Codes" class="cd-faq__group">
 			<!-- <li class="cd-faq__title"><h2>Mobile</h2></li> -->
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>What is "Chart Not Prepared" status?</span></a>
+				<a class="cd-faq__trigger" ><span>What is "Chart Not Prepared" status?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
 			<p>The last booking chart for a train will be done at least 4hrs prior to the schedule departure of the train at origination station.
@@ -136,7 +138,7 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 			</li>
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>What are different type of Class Codes and their meaning?</span></a>
+				<a class="cd-faq__trigger" id="Codes"><span>What are different type of Class Codes and their meaning?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
 			<p><h2>Train Classes</h2>
@@ -276,7 +278,7 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 			</li>
 		</ul> <!-- cd-faq__group -->
 
-		<ul id="Codes" class="cd-faq__group">
+		<ul id="Codes1" class="cd-faq__group">
 			<!-- <li class="cd-faq__title"><h2>Account</h2></li> -->
 			<li class="cd-faq__item">
 				<a class="cd-faq__trigger" href="#0"><span>What are different type of Coach Codes and their meaning?</span></a>
@@ -405,7 +407,7 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 			</li>
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>What is TATKAL Booking and how it is done?</span></a>
+				<a class="cd-faq__trigger" href="#0"><span id="tatkalSection">What is TATKAL Booking and how it is done?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
 			<p>Tatkal booking is meant for immediate travel plans.
