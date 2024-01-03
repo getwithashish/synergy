@@ -38,31 +38,31 @@ const userCredentials = [
     {
         name: "Ashish Sam T George",
         email: "ashish@gmail.com",
-        pass: "ashish123",
+        password: "QWERTY@123qw",
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFzaGlzaCBTYW0gVCBHZW9yZ2UiLCJpYXQiOjE1MTYyMzkwMjJ9.7feXCCW78LWuEcZLeno8_yM-KIaXdfxe0kY7zsks_MU"
     },
     {
         name: "Arjun",
         email: "arjun@gmail.com",
-        pass: "arjun123",
+        password: "arjun123",
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFyanVuIiwiaWF0IjoxNTE2MjM5MDIyfQ.zfUABrV6X01Okg5gCKuWEkcunt_n9HvV37ZyxP8q2bk"
     },
     {
         name: "Archa",
         email: "archa@gmail.com",
-        pass: "archa123",
+        password: "archa123",
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFyY2hhIiwiaWF0IjoxNTE2MjM5MDIyfQ.a_zH8NHWX6vBhH3iaxdHzQBwAxpAG_mV_Ife0DS6y3c"
     },
     {
         name: "Devapriya",
         email: "devapriya@gmail.com",
-        pass: "devapriya123",
+        password: "devapriya123",
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRldmFwcml5YSIsImlhdCI6MTUxNjIzOTAyMn0.YerYAdkIpV0RoLFnn0TOArKR3rcAX3_29z9-8pREra4"
     },
     {
         name: "Dantus",
         email: "dantus@gmail.com",
-        pass: "dantus123",
+        password: "dantus123",
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRhbnR1cyIsImlhdCI6MTUxNjIzOTAyMn0.slE22Zv7WX-ma7OhUGbWEguWZ1k3ss0eWCXvgmIPiN4"
     }
 ];
@@ -105,11 +105,13 @@ app.post("/signup", (request, response) => {
 app.post("/signin", (request, response) => {
     let userCred = request.body;
     let user = userCredentials.find(el => el.email === userCred.email);
+
+    console.log("Received Body: ", user);
     
     let respObject = {};
     let status = 200;
     if(user !== undefined && Object.keys(user).length !== 0){
-        if(user.pass === userCred.pass){
+        if(user.password === userCred.password){
             status = 200;
             respObject = {
                 status: "Success",
