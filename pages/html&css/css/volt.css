@@ -114,6 +114,13 @@ p {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
 }
+#day3,
+#day4,
+#day1,#day2
+/* Add more IDs if needed */
+{
+ box-shadow:0 8px 8px 0 rgba(0, 0, 0, 0.2);  
+}
 .datepicker {
     display: none;
 }
