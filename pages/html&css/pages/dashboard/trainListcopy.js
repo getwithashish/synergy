@@ -1,5 +1,5 @@
 async function searchTrain1() {
-  const trainInput = document.getElementById("topbarInputIconLeft").value.trim();
+  // const trainInput = document.getElementById("topbarInputIconLeft").value.trim();
   const trainList = document.getElementById("trainList");
   const trainDetails = document.getElementById("trainDetails");
   trainDetails.innerHTML = "";
@@ -8,9 +8,11 @@ async function searchTrain1() {
   // const trainDest = document.getElementById("destination");
   // const trainDuration = document.getElementById("duration");
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const trainNumber = urlParams.get('trainNumber');
   
-    // const someData = await getTrainSchedule({ trainNo: trainInput })
-    const someSchedule = await getTrainSchedule({trainNo: trainInput})
+    // const someSchedule = await getTrainSchedule({trainNo: trainInput})
+    const someSchedule = await getTrainSchedule({trainNo: trainNumber})
     .then((response) => {
       console.log("Inside search train: ", response);
       let classArray =  response.class;
@@ -30,6 +32,9 @@ async function searchTrain1() {
       
     })  
 }
+
+searchTrain1();
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
