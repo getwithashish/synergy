@@ -1,14 +1,18 @@
 async function searchTrain1() {
-  const trainInput = document.getElementById("topbarInputIconLeft").value.trim();
+  // const trainInput = document.getElementById("topbarInputIconLeft").value.trim();
   const trainList = document.getElementById("trainList");
+  const trainDetails = document.getElementById("trainDetails");
+  trainDetails.innerHTML = "";
   trainList.innerHTML = ""; // Clear previous search results
   // const trainSource = document.getElementById("source");
   // const trainDest = document.getElementById("destination");
   // const trainDuration = document.getElementById("duration");
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const trainNumber = urlParams.get('trainNumber');
   
-    // const someData = await getTrainSchedule({ trainNo: trainInput })
-    const someSchedule = await getTrainSchedule({trainNo: trainInput})
+    // const someSchedule = await getTrainSchedule({trainNo: trainInput})
+    const someSchedule = await getTrainSchedule({trainNo: trainNumber})
     .then((response) => {
       console.log("Inside search train: ", response);
       let classArray =  response.class;
@@ -29,11 +33,14 @@ async function searchTrain1() {
     })  
 }
 
+searchTrain1();
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 async function searchSeat(){
-  seatAvailability.innerhtml = "";
+  // seatAvailability.innerhtml = "";
   const trainNoInput = document.getElementById("topbarInputIconLeft").value.trim();
   const fromInput = document.getElementById("from_station").value.trim();
   const toInput = document.getElementById("to_station").value.trim();
@@ -41,74 +48,35 @@ async function searchSeat(){
   const classTypeInput = document.getElementById("classtype").value.trim();
   const quotaInput = document.getElementById("enter_quota").value.trim();
   
-  // const enteredDate = new Date(searchInput3);
-  // const currentDate = new Date();
-  // const differenceInTime = currentDate.getTime() - enteredDate.getTime();
-  // const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
-
-  // // Map the difference in days to the startDay range (0-4)
-  // let startDay = 0;
-  // if (differenceInDays === 0) {
-  //   startDay = 0;
-  // } else if (differenceInDays >= 1 && differenceInDays <= 4) {
-  //   startDay = differenceInDays;
-  // } else {
-  //   // Handle cases where the entered date is more than 4 days ago
-  //   startDay = 4;
-  // }
-
-  // const selectClassSeat = await getTrainClasses({trainNo:trainNoInput })
-  // .then((response) => {
-
-  //   let classArraySeat = response.class;
-  //   let seatQuotaArray = response.quota;
-  //   displayClassSeat(classArraySeat,classSeatContainer);
-  //   displayQuotaSeat(seatQuotaArray,seatQuotaContainer);
-  // })
-
-  //display class
-  // function displayClassSeat(classArraySeat, classSeatContainer) {
-  //   let selectClassList = document.createElement('select'); // Create a <select> element
-  
-  //   for (let c = 0; c < classArraySeat.length; c++) {
-  //     let optionItem = document.createElement('option'); // Create an <option> for each object
-  //     optionItem.value = classArraySeat[c].value;
-  //     optionItem.textContent = `Value: ${classArraySeat[c].value}, Name: ${classArraySeat[c].name}`;
-  //     selectClassList.appendChild(optionItem); // Append the <option> to the <select>
-  //   }
-  //   classSeatContainer.appendChild(selectClassList);
-  //   classSeatContainer.appendChild(selectClassList);
-  // }
-
-
-  // function displayQuotaSeat(seatQuotaArray, seatQuotaContainer){
-  //   let selectQuotaList = document.createElement('select');
-  //   for (let d = 0; d < classArraySeat.length; d++) {
-  //     let optionQuota = document.createElement('option'); // Create an <option> for each object
-  //     optionQuota.value = seatQuotaArray[d].value;
-  //     optionQuota.textContent = `Value: ${seatQuotaArray[d].value}, Name: ${seatQuotaArray[d].name}`;
-  //     selectQuotaList.appendChild(optionQuota); // Append the <option> to the <select>
-  //   }
-  //   seatQuotaContainer.appendChild(selectQuotaList);
-  // }
-  // const classInput = document.getElementById("classSeatContainer").value.trim();
-  // const quotaInput = document.getElementById("seatQuotaContainer").value.trim();
-  //search seat 
-  const seatAva = await checkSeatAvailability({ fromStationCode:fromInput, toStationCode:toInput, date:dateInput, trainNo:trainNoInput, classType:classTypeInput, quota:quotaInput})
+  const seatAva = await checkSeatAvailability({ classType:classTypeInput,fromStationCode:fromInput, quota:quotaInput,toStationCode:toInput,trainNo:trainNoInput, date:dateInput})
   .then((response) => {
     console.log("Inside seat availability: ", response);
+    const seatData = response.data;
+
+    searchSeatAvail(response.data);
   })
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function searchSeatAvail(){
-  let seatAvailability = document.createElement('ul');
+function searchSeatAvail(data){
+  // let seatAvailability = document.createElement('ul');
+  const cardContainer = document.getElementById('cardContainer');
 
-  for (let s=0; s<liveStatusArray.length; s++){
-    let listSeat = document.createElement('li');
-    listSeat.textContent = `Station Code:${liveStatusArray[s].station_code}, Station Name: ${liveStatusArray[s].station_name},Platform No: ${liveStatusArray[s].platform_number}`;
-    trainLiveStatusList.appendChild(listLiveStatus);
-  }
+  data.forEach((item, index) => {
+    const card = document.createElement('div');
+    card.classList.add('col-12', 'col-sm-6', 'col-xl-4', 'col-md-3', 'mb-4');
+    card.innerHTML = `
+        <div class="card" id="day${index + 1}">
+            <h5><span class="word" id="day${index + 1}seat" style="color:black">${item.date}</span></h5>
+            <span class="word" id="cnf_seat${index + 1}" style="color:black">${item.confirm_probability}</span>
+            <span class="word" id="tot_fare${index + 1}" style="color:black">${item.total_fare}</span>
+            <span class="word" id="probability${index + 1}" style="color:black">${item.confirm_probability_percent}</span>
+            <span class="word" id="current_stat${index + 1}" style="color:black">${item.current_status}</span>
+        </div>
+    `;
+    cardContainer.appendChild(card);
+});
+  
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////

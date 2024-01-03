@@ -9,13 +9,13 @@
   <script src="../src/api/api.js"></script> 
   <script src="../src/api/rapidapi-api.js"></script> 
 
-  <script src="trainList.js"></script>
+  <script src="../pages/html&css/pages/dashboard/trainListcopy.js"></script>
 
 </head>
 <body>
   <div class="container" id="trainContainer">
     <h1>Train List</h1>
-    <input type="text" id="searchInput" placeholder="Enter train name or number">
+    <input type="text" id="topbarInputIconLeft" placeholder="Enter train name or number">
     <button onclick="searchTrain1()">Search</button>
 
         <div class="container" id="trainIfoContainer">
@@ -50,11 +50,11 @@
   </div> 
 
   <h1 style="text-align: center;">Live Status</h1>
-  <div class="container" id="liveStatusContainer">
+  <div class="container" id="lvsContainer1">
     <!-- <input type="text" id="searchInput2" placeholder="Enter train name or number"> -->
-    <input type="text" id="searchInput3" placeholder="yyyy-mm-dd">
+    <!-- <input type="text" id="searchInput3" placeholder="yyyy-mm-dd"> -->
     <button onclick="liveStatus()">Search</button>
-        <div class="container" id="liveStatus">
+        <div class="container" id="lvsContainer">
           <ul id="trainLiveStatusList"></ul>
         </div>
   </div>
@@ -64,19 +64,20 @@
   <div class="container" id="seatAvailabilityContainer">
       <form id="seatAvailability">
         <!-- <label for="from">From:</label> -->
-        <input type="text" id="from" placeholder="From" name="from" required><br><br>
+        <input type="text" id="from_station" placeholder="From" name="from" required><br><br>
         
         <!-- <label for="to">To:</label> -->
-        <input type="text" id="to" placeholder="To" name="to" required><br><br>
+        <input type="text" id="to_station" placeholder="To" name="to" required><br><br>
         
         <!-- <label for="date">Enter date:</label> -->
-        <input type="text" id="searchInputDate" placeholder="yyyy-mm-dd" required><br><br>
+        <input type="text" id="enter_date" placeholder="yyyy-mm-dd" required><br><br>
+        <input type="text" id="enter_quota" placeholder="quota" required><br><br>
         
         <!-- <label for="classType">Class Type:</label> -->
-        <select id="classSeatContainer" placeholder="Choose class type" name="classType">
+        <!-- <select id="classSeatContainer" placeholder="Choose class type" name="classType">
         </select><br><br>
         <select id="seatQuotaContainer" placeholder="Choose class type" name="classType">
-        </select><br><br>
+        </select><br><br> -->
       </form>
       <button onclick="searchSeat()">Search</button>
       <div class="container" id="searchSeatAvailability">

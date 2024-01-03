@@ -20,6 +20,28 @@ app.get("/allFeedback", (req, res) => {
   res.status(200).send(feedbackData);
 });
 
+// Endpoint to change password. old password is checked from user credentials given above
+app.post('/change-password', (req, res) => {
+    const { email, oldPassword, newPassword } = req.body;
+
+    // Find the user by email
+    const user = userCredentials.find(u => u.email === email);
+
+    // If user not found or old password is incorrect, send an error response
+    if (!user || user.pass !== oldPassword) {
+        return res.status(401).json({ error: 'Invalid old password' });
+    }
+
+    // If old password is correct, update the password
+    user.pass = newPassword;
+
+    // Create a new JWT token (optional, if you use JWT for authentication)
+    // const newJwtToken = jwt.sign({ sub: user.email, name: user.name }, 'your_secret_key', { expiresIn: '1h' });
+    // user.jwt = newJwtToken;
+
+    // Send a success response
+    res.json({ message: 'Password changed successfully'});
+});
 
 app.listen(PORT, () => {
     console.log("Server listening on PORT: ", PORT);
@@ -38,31 +60,31 @@ const userCredentials = [
     {
         name: "Ashish Sam T George",
         email: "ashish@gmail.com",
-        pass: "ashish123",
+        password: "QWERTY@123qw",
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFzaGlzaCBTYW0gVCBHZW9yZ2UiLCJpYXQiOjE1MTYyMzkwMjJ9.7feXCCW78LWuEcZLeno8_yM-KIaXdfxe0kY7zsks_MU"
     },
     {
         name: "Arjun",
         email: "arjun@gmail.com",
-        pass: "arjun123",
+        password: "arjun123",
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFyanVuIiwiaWF0IjoxNTE2MjM5MDIyfQ.zfUABrV6X01Okg5gCKuWEkcunt_n9HvV37ZyxP8q2bk"
     },
     {
         name: "Archa",
         email: "archa@gmail.com",
-        pass: "archa123",
+        password: "archa123",
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFyY2hhIiwiaWF0IjoxNTE2MjM5MDIyfQ.a_zH8NHWX6vBhH3iaxdHzQBwAxpAG_mV_Ife0DS6y3c"
     },
     {
         name: "Devapriya",
         email: "devapriya@gmail.com",
-        pass: "devapriya123",
+        password: "devapriya123",
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRldmFwcml5YSIsImlhdCI6MTUxNjIzOTAyMn0.YerYAdkIpV0RoLFnn0TOArKR3rcAX3_29z9-8pREra4"
     },
     {
         name: "Dantus",
         email: "dantus@gmail.com",
-        pass: "dantus123",
+        password: "dantus123",
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRhbnR1cyIsImlhdCI6MTUxNjIzOTAyMn0.slE22Zv7WX-ma7OhUGbWEguWZ1k3ss0eWCXvgmIPiN4"
     }
 ];
@@ -105,11 +127,13 @@ app.post("/signup", (request, response) => {
 app.post("/signin", (request, response) => {
     let userCred = request.body;
     let user = userCredentials.find(el => el.email === userCred.email);
+
+    console.log("Received Body: ", user);
     
     let respObject = {};
     let status = 200;
     if(user !== undefined && Object.keys(user).length !== 0){
-        if(user.pass === userCred.pass){
+        if(user.password === userCred.password){
             status = 200;
             respObject = {
                 status: "Success",
@@ -314,4 +338,3 @@ const failedTransactions = [
 app.get('/failedTransactions', (req, res) => {
   res.status(200).json(failedTransactions);
 });
-
