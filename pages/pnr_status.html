@@ -17,21 +17,21 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <div class="create-account-container">
+    <div class="create-account-container" id="pnr_container_id">
         <div class="close-btn" id="closeContainer">
           <button type="button" class="btn-close" aria-label="Close"></button>
           </div>
           <div class="row">
             <form onsubmit="event.preventDefault();" class="row g-3 needs-validation " id="create-account-form" novalidate>
           
-              <h3 style="text-align: center;">PNR STATUS</h3>
+              <h3 style="text-align: center;" style="color:rgb(250, 249, 249)">PNR STATUS</h3>
               <!-- <P style="color: gray;text-align: center;">Welcome!</P> -->
       
               <div class="mb-6" id="name-input-group">
-                  <label for="userName" class="form-label">PNR number</label>
+                  <label for="userName" class="form-label" style="color:rgb(250, 249, 249)">PNR number</label>
                   <div class="input-group">
                       <input type="text" class="form-control" id="checkPNR" placeholder="Enter your 10 digit PNR number"   name="userName" required>
-                      <a href="#" onclick="checkPnr();expandBox();" class="btn btn-primary"  id="checkpnrBtn">Search</a>
+                      <a href="#" onclick="checkPnr();" class="btn btn-primary"  id="checkpnrBtn">Search</a>
                     </div>    
                   <div class="valid-feedback" id="nameValidFeedback">
                     Looks good!
@@ -48,11 +48,11 @@
                 <div class="row" id="first">
                 
                   <div class="col-md-6">
-                    <span class="word1" id="trainNumber"></span>
+                    <span class="word1" id="trainNumber"style="color:rgb(250, 249, 249)">Train Number: </span>
                   </div> 
 
                   <div class="col-md-6">
-                    <span class="word" id="trainName"></span>
+                    <span class="word" id="trainName" style="color:rgb(250, 249, 249)">TrainName: </span>
                   </div>
 
                 </div>
@@ -60,11 +60,11 @@
                 <div class="row" id="second">
 
                   <div class="col-md-6">
-                    <span class="word1" id="boardingStation"></span>
+                    <span class="word1" id="boardingStation" style="color:rgb(250, 249, 249)">Boarding Station: </span>
                   </div>
 
                   <div class="col-md-6">  
-                    <span class="word" id="reservUpto"></span>
+                    <span class="word" id="reservUpto" style="color:rgb(250, 249, 249)">Reservation Upto: </span>
                   </div>  
 
                 </div>
@@ -72,11 +72,11 @@
                 <div class="row" id="three">
 
                   <div class="col-md-6">
-                    <span class="word1" id="passStatus"></span>
+                    <span class="word1" id="passStatus" style="color:rgb(250, 249, 249)">Passenger Status: </span>
                   </div>
 
                   <div class="col-md-6">  
-                    <span class="word" id="timeTaken"></span>
+                    <span class="word" id="timeTaken" style="color:rgb(250, 249, 249)">Duration: </span>
                   </div>  
 
                 </div>
@@ -84,22 +84,22 @@
                 <div class="row" id="four">
 
                   <div class="col-md-6">
-                    <span class="word1" id="departureTime"></span>
+                    <span class="word1" id="departureTime" style="color:rgb(250, 249, 249)">Departure Time: </span>
                   </div>
 
                   <div class="col-md-6">  
-                    <span class="word" id="arrivalTime"></span>
+                    <span class="word" id="arrivalTime" style="color:rgb(250, 249, 249)">Arrival Time</span>
                   </div>  
 
                 </div>
                 <div class="row" id="five">
 
                   <div class="col-md-6">
-                    <span class="word1" id="bookingFare"></span>
+                    <span class="word1" id="bookingFare" style="color:rgb(250, 249, 249)">Booking Fare: </span>
                   </div>
 
                   <div class="col-md-6">  
-                    <span class="word" id="ticketFare"></span>
+                    <span class="word" id="ticketFare" style="color:rgb(250, 249, 249)">Ticket Fare</span>
                   </div>  
 
                 </div>
@@ -107,11 +107,26 @@
                 <div class="row" id="six">
 
                   <div class="col-md-6">
-                    <span class="word1" id="coachPostn"></span>
+                    <span class="word1" id="coachPostn" style="color:rgb(250, 249, 249)">Date</span>
                   </div>
 
                   <div class="col-md-6">  
-                    <span class="word" id="quota"></span>
+                    <span class="word" id="quota" style="color:rgb(250, 249, 249)">Quota</span>
+                  </div>
+
+                  <!-- <div class="col-md-6">  
+                    <span class="word" id="platform">platform</span>
+                  </div>  -->
+
+                </div>
+                <div class="row" id="seven">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="class" style="color:rgb(250, 249, 249)">Class:</span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="platformNo" style="color:rgb(250, 249, 249)">Platform No:</span>
                   </div>
 
                   <!-- <div class="col-md-6">  
