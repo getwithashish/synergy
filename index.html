@@ -45,10 +45,23 @@ img {
     </style>
 
     <!-- JS -->
-    <script src="src/authenticate_login.js"></script>
     <script src="src/validation.js"></script>
+    <script src="src/authenticate_login.js"></script>
+
+    <script src="src/api/api.js"></script>
+    <script src="src/api/rapidapi-api.js"></script>
+    <script src="src/api/railwayapi-api.js"></script>
+    <script src="src/api/synergy-server-api.js"></script>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.01.min.css">
+  
+
+  <script defer src="src/searchStations.js"></script>
+  <script defer src="src/searchTrains.js"></script>
 
 </head>
 
@@ -75,11 +88,15 @@ img {
         </label>
 
         <nav class="newnavbar">
+
+          <div class="autoComplete_wrapper">
+            <input style="width: 100%;" id="autocompleteTrainSearch" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off">
+        </div>
+
             <a href="#" style="--i:0;">PNR Status</a>
-            <a href="#" style="--i:1;">About</a>
-            <a href="#" style="--i:2;">Gallery</a>
-            <a href="#" style="--i:3;">Services</a>
+            <a href="#" style="--i:3;">FAQ</a>
             <a href="#" style="--i:4;">Contact</a>
+            <a href="#" style="--i:5;" onclick="toggleLoginForm()">LogIn/SignUp</a>
         </nav>
 
         <!-- class="nav-link dropdown-toggle" -->
@@ -100,7 +117,7 @@ img {
               </div>
               <form onsubmit="event.preventDefault();" class="row g-3 needs-validation" id="login-form" novalidate>
             
-                <h3 style="text-align: center;">CREATE ACCOUNT</h3>
+                <h3 style="text-align: center;">Log In To Account</h3>
                 <!-- <P style="color: gray;text-align: center;">Please enter your details</P> -->
         
                 <div class="mb-6" id="email-input-group">
@@ -131,8 +148,12 @@ img {
                       <label class="form-check-label" for="exampleCheck1">Remember me</label>
                       <a href="#" class="forgot-password" style="margin-left: 40px;">Forgot Password?</a>
                 </div>
+
+                <div id="loginmessageContainer">
+              
+                </div>
                 
-                <button onclick="submitForm()" type="submit" class="btn btn-primary"  id="signInBtn">Sign in</button>
+                <button onclick="submitLoginForm()" type="submit" class="btn btn-primary"  id="signInBtn">Sign in</button>
                 <!-- <button type="submit" class="btn btn-primary"  id="signInGoogleBtn">
                   <img src="assets/icons8-google-48.png" alt="googleLogo" style="height: 25px; margin-right: 10px;">Sign in with Google</button> -->
               </form>
@@ -193,7 +214,7 @@ img {
                   </div>
                 </div>
               
-                <button onclick="submit_signup_Form()" type="submit" class="btn btn-primary" id="signInBtn">Sign in</button>
+                <button onclick="submitSignupForm()" class="btn btn-primary" id="signInBtn">Sign Up</button>
                 <!-- <button type="submit" class="btn btn-primary" id="signInGoogleBtn">
                   <img src="assets/icons8-google-48.png" alt="googleLogo" style="height: 25px; margin-right: 10px;">Sign in with
                   Google</button> -->
@@ -224,11 +245,21 @@ Larger Map</a></small>
                 <form class="form p-3 ">
                   <div class="mb-3">
                     <label for="departure from" class="form-label">Depart from</label>
-                    <input type="text" class="form-control" id="departure from" placeholder="Enter departure place" required>
+                    <!-- <input type="text" class="form-control" id="departure from" placeholder="Enter departure place" required> -->
+
+                    <div class="autoComplete_wrapper">
+                      <input style="width: 100%;" id="autocompleteSrcStation" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off">
+                  </div>
+
                   </div>
                   <div class="mb-3">
                       <label for="arrival at" class="form-label">Arrive at</label>
-                      <input type="text" class="form-control" id="arrival at" placeholder="Enter arrival place" required>
+                      <!-- <input type="text" class="form-control" id="arrival at" placeholder="Enter arrival place" required> -->
+
+                      <div class="autoComplete_wrapper">
+                        <input style="width: 100%;" id="autocompleteDestStation" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off">
+                    </div>
+
                     </div>
 
                           <div class="row">
@@ -238,7 +269,8 @@ Larger Map</a></small>
                         </div>
                       </div>
           
-                      
+                      <!-- <button onclick="searchStationRailwayApi({q: 'KZK'})">Test Button</button>
+                       -->
                       <div class="container">
                         <div class="row">
                           <div class="col-md-12"> 

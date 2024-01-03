@@ -6,7 +6,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
+    background-image: url('../../../assets/devanshu-verma-HeAz1n6mVWE-unsplash.jpg');
+    /* Other background properties to control size, position, etc. */
+    background-size: cover; /* Cover the entire body */
+    background-repeat: no-repeat; /* No repeating of the image */
     
   }
   
@@ -14,11 +18,17 @@ body {
     position: relative;
     width: 950px;
     height: 210px;
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 20px;
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px) saturate(171%);
+    -webkit-backdrop-filter: blur(6px) saturate(171%);
+    -moz-backdrop-filter: blur(6px) saturate(171%);
+    background-color: transparent;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
     
   }
 
@@ -118,7 +128,7 @@ body {
     margin-top: 20px;
   }
 
-  #first, #second, #three, #four, #five, #six {
+  #first, #second, #three, #four, #five, #six, #seven {
     display: flex;
     justify-content: space-between; /* This will add space between the spans */
     width: 100%;
