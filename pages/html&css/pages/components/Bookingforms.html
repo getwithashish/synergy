@@ -63,20 +63,22 @@
 
 <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
 
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 
 
 </head>
 
-<body >
+<body  >
 
         <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
         
-
+        <div class="bookingForm">
             <div class="row" >
                 <div class="col-12 mb-4">
-                    <p><H1 style="text-align: center;color: white;" >BOOK YOUR TRAIN</H1> </p>
-                    <div class="card shadow components-section" style="border-radius: 30px;">
+                    <p><H1 id="bookYourTrain" >BOOK YOUR TRAIN</H1> </p>
+                    <div id="bookingBox" class="card shadow components-section" style="border-radius: 30px;">
                         <div class="card-body" style="margin:30px 50px;">     
                             <!-- <div class="card-body"> -->
                             <div class="row mb-4">
@@ -471,12 +473,13 @@
                                         </select>
                                     </div>
                                     <br>
-                                    <button class="btn btn-primary" type="button"  style="width: 170px;height: 40px;font-size: 20px;padding: 0px;background-color:#e12f3e;opacity: 100px;border: none;">Submit</button>
+                                    <button id="submitButton" class="btn btn-primary" type="button">Submit</button>
 
                                    
                             </div>
              
         </main>
+        </div>
 
     <!-- Core -->
 <script src="../../vendor/@popperjs/core/dist/umd/popper.min.js"></script>

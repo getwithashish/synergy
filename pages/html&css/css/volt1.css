@@ -17,6 +17,57 @@
 */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
+
+body {
+    background-image: url('/assets/darkabstract.jpg');  /* Replace 'your-image-url.jpg' with the actual URL or path to your image file */
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust the background size as needed, 'cover' ensures the image covers the entire container */
+    background-position: center center; /* Center the background image horizontally and vertically */
+    background-attachment: fixed; /* Fixed background to prevent scrolling */
+    /* You can add more background properties or adjust these according to your design needs */
+
+}
+
+
+.bookingForm{
+    background: transparent;
+
+
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
+
+#bookingBox{
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: white;
+    font-family:monospace;
+}
+
+#bookYourTrain{
+    text-align: center;
+    color: rgb(255, 255, 255); 
+    font-family: 'Poppins', sans-serif;
+    font-weight:bolder;
+    text-shadow: 2px 2px 3px #ffffff;
+}
+
+#submitButton{
+    width: 170px;
+    height: 40px;
+    font-size: 20px;
+    padding: 0px;
+    background-color:#4bbb5a;
+    opacity: 100px;border: none;
+}
+
 .datepicker {
     display: none;
 }
