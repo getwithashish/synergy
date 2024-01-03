@@ -15,12 +15,14 @@ const trainFareUrl = "https://irctc1.p.rapidapi.com/api/v2/getFare";
 const trainByStationUrl = "https://irctc1.p.rapidapi.com/api/v3/getTrainsByStation";
 const liveStationUrl = "https://irctc1.p.rapidapi.com/api/v3/getLiveStation";
 
+
 const searchStation = async (params) => {
     return getRequest(searchStationUrl, params, rapidapiHeaders)
     .then((response) => {
         return response.data;
     });
 };
+
 
 const searchTrain = async (params) => {
     return getRequest(searchTrainUrl, params, rapidapiHeaders)
@@ -29,6 +31,7 @@ const searchTrain = async (params) => {
     });
 };
 
+
 const trainsBetweenStations = async (params) => {
     return getRequest(trainBetweenStationsUrl, params, rapidapiHeaders)
     .then((response) => {
@@ -36,12 +39,14 @@ const trainsBetweenStations = async (params) => {
     });
 };
 
+
 const getTrainLiveStatus = async (params) => {
     return getRequest(liveTrainStatusUrl, params, rapidapiHeaders)
     .then((response) => {
         return response.data;
     });
 };
+
 
 const getTrainSchedule = async (params) => {
     return getRequest(trainScheduleUrl, params, rapidapiHeaders)
