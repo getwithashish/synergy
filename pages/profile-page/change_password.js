@@ -2,6 +2,7 @@ function changePassword() {
   // Get old and new passwords from the form
   const oldPassword = document.getElementById("oldPassword").value;
   const newPassword = document.getElementById("newPassword").value;
+  const userEmail = "arjun@gmail.com";
 
   // Validate password before making the request
   if (!validatePassword()) {
@@ -15,7 +16,8 @@ function changePassword() {
 
   // Make an Axios request to change the password on the server
   axios
-    .post("http://your-api-endpoint/change-password", {
+    .post("http://localhost:3000/change-password", {
+      email: userEmail,
       oldPassword: oldPassword,
       newPassword: newPassword,
     })
