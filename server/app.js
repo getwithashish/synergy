@@ -20,6 +20,28 @@ app.get("/allFeedback", (req, res) => {
   res.status(200).send(feedbackData);
 });
 
+// Endpoint to change password. old password is checked from user credentials given above
+app.post('/change-password', (req, res) => {
+    const { email, oldPassword, newPassword } = req.body;
+
+    // Find the user by email
+    const user = userCredentials.find(u => u.email === email);
+
+    // If user not found or old password is incorrect, send an error response
+    if (!user || user.pass !== oldPassword) {
+        return res.status(401).json({ error: 'Invalid old password' });
+    }
+
+    // If old password is correct, update the password
+    user.pass = newPassword;
+
+    // Create a new JWT token (optional, if you use JWT for authentication)
+    // const newJwtToken = jwt.sign({ sub: user.email, name: user.name }, 'your_secret_key', { expiresIn: '1h' });
+    // user.jwt = newJwtToken;
+
+    // Send a success response
+    res.json({ message: 'Password changed successfully'});
+});
 
 app.listen(PORT, () => {
     console.log("Server listening on PORT: ", PORT);
@@ -316,4 +338,3 @@ const failedTransactions = [
 app.get('/failedTransactions', (req, res) => {
   res.status(200).json(failedTransactions);
 });
-
