@@ -1,7 +1,20 @@
 body {
     font-family: Arial, sans-serif;
   }
-  
+  .header {
+    /* Ensure the navigation bar doesn't overlap other content */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    padding-bottom: 50px;
+   /* background-color: #fff;  */
+    /* Add any other necessary styling */
+  }
+  #main_container{
+    padding-top: 80px;
+    
+  }
   .container {
     max-width: 600px;
     margin: 0 auto;
@@ -56,6 +69,15 @@ body {
   #liveStatuscontainer input[type="text"],
 #liveStatusContainer button {
   margin-right: 10px;
+}
+@media only screen and (max-width: 767px) {
+  /* Your CSS styles specific to mobile phones go here */
+  /* For example: */
+  
+  #lvsContainer {
+    width: 100%; /* Make containers full width for better mobile layout */
+  }
+  /* Add more styles as needed */
 }
 
 #seatAvailability{
