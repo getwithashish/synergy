@@ -101,9 +101,10 @@ p {
     padding-top: 140px;
 }
 #dashb{
-    background-image: url('../../../assets/devanshu-verma-HeAz1n6mVWE-unsplash.jpg');
+    background-image: url('../../../assets/pawel-czerwinski-JgWp9DNib3k-unsplash.jpg');
     /* Other background properties to control size, position, etc. */
     background-size: cover; /* Cover the entire body */
+    background-attachment: fixed;
     background-repeat: no-repeat; /* No repeating of the image */
 }
 #seatForm{
@@ -113,6 +114,13 @@ p {
     background-color: transparent;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
+}
+#day3,
+#day4,
+#day1,#day2
+/* Add more IDs if needed */
+{
+ box-shadow:0 8px 8px 0 rgba(0, 0, 0, 0.2);  
 }
 .datepicker {
     display: none;
