@@ -1,5 +1,5 @@
-// Function to submit form
-function submit_signup_Form() {
+// Submit Signup Form
+function submitSignupForm() {
   // Get form data
   const sign_up_name = document.getElementById("signupuserName").value;
   const sign_up_email = document.getElementById("signupuserEmail").value;
@@ -37,35 +37,40 @@ function submit_signup_Form() {
       .classList.remove("is-invalid");
     document.getElementById("signupuserEmail").classList.remove("is-invalid");
 
-    // Call the external function to submit data
-    submitData(signupdata)
-      .then((response) => {
-        // Handle the response here
-        const signupmessageContainer = document.getElementById(
-          "signupmessageContainer"
-        );
+    signup(signupdata)
+    .then((response) => {
+      // Handle the response here
+      const signupmessageContainer = document.getElementById(
+        "signupmessageContainer"
+      );
 
-        if (response.success) {
-          // Show success message
-          signupmessageContainer.innerHTML =
-            '<p style="color: green;">Registration successful!</p>';
-        } else {
-          // Show failure message
-          signupmessageContainer.innerHTML =
-            '<p style="color: red;">Registration failed. Please try again.</p>';
-        }
-      })
-      .catch((error) => {
-        // Handle error
-        console.error("Error in submitData:", error);
-
-        // Show error message
-        const signupmessageContainer = document.getElementById(
-          "signupmessageContainer"
-        );
+      if (response.status == "Success") {
+        // Show success message
         signupmessageContainer.innerHTML =
-          '<p style="color: red;">An error occurred. Please try again later.</p>';
-      });
+          '<p style="color: green;">Registration successful!</p>';
+          closesignupForm();
+
+          const parsedToken = parseJwt(data.token);
+          storeInLocalStorage(parsedToken);
+      } else {
+        // Show failure message
+        signupmessageContainer.innerHTML =
+          '<p style="color: red;">Registration failed. Please try again.</p>';
+      }
+    })
+    .catch((error) => {
+      // Handle error
+      console.error("Error in submitData:", error);
+
+      // Show error message
+      const signupmessageContainer = document.getElementById(
+        "signupmessageContainer"
+      );
+      signupmessageContainer.innerHTML =
+        '<p style="color: red;">An error occurred. Please try again later.</p>';
+    });
+
+    
   } else {
     // Display validation error messages
     if (!isValidSignUpName) {
@@ -91,7 +96,7 @@ function submit_signup_Form() {
 }
 
 // Function to submit form
-function submitForm() {
+function submitLoginForm() {
   // Get form data
   const email = document.getElementById("userEmail").value;
   const password = document.getElementById("userPassword").value;
@@ -105,12 +110,12 @@ function submitForm() {
   if (isValidPassword && isValidEmail) {
     // Check if all fields are valid
     // Prepare data object
-    const data = {
+    const loginData = {
       email: email,
       password: password,
     };
 
-    console.log("inside authenticate_login.js", data);
+    console.log("inside authenticate_login.js", loginData);
 
     // Clear previous validation feedback
     document.getElementById("passwordInvalidFeedback").innerHTML = "";
@@ -120,31 +125,33 @@ function submitForm() {
     document.getElementById("userPassword").classList.remove("is-invalid");
     document.getElementById("userEmail").classList.remove("is-invalid");
 
-    // Call the external function to submit data
-    submitData(data)
-      .then((response) => {
-        // Handle the response here
-        const messageContainer = document.getElementById("messageContainer");
+    signin(loginData)
+    .then((response) => {
+      // Handle the response here
+      const messageContainer = document.getElementById("loginmessageContainer");
 
-        if (response.success) {
-          // Show success message
-          messageContainer.innerHTML =
-            '<p style="color: green;">Registration successful!</p>';
-        } else {
-          // Show failure message
-          messageContainer.innerHTML =
-            '<p style="color: red;">Registration failed. Please try again.</p>';
-        }
-      })
-      .catch((error) => {
-        // Handle error
-        console.error("Error in submitData:", error);
-
-        // Show error message
-        const messageContainer = document.getElementById("messageContainer");
+      if (response.status == "Success") {
+        // Show success message
         messageContainer.innerHTML =
-          '<p style="color: red;">An error occurred. Please try again later.</p>';
-      });
+          '<p style="color: green;">Registration successful!</p>';
+
+          const parsedToken = parseJwt(response.jwt);
+          storeInLocalStorage(parsedToken);
+      } else {
+        // Show failure message
+        messageContainer.innerHTML =
+          '<p style="color: red;">Registration failed. Please try again.</p>';
+      }
+    })
+    .catch((error) => {
+      // Handle error
+      console.error("Error in submitData:", error);
+
+      // Show error message
+      const messageContainer = document.getElementById("messageContainer");
+      messageContainer.innerHTML =
+        '<p style="color: red;">An error occurred. Please try again later.</p>';
+    });
   } else {
     // Display validation error messages
 
@@ -188,90 +195,7 @@ function closesignupForm() {
 }
 
 
-
-
-/////////POST FOR CREATE ACCOUNT
-
-function submitCreateAccountData(signupdata) {
-  return fetch('URL', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(signupdata),
-  })
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-    
-  })
-  .then((signupdata) => {
-    console.log(signupdata);
-    // Check if the response contains a token field
-    if (signupdata.token) {
-      // parse jwt token
-      const parsedToken = parseJwt(signupdata.token);
-      for (const key in parsedToken) {
-        if (parsedToken.hasOwnProperty(key)) {
-          localStorage.setItem(key, parsedToken[key]);
-        }
-      }
-    }
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-    throw new Error('Failed to send data to the server');
-  });
-}
-
-
-
-
-
-/////POST FOR  LOGIN
-function submitLoginData(data) {
-  return fetch('URL', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    // console.log(data);
-    return response.json();
-    
-  })
-  .then((data) => {
-    console.log(data);
-    // Check if the response contains a token field
-    if (data.token) {
-      // parse the token
-      const parsedToken = parseJwt(data.token);
-
-// Store the payload in local storage as key-value pairs
-for (const key in parsedToken) {
-  if (parsedToken.hasOwnProperty(key)) {
-    localStorage.setItem(key, parsedToken[key]);
-  }
-}
-    }
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-    throw new Error('Failed to send data to the server');
-  });
-}
-
-
-
-
-//function to parse jwt
+// Parse JWT
 
 function parseJwt(token) {
   const base64Url = token.split('.')[1];
@@ -280,4 +204,12 @@ function parseJwt(token) {
     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
   }).join(''));
   return JSON.parse(jsonPayload);
+}
+
+function storeInLocalStorage(parsedToken){
+  for (const key in parsedToken) {
+    if (parsedToken.hasOwnProperty(key)) {
+      localStorage.setItem(key, parsedToken[key]);
+    }
+  }
 }
