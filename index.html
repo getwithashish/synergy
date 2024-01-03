@@ -238,34 +238,34 @@ Larger Map</a></small>
     <script src="src/map.js"></script>
 
 
-           <div class="container">
+           <div class="container" id="f_container">
             <div class="row">
               <div class="col-lg-6 col-md-8 col-sm-12 col-12">
-                <div class="form-container">
+                <div class="form-container" id="form_container">
                 <form class="form p-3 ">
                   <div class="mb-3">
-                    <label for="departure from" class="form-label">Depart from</label>
+                    <label for="departure from" class="form-label" id="depart_form" style="color:rgb(250, 249, 249)">Depart from</label>
                     <!-- <input type="text" class="form-control" id="departure from" placeholder="Enter departure place" required> -->
 
                     <div class="autoComplete_wrapper">
-                      <input style="width: 100%;" id="autocompleteSrcStation" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off">
+                      <input class="col-xl-3 col-lg-6 col-md-8 col-sm-12 col-12" style="width: 100%;" id="autocompleteSrcStation" style="width: 220px;" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off">
                   </div>
 
                   </div>
                   <div class="mb-3">
-                      <label for="arrival at" class="form-label">Arrive at</label>
+                      <label for="arrival at" class="form-label" id="arrival_form" style="color:rgb(250, 249, 249)">Arrive at</label>
                       <!-- <input type="text" class="form-control" id="arrival at" placeholder="Enter arrival place" required> -->
 
                       <div class="autoComplete_wrapper">
-                        <input style="width: 100%;" id="autocompleteDestStation" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off">
+                        <input style="width: 100%;" id="autocompleteDestStation" style="width: 220px;" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off">
                     </div>
 
                     </div>
 
                           <div class="row">
                         <div class=" col-12 mb-3">
-                          <label for="departure date " class="form-label">Departure date</label>
-                          <input type="date" class="form-control" id="departure date" placeholder="">
+                          <label for="departure date " class="form-label" id="dep_date" style="color:rgb(250, 249, 249)">Departure date</label>
+                          <input type="date" class="form-control" id="departure_date" placeholder="">
                         </div>
                       </div>
           
@@ -274,7 +274,7 @@ Larger Map</a></small>
                       <div class="container">
                         <div class="row">
                           <div class="col-md-12"> 
-                            <button type="submit" class="btn btn-primary btn-block" style="width:100%;">Find Train</button>
+                            <button type="submit" class="btn btn-primary btn-block" style="width:100%;" id="sub_button">Find Train</button>
                           </div>
                         </div>
                       </div>
