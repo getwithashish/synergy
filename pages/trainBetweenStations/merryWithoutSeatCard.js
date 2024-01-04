@@ -91,7 +91,8 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
 
         seatClassSection.style.display = 'flex';
         seatClassSection.style.gap = '10px'; 
-
+        seatClassSection.style.width = '100%';        
+        
         // Loop through each seat class
         train.class_type.forEach(classType => {
             // Create a seat card
@@ -120,63 +121,68 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
             seatClassSection.appendChild(seatCard);
         });
 
+        // const runDayDiv = document.createElement('div');
+        // runDayDiv.classList.add('runDayDiv');
+        // runDayDiv.style.marginLeft = 'auto'; // Align to the right
+        // runDayDiv.style.display = 'flex'; // Set to flex to display run days side by side
+
+
+        // // Loop through each run day and create a paragraph
+        //     train.run_days.forEach(runDay => {
+        //     const runDayParagraph = document.createElement('p');
+        //     runDayParagraph.textContent = runDay;
+        //     runDayParagraph.style.marginRight = '5px'; // Adjust the gap as needed
+        //     runDayParagraph.style.fontStyle = 'italic'; // Set to italic
+
+        // You can add additional styling to runDayParagraph if needed
+        //     runDayDiv.appendChild(runDayParagraph);
+        // });
+
+        
+
         const runDayDiv = document.createElement('div');
         runDayDiv.classList.add('runDayDiv');
-        runDayDiv.style.marginLeft = 'auto'; // Align to the right
-        runDayDiv.style.display = 'flex'; // Set to flex to display run days side by side
+        
+        
+        const allDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        
+        allDays.forEach(day => {
+            const runDayCard = document.createElement('div');
+            runDayCard.classList.add('runDayCard');
+        
+            const runDayHeader = document.createElement('div');
+            runDayHeader.classList.add('runDayHeader');
+        
+            // Convert the first character to uppercase
+            const shortenedDay = day.charAt(0);
+            runDayHeader.textContent = shortenedDay;
+        
+            const runDayBody = document.createElement('div');
+            runDayBody.classList.add('runDayBody');
+            console.log(train.run_days,day)
 
+            // Check if the capitalized day is in train.run_days
+            if (train.run_days.includes(day)) {
 
-        // Loop through each run day and create a paragraph
-        train.run_days.forEach(runDay => {
-            const runDayParagraph = document.createElement('p');
-            runDayParagraph.textContent = runDay;
-            runDayParagraph.style.marginRight = '5px'; // Adjust the gap as needed
-            runDayParagraph.style.fontStyle = 'italic'; // Set to italic
-
-            // You can add additional styling to runDayParagraph if needed
-            runDayDiv.appendChild(runDayParagraph);
-        });
-
-        const runDayDiv = document.createElement('div');
-        runDayDiv.classList.add('runDayDiv');
-        runDayDiv.style.marginLeft = 'auto'; // Align to the right
-        runDayDiv.style.display = 'flex'; // Set to flex to display run days side by side
-
-        // Define the days of the week
-        const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-
-        // Loop through each day of the week
-        daysOfWeek.forEach(day => {
-            const card = document.createElement('div');
-            card.classList.add('card'); // Add a class for card styling
-
-            const cardContent = document.createElement('p');
-            cardContent.textContent = day;
-            cardContent.style.fontStyle = 'bold'; // Set to italic
-
-            // Highlight in yellow 
-            if (day === "Mon") {
-                card.style.backgroundColor = 'yellow';
-            } else if (day === "Tue") {
-                card.style.backgroundColor = 'yellow';
-            } else if (day === "Wed") {
-                card.style.backgroundColor = 'yellow';
-            } else if (day === "Thu") {
-                card.style.backgroundColor = 'yellow';
-            } else if (day === "Fri") {
-                card.style.backgroundColor = 'yellow';
-            } else if (day === "Sat") {
-                card.style.backgroundColor = 'yellow';
-            } else if (day === "Sun") {
-                card.style.backgroundColor = 'yellow';
+                runDayCard.classList.add('highlight');
             }
+        
+            runDayCard.appendChild(runDayHeader);
+            runDayCard.appendChild(runDayBody);
+        
+            runDayDiv.appendChild(runDayCard);
+        });
+       
+        // Set display property to flex to make the run day cards appear side by side
+        runDayDiv.style.display = 'flex';
 
-    // Append content to the card
-    card.appendChild(cardContent);
+        // Adjust gap between run day cards if needed
+        runDayDiv.style.gap = '5px';
 
-    // You can add additional styling to the card if needed
-    runDayDiv.appendChild(card);
-});
+        runDayDiv.style.marginLeft = 'auto';
+
+        // cardBody.appendChild(runDayDiv);
+        // trainDetailsContainer.appendChild(cardBody);
 
 
 
