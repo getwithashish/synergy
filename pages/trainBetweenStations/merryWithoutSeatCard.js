@@ -97,7 +97,7 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
             const seatCard = document.createElement('div');
             seatCard.classList.add('seatCardType', 'card');
 
-            
+
             // Create individual seat content
             const individualSeat = document.createElement('div');
             individualSeat.classList.add('IndividualSeat', 'card-body');
@@ -135,6 +135,48 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
             // You can add additional styling to runDayParagraph if needed
             runDayDiv.appendChild(runDayParagraph);
         });
+
+        const runDayDiv = document.createElement('div');
+        runDayDiv.classList.add('runDayDiv');
+        runDayDiv.style.marginLeft = 'auto'; // Align to the right
+        runDayDiv.style.display = 'flex'; // Set to flex to display run days side by side
+
+        // Define the days of the week
+        const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+        // Loop through each day of the week
+        daysOfWeek.forEach(day => {
+            const card = document.createElement('div');
+            card.classList.add('card'); // Add a class for card styling
+
+            const cardContent = document.createElement('p');
+            cardContent.textContent = day;
+            cardContent.style.fontStyle = 'bold'; // Set to italic
+
+            // Highlight in yellow 
+            if (day === "Mon") {
+                card.style.backgroundColor = 'yellow';
+            } else if (day === "Tue") {
+                card.style.backgroundColor = 'yellow';
+            } else if (day === "Wed") {
+                card.style.backgroundColor = 'yellow';
+            } else if (day === "Thu") {
+                card.style.backgroundColor = 'yellow';
+            } else if (day === "Fri") {
+                card.style.backgroundColor = 'yellow';
+            } else if (day === "Sat") {
+                card.style.backgroundColor = 'yellow';
+            } else if (day === "Sun") {
+                card.style.backgroundColor = 'yellow';
+            }
+
+    // Append content to the card
+    card.appendChild(cardContent);
+
+    // You can add additional styling to the card if needed
+    runDayDiv.appendChild(card);
+});
+
 
 
         // Append run days div to seat class section
