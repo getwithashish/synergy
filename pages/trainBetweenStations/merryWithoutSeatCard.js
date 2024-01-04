@@ -4,7 +4,8 @@
 async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJourney) {
     const options = {
         method: 'GET',
-        url: 'https://irctc1.p.rapidapi.com/api/v3/trainBetweenStations',
+        // url: 'https://irctc1.p.rapidapi.com/api/v3/trainBetweenStations',
+        url: 'http://localhost:3000/trainBetweenStations',
         params: {
             fromStationCode: 'CGY',
             toStationCode: 'KZK',

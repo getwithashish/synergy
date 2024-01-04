@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pop-up Container</title>
+ <link rel="stylesheet" href="/css/">
+ <!-- <script src="/html&css/css/popbutton.js"></script> -->
+</head>
+
+<body>
+
+<button id="popupBtn">Open Pop-up</button>
+
+<div class="blur-container" id="blurContainer">
+  <div class="popup">
+    <span id="closePopup">&times;</span>
+    <p>hello</p>
+  </div>
+</div>
+
+<script>
+  const popupBtn = document.getElementById('popupBtn');
+  const blurContainer = document.getElementById('blurContainer');
+  const closePopup = document.getElementById('closePopup');
+
+  popupBtn.addEventListener('click', function() {
+    blurContainer.style.display = 'flex';
+  });
+
+  closePopup.addEventListener('click', function() {
+    blurContainer.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>

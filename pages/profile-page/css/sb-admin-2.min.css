@@ -5344,7 +5344,8 @@ a.bg-dark:focus,a.bg-dark:hover,button.bg-dark:focus,button.bg-dark:hover {
 	border-radius:.3rem!important
 }
 .rounded-circle {
-	border-radius:50%!important
+	border-radius:50%!important;
+	margin-right:-30px;
 }
 .rounded-pill {
 	border-radius:50rem!important
