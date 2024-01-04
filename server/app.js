@@ -4,6 +4,8 @@ const multer = require("multer");
 
 const cors = require('cors');
 
+const fs = require('fs');
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -374,3 +376,16 @@ function findBookingEntry(pnrNumber, trainNumber) {
 
   return null;
 }
+
+// Endpoint to get trains between stations
+app.get("/trainBetweenStations", (req, res) => {
+    fs.readFile("trainBetweenStationsDummyData.json", "utf8", (err, data) => {
+        if (err) {
+            console.error('Error reading JSON file:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+          }
+          const jsonData = JSON.parse(data);
+          res.json(jsonData);
+    })
+})

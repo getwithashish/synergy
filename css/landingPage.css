@@ -105,29 +105,29 @@ input {
 } */
 #depart_form{
 padding-right: 50px;
-margin-left: 20px;
+/* margin-left: 20px; */
 }
 #arrival_form{
 padding-right: 80px;
-margin-left: 20px;
+/* margin-left: 20px; */
 }
 #autoComplete_wrapper{
   width: 150px;
 }
-#dep_date{
-  margin-left: 20px;
-}
+/* #dep_date{
+  margin-left: 2px;
+} */
 #departure_date{
   width:220px;
-  margin-left: 22px;
+  /* margin-left: 22px; */
 }
 /* .btn btn-primary{
   width:120px;
 } */
-#autocompleteSrcStation{
+/* #autocompleteSrcStation{
   margin-left: 15px;
 }
 #autocompleteDestStation{
   margin-left: 15px;
-}
+} */
 
