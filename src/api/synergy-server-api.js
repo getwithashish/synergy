@@ -8,7 +8,7 @@ const signupEndpoint = "/signup";
 const signinEndpoint = "/signin";
 const userDataEndpoint = "/getUserData";
 
-const trainsBetweenStationsEndpoint = "/trainBetweenStations";
+const trainsBetweenStationsDummyEndpoint = "/trainBetweenStations";
 
 const signup = async (params) => {
     return postRequest(`${synergyServerUrl}${signupEndpoint}`, params, synergyServerHeaders)
@@ -32,7 +32,7 @@ const getUserData = async (params) => {
 };
 
 const getTrainsBetweenStations = async (params) => {
-    return getRequest(`${synergyServerUrl}${trainsBetweenStationsEndpoint}`, params, synergyServerHeaders)
+    return getRequest(`${synergyServerUrl}${trainsBetweenStationsDummyEndpoint}`, params, synergyServerHeaders)
     .then((response) => {
         console.log("Inside Trains Function")
         return response;
