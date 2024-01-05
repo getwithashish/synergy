@@ -6,6 +6,9 @@
 
 
 .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(7.5px);
@@ -38,3 +41,61 @@
   font-size: 18px;  
 }
   
+
+
+.topsection {
+    display: flex;
+    justify-content: space-between; /* Space elements evenly within the container */
+    width: 100%; /* Ensure it takes the full width of the card-body */
+}
+
+.nameandnumber {
+    font-weight: bold;
+}
+
+.timeandtofro {
+    text-align: right; /* Align text to the right within this container */
+    flex-grow: 1;
+}
+
+
+
+.runDayCard {
+
+    margin-left: 3rem;
+    border: 1px solid #ccc;
+    color: #ccc;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20%;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+}
+
+
+/* .runDayDiv {
+    display: flex;
+} */
+
+
+.runDayDiv {
+    margin-left: auto;
+    display: flex;
+}
+
+.runDayCard {
+    border: 1px solid #ccc;
+    color: #ccc;
+    background-color: #9b9b9b; /* Highlight color for selected days */
+
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20%;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+}
+
+.runDayCard.highlight {
+    color: #ffffff;
+    background-color: #008000; /* Highlight color for selected days */
+    box-shadow: 5px 5px 10px rgba(33, 33, 33, 0.5); /* Shadow color for highlighted days */
+    transform: rotate(3deg); /* Rotate by 3 degrees for a subtle 3D effect */
+}

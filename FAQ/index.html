@@ -4,21 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/navBar.css">
-  <title>FAQ</title>
-  <script src="faq.js"></script>
-
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>FAQ Template | CodyHouse</title>
 </head>
 
-
-
 <body style="margin-top: 5rem; margin: 0;
-background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;height: 100vh;background-attachment: fixed;"">
-
-
-
-<div class="bgimage" style="background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;height: 100vh;background-attachment: fixed;">
+background-image: url('assets/images/faq_bg.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;height: 100vh;background-attachment: fixed;"">
 
 
 
@@ -41,33 +32,35 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
         </nav>
 
     </header>
+
 <div class="notNav">
 
-	<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
+	
+<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
+	<ul class="cd-faq__categories">
+		<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#basics">PNR</a></li>
+		<li><a class="cd-faq__category truncate" href="#mobile">Codes</a></li>
+		<li><a class="cd-faq__category truncate" href="#account">Tatkal</a></li>
+		<li><a class="cd-faq__category truncate" href="#payments">Booking</a></li>
+		<li><a class="cd-faq__category truncate" href="#privacy">Privacy</a></li>
+		<li><a class="cd-faq__category truncate" href="#delivery">Delivery</a></li>
+	</ul> <!-- cd-faq__categories -->
 
-		<ul class="cd-faq__categories" style="position: fixed; top: 5rem;">
-			<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#PNR" >PNR</a></li>
-			<li><a class="cd-faq__category truncate"  href="#Codes">Codes</a></li>
-			<li><a class="cd-faq__category truncate"  href="#Tatkal">Tatkal</a></li>
-			<li><a class="cd-faq__category truncate" href="#Booking">Booking</a></li>
-		</ul>
-
-	<div class="cd-faq__items" style="padding-left: 15rem;">
-		<ul  class="cd-faq__group">
-			<!-- <li class="cd-faq__title"><h2>PNR</h2></li> -->
-			<br>
+	<div class="cd-faq__items">
+		<ul id="basics" class="cd-faq__group">
+			<!-- <li class="cd-faq__title"><h2>Basics</h2></li> -->
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" ><span id="PNR">What is a PNR?</span></a>
+				<a class="cd-faq__trigger" href="#0"><span>What is a PNR?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>
+			<p>
 				PNR - Passenger Name Record is an unique number that recognizes your booking.<br>
 	PNR is a travel record of an individual or a group of individuals, maintained in CRS (Central Reservation System) database.<br>
 	This code is generated only when the CRS gets full data of journey like passenger's name, gender, age, train number, journey class, berth preference, contact link, etc
 	PNR is per ticket and not for person. If multiple members are booked together on one ticket, then Only one PNR number will be allocated for it.
 	Indian Railways has a 10-digit numerical PNR number.
-			</p>
-          </div>
+			</p>         
+		 </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
@@ -78,8 +71,9 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 			<p>PNR is utilized to get the Confirmed or Waitlisted status of your booking along with the coach and seat numbers.
 				Basically PNR is used in "follow-up" process by which passengers are able to get updates about the status of their journey.
 				This 10-digit numerical PNR number of Indian Railways is of great use to passengers, whose tickets are not confirmed.
-				PNR helps passengers to check whether their tickets got confirmed or not.</p>
-		</div>
+				PNR helps passengers to check whether their tickets got confirmed or not.
+			</p>
+		          </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
@@ -90,8 +84,9 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 			<p>On a paper ticket released in a railway booking counter, the PNR number is on the top left of the ticket.
 				The PNR number on ticket might be split right into 3-7(digits) form (e.g. 890-1234567) on paper ticket.
 				On IRCTC e-ticket or any other agency e-ticket the PNR number can be on the top left of the ticket.
-				PNR might also be on SMS alert on your mobile if you have booked e-ticket and provided your mobile number.</p>
-          </div>
+				PNR might also be on SMS alert on your mobile if you have booked e-ticket and provided your mobile number.
+			</p>         
+		 </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
@@ -102,8 +97,8 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 			<p>PNR <10-digit PNR Number> to 139
 				PNR <10-digit PNR Number> to 54959
 				PNR <10-digit PNR number> to 5676747
-				IRPNR <10-digit PNR Number> to 57886</p>
-          </div>
+				IRPNR <10-digit PNR Number> to 57886
+				</p>          </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
@@ -114,16 +109,14 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 			<p>There could be 3 possible reasons
 				1. You entered wrong PNR number(Please check PNR then try again ).
 				2. Web servers are down.(In this case check again couple of minutes).
-				3 Indian Railways Servers Maintenance happens at 11:30pm - 12:30am (Check again after 12:30 AM).</p>
-          </div>
+				3 Indian Railways Servers Maintenance happens at 11:30pm - 12:30am (Check again after 12:30 AM).
+			</p>
+		  </div>
 				</div> <!-- cd-faq__content -->
 			</li>
-		</ul> <!-- cd-faq__group -->
 
-		<ul id="Codes" class="cd-faq__group">
-			<!-- <li class="cd-faq__title"><h2>Mobile</h2></li> -->
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" ><span>What is "Chart Not Prepared" status?</span></a>
+				<a class="cd-faq__trigger" href="#0"><span>What is "Chart Not Prepared" status?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
 			<p>The last booking chart for a train will be done at least 4hrs prior to the schedule departure of the train at origination station.
@@ -132,16 +125,22 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 				Your booking standing might change any time till chart is prepared.
 				Though quite uncommon, it is possible that an RAC ticket can change to wait-listed status.
 				It is also possible that booking relocated from WL to CNF can return to RAC or WL.
-				However none of this will certainly not happen for a ticket which was CNF while Booking itself.</p>
-		</div>
+				However none of this will certainly not happen for a ticket which was CNF while Booking itself.
+			</p>   
+		  </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="mobile" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Codes</h2></li>
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" id="Codes"><span>What are different type of Class Codes and their meaning?</span></a>
+				<a class="cd-faq__trigger" href="#0"><span>What are different type of Class Codes and their meaning?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-			<p><h2>Train Classes</h2>
+			<p>
+				<h2>Train Classes</h2>
 
 				<table border="1]">
 					<tr>
@@ -180,8 +179,9 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 						<td>2S</td>
 						<td>Second Sitting</td>
 					</tr>
-				</table></p>
-		</div>
+				</table>
+			</p>
+		          </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
@@ -191,100 +191,109 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
           <div class="text-component">
 			<h2>Reservation Quotas</h2>
 
-				<table border="1">
-					<tr>
-						<th>Code</th>
-						<th>Description</th>
-					</tr>
-					<tr>
-						<td>GN</td>
-						<td>General Quota</td>
-					</tr>
-					<tr>
-						<td>CK</td>
-						<td>Tatkal Quota</td>
-					</tr>
-					<tr>
-						<td>PT</td>
-						<td>Premium Tatkal Quota</td>
-					</tr>
-					<tr>
-						<td>RC(RAC)</td>
-						<td>Reservation Against Cancellation</td>
-					</tr>
-					<tr>
-						<td>LB</td>
-						<td>Lower Berth</td>
-					</tr>
-					<tr>
-						<td>PQ</td>
-						<td>Pooled Quota</td>
-					</tr>
-					<tr>
-						<td>OS</td>
-						<td>Out Station</td>
-					</tr>
-					<tr>
-						<td>RS</td>
-						<td>Road Side</td>
-					</tr>
-					<tr>
-						<td>GNRS</td>
-						<td>General Quota Road Side</td>
-					</tr>
-					<tr>
-						<td>LD</td>
-						<td>Ladies Quota</td>
-					</tr>
-					<tr>
-						<td>SS</td>
-						<td>Female(above 45 Year)/Senior Citizen/Travelling alone</td>
-					</tr>
-					<tr>
-						<td>HP</td>
-						<td>Physically Handicapped Quota</td>
-					</tr>
-					<tr>
-						<td>YU</td>
-						<td>Yuva</td>
-					</tr>
-					<tr>
-						<td>HO</td>
-						<td>Head quarters/high official Quota</td>
-					</tr>
-					<tr>
-						<td>DF</td>
-						<td>Defence Quota</td>
-					</tr>
-					<tr>
-						<td>PH</td>
-						<td>Parliament house Quota</td>
-					</tr>
-					<tr>
-						<td>FT</td>
-						<td>Foreign Tourist Quota</td>
-					</tr>
-					<tr>
-						<td>DP</td>
-						<td>Duty Pass Quota</td>
-					</tr>
-					<tr>
-						<td>RE</td>
-						<td>Railway Employee Staff on Duty for the train same as above</td>
-					</tr>
-				</table>
-		</div>
+			<table border="1">
+				<tr>
+					<th>Code</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>GN</td>
+					<td>General Quota</td>
+				</tr>
+				<tr>
+					<td>CK</td>
+					<td>Tatkal Quota</td>
+				</tr>
+				<tr>
+					<td>PT</td>
+					<td>Premium Tatkal Quota</td>
+				</tr>
+				<tr>
+					<td>RC(RAC)</td>
+					<td>Reservation Against Cancellation</td>
+				</tr>
+				<tr>
+					<td>LB</td>
+					<td>Lower Berth</td>
+				</tr>
+				<tr>
+					<td>PQ</td>
+					<td>Pooled Quota</td>
+				</tr>
+				<tr>
+					<td>OS</td>
+					<td>Out Station</td>
+				</tr>
+				<tr>
+					<td>RS</td>
+					<td>Road Side</td>
+				</tr>
+				<tr>
+					<td>GNRS</td>
+					<td>General Quota Road Side</td>
+				</tr>
+				<tr>
+					<td>LD</td>
+					<td>Ladies Quota</td>
+				</tr>
+				<tr>
+					<td>SS</td>
+					<td>Female(above 45 Year)/Senior Citizen/Travelling alone</td>
+				</tr>
+				<tr>
+					<td>HP</td>
+					<td>Physically Handicapped Quota</td>
+				</tr>
+				<tr>
+					<td>YU</td>
+					<td>Yuva</td>
+				</tr>
+				<tr>
+					<td>HO</td>
+					<td>Head quarters/high official Quota</td>
+				</tr>
+				<tr>
+					<td>DF</td>
+					<td>Defence Quota</td>
+				</tr>
+				<tr>
+					<td>PH</td>
+					<td>Parliament house Quota</td>
+				</tr>
+				<tr>
+					<td>FT</td>
+					<td>Foreign Tourist Quota</td>
+				</tr>
+				<tr>
+					<td>DP</td>
+					<td>Duty Pass Quota</td>
+				</tr>
+				<tr>
+					<td>RE</td>
+					<td>Railway Employee Staff on Duty for the train same as above</td>
+				</tr>
+			</table>
+		          </div>
 				</div> <!-- cd-faq__content -->
+			</li>
+
+			<!-- <li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How do I link to a file or folder?</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+          </div>
+				</div>  -->
 			</li>
 		</ul> <!-- cd-faq__group -->
 
-		<ul id="Codes1" class="cd-faq__group">
+		<ul id="account" class="cd-faq__group">
 			<!-- <li class="cd-faq__title"><h2>Account</h2></li> -->
 			<li class="cd-faq__item">
 				<a class="cd-faq__trigger" href="#0"><span>What are different type of Coach Codes and their meaning?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-			 <h2>Coach Information</h2>
+<h2>Coach Information</h2>
     
 				<table class="class_information">
 					<tr>
@@ -387,13 +396,12 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 						<td>Second Class Executive Chair</td>
 						<td>It is a non-Air-conditioned version of Class E.</td>
 					</tr>
-				</table>
-		</div>
+				</table>          </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>How does Reservations work and Booking Status changed ?</span></a>
+				<a class="cd-faq__trigger" href="#0"><span>How does Railway Reservations work and Booking Status changed ?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
 			<p>When all available seats on a train are sold, Indian Railway or IRCTC releases RACs for railway reservations.
@@ -402,19 +410,19 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 				These cancellations can get you on the train if you bought an RAC or WL ticket.
 				When the reservation chart of a particular train is ready (usually meaning that the train is due to depart in a few hours) and there are still some available tickets in different quotas, those will be given to RAC/WL ticket holders.
 				Usually booking are upgraded step by step.</p>
-		</div>
+			          </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span id="tatkalSection">What is TATKAL Booking and how it is done?</span></a>
+				<a class="cd-faq__trigger" href="#0"><span>What is TATKAL Booking and how it is done?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
 			<p>Tatkal booking is meant for immediate travel plans.
 				Tatkal booking for every train opens 1 days in advance at 10 am for AC (Air conditioned Class) and at 11 Am for Non-Ac.
 				You can book tatkal e-ticket online irctc.co.in or any other online booking agency.
 				Every train and class has a defined tatkal quota and it varies from station to station.</p>
-		</div>
+			          </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
@@ -461,14 +469,13 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 						<td>400.00</td>
 					</tr>
 				</table>
-			</p>
-		</div>
+			</p>          </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 		</ul> <!-- cd-faq__group -->
 
-		<ul id="Tatkal" class="cd-faq__group">
-			<!-- <li class="cd-faq__title"><h2>Payments</h2></li> -->
+		<ul id="payments" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Booking</h2></li>
 			<li class="cd-faq__item">
 				<a class="cd-faq__trigger" href="#0"><span>What are TATKAL Booking conditions?</span></a>
 				<div class="cd-faq__content">
@@ -481,96 +488,9 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 				Student Identity Card with photograph issued by recognized School/College for their students.
 				Nationalized Bank Passbok with photograph.
 				Credit cards issued by banks with laminated photograph.
-				Unique Identification Card "Aadhaar".</p>
-		</div>
+				Unique Identification Card "Aadhaar".</p>          </div>
 				</div> <!-- cd-faq__content -->
 			</li>
-
-			<ul id="delivery" class="cd-faq__group">
-				<!-- <li class="cd-faq__title"><h2>Tatkal</h2></li> -->
-				<li class="cd-faq__item">
-					<a class="cd-faq__trigger" href="#0"><span>What are the various classes of travel available in Tatkal?</span></a>
-					<div class="cd-faq__content">
-			  <div class="text-component">
-				<p>Tatkal bookings are allowed in all classes except First AC and Executive class.</p>
-			</div>
-					</div> <!-- cd-faq__content -->
-				</li>
-	
-				<li class="cd-faq__item">
-					<a class="cd-faq__trigger" href="#0"><span>Can I select ladies or general quota along with tatkal quota?</span></a>
-					<div class="cd-faq__content">
-			  <div class="text-component">
-				<p>Ladies and general quota cannot be opted for along with Tatkal quota</p>
-			</div>
-					</div> <!-- cd-faq__content -->
-				</li>
-	
-				<li class="cd-faq__item">
-					<a class="cd-faq__trigger" href="#0"><span>Can I book tatkal ticket from all locations?</span></a>
-					<div class="cd-faq__content">
-			  <div class="text-component">
-				<p>Tatkal tickets will be issued for actual distance of travel, instead of end-to-end, subject to the distance restriction applicable to the train. The same Tatkal berth/seat may be booked in multiple legs till preparation of charts.For some trains/class/locations Tatkal quota may not be available. Please check the availability before booking.	 
-				</p>
-			</div>
-					</div> <!-- cd-faq__content -->
-				</li>
-	
-				<li class="cd-faq__item">
-					<a class="cd-faq__trigger" href="#0"><span>What are the rules for cancellation?</span></a>
-					<div class="cd-faq__content">
-			  <div class="text-component">
-				<p>No refund will be granted on cancellation of confirmed Tatkal tickets. For contingent cancellation & waitlisted Tatkal ticket cancellations, charges will be deducted as per existing Railway rules.</p>
-			</div>
-					</div> <!-- cd-faq__content -->
-				</li>
-	
-				<li class="cd-faq__item">
-					<a class="cd-faq__trigger" href="#0"><span>How much extra should I pay for my ticket?</span></a>
-					<div class="cd-faq__content">
-			  <div class="text-component">
-				<p>Tatkal charges per passenger in addition to normal ticket.
-	
-					The Tatkal Charges have been fixed as a percentage of fare at the rate of 10% of basic fare for second class and 30% of basic fare for all other classes subject to minimum and maximum as given in the table below:-
-				</p>
-				<table>
-					<tr>
-					  <th>Class of Travel</th>
-					  <th>Minimum Tatkal Charges (in Rs.)</th>
-					  <th>Maximum Tatkal Charges (in Rs.)</th>
-					</tr>
-					<tr>
-					  <td>Second (sitting)</td>
-					  <td>10</td>
-					  <td>15</td>
-					</tr>
-					<tr>
-					  <td>Sleeper</td>
-					  <td>100</td>
-					  <td>200</td>
-					</tr>
-					<tr>
-					  <td>AC Chair Car</td>
-					  <td>125</td>
-					  <td>225</td>
-					</tr>
-					<tr>
-					  <td>AC 3 Tier</td>
-					  <td>300</td>
-					  <td>400</td>
-					</tr>
-					<tr>
-					  <td>AC 2 Tier</td>
-					  <td>400</td>
-					  <td>500</td>
-					</tr>
-					<tr>
-					  <td>Executive</td>
-					  <td>400</td>
-					  <td>500</td>
-					</tr>
-				  </table>
-			</div>
 
 			<li class="cd-faq__item">
 				<a class="cd-faq__trigger" href="#0"><span>Cancellation Rules & Refunds</span></a>
@@ -692,8 +612,7 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 
   <p>
     If your train is ready for departure and its reservation chart is finalized, the cost of your WL ticket will be automatically refunded to your bank account.
-  </p>
-		</div>
+  </p>          </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
@@ -704,16 +623,15 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 			<p>Passengers have to be careful about their details provided while booking train tickets.
 				Your personal information could be stolen as they were publicly pasted on rail coaches after chart preparation.
 				The only way to protect yourself from fraudulent transactions, is to avoid quoting PAN details for identity proof.
-				Don't mention your PAN card as ID proof while booking train tickets</p>
-		</div>
+				Don't mention your PAN card as ID proof while booking train tickets</p>          </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 		</ul> <!-- cd-faq__group -->
 
 		<ul id="privacy" class="cd-faq__group">
-			<!-- <li class="cd-faq__title"><h2>Privacy</h2></li> -->
+			<li class="cd-faq__title"><h2>Insurance</h2></li>
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Am I Insured while Travelling on Railways?</span></a>
+				<a class="cd-faq__trigger" href="#0"><span>	Am I Insured while Travelling on Railways?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
 			<p>Indian Railways provides free insurance to the passengers.<br>
@@ -722,7 +640,7 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 				The insurance not only covers the travelling passenger, it covers the person who came to receive someone with valid platform ticket.
 				If you have a valid platform or travel ticket and you get insured or dead because of any terror or due to railway negligence, you are covered under insurance.
 				Railway Claim Tribunal will decide the amount you are liable for insurance depends upon severity.</p>
-		</div>
+			    </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
@@ -731,40 +649,21 @@ background-image: url('../assets/faq_bg.jpg');background-repeat: no-repeat;backg
 				<div class="cd-faq__content">
           <div class="text-component">
 			<p> It is compulsory for children aged between the ages 5 to 12 years to buy a train ticket.</p>
-		</div>
-				</div> <!-- cd-faq__content -->
-			</li>
-
-			<!-- <li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>How can I access my account data?</span></a>
-				<div class="cd-faq__content">
-          <div class="text-component">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus magni vero deserunt enim et quia in aliquam, rem tempore voluptas illo nisi veritatis quas quod placeat ipsa! Error qui harum accusamus incidunt at libero ipsum, suscipit dolorum esse explicabo in eius voluptates quidem voluptatem inventore amet eaque deserunt veniam dignissimos excepturi? Dolore, quo amet nostrum autem nemo. Sit nam assumenda, corporis ea sunt distinctio nostrum doloribus alias, beatae nesciunt dolore saepe consequuntur minima eveniet porro dolor officiis maiores ab obcaecati officia enim aliquam. Itaque fuga molestiae hic accusantium atque corporis quia id sequi enim vero? Hic aperiam sint facilis aliquam quia, accusamus tenetur earum totam enim est, error. Iusto, reiciendis necessitatibus molestias. Voluptatibus eos explicabo repellat nesciunt nam vero minima.</p>
           </div>
 				</div> <!-- cd-faq__content -->
-			<!-- </li> --> 
-
-			<!-- cd-faq__group -->
-
-		
-				</div> <!-- cd-faq__content -->
 			</li>
+		</ul> <!-- cd-faq__group -->
 
-			 <!-- cd-faq__items -->
-
+ <!-- cd-faq__group -->
+	</div> <!-- cd-faq__items -->
 
 	<a href="#0" class="cd-faq__close-panel text-replace">Close</a>
   
   <div class="cd-faq__overlay" aria-hidden="true"></div>
-
-	</section> <!-- cd-faq -->
-
+</section> <!-- cd-faq -->
 </div>
 
-</div>
-
-
-<script src="js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
-<script src="js/main.js"></script> 
+<script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+<script src="assets/js/main.js"></script> 
 </body>
 </html>
