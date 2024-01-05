@@ -19,27 +19,56 @@
     background-color: transparent !important;
 }
 
-.IndividualSeat{
-    height: 2rem;
-    width: 2rem;
+/* Container for the seat classes */
+.seatClassSection {
+    display: flex;
+    gap: 10px;
+    width: 100%;
 }
 
-.seatCardType{
+/* Individual seat card */
+.seatCardType {
     height: 2rem;
     width: 2rem;
+    border: 1px solid #ccc; /* Adding a border for better visibility */
+    border-radius: 4px; /* Adding a slight border radius for a softer look */
+    overflow: hidden; /* Ensuring content doesn't overflow */
+    background-color: #fff; /* Set a white background color */
+
 }
 
+/* Individual seat content */
+.IndividualSeat {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Seat type heading */
+.IndividualSeat h3 {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Adjusted size */
+    font-weight: bold;
+}
+
+/* Additional styling for the seat container */
 #seatContainer {
     display: flex;
-  }
-
-#seatTypeBox{
-    padding: 0px;
+    flex-wrap: wrap; /* Allow seats to wrap to the next line if necessary */
 }
 
-#seatTypeFont{
-  font-size: 18px;  
+/* Removing unnecessary styling */
+#seatTypeBox {
+    /* No specific styling needed, removed padding */
 }
+
+#seatTypeFont {
+    /* No specific styling needed, removed font-size */
+}
+
   
 
 
@@ -72,20 +101,29 @@
 }
 
 
-/* .runDayDiv {
-    display: flex;
-} */
+.runDayBody {
+    font-size: 12px; /* Adjust the font size as needed */
+}
 
 
 .runDayDiv {
     margin-left: auto;
     display: flex;
+    max-width: 300px;
 }
 
 .runDayCard {
+
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+
     border: 1px solid #ccc;
     color: #ccc;
     background-color: #9b9b9b; /* Highlight color for selected days */
+
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
 
     padding: 10px;
     margin: 5px;
@@ -97,5 +135,13 @@
     color: #ffffff;
     background-color: #008000; /* Highlight color for selected days */
     box-shadow: 5px 5px 10px rgba(33, 33, 33, 0.5); /* Shadow color for highlighted days */
-    transform: rotate(3deg); /* Rotate by 3 degrees for a subtle 3D effect */
+    font-size: 16px;
+    font-weight: bold;
+    /* transform: rotate(3deg); */
+}
+
+.runDayHeader {
+    font-size: 10px;
+    text-align: center;
+    /* Adjust the font size as needed */
 }
