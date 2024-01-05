@@ -37,26 +37,41 @@
     <script src="change_password.js"></script>
 
     <style>
+        .cancelNotification {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            display: none;
+        }
 
-        @media (max-width: 768px){
-            .text-white-800{
+
+        @media (max-width: 768px) {
+            .text-white-800 {
                 padding-top: 0px;
-            } 
+            }
 
-            .container-fluid{
+            .container-fluid {
                 padding-top: 34px;
                 margin-top: 50px;
             }
         }
 
         @media (min-width: 768px) {
-  /* Override the left and right padding of container-fluid */
-  .container-fluid {
-    padding-right: 1.5rem;
-    padding-left: 7.5rem;
-    padding-top: 45px;
-  }
-}
+
+            /* Override the left and right padding of container-fluid */
+            .container-fluid {
+                padding-right: 1.5rem;
+                padding-left: 7.5rem;
+                padding-top: 45px;
+            }
+        }
+
         /* .container-fluid{
             margin-top: 52px;
             background-image: url("/assets/railway.jpg");
@@ -76,112 +91,151 @@
         } */
 
         img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-    width: 30px; /* Adjust the width of the image */
-    height: 30px; /* Adjust the height of the image */
-    margin-right: 100px;
-}
+            overflow-clip-margin: content-box;
+            overflow: clip;
+            width: 30px;
+            /* Adjust the width of the image */
+            height: 30px;
+            /* Adjust the height of the image */
+            margin-right: 100px;
+        }
 
-    .sidebar{
-        position: fixed;
-        margin-top: 90px;
-        /* background: #212529; */
-        opacity: 0.6;      
-    }
+        .sidebar {
+            position: fixed;
+            margin-top: 90px;
+            /* background: #212529; */
+            opacity: 0.6;
+        }
 
-    .bx-menu{
-        margin-right: 30px;
-    }
+        .bx-menu {
+            margin-right: 30px;
+        }
 
-    .newnavbar{
-        margin-right: -300px;
-    }
+        .newnavbar {
+            margin-right: -300px;
+        }
 
-    .sidebar {
-        background-color: rgba(0, 0, 0, 0.2);
+        .sidebar {
+            background-color: rgba(0, 0, 0, 0.2);
             /* background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 ); */
         }
 
-    .card{
-        /* background-color: rgba(0, 0, 0, 0.2); */
-        background: rgba( 255, 255, 255, 0.1 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 7.5px );
--webkit-backdrop-filter: blur( 7.5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-        /* background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-    }
+        .card {
+            /* background-color: rgba(0, 0, 0, 0.2); */
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(7.5px);
+            -webkit-backdrop-filter: blur(7.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            /* background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+        }
 
-    footer{
-        background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 );
-    }
+        footer {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(7.5px);
+            -webkit-backdrop-filter: blur(7.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
 
-    .sticky-footer{
-        background-color: rgba(0, 0, 0, 0.2);
-    }
+        .sticky-footer {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
 
-    #update-profile{
-        background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 );
-    }
+        #update-profile {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(7.5px);
+            -webkit-backdrop-filter: blur(7.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
 
-    #cancellationHistorySection{
-        background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 );
-    }
+        #cancellationHistorySection {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(7.5px);
+            -webkit-backdrop-filter: blur(7.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
 
-    #myBookingsSection{
-        background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 );
+        #myBookingsSection {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(7.5px);
+            -webkit-backdrop-filter: blur(7.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
 
-    }
-    #failedTransactionsSection{
-                background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
 
-    }
-    #feedbackSection{
-                        background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 );
+        #failedTransactionsSection {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(7.5px);
+            -webkit-backdrop-filter: blur(7.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
 
-    }
+        }
 
-    .btn{
-        background-color: rgb(224, 30, 30);
-    }
+        #feedbackSection {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(7.5px);
+            -webkit-backdrop-filter: blur(7.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
 
-    .list-group-item{
-        background-color: rgba(0, 0, 0, 0.2);
-                                /* background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+        }
 
-    }
+        .btn {
+            background-color: rgb(224, 30, 30);
+        }
 
-    .form-control{
-                                        background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 );
+        .list-group-item {
+            background-color: rgba(0, 0, 0, 0.2);
+            /* background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 
-    }
+        }
 
-    #bookingsCardBody{
-                                                /* background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-        background-color: rgba(0, 0, 0, 0.2);
-    }
+        .form-control {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(7.5px);
+            -webkit-backdrop-filter: blur(7.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
 
-    #failedTransactionsTableContainer{
-                                                        /* background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-        background-color: rgba(0, 0, 0, 0.2);
-    }
+        }
 
-    /* html, body {
+        #bookingsCardBody {
+            /* background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        #failedTransactionsTableContainer {
+            /* background: rgba( 255, 255, 255, 0.3 );box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );backdrop-filter: blur( 7.5px );-webkit-backdrop-filter: blur( 7.5px );border-radius: 10px;border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        /* html, body {
     width: 100%;
     height:100%;
   } */
-  .container-fluid {
-      /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        .container-fluid {
+            /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
       background-size: 400% 400%;
       animation: gradient 15s ease infinite; */
-      background: #3E1E68;
-  }
+            background: #3E1E68;
+        }
 
-  
-  
-  /* @keyframes gradient {
+
+
+        /* @keyframes gradient {
       0% {
           background-position: 0% 50%;
       }
@@ -198,16 +252,15 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   -ms-touch-action: none;
       touch-action: none;
 } */
-
     </style>
 
-    
+
 
 </head>
 
 <body id="page-top">
 
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>
         <script id="vertexShader" type="x-shader/x-vertex">
             void main() {
                 gl_Position = vec4( position, 1.0 );
@@ -332,24 +385,24 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
       }
     </script> -->
 
-        <header class="header">
-        
-            <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a>
-        
-            <input type="checkbox" id="check">
-            <label for="check" class="icons">
-                <i class="bx bx-menu" id="menu-icon"></i>
-                <i class="bx bx-x" id="close-icon"></i>
-            </label>
-        
-            <nav class="newnavbar">
-                <a href="#" style="--i:0;">Home</a>
-                <a href="#" style="--i:1;">About</a>
-                <a href="#" style="--i:2;">Gallery</a>
-                <a href="#" style="--i:3;">Services</a>
-                <a href="#" style="--i:4;">Contact</a>
-            </nav>
-<!-- 
+    <header class="header">
+
+        <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+        <nav class="newnavbar">
+            <a href="#" style="--i:0;">Home</a>
+            <a href="#" style="--i:1;">About</a>
+            <a href="#" style="--i:2;">Gallery</a>
+            <a href="#" style="--i:3;">Services</a>
+            <a href="#" style="--i:4;">Contact</a>
+        </nav>
+        <!-- 
             <li class="nav-item dropdown no-arrow">
                                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -357,8 +410,8 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
                                             <img class="assets-profile rounded-circle ml-2" src="assets/undraw_profile.svg"
                                                 id="profileImage">
                                         </a> -->
-            <!-- Dropdown - User Information -->
-            <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+        <!-- Dropdown - User Information -->
+        <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                             aria-labelledby="userDropdown">
                                             <label class="dropdown-item" for="photoUpload">
                                                 <input type="file" id="photoUpload" style="display: none;" accept="image/*"
@@ -372,22 +425,23 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
                                         </div>
                                     </li> -->
 
-                    <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        <!-- <span class="mr-2 d-none d-lg-inline text-white-600 small">Douglas McGee</span> -->
-                        <img class="img-profile rounded-circle" src="assets/undraw_profile.svg" id="profileImage">
-                    </a>
-                    <div class="dropdown-menu " aria-labelledby="userDropdown">
-                        <label class="dropdown-item" for="photoUpload">
-                            <input type="file" id="photoUpload" style="display: none;" accept="image/*" onchange="uploadProfilePhoto()">
-                            <i class="fas fa-user fa-sm fa-fw mr-2 text-white-400"></i> Upload photo
-                        </label>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-white-400"></i> Logout
-                        </a>
-                    </div>
-        </header>
+        <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <!-- <span class="mr-2 d-none d-lg-inline text-white-600 small">Douglas McGee</span> -->
+            <img class="img-profile rounded-circle" src="assets/undraw_profile.svg" id="profileImage">
+        </a>
+        <div class="dropdown-menu " aria-labelledby="userDropdown">
+            <label class="dropdown-item" for="photoUpload">
+                <input type="file" id="photoUpload" style="display: none;" accept="image/*"
+                    onchange="uploadProfilePhoto()">
+                <i class="fas fa-user fa-sm fa-fw mr-2 text-white-400"></i> Upload photo
+            </label>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-white-400"></i> Logout
+            </a>
+        </div>
+    </header>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -483,15 +537,15 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="animation d-flex flex-column">
 
-                                <span class="animate"></span>
-                                <span class="animate"></span>
-                                <span class="animate"></span>
-                                <span class="animate"></span>
-                                <span class="animate"></span>
-                                <span class="animate"></span>
-                                <span class="animate"></span>
+            <span class="animate"></span>
+            <span class="animate"></span>
+            <span class="animate"></span>
+            <span class="animate"></span>
+            <span class="animate"></span>
+            <span class="animate"></span>
+            <span class="animate"></span>
 
-            
+
             <!-- Main Content -->
             <div id="content">
 
@@ -527,8 +581,8 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
                                 <img class="assets-profile rounded-circle ml-2" src="assets/undraw_profile.svg"
                                     id="profileImage">
                             </a> -->
-                            <!-- Dropdown - User Information -->
-                            <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        <!-- Dropdown - User Information -->
+                        <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <label class="dropdown-item" for="photoUpload">
                                     <input type="file" id="photoUpload" style="display: none;" accept="image/*"
@@ -836,6 +890,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 
                         <!-- Cancellation-->
                         <div class="col-xl-6 col-lg-6">
+                            <!-- Add this div for displaying notifications -->
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div id="cancellationHistorySection"
@@ -882,6 +937,8 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
                                             onclick="submitCancellation()">Submit Cancellation</button>
                                     </form>
                                 </div>
+                                <!-- Notification div -->
+                                <div id="cancelNotification" class="cancelNotification"></div>
                             </div>
                         </div>
                     </div>
@@ -983,13 +1040,15 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="experienceRating" id="ratingBad" value="Bad">
+                                                <input class="form-check-input" type="radio" name="experienceRating"
+                                                    id="ratingBad" value="Bad">
                                                 <label class="form-check-label" for="ratingBad">
                                                     Bad
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="experienceRating" id="ratingWorst" value="Worst">
+                                                <input class="form-check-input" type="radio" name="experienceRating"
+                                                    id="ratingWorst" value="Worst">
                                                 <label class="form-check-label" for="ratingWorst">
                                                     Worst
                                                 </label>
@@ -1019,12 +1078,12 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
                         </div>
                     </div>
 
-                                <footer class="sticky-footer bg-white">
-                                    <div class="container my-auto">
-                                        <div class="copyright text-center my-auto">
-                                            <span>Copyright Synergy IRCTC 2024</span>
-                                        </div>
-                                </footer>
+                    <footer class="sticky-footer bg-white">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright Synergy IRCTC 2024</span>
+                            </div>
+                    </footer>
 
 
                 </div>
@@ -1323,7 +1382,8 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
                         </div>
                         <div class="form-group">
                             <label for="newPassword">New Password:</label>
-                            <input type="password" class="form-control" id="newPassword" oninput="validatePassword()" required>
+                            <input type="password" class="form-control" id="newPassword" oninput="validatePassword()"
+                                required>
                             <div id="passwordValidationMessage" class="validation-message"></div>
                             <!-- <span id="newPasswordFeedback" class="text-danger"></span> -->
                         </div>
@@ -1362,6 +1422,8 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     <script src="upload-profile-photo.js"></script>
 
     <script src="failed_transactions.js"></script>
+
+    <script src="cancellation.js"></script>
 
     <!-- include this in end then only will work -->
 
