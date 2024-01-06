@@ -438,19 +438,3 @@ app.get("/stationsList", async (req, res) => {
   })
 })
 
-
-app.get("/stationsList", async (req, res) => {
-    const parsedUrl = url.parse(req.url, true);
-  const queryParams = parsedUrl.query;
-  console.log(queryParams)
-
-   await axios.get('https://api.railwayapi.site/api/v1/stations?q=kaz', { httpsAgent: agent })
-  .then(response => {
-    res.json(response.data);
-  })
-  .catch(err => {
-    console.log(err)
-    res.status(500).send('Data not obtained');
-  })
-})
-
