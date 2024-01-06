@@ -10,7 +10,6 @@ function validatePassword(password) {
   return regex.test(password);
 }
 
-
 function validateEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email); // return true if email is valid, false otherwise
