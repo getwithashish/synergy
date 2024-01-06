@@ -13,6 +13,10 @@
 
     <link rel="stylesheet" href="css/animate.css">
     <!-- Custom fonts for this template-->
+
+    <link rel="stylesheet" href="radio_button.css">
+
+    <link rel="stylesheet" href="auto_complete.css">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -22,6 +26,8 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <link href="/css/newNavBar.css" rel="stylesheet">
+
+    <script src="jwt_validation.js"></script>
 
     <!-- Add this line inside the <head> section to include Axios via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -70,6 +76,10 @@
                 padding-left: 7.5rem;
                 padding-top: 45px;
             }
+        }
+
+        .rounded-circle{
+            margin-left: 300px;
         }
 
         /* .container-fluid{
@@ -258,7 +268,7 @@
 
     <header class="header">
 
-        <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a>
+        <a href="/index.html" class="logo">Syn</a>
 
         <input type="checkbox" id="check">
         <label for="check" class="icons">
@@ -267,11 +277,16 @@
         </label>
 
         <nav class="newnavbar">
-            <a href="#" style="--i:0;">Home</a>
-            <a href="#" style="--i:1;">About</a>
-            <a href="#" style="--i:2;">Gallery</a>
-            <a href="#" style="--i:3;">Services</a>
-            <a href="#" style="--i:4;">Contact</a>
+          <div class="autoComplete_wrapper">
+            <div class="autoComplete_wrapper" role="combobox" aria-owns="autoComplete_list_3" aria-haspopup="true" aria-expanded="false">
+                <input style="width: 100%;" id="autocompleteTrainSearch" type="search" dir="ltr" spellcheck=false autocorrect="off"
+                    autocomplete="off" autocapitalize="off" aria-controls="autoComplete_list_3" aria-autocomplete="both" placeholder="Search Train...">
+            </div>
+          </div>
+                        <a href="pages/pnr_status.html" style="--i:0;">PNR Status</a>
+                        <a href="FAQ/index.html" style="--i:3;">FAQ</a>
+                        <a href="pages/contact-page/index.html" style="--i:4;">Contact</a>
+                        <a href="#" style="--i:5;" onclick="toggleLoginForm()">LogIn/SignUp</a>
         </nav>
         <!-- 
             <li class="nav-item dropdown no-arrow">
@@ -296,7 +311,7 @@
                                         </div>
                                     </li> -->
 
-        <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+        <a class="nav-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             <!-- <span class="mr-2 d-none d-lg-inline text-white-600 small">Douglas McGee</span> -->
             <img class="img-profile rounded-circle" src="assets/undraw_profile.svg" id="profileImage">
@@ -924,7 +939,6 @@
                                                     Worst
                                                 </label>
                                             </div>
-                                            <!-- Add more questions as needed -->
 
                                         </div>
 

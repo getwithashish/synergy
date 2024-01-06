@@ -3229,6 +3229,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
 .nav-link {
 	display:block;
 	padding:.5rem 1rem
+	padding
 }
 .nav-link:focus,.nav-link:hover {
 	text-decoration:none
