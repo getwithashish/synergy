@@ -6,6 +6,15 @@ const cors = require('cors');
 
 const fs = require('fs');
 
+const axios = require('axios');
+
+const url = require('url');
+
+const https = require('https');
+const agent = new https.Agent({
+    rejectUnauthorized: false,
+  });
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -411,4 +420,20 @@ app.get("/trainBetweenStations", (req, res) => {
           const jsonData = JSON.parse(data);
           res.json(jsonData);
     })
+})
+
+
+app.get("/stationsList", async (req, res) => {
+    const parsedUrl = url.parse(req.url, true);
+  const queryParams = parsedUrl.query;
+  console.log(queryParams)
+
+   await axios.get('https://api.railwayapi.site/api/v1/stations?q=kaz', { httpsAgent: agent })
+  .then(response => {
+    res.json(response.data);
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).send('Data not obtained');
+  })
 })
