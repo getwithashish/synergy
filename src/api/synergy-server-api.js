@@ -44,6 +44,6 @@ const getStationsList = async (params) => {
     return getRequest(`${synergyServerUrl}${stationsListEndpoint}`, params, synergyServerHeaders)
     .then((response) => {
         console.log("Inside Stations List Function")
-        return response;
+        return response.data;
     });
 }
