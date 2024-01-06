@@ -173,6 +173,27 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
         // Append card body to card
         card.appendChild(cardBody);
 
+       // Create "Book Train" button
+            const bookTrainButton = document.createElement('button');
+            bookTrainButton.textContent = 'Book Ticket';
+            bookTrainButton.classList.add('bookTrainButton');
+
+            // Add an event listener to handle the booking functionality
+            bookTrainButton.addEventListener('click', () => {
+                // You can add your booking logic here or redirect to a booking page
+                // alert(`Booking train ${train.train_number}`);
+                window.location.href = `../html&css/pages/components/Bookingforms.html?trainNumber=${train.train_number}`;
+
+            });
+
+            // Create a container for the button and center it
+            const buttonContainer = document.createElement('div');
+            buttonContainer.classList.add('buttonContainer');
+            buttonContainer.appendChild(bookTrainButton);
+
+            // Append the button container to the card body
+            cardBody.appendChild(buttonContainer);
+
         // Append card to container
         container.appendChild(card);
         });
