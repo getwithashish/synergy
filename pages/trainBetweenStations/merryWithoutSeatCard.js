@@ -120,25 +120,7 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
             // Append the seat card to the seat class section
             seatClassSection.appendChild(seatCard);
         });
-
-        // const runDayDiv = document.createElement('div');
-        // runDayDiv.classList.add('runDayDiv');
-        // runDayDiv.style.marginLeft = 'auto'; // Align to the right
-        // runDayDiv.style.display = 'flex'; // Set to flex to display run days side by side
-
-
-        // // Loop through each run day and create a paragraph
-        //     train.run_days.forEach(runDay => {
-        //     const runDayParagraph = document.createElement('p');
-        //     runDayParagraph.textContent = runDay;
-        //     runDayParagraph.style.marginRight = '5px'; // Adjust the gap as needed
-        //     runDayParagraph.style.fontStyle = 'italic'; // Set to italic
-
-        // You can add additional styling to runDayParagraph if needed
-        //     runDayDiv.appendChild(runDayParagraph);
-        // });
-
-        
+   
 
         const runDayDiv = document.createElement('div');
         runDayDiv.classList.add('runDayDiv');
@@ -180,11 +162,6 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
         runDayDiv.style.gap = '5px';
 
         runDayDiv.style.marginLeft = 'auto';
-
-        // cardBody.appendChild(runDayDiv);
-        // trainDetailsContainer.appendChild(cardBody);
-
-
 
         // Append run days div to seat class section
         seatClassSection.appendChild(runDayDiv);

@@ -54,6 +54,29 @@ app.post('/change-password', (req, res) => {
     res.json({ message: 'Password changed successfully'});
 });
 
+
+// Endpoint to handle cancellation requests
+app.post('/cancellation-endpoint', (req, res) => {
+  const { pnrNumber, trainNumber, reasonForCancellation, contactInformation } = req.body;
+
+  // Find the booking entry based on PNR and Train Number
+  const bookingEntry = findBookingEntry(pnrNumber, trainNumber);
+
+  if (bookingEntry) {
+    // Update reservation status to "Cancelled"
+    bookingEntry.reservationStatus = 'Cancelled';
+    console.log(`Booking with PNR ${pnrNumber} and Train Number ${trainNumber} cancelled successfully.`);
+
+    // Optionally, you can handle additional cancellation logic here
+    // For example, refund processing, sending cancellation confirmation, etc.
+
+    res.status(200).send({ status: 'Success', msg: 'Booking cancelled successfully' });
+  } else {
+    res.status(404).send({ status: 'Failure', msg: 'Booking not found' });
+  }
+});
+
+
 app.listen(PORT, () => {
     console.log("Server listening on PORT: ", PORT);
 });
@@ -349,6 +372,42 @@ const failedTransactions = [
 app.get('/failedTransactions', (req, res) => {
   res.status(200).json(failedTransactions);
 });
+
+
+// // Endpoint to handle cancellation requests
+// app.post('/cancellation-endpoint', (req, res) => {
+//   const { pnrNumber, trainNumber, reasonForCancellation, contactInformation } = req.body;
+
+//   // Find the booking entry based on PNR and Train Number
+//   const bookingEntry = findBookingEntry(pnrNumber, trainNumber);
+
+//   if (bookingEntry) {
+//     // Update reservation status to "Cancelled"
+//     bookingEntry.reservationStatus = 'Cancelled';
+//     console.log(`Booking with PNR ${pnrNumber} and Train Number ${trainNumber} cancelled successfully.`);
+
+//     // Optionally, you can handle additional cancellation logic here
+//     // For example, refund processing, sending cancellation confirmation, etc.
+
+//     res.status(200).send({ status: 'Success', msg: 'Booking cancelled successfully' });
+//   } else {
+//     res.status(404).send({ status: 'Failure', msg: 'Booking not found' });
+//   }
+// });
+
+// Function to find a booking entry based on PNR and Train Number
+function findBookingEntry(pnrNumber, trainNumber) {
+  for (const category in bookingDetails) {
+    const bookings = bookingDetails[category];
+    const foundBooking = bookings.find((booking) => booking.pnr === pnrNumber && booking.trainNumber === trainNumber);
+
+    if (foundBooking) {
+      return foundBooking;
+    }
+  }
+
+  return null;
+}
 
 // Endpoint to get trains between stations
 app.get("/trainBetweenStations", (req, res) => {

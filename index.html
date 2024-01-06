@@ -121,7 +121,8 @@
 
     <div id="main-container">
       <header class="header">
-        <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a>
+
+        <a href="/index.html" class="logo">Syn</a>
 
         <input type="checkbox" id="check" />
         <label for="check" class="icons">
@@ -143,29 +144,18 @@
             />
           </div>
 
-          <a href="http://127.0.0.1:5503/pages/pnr_status.html" style="--i: 0"
-            >PNR Status</a
-          >
-          <a href="FAQ/index.html" style="--i: 3">FAQ</a>
-          <a href="pages/contact-page/index.html" style="--i: 4">Contact</a>
-          <a href="#" style="--i: 5" onclick="toggleLoginForm()"
-            >LogIn/SignUp</a
-          >
+            <a href="pages/pnr_status.html" style="--i:0;">PNR Status</a>
+            <a href="FAQ/index.html" style="--i:3;">FAQ</a>
+            <a href="pages/contact-page/index.html" style="--i:4;">Contact</a>
+            <a href="#" style="--i:5;" onclick="toggleLoginForm()">LogIn/SignUp</a>
         </nav>
 
-        <a
-          class="nav-link"
-          href="http://127.0.0.1:5503/pages/profile-page/profile-page-copy.html"
-          id="userDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          <img
-            class="img-profile rounded-circle"
-            src="assets/undraw_profile.svg"
-          />
+        <!-- class="nav-link dropdown-toggle" -->
+
+        <a class="nav-link " href="/pages/profile-page/profile-page-copy.html" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <!-- <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span> -->
+          <img class="img-profile rounded-circle" src="assets/undraw_profile.svg">
         </a>
       </header>
 
