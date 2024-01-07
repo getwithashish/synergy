@@ -552,6 +552,8 @@ PaytmChecksum.generateSignature(JSON.stringify(paytmParams.body), "37MuHFVCCXnpK
             console.log('Response: ', response);
 
             var responseJson = JSON.parse(response);
+            initiatePaymentResponse.orderId = "ORDERID_98765";
+            initiatePaymentResponse.amount = "1.00";
           initiatePaymentResponse.txnToken = responseJson.body.txnToken;
 
           res.status(200).send(initiatePaymentResponse);
