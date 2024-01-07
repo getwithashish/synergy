@@ -1,8 +1,9 @@
 function changePassword() {
+  event.preventDefault();
   // Get old and new passwords from the form
   const oldPassword = document.getElementById("oldPassword").value;
   const newPassword = document.getElementById("newPassword").value;
-  const userEmail = "arjun@gmail.com";
+  const userEmail = "ashish@gmail.com";
 
   // Validate password before making the request
   if (!validatePassword()) {

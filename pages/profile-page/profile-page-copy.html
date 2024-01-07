@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/animate.css">
     <!-- Custom fonts for this template-->
 
-    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="css/table.css">
 
     <link rel="stylesheet" href="radio_button.css">
 
@@ -49,6 +49,30 @@
     <script src="change_password.js"></script>
 
     <style>
+        .inputfile{
+            color: #1d0839;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px black;
+            width: 350px;
+            outline: none;
+        }
+
+        ::-webkit-file-upload-button{
+            color: white;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 1px 0 1px 1px #6b4559;
+            outline: none;
+        }
+
+        ::-webkit-file-upload-button:hover{
+            background: #1d0e37;
+        }
+
         .cancelNotification {
             position: fixed;
             top: 0;
@@ -344,12 +368,12 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <!-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">ALICE</div>
-            </a>
+            </a> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -953,7 +977,7 @@
                                         <!-- File Upload -->
                                         <div class="form-group">
                                             <label for="fileUpload">Upload Image (if any):</label>
-                                            <input type="file" class="form-control-file" id="fileUpload">
+                                            <input type="file" class="inputfile form-control-file" id="fileUpload">
                                         </div>
 
                                         <button type="button" class="btn btn-danger" onclick="submitFeedback()">Submit
