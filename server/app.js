@@ -11,6 +11,12 @@ const axios = require('axios');
 const url = require('url');
 
 const https = require('https');
+
+const paytmConfig = require('./paytmConfig');
+// const PaytmChecksum = require('./PaytmChecksum');
+const Paytm = require('paytmchecksum');
+
+
 const agent = new https.Agent({
     rejectUnauthorized: false,
   });
@@ -436,4 +442,55 @@ app.get("/stationsList", async (req, res) => {
     console.log(err)
     res.status(500).send('Data not obtained');
   })
+})
+
+
+// ====================== PayTm Payment ========================
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+app.post("/initiatePayment", (req, res) => {
+  var paytmParams = {};
+  paytmParams.body = {
+    "requestType"   : "Payment",
+    "mid"           : paytmConfig.MID,
+    "websiteName"   : paytmConfig.WEBSITE,
+    "orderId"       : "ORD10239",
+    "callbackUrl"   : "http://localhost:8080/callback",
+    "txnAmount"     : {
+      "value"     : 5.00,
+      "currency"  : "INR",
+    },
+    "userInfo"      : {
+      "custId"    : "CUST_001",
+      "mobile"    : "9446020861"
+    },
+  };
+
+  Paytm.generateSignature(JSON.stringify(paytmParams.body), paytmConfig.MKEY)
+  .then(async (checksum) => {
+    paytmParams.head = {
+      "signature"    : checksum
+    };
+
+    var post_data = JSON.stringify(paytmParams);
+
+    console.log("Key: ", paytmConfig.MKEY)
+    console.log("Params: ", paytmParams)
+
+    var paymentInitialLink = `https://securegw.paytm.in/theia/api/v1/initiateTransaction?mid=${paytmConfig.MID}&orderId=${paytmParams.body.orderId}`;
+    console.log("Payment Link: ", paymentInitialLink)
+
+    await axios.post(paymentInitialLink, 
+    {
+      httpsAgent: agent,
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': post_data.length
+      }
+    })
+    .then((response) => {
+      console.log("Obtained Response: ", response.data);
+    })
+
+  })
+
 })
