@@ -502,7 +502,7 @@ paytmParams.body = {
     "requestType"   : "Payment",
     "mid"           : "SApWAl73540535701479",
     "websiteName"   : "DEFAULT",
-    "orderId"       : "ORDERID_98765",
+    "orderId"       : "ORDERID_98773",
     "callbackUrl"   : "https://localhost:3000",
     "txnAmount"     : {
         "value"     : "1.00",
@@ -534,7 +534,7 @@ PaytmChecksum.generateSignature(JSON.stringify(paytmParams.body), "37MuHFVCCXnpK
         hostname: 'securegw.paytm.in',
 
         port: 443,
-        path: '/theia/api/v1/initiateTransaction?mid=SApWAl73540535701479&orderId=ORDERID_98765',
+        path: '/theia/api/v1/initiateTransaction?mid=SApWAl73540535701479&orderId=ORDERID_98773',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -552,7 +552,7 @@ PaytmChecksum.generateSignature(JSON.stringify(paytmParams.body), "37MuHFVCCXnpK
             console.log('Response: ', response);
 
             var responseJson = JSON.parse(response);
-            initiatePaymentResponse.orderId = "ORDERID_98765";
+            initiatePaymentResponse.orderId = "ORDERID_98773";
             initiatePaymentResponse.amount = "1.00";
           initiatePaymentResponse.txnToken = responseJson.body.txnToken;
 

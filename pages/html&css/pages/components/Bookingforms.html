@@ -20,6 +20,10 @@
 
 <head> 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="application/javascript" crossorigin="anonymous" src="paymentSubmit.js"></script> 
+    <script type="application/javascript" crossorigin="anonymous" src="
+    https://securegw.paytm.in/merchantpgpui/checkoutjs/merchants/SApWAl73540535701479.js"></script>
 <!-- Primary Meta Tags -->
 <!-- <title>Volt Premium Bootstrap Dashboard - Forms</title> -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -549,7 +553,7 @@
                                         </select>
                                     </div>
                                     <br>
-                                    <button id="submitButton" class="btn btn-primary" type="button">Submit</button>
+                                    <button id="submitButton" onclick="initiatePayment()" class="btn btn-primary" type="button">Submit</button>
 
                                    
                             </div>
