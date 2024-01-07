@@ -35,7 +35,7 @@ document.getElementById("confirmLogoutBtn").addEventListener("click", function (
       /* Read more about handling dismissals below */
       if (result.dismiss === Swal.DismissReason.timer) {
         console.log("I was closed by the timer");
-        window.location.href = "../loginPage.html";
+        window.location.href = "/index.html";
       }
     });
 
