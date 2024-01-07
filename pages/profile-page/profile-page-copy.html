@@ -11,6 +11,10 @@
 
     <title>Profile</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2"></script>
+
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.min.css'></link>  
+
     <link rel="stylesheet" href="css/animate.css">
     <!-- Custom fonts for this template-->
 
@@ -78,7 +82,7 @@
             }
         }
 
-        .rounded-circle{
+        .rounded-circle {
             margin-left: 300px;
         }
 
@@ -277,16 +281,18 @@
         </label>
 
         <nav class="newnavbar">
-          <div class="autoComplete_wrapper">
-            <div class="autoComplete_wrapper" role="combobox" aria-owns="autoComplete_list_3" aria-haspopup="true" aria-expanded="false">
-                <input style="width: 100%;" id="autocompleteTrainSearch" type="search" dir="ltr" spellcheck=false autocorrect="off"
-                    autocomplete="off" autocapitalize="off" aria-controls="autoComplete_list_3" aria-autocomplete="both" placeholder="Search Train...">
+            <div class="autoComplete_wrapper">
+                <div class="autoComplete_wrapper" role="combobox" aria-owns="autoComplete_list_3" aria-haspopup="true"
+                    aria-expanded="false">
+                    <input style="width: 100%;" id="autocompleteTrainSearch" type="search" dir="ltr" spellcheck=false
+                        autocorrect="off" autocomplete="off" autocapitalize="off" aria-controls="autoComplete_list_3"
+                        aria-autocomplete="both" placeholder="Search Train...">
+                </div>
             </div>
-          </div>
-                        <a href="pages/pnr_status.html" style="--i:0;">PNR Status</a>
-                        <a href="FAQ/index.html" style="--i:3;">FAQ</a>
-                        <a href="pages/contact-page/index.html" style="--i:4;">Contact</a>
-                        <a href="#" style="--i:5;" onclick="toggleLoginForm()">LogIn/SignUp</a>
+            <a href="../pnr_status.html" style="--i:0;">PNR Status</a>
+            <a href="/FAQ/index.html" style="--i:3;">FAQ</a>
+            <a href="../contact-page/index.html" style="--i:4;">Contact</a>
+            <a href="#" style="--i:5;" onclick="toggleLoginForm()">LogIn/SignUp</a>
         </nav>
         <!-- 
             <li class="nav-item dropdown no-arrow">
@@ -1240,7 +1246,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a id="confirmLogoutBtn" class="btn btn-danger" href="../loginPage.html">Logout</a>
+                    <a id="confirmLogoutBtn" class="btn btn-danger">Logout</a>
                 </div>
             </div>
         </div>
@@ -1299,9 +1305,6 @@
         })(document, 'script');
     </script>
 
-
-    <script src="logout.js"></script>
-
     <script src="feedback.js"></script>
 
     <script src="upload-profile-photo.js"></script>
@@ -1311,10 +1314,6 @@
     <script src="cancellation.js"></script>
 
     <!-- include this in end then only will work -->
-
-
-
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1333,6 +1332,8 @@
     <script src="js/demo/chart-pie-demo.js"></script>
 
     <script type="text/javascript" src="animate.js"></script>
+
+    <script src="logout.js"></script>
 
 </body>
 
