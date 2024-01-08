@@ -1,5 +1,19 @@
 // Assuming 'data' contains your array of train objects
 
+const { Translate } = require('@google-cloud/translate').v2;
+const translateClient = new Translate();
+
+async function translateText(text, target) {
+    try {
+      // Translate the text to the target language
+      const [translations] = await translateClient.translate(text, target);
+      return Array.isArray(translations) ? translations : [translations];
+    } catch (error) {
+      console.error('Error during translation:', error);
+      return null;
+    }
+  }
+
 // Function to make the API call
 async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJourney) {
     const options = {
@@ -23,6 +37,9 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
         const response = await axios.request(options);
         const trainDetails = response.data;
         console.log(trainDetails);
+
+        const translatedFromStation = await translateText('From Station', 'hi');
+        const translatedToStation = await translateText('To Station', 'hi');
         
 
         // Assuming the container element where you want to display trainDetails has the ID "trainDetailsContainer"
@@ -59,8 +76,10 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
         // Create name and number
         const nameAndNumber = document.createElement('div');
         nameAndNumber.classList.add('nameandnumber');
+
         const nameAndNumberText = document.createElement('p');
         nameAndNumberText.textContent = `${train.train_name} | ${train.train_number}`;
+
         nameAndNumber.appendChild(nameAndNumberText);
         nameAndNumber.style.fontStyle = 'bold';
 
@@ -173,6 +192,27 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
         // Append card body to card
         card.appendChild(cardBody);
 
+       // Create "Book Train" button
+            const bookTrainButton = document.createElement('button');
+            bookTrainButton.textContent = 'Book Ticket';
+            bookTrainButton.classList.add('bookTrainButton');
+
+            // Add an event listener to handle the booking functionality
+            bookTrainButton.addEventListener('click', () => {
+                // You can add your booking logic here or redirect to a booking page
+                // alert(`Booking train ${train.train_number}`);
+                window.location.href = `../html&css/pages/components/Bookingforms.html?trainNumber=${train.train_number}`;
+
+            });
+
+            // Create a container for the button and center it
+            const buttonContainer = document.createElement('div');
+            buttonContainer.classList.add('buttonContainer');
+            buttonContainer.appendChild(bookTrainButton);
+
+            // Append the button container to the card body
+            cardBody.appendChild(buttonContainer);
+
         // Append card to container
         container.appendChild(card);
         });
@@ -195,3 +235,7 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
     }
 }
 
+const fromStationCode = 'CGY';
+const toStationCode = 'KZK';
+const dateOfJourney = '2024-01-04';
+getTrainBetweenStations(fromStationCode, toStationCode, dateOfJourney);

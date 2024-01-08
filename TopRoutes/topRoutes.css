@@ -178,47 +178,7 @@ body {
   box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
 }
 
-#buddhaCard1 {
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
-  background-color: transparent;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
-}
-
-#buddhaCard2 {
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
-  background-color: transparent;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
-}
-
-#buddhaCard3 {
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
-  background-color: transparent;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
-}
-
-#buddhaCard4 {
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
-  background-color: transparent;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
-}
-
-#buddhaCard5 {
+#buddhaCard1, #buddhaCard2, #buddhaCard3, #buddhaCard4, #buddhaCard5 {
   backdrop-filter: blur(16px) saturate(171%);
   -webkit-backdrop-filter: blur(66px) saturate(181%);
   -moz-backdrop-filter: blur(16px) saturate(171%);
@@ -250,13 +210,7 @@ body {
   color: white;
 }
 
-#field1 {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-}
-
-#field2 {
+#field1, #field2, #field3, #field4 {
   display: flex;
   width: 100%;
   gap: 10px;
@@ -273,18 +227,6 @@ body {
   flex: 1;
 }
 
-#field3 {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-}
-
-#field4 {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-}
-
 #enquiryButton {
   background-color: #cf2550;
   border-color: #cf2550;
@@ -297,6 +239,7 @@ body {
   color: white;
   opacity: 0;
   transition: opacity 0.3s ease;
+  border: 2px groove;
 }
 
 /* Show the card body on hover */

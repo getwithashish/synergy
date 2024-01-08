@@ -190,26 +190,9 @@ padding-bottom: 60px;
     background-color: transparent;
     @include shadow_property();
 }
-#buddhaCard1{
+#buddhaCard1,#buddhaCard2,#buddhaCard3,#buddhaCard4,#buddhaCard5{
     @include glassmorphism();
     @include shadow_property();
-}
-#buddhaCard2{
-    @include glassmorphism();
-    @include shadow_property();
-}
-#buddhaCard3{
-    @include glassmorphism();
-    @include shadow_property();
-}
-#buddhaCard4{
-    @include glassmorphism();
-    @include shadow_property();
-}
-#buddhaCard5{
-    @include glassmorphism();
-    @include shadow_property();
-    // height:300px;
 }
 
 .contactTable{
@@ -227,13 +210,10 @@ padding-bottom: 60px;
     background-color: rgba(0, 0, 0, 0.2); /* Adjust the transparency of the header */
     color: white;
   }
-  #field1{
+  #field1, #field2, #field3,#field4{
     @include flexProperty();
   }
  
-  #field2{
-    @include flexProperty();
-  }
   .mobile, 
   .email,
   .nameField,
@@ -246,13 +226,6 @@ padding-bottom: 60px;
     flex: 1;
   }
 
-  #field3{
-    @include flexProperty();
-  }
-
-  #field4{
-    @include flexProperty();
-  }
   #enquiryButton{
     background-color: $bg-color-4;
     border-color: $bg-color-4;
@@ -264,13 +237,21 @@ padding-bottom: 60px;
     text-align: center;
     color: white;
     opacity: 0;
+    margin-top: 30px;
+    margin-right: 20px;
     transition: opacity 0.3s ease;
+    border:2px groove;
+    
   }
   
   /* Show the card body on hover */
  #nilgiriImgOverlay:hover{
     opacity: 1;
+    
   }
-  
+//   #nilgiriText{
+//     margin-top: 30px;
+//      margin-right: 20px;
+//   }
 
   

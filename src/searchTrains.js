@@ -33,7 +33,7 @@ const autoCompleteSearchTrainJS = new autoComplete({
         const selection = event.detail.selection.value;
         autoCompleteSearchTrainJS.input.value = `${selection.train_name} (${selection.train_number})`;
         console.log("Selected: ", selection);
-        window.location.href = `http://127.0.0.1:5503/pages/html&css/pages/dashboard/dashboard.html?trainNumber=${selection.train_number}`;
+        window.location.href = `http://127.0.0.1:5504/pages/html&css/pages/dashboard/dashboard.html?trainNumber=${selection.train_number}`;
       },
     },
   },
