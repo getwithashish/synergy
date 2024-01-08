@@ -1,4 +1,11 @@
 
+function buttonClickFunction(trainNumber, trainName, sourceStation, destination) {
+    // Your logic here when the button is clicked
+    const queryParams = `trainNumber=${trainNumber}&trainName=${encodeURIComponent(trainName)}&sourceStation=${encodeURIComponent(sourceStation)}&destination=${encodeURIComponent(destination)}`;
+
+    window.location.href = `../pages/html&css/pages/components/Bookingforms.html?${queryParams}`;
+}
+
 // Function to make the API call
 async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJourney) {
     const options = {
@@ -43,11 +50,13 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
         card.style.height = '10rem';
         card.style.marginTop = '30px';
         card.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.37)';
-        card.style.background = 'rgba(255, 255, 255, 0.3)';
+        // card.style.background = 'rgba(255, 255, 255, 0.3)';
         card.style.borderRadius = '10px';
         card.style.border = '1px solid rgba(255, 255, 255, 0.18)';
-        card.style.backdropFilter = 'blur(7.5px)';
-        card.style.webkitBackdropFilter = 'blur(7.5px)';
+        // card.style.backdropFilter = 'blur(7.5px)';
+        // card.style.webkitBackdropFilter = 'blur(7.5px)';
+        card.style.background = 'transparent';
+
     
 
         // Create card body
@@ -62,18 +71,31 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
         const nameAndNumber = document.createElement('div');
         nameAndNumber.classList.add('nameandnumber');
         const nameAndNumberText = document.createElement('p');
+
+        nameAndNumberText.style.fontSize = '18px';
+        nameAndNumberText.style.textAlign = 'left';
+
+
         nameAndNumberText.textContent = `${train.train_name} | ${train.train_number}`;
         nameAndNumber.appendChild(nameAndNumberText);
         nameAndNumber.style.fontStyle = 'bold';
+        
 
         // Create time and to/from
         const timeAndToFrom = document.createElement('div');
         timeAndToFrom.classList.add('timeandtofro');
+
         
         const timeAndToFromText = document.createElement('p');
+        timeAndToFromText.style.fontSize = '20px';
+        timeAndToFromText.style.marginBottom = '2px';
+
+
         timeAndToFromText.textContent = `${train.from_std} - ${train.to_sta}`;
             
         const stationText = document.createElement('p');
+        stationText.style.fontSize = '15px';
+
         stationText.textContent = `${train.from_station_name} - ${train.to_station_name}`;
         
         
@@ -86,6 +108,8 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
 
         // Append top section to card body
         cardBody.appendChild(topSection);
+        topSection.style.marginBottom = '20px';
+
 
         // Create seat class section
         const seatClassSection = document.createElement('div');
@@ -111,6 +135,7 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
             seatTypeHeading.textContent = classType;
 
             seatTypeHeading.style.fontSize = '14px'; // Adjust the size as needed
+            seatTypeHeading.style.color = 'black'; // Adjust the size as needed
 
 
             // Append the seat type heading to the individual seat content
@@ -168,16 +193,47 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
         // Append run days div to seat class section
         seatClassSection.appendChild(runDayDiv);
 
-
         // Append seat class section to card body
         cardBody.appendChild(seatClassSection);
 
         // Append card body to card
         card.appendChild(cardBody);
+        // Create "Book Train" button
+        
+        const bookTrainButton = document.createElement('button');
+        bookTrainButton.textContent = 'Book Ticket';
+        bookTrainButton.classList.add('bookTrainButton');
+        bookTrainButton.style.padding = '5px 10px'; // Adjust the values as needed
+        bookTrainButton.style.zIndex = '1000'; // You can adjust the value as needed
+
+        // function bookButton() {
+        //     const clickedTrain = train;
+        //     console.log("Clicked");
+        //     console.log(clickedTrain.train_number);
+        
+        //     window.location.href = `../pages/html&css/pages/components/Bookingforms.html?trainNumber=${clickedTrain.train_number}`;
+        // }
+
+        bookTrainButton.setAttribute('onclick', `buttonClickFunction(${train.train_number}, '${train.train_name}', '${train.from_station_name}', '${train.to_station_name}')`);
+        // Use a closure to capture the value of train
+       
+      
+
+
+         // Create a container for the button and center it
+         const buttonContainer = document.createElement('div');
+         buttonContainer.classList.add('buttonContainer');
+         buttonContainer.appendChild(bookTrainButton);
+         buttonContainer.style.marginTop = '-30px'; // Adjust the value as needed
+
+
+         // Append the button container to the card body
+         cardBody.appendChild(buttonContainer);
 
         // Append card to container
         container.appendChild(card);
         });
+
 
 
         

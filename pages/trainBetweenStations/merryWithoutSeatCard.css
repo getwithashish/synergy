@@ -132,6 +132,9 @@
 }
 
 .runDayCard.highlight {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+
     color: #ffffff;
     background-color: #008000; /* Highlight color for selected days */
     box-shadow: 5px 5px 10px rgba(33, 33, 33, 0.5); /* Shadow color for highlighted days */
@@ -145,3 +148,50 @@
     text-align: center;
     /* Adjust the font size as needed */
 }
+
+
+/* .buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+
+.bookTrainButton {
+    background-color: cadetblue;
+    border-radius: 10px;
+    border-color: rgb(0, 0, 0);
+} 
+
+/* Add this CSS to your stylesheet or style tag */
+.bookTrainButton {
+    background-color: #000000; /* Button background color */
+    color: #ffffff; /* Button text color */
+    font-weight: bold;
+    
+
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Add smooth transitions */
+
+    /* Add subtle box-shadow for 3D effect */
+    box-shadow: 2px 4px 8px rgba(67, 67, 67, 0.696);
+}
+
+.bookTrainButton:hover {
+    background-color: #ffffff; /* Darker background color on hover */
+    transform: translateY(-2px); /* Add a slight lift on hover */
+    font-weight: bold;
+    color: black;
+
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center the button within the container */
+    /* Add top margin for spacing */
+}
+
