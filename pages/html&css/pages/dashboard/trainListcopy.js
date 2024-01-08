@@ -12,7 +12,8 @@ async function searchTrain1() {
   const trainNumber = urlParams.get('trainNumber');
   
     // const someSchedule = await getTrainSchedule({trainNo: trainInput})
-    const someSchedule = await getTrainSchedule({trainNo: trainNumber})
+    // const someSchedule = await getTrainSchedule({trainNo: trainNumber})
+    const someSchedule = await getDummyTrainDetails({trainNo: trainNumber})
     .then((response) => {
       console.log("Inside search train: ", response);
       let classArray =  response.class;
