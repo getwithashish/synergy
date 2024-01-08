@@ -67,7 +67,7 @@ function searchSeatAvail(seatArray){
 
 for (let s = 0; s< seatArray.length; s++){
  
-  const dateElement = document.getElementById(`day${s + 1}seat`);
+    const dateElement = document.getElementById(`day${s + 1}seat`);
     const ticketFareElement = document.getElementById(`cnf_seat${s + 1}`);
     const altcnfElement = document.getElementById(`tot_fare${s + 1}`);
     const probabilityElement = document.getElementById(`probability${s + 1}`);
