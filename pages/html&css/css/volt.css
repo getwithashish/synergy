@@ -45,6 +45,7 @@ p {
     display: inline-block;
     margin: 0 10px; /* Adjust spacing between words and line */
   }
+
  
 #routeContainer{
     height: 600px;
@@ -59,6 +60,15 @@ p {
 #routeContainer::-webkit-scrollbar {
     display: none; /* Hide scrollbar for webkit-based browsers */
 }
+.rowDiv,.colAutoDiv,.colContentDiv{
+    backdrop-filter: blur(6px) saturate(171%);
+    -webkit-backdrop-filter: blur(6px) saturate(171%);
+    -moz-backdrop-filter: blur(6px) saturate(171%);
+    background-color:transparent;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
+}
 #lvsContainer{
     height: 600px;
     overflow: auto;
@@ -67,16 +77,35 @@ p {
 #liveStatusContainer::-webkit-scrollbar {
     display: none; /* Hide scrollbar for webkit-based browsers */
 }
+.two-column-list {
+    column-count: 2;
+    column-gap: 20px;
+    padding-left: 0;
+    list-style: none;
+}
+.inline-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.inline-list li {
+    margin-right: 10px; /* Adjust spacing between items */
+}
 #runDaysContainer{
     height: 180px;
     overflow: auto;
+    justify-content: center;
 }
 #runDaysContainer::-webkit-scrollbar {
     display: none; /* Hide scrollbar for webkit-based browsers */
 }
+
 #classContainer{
     height: 180px;
     overflow: auto; 
+    justify-content: center;
 }
 #classContainer::-webkit-scrollbar {
     display: none; /* Hide scrollbar for webkit-based browsers */
@@ -85,20 +114,60 @@ p {
 #quotaContainer{
     height: 180px;
     overflow: auto; 
+    justify-content: center;
 }
 #quotaContainer::-webkit-scrollbar {
     display: none; /* Hide scrollbar for webkit-based browsers */
+}
+#quotaContainer{
+    width: 100%;
+}
+.two-column-list {
+    /* display: grid; */
+    column-count: 2;
+    /* grid-template-columns: repeat(2, 1fr); Two columns */
+    gap: 5px; /* Adjust spacing between items */
+    padding-left: 0; /* Remove default padding */
 }
 #tr{
     width: 545px;
     margin-right: 15px;
     margin-left: 25px;
+    color:white;
 }
+#routeContainer .list-group-item {
+    /* Styles for each list item */
+    backdrop-filter: blur(6px) saturate(171%);
+    -webkit-backdrop-filter: blur(6px) saturate(171%);
+    -moz-backdrop-filter: blur(6px) saturate(171%);
+    background-color: transparent;
+    border-style:none;
+    border-radius: 3px; /* Add some border-radius */
+    margin-bottom: 10px; /* Adjust spacing between items */
+    color: white;
+  }
+  #trainLiveStatusList .list-group-item {
+    backdrop-filter: blur(6px) saturate(171%);
+    -webkit-backdrop-filter: blur(6px) saturate(171%);
+    -moz-backdrop-filter: blur(6px) saturate(171%);
+    background-color: transparent;
+    border-style:none;
+    border-radius: 12px; /* Add some border-radius */
+    margin-bottom: 10px; /* Adjust spacing between items */
+    color:white
+  }
 #lvs{
     margin-left: 15px;
     width: 545px;
 }
-
+/* .glassmorphism{
+    backdrop-filter: blur(6px) saturate(171%);
+    -webkit-backdrop-filter: blur(6px) saturate(171%);
+    -moz-backdrop-filter: blur(6px) saturate(171%);
+    background-color: transparent;
+    /* border-radius: 12px; */
+    /* border: 1px solid rgba(255, 255, 255, 0.125);
+} */ 
 #seatButton {
     width: 200px; /* Adjust the width as needed */  
 }
@@ -1873,7 +1942,7 @@ progress {
 
 .col-7 {
     flex: 0 0 auto;
-    width: 58.33333333%;
+    width: 100%;
 }
 
 .col-8 {
@@ -3166,7 +3235,7 @@ progress {
 
     .col-xl-7 {
         flex: 0 0 auto;
-        width: 58.33333333%;
+        width: 100%;
     }
 
     .col-xl-8 {
