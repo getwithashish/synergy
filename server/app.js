@@ -35,11 +35,17 @@ app.get("/allFeedback", (req, res) => {
 app.post('/change-password', (req, res) => {
     const { email, oldPassword, newPassword } = req.body;
 
+    console.log("inside change password endpoint");
     // Find the user by email
     const user = userCredentials.find(u => u.email === email);
 
+    console.log("User is "+user.name);
+    console.log("User password is " + user.pass);
+    console.log("User old password is " + oldPassword);
+    console.log("User new password is " + newPassword);
+
     // If user not found or old password is incorrect, send an error response
-    if (!user || user.pass !== oldPassword) {
+    if (!user || user.password !== oldPassword) {
         return res.status(401).json({ error: 'Invalid old password' });
     }
 
@@ -437,3 +443,4 @@ app.get("/stationsList", async (req, res) => {
     res.status(500).send('Data not obtained');
   })
 })
+

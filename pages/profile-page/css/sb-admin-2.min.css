@@ -1296,7 +1296,8 @@ pre code {
 }
 .table thead th {
 	vertical-align:bottom;
-	border-bottom:2px solid #e3e6f0
+	border-bottom:2px solid #e3e6f0;
+	background: linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
 }
 .table tbody+tbody {
 	border-top:2px solid #e3e6f0
@@ -3229,6 +3230,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
 .nav-link {
 	display:block;
 	padding:.5rem 1rem
+	padding
 }
 .nav-link:focus,.nav-link:hover {
 	text-decoration:none
