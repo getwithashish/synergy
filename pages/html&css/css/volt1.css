@@ -19,7 +19,9 @@
 
 
 body {
-    background-image: url('../../../assets/darkabstract.jpg');  /* Replace 'your-image-url.jpg' with the actual URL or path to your image file */
+    
+    /* background-image: url('../../../assets/darkabstract.jpg');   */
+    /* Replace 'your-image-url.jpg' with the actual URL or path to your image file */
     background-repeat: no-repeat;
     background-size: cover; /* Adjust the background size as needed, 'cover' ensures the image covers the entire container */
     background-position: center center; /* Center the background image horizontally and vertically */
