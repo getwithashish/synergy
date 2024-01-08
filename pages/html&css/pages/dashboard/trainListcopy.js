@@ -41,41 +41,44 @@ searchTrain1();
 
 async function searchSeat(){
   // seatAvailability.innerhtml = "";
-  const trainNoInput = document.getElementById("topbarInputIconLeft").value.trim();
+ // const trainNoInput = document.getElementById("topbarInputIconLeft").value.trim();
   const fromInput = document.getElementById("from_station").value.trim();
   const toInput = document.getElementById("to_station").value.trim();
   const dateInput = document.getElementById("enter_date").value.trim();
   const classTypeInput = document.getElementById("classtype").value.trim();
   const quotaInput = document.getElementById("enter_quota").value.trim();
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const trainNumber = urlParams.get('trainNumber');
   
-  const seatAva = await checkSeatAvailability({ classType:classTypeInput,fromStationCode:fromInput, quota:quotaInput,toStationCode:toInput,trainNo:trainNoInput, date:dateInput})
+  const seatAva = await checkSeatAvailability({ classType:classTypeInput,fromStationCode:fromInput, quota:quotaInput,toStationCode:toInput,trainNo:trainNumber, date:dateInput})
   .then((response) => {
     console.log("Inside seat availability: ", response);
-    const seatData = response.data;
+    let seatArray = response;
 
-    searchSeatAvail(response.data);
+    searchSeatAvail(seatArray);
   })
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function searchSeatAvail(data){
+function searchSeatAvail(seatArray){
   // let seatAvailability = document.createElement('ul');
   const cardContainer = document.getElementById('cardContainer');
 
-  data.forEach((item, index) => {
-    const card = document.createElement('div');
-    card.classList.add('col-12', 'col-sm-6', 'col-xl-4', 'col-md-3', 'mb-4');
-    card.innerHTML = `
-        <div class="card" id="day${index + 1}">
-            <h5><span class="word" id="day${index + 1}seat" style="color:rgb(250, 249, 249)">${item.date}</span></h5>
-            <span class="word" id="cnf_seat${index + 1}" style="color:rgb(250, 249, 249)">${item.confirm_probability}</span>
-            <span class="word" id="tot_fare${index + 1}" style="color:rgb(250, 249, 249)">${item.total_fare}</span>
-            <span class="word" id="probability${index + 1}" style="color:rgb(250, 249, 249)">${item.confirm_probability_percent}</span>
-            <span class="word" id="current_stat${index + 1}" style="color:rgb(250, 249, 249)">${item.current_status}</span>
-        </div>
-    `;
-    cardContainer.appendChild(card);
-});
+for (let s = 0; s< seatArray.length; s++){
+ 
+    const dateElement = document.getElementById(`day${s + 1}seat`);
+    const ticketFareElement = document.getElementById(`cnf_seat${s + 1}`);
+    const altcnfElement = document.getElementById(`tot_fare${s + 1}`);
+    const probabilityElement = document.getElementById(`probability${s + 1}`);
+    const currentStatusElement = document.getElementById(`current_stat${s + 1}`);
+
+    dateElement.textContent = seatArray[s].date;
+    ticketFareElement.textContent = seatArray[s].confirm_probability;
+    altcnfElement.textContent = seatArray[s].ticket_fare;
+    probabilityElement.textContent = seatArray[s].confirm_probability_percent;
+    currentStatusElement.textContent = seatArray[s].current_status;
+}
   
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -85,9 +88,12 @@ function searchSeatAvail(data){
 async function liveStatus(){
   const trainLiveStatusList = document.getElementById("trainLiveStatusList");
   trainLiveStatusList.innerHTML = "";
-  const trainInput2 = document.getElementById("topbarInputIconLeft").value.trim();
+  //const trainInput2 = document.getElementById("topbarInputIconLeft").value.trim();
 
-  const someLiveStatus = await getTrainLiveStatus({trainNo: trainInput2})
+  const urlParams = new URLSearchParams(window.location.search);
+  const trainNumber = urlParams.get('trainNumber');
+
+  const someLiveStatus = await getTrainLiveStatus({trainNo: trainNumber})
   .then ((response) => {
 
     console.log("live status of train:", response);
@@ -132,7 +138,7 @@ function displayLiveStatus(lvsContainer,previousStationsArray,upcomingStationsAr
     // verticalLine.style.height = '35px'; 
     iconShapeDiv.appendChild(iconImage);
     colAutoDiv.appendChild(iconShapeDiv);
-    colAutoDiv.appendChild(verticalLine);
+    // colAutoDiv.appendChild(verticalLine);
 
     let colContentDiv = document.createElement('div');
     colContentDiv.classList.add('col', 'ms-n2', 'mb-3');
@@ -174,18 +180,18 @@ function displayLiveStatus(lvsContainer,previousStationsArray,upcomingStationsAr
     iconShapeDiv.classList.add('icon-shape', 'icon-xs');
     let iconImage = document.createElement('img');
     iconImage.src = "icons8-round-48.png";
-    iconImage.style.width = "70px"; // Set the desired width
+    iconImage.style.width = "75px"; // Set the desired width
     iconImage.style.height = "70px";
-    let verticalLine = document.createElement('div');
-    verticalLine.classList.add('vertical-line'); // Create a class for styling
+    // let verticalLine = document.createElement('div');
+    // verticalLine.classList.add('vertical-line'); // Create a class for styling
 
   // Style the vertical line (adjust properties as needed)
-    verticalLine.style.borderLeft = '2px solid grey'; // Example line style
-    verticalLine.style.height = '80px'; 
-    verticalLine.style.paddingLeft = '30px';
+    // verticalLine.style.borderLeft = '2px solid grey'; // Example line style
+    // verticalLine.style.height = '80px'; 
+    // verticalLine.style.paddingLeft = '30px';
     iconShapeDiv.appendChild(iconImage);
     colAutoDiv.appendChild(iconShapeDiv);
-    colAutoDiv.appendChild(verticalLine);
+    // colAutoDiv.appendChild(verticalLine);
 
     let colContentDiv = document.createElement('div');
     colContentDiv.classList.add('col', 'ms-n2', 'mb-3');
@@ -236,7 +242,7 @@ function displayLiveStatus(lvsContainer,previousStationsArray,upcomingStationsAr
       // verticalLine.style.height = '80px'; 
       iconShapeDiv.appendChild(iconImage);
       colAutoDiv.appendChild(iconShapeDiv);
-      colAutoDiv.appendChild(verticalLine);
+      // colAutoDiv.appendChild(verticalLine);
 
       let colContentDiv = document.createElement('div');
       colContentDiv.classList.add('col', 'ms-n2', 'mb-3');
@@ -397,9 +403,6 @@ function displayRunDay(runDayArray,runDaysContainer){
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 

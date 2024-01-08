@@ -1,0 +1,305 @@
+#topic_container {
+  background-color: rgb(233, 229, 229);
+  height: 450px;
+  padding-top: 140px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  color: rgb(233, 229, 229);
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+body {
+  background: linear-gradient(to bottom right, #0f0f0f, #a5a0a0);
+  animation: gradientAnimation 5s ease infinite;
+}
+
+#card1 {
+  height: auto;
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+#card2,
+#card3,
+#card4,
+#card5, #card6, #palaceOnWheels, #deccan_odyssey,
+#golden_chariot, #maharajas {
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+.img-fluid1 {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.img-fluid {
+  width: 100%;
+  height: 398px;
+  border-radius: 20px;
+}
+
+.img-fluid3 {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.img-fluid4 {
+  max-width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.img-fluid5 {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.img-fluid6 {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.card-img-top {
+  border-radius: 20px;
+}
+
+#luxury_train {
+  align-items: center;
+  justify-content: center;
+  height: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  height: auto;
+}
+
+#luxuryTrain_title {
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 90px;
+}
+
+#buddistTrain_title {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 40px;
+}
+
+#charterTrain_title {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 30px;
+}
+
+#charterTrains {
+  background-color: transparent;
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+#charter_container {
+  padding-bottom: 60px;
+}
+
+.nav-pills .nav-link {
+  color: rgb(233, 229, 229); /* Change this to your preferred color */
+}
+
+.nav-pills .nav-link.active {
+  color: white; /* Change this to your preferred active color */
+  background-color: #cf2550; /* Change this to your preferred active background color */
+}
+
+#trainCharter1 {
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  background-color: transparent;
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+#trainCharter2 {
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  background-color: transparent;
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+#trainCharter3 {
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  background-color: transparent;
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+#buddhaCard1 {
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+#buddhaCard2 {
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+#buddhaCard3 {
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+#buddhaCard4 {
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+#buddhaCard5 {
+  backdrop-filter: blur(16px) saturate(171%);
+  -webkit-backdrop-filter: blur(66px) saturate(181%);
+  -moz-backdrop-filter: blur(16px) saturate(171%);
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+.contactTable {
+  border-radius: 10px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Add this CSS in your stylesheet or style section */
+.table-glassmorphism {
+  background-color: rgba(255, 255, 255, 0.2); /* Adjust the transparency as needed */
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px); /* Adjust the blur effect as needed */
+  color: white;
+}
+
+.table-glassmorphism thead th {
+  background-color: rgba(0, 0, 0, 0.2); /* Adjust the transparency of the header */
+  color: white;
+}
+
+#field1 {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+#field2 {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.mobile,
+.email,
+.nameField,
+.orgField,
+.address,
+.requestFor,
+.purpose,
+.additionalService {
+  flex: 1;
+}
+
+#field3 {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+#field4 {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+#enquiryButton {
+  background-color: #cf2550;
+  border-color: #cf2550;
+}
+
+/* Positioning the card body and hiding it initially */
+#nilgiriImgOverlay {
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the background color and opacity */
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show the card body on hover */
+#nilgiriImgOverlay:hover {
+  opacity: 1;
+}/*# sourceMappingURL=topRoutes.css.map */
