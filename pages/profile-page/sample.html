@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWT Token Test</title>
+</head>
+
+<body>
+    <script>
+        // Paste the copied JWT token here
+        const jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+
+        // Decode the token
+        const decodedToken = jwt.decode(jwtToken);
+
+        // Display decoded information in the console
+        console.log('Decoded Token:', decodedToken);
+
+        // Store the decoded information in local storage
+        localStorage.setItem('decodedToken', JSON.stringify(decodedToken));
+
+        // You can also display the decoded information in the HTML document
+        document.body.innerHTML = `<pre>${JSON.stringify(decodedToken, null, 2)}</pre>`;
+
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        function createLocalstorageItem(txtJwtTokenValue) {
+            sessionStorage.setItem("jwtToken", txtJwtTokenValue);
+        }
+
+        function readValue() {
+            var jwtToken = sessionStorage.getItem("jwtToken");
+            console.log("jwtToken : " + jwtToken);
+            return jwtToken;
+
+        }
+
+        function getDataFromAPiByPassingJwtTokenInHeader() {
+            var jwtToken = readValue();
+            $.ajax({
+                url: 'https://url.com',
+                type: 'post',
+                data: {},
+                headers: {
+                    Bearer Token: "Bearer " + jwtToken,   //key word **Bearer**  should pass before the token string
+                },
+                dataType: 'json',
+                success: function (data) {
+                    console.info(data);
+                }
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

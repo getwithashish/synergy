@@ -11,8 +11,18 @@
 
     <title>Profile</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2"></script>
+
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.min.css'></link>  
+
     <link rel="stylesheet" href="css/animate.css">
     <!-- Custom fonts for this template-->
+
+    <link rel="stylesheet" href="css/table.css">
+
+    <link rel="stylesheet" href="radio_button.css">
+
+    <link rel="stylesheet" href="auto_complete.css">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -22,6 +32,8 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <link href="/css/newNavBar.css" rel="stylesheet">
+
+    <script src="jwt_validation.js"></script>
 
     <!-- Add this line inside the <head> section to include Axios via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -37,6 +49,30 @@
     <script src="change_password.js"></script>
 
     <style>
+        .inputfile{
+            color: #1d0839;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px black;
+            width: 350px;
+            outline: none;
+        }
+
+        ::-webkit-file-upload-button{
+            color: white;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 1px 0 1px 1px #6b4559;
+            outline: none;
+        }
+
+        ::-webkit-file-upload-button:hover{
+            background: #1d0e37;
+        }
+
         .cancelNotification {
             position: fixed;
             top: 0;
@@ -70,6 +106,10 @@
                 padding-left: 7.5rem;
                 padding-top: 45px;
             }
+        }
+
+        .rounded-circle {
+            margin-left: 300px;
         }
 
         /* .container-fluid{
@@ -258,7 +298,7 @@
 
     <header class="header">
 
-        <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a>
+        <a href="/index.html" class="logo">Syn</a>
 
         <input type="checkbox" id="check">
         <label for="check" class="icons">
@@ -267,11 +307,18 @@
         </label>
 
         <nav class="newnavbar">
-            <a href="#" style="--i:0;">Home</a>
-            <a href="#" style="--i:1;">About</a>
-            <a href="#" style="--i:2;">Gallery</a>
-            <a href="#" style="--i:3;">Services</a>
-            <a href="#" style="--i:4;">Contact</a>
+            <div class="autoComplete_wrapper">
+                <div class="autoComplete_wrapper" role="combobox" aria-owns="autoComplete_list_3" aria-haspopup="true"
+                    aria-expanded="false">
+                    <input style="width: 100%;" id="autocompleteTrainSearch" type="search" dir="ltr" spellcheck=false
+                        autocorrect="off" autocomplete="off" autocapitalize="off" aria-controls="autoComplete_list_3"
+                        aria-autocomplete="both" placeholder="Search Train...">
+                </div>
+            </div>
+            <a href="../pnr_status.html" style="--i:0;">PNR Status</a>
+            <a href="/FAQ/index.html" style="--i:3;">FAQ</a>
+            <a href="../contact-page/index.html" style="--i:4;">Contact</a>
+            <a href="#" style="--i:5;" onclick="toggleLoginForm()">LogIn/SignUp</a>
         </nav>
         <!-- 
             <li class="nav-item dropdown no-arrow">
@@ -296,7 +343,7 @@
                                         </div>
                                     </li> -->
 
-        <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+        <a class="nav-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             <!-- <span class="mr-2 d-none d-lg-inline text-white-600 small">Douglas McGee</span> -->
             <img class="img-profile rounded-circle" src="assets/undraw_profile.svg" id="profileImage">
@@ -321,12 +368,12 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <!-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">ALICE</div>
-            </a>
+            </a> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -924,14 +971,13 @@
                                                     Worst
                                                 </label>
                                             </div>
-                                            <!-- Add more questions as needed -->
 
                                         </div>
 
                                         <!-- File Upload -->
                                         <div class="form-group">
                                             <label for="fileUpload">Upload Image (if any):</label>
-                                            <input type="file" class="form-control-file" id="fileUpload">
+                                            <input type="file" class="inputfile form-control-file" id="fileUpload">
                                         </div>
 
                                         <button type="button" class="btn btn-danger" onclick="submitFeedback()">Submit
@@ -1226,7 +1272,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a id="confirmLogoutBtn" class="btn btn-danger" href="../loginPage.html">Logout</a>
+                    <a id="confirmLogoutBtn" class="btn btn-danger">Logout</a>
                 </div>
             </div>
         </div>
@@ -1285,9 +1331,6 @@
         })(document, 'script');
     </script>
 
-
-    <script src="logout.js"></script>
-
     <script src="feedback.js"></script>
 
     <script src="upload-profile-photo.js"></script>
@@ -1297,10 +1340,6 @@
     <script src="cancellation.js"></script>
 
     <!-- include this in end then only will work -->
-
-
-
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1319,6 +1358,8 @@
     <script src="js/demo/chart-pie-demo.js"></script>
 
     <script type="text/javascript" src="animate.js"></script>
+
+    <script src="logout.js"></script>
 
 </body>
 
