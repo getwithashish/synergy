@@ -52,7 +52,8 @@ async function searchSeat(){
   const urlParams = new URLSearchParams(window.location.search);
   const trainNumber = urlParams.get('trainNumber');
   
-  const seatAva = await checkSeatAvailability({ classType:classTypeInput,fromStationCode:fromInput, quota:quotaInput,toStationCode:toInput,trainNo:trainNumber, date:dateInput})
+  // const seatAva = await checkSeatAvailability({ classType:classTypeInput,fromStationCode:fromInput, quota:quotaInput,toStationCode:toInput,trainNo:trainNumber, date:dateInput})
+  const seatAva = await getDummySeatAvailability({ classType:classTypeInput,fromStationCode:fromInput, quota:quotaInput,toStationCode:toInput,trainNo:trainNumber, date:dateInput})
   .then((response) => {
     console.log("Inside seat availability: ", response);
     let seatArray = response;
