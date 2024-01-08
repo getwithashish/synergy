@@ -11,7 +11,7 @@ const userDataEndpoint = "/getUserData";
 const trainsBetweenStationsDummyEndpoint = "/trainBetweenStations";
 const stationsListEndpoint = "/stationsList";
 const trainDetailsDummyEndpoint = "/getTrainDetails";
-const trainScheduleDummyEndpoint = "/getSeatAvailability";
+const seatAvailabilityeDummyEndpoint = "/getSeatAvailability";
 
 const signup = async (params) => {
     return postRequest(`${synergyServerUrl}${signupEndpoint}`, params, synergyServerHeaders)
@@ -59,10 +59,11 @@ const getDummyTrainDetails = async (params) => {
     });
 }
 
-const getDummyTrainSchedule = async (params) => {
-    return getRequest(`${synergyServerUrl}${trainScheduleDummyEndpoint}`, params, synergyServerHeaders)
+const getDummySeatAvailability = async (params) => {
+    return getRequest(`${synergyServerUrl}${seatAvailabilityeDummyEndpoint}`, params, synergyServerHeaders)
     .then((response) => {
-        console.log("Inside Trains Schedule Function: ", response)
-        return response;
+        console.log("Inside Seat availability Function: ", response.data)
+        return response.data;
     });
 }
+
