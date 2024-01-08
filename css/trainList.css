@@ -1,0 +1,167 @@
+/* CSS Styles for seat class cards */
+.trainDetailsContainer {
+    display: flex;
+    gap: 10px;
+}
+
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 5px;
+    background-color: transparent !important;
+}
+
+/* Container for the seat classes */
+.seatClassSection {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Individual seat card */
+.seatCardType {
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid #ccc; /* Adding a border for better visibility */
+    border-radius: 4px; /* Adding a slight border radius for a softer look */
+    overflow: hidden; /* Ensuring content doesn't overflow */
+    background-color: #fff; /* Set a white background color */
+
+}
+
+/* Individual seat content */
+.IndividualSeat {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Seat type heading */
+.IndividualSeat h3 {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Adjusted size */
+    font-weight: bold;
+}
+
+/* Additional styling for the seat container */
+#seatContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allow seats to wrap to the next line if necessary */
+}
+
+/* Removing unnecessary styling */
+#seatTypeBox {
+    /* No specific styling needed, removed padding */
+}
+
+#seatTypeFont {
+    /* No specific styling needed, removed font-size */
+}
+
+  
+
+
+.topsection {
+    display: flex;
+    justify-content: space-between; /* Space elements evenly within the container */
+    width: 100%; /* Ensure it takes the full width of the card-body */
+}
+
+.nameandnumber {
+    font-weight: bold;
+}
+
+.timeandtofro {
+    text-align: right; /* Align text to the right within this container */
+    flex-grow: 1;
+}
+
+
+
+.runDayCard {
+
+    margin-left: 3rem;
+    border: 1px solid #ccc;
+    color: #ccc;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20%;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+}
+
+
+.runDayBody {
+    font-size: 12px; /* Adjust the font size as needed */
+}
+
+
+.runDayDiv {
+    margin-left: auto;
+    display: flex;
+    max-width: 300px;
+}
+
+.runDayCard {
+
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+
+    border: 1px solid #ccc;
+    color: #ccc;
+    background-color: #9b9b9b; /* Highlight color for selected days */
+
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20%;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+}
+
+.runDayCard.highlight {
+    color: #ffffff;
+    background-color: #008000; /* Highlight color for selected days */
+    box-shadow: 5px 5px 10px rgba(33, 33, 33, 0.5); /* Shadow color for highlighted days */
+    font-size: 16px;
+    font-weight: bold;
+    /* transform: rotate(3deg); */
+}
+
+.runDayHeader {
+    font-size: 10px;
+    text-align: center;
+    /* Adjust the font size as needed */
+}
+
+
+/* .colored-popup.swal2-icon-success{
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+} */
+
+.colored-popup.swal2-popup {
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+

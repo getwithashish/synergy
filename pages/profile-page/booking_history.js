@@ -60,17 +60,34 @@
           table.classList.add("table", "table-responsive");
 
           // Create a table header
+          const heading = document.createElement("h3");
+          heading.textContent = title;
+          // Get the div with id "bookingsCardBody"
+          var bookingsCardBody = document.getElementById("bookingsCardBody");
+
+          // Append the h1 element to the "bookingsCardBody" div
+          bookingsCardBody.appendChild(heading);
           const thead = document.createElement("thead");
           const headerRow = thead.insertRow();
-          headerRow.innerHTML = `<th colspan="8">${title}</th>`;
+          headerRow.innerHTML = `<th>${"Source"}</th> <th>${"Destination"}</th> <th>${"Date of journey"}</th>
+          <th>${"Train Name"}</th> <th>${"Train Number"}</th> <th>${"PNR Number"}</th>
+          <th>${"Booking date"}</th> <th>${"Status"}</th>`;
           table.appendChild(thead);
 
           // Create table body
           const tbody = document.createElement("tbody");
 
+          const classList = [
+            "status delivered",
+            "status cancelled",
+          ];
           // Add rows to the table
           data.forEach((booking) => {
             const row = tbody.insertRow();
+
+            // Determine the class based on reservationStatus
+            const statusClass = booking.reservationStatus === "Cancelled"? classList[1]: classList[0];
+
             row.innerHTML = `
             <td>${booking.from}</td>
             <td>${booking.to}</td>
@@ -79,7 +96,7 @@
             <td>${booking.trainNumber}</td>
             <td>${booking.pnr}</td>
             <td>${booking.bookingDate}</td>
-            <td>${booking.reservationStatus}</td>
+            <td class="${statusClass}">${booking.reservationStatus}</td>
         `;
           });
 
