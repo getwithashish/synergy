@@ -1,6 +1,6 @@
 function openSweetAlert(htmlContainerCode) {
     Swal.fire({
-      title: "<strong style='color: white;'>Train List</strong>",
+      title: "<strong style='color: white; font-size: 20px; font-family: Arial, sans-serif;  '>Train List</strong>",
       width: "max-content",
       // width: "82px",
       html: `
@@ -23,17 +23,20 @@ function openSweetAlert(htmlContainerCode) {
       customClass: {
         popup: 'colored-popup'
       },
-      showCloseButton: true,
-      showCancelButton: true,
-      focusConfirm: false,
-      confirmButtonText: `
-        <i class="fa fa-thumbs-up"></i> Great!
-      `,
-      confirmButtonAriaLabel: "Thumbs up, great!",
-      cancelButtonText: `
-        <i class="fa fa-thumbs-down"></i>
-      `,
-      cancelButtonAriaLabel: "Thumbs down"
+      padding:'0px 0px 0px',
+
+      // showCloseButton: true,
+      // showConfirmButton:false,
+      // showCancelButton: true,
+      // focusConfirm: false,
+      // confirmButtonText: `
+      //   <i class="fa fa-thumbs-up"></i> Great!
+      // `,
+      // confirmButtonAriaLabel: "Thumbs up, great!",
+      // cancelButtonText: `
+      //   <i class="fa fa-thumbs-down"></i>
+      // `,
+      // cancelButtonAriaLabel: "Thumbs down"
     });
 
   }
