@@ -190,6 +190,12 @@ p {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
 }
+#fieldSeat1{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    border-radius: 10px;
+}
 #day3,
 #day4,
 #day1,#day2
