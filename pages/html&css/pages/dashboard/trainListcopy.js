@@ -95,11 +95,11 @@ for (let s = 0; s< seatArray.length; s++){
     const probabilityElement = document.getElementById(`probability${s + 1}`);
     const currentStatusElement = document.getElementById(`current_stat${s + 1}`);
 
-    dateElement.textContent = seatArray[s].date;
+    dateElement.textContent ="Date: "+ seatArray[s].date;
     ticketFareElement.textContent = seatArray[s].confirm_probability;
-    altcnfElement.textContent = seatArray[s].ticket_fare;
+    altcnfElement.textContent ="Ticket Fare: "+ seatArray[s].ticket_fare;
     probabilityElement.textContent = seatArray[s].confirm_probability_percent;
-    currentStatusElement.textContent = seatArray[s].current_status;
+    currentStatusElement.textContent ="Status: "+ seatArray[s].current_status;
 
 }
   
