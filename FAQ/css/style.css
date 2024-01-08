@@ -411,7 +411,7 @@ html:not(.js) .cd-faq__content {
 }
 
 body {
-  background-color: var(--color-contrast-lower);
+  background: #3E1E68;
 }
 
 .cd-header {
