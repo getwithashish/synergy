@@ -1,3 +1,6 @@
+var sourceStationCode = "";
+var destinationStationCode = "";
+
 const autoCompleteSrcStationJS = new autoComplete({
   selector: "#autocompleteSrcStation",
   placeHolder: "Source Station...",
@@ -34,6 +37,7 @@ const autoCompleteSrcStationJS = new autoComplete({
       selection: (event) => {
         const selection = event.detail.selection.value;
         autoCompleteSrcStationJS.input.value = `${selection.stationName} (${selection.stationCode})`;
+        sourceStationCode = selection.stationCode;
         addSourceMarker(selection.stationCode);
         console.log("Selected: ", selection);
       },
@@ -76,6 +80,7 @@ const autoCompleteDestStationJS = new autoComplete({
       selection: (event) => {
         const selection = event.detail.selection.value;
         autoCompleteDestStationJS.input.value = `${selection.name} (${selection.code})`;
+        destinationStationCode = selection.code;
         addDestinationMarker(selection.code);
         console.log("Selected: ", selection);
       },
