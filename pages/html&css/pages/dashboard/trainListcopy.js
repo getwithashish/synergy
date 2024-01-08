@@ -43,6 +43,21 @@ searchTrain1();
 async function searchSeat(){
   // seatAvailability.innerhtml = "";
  // const trainNoInput = document.getElementById("topbarInputIconLeft").value.trim();
+
+ const elements = [
+  "day1seat", "cnf_seat1", "tot_fare1", "probability1", "current_stat1",
+  "day2seat", "cnf_seat2", "tot_fare2", "probability2", "current_stat2",
+  "day3seat", "cnf_seat3", "tot_fare3", "probability3", "current_stat3",
+  "day4seat", "cnf_seat4", "tot_fare4", "probability4", "current_stat4",
+  "day5seat", "cnf_seat5", "tot_fare5", "probability5", "current_stat5",
+  "day6seat", "cnf_seat6", "tot_fare6", "probability6", "current_stat6"
+];
+
+elements.forEach(id => {
+  document.getElementById(id).innerHTML = "";
+});
+
+
   const fromInput = document.getElementById("from_station").value.trim();
   const toInput = document.getElementById("to_station").value.trim();
   const dateInput = document.getElementById("enter_date").value.trim();
@@ -60,6 +75,8 @@ async function searchSeat(){
     searchSeatAvail(seatArray);
   })
 }
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function searchSeatAvail(seatArray){
@@ -67,6 +84,9 @@ function searchSeatAvail(seatArray){
   const cardContainer = document.getElementById('cardContainer');
 
 for (let s = 0; s< seatArray.length; s++){
+
+  const cardId = `day${s + 1}`;
+  const childCard = document.getElementById(cardId);
  
     const dateElement = document.getElementById(`day${s + 1}seat`);
     const ticketFareElement = document.getElementById(`cnf_seat${s + 1}`);
@@ -79,6 +99,7 @@ for (let s = 0; s< seatArray.length; s++){
     altcnfElement.textContent = seatArray[s].ticket_fare;
     probabilityElement.textContent = seatArray[s].confirm_probability_percent;
     currentStatusElement.textContent = seatArray[s].current_status;
+
 }
   
 }
@@ -369,6 +390,8 @@ function displayRoute(routeArray,routeContainer){
       let platformSpan = document.createElement('span');
       platformSpan.classList.add('small');
       platformSpan.textContent = `Platform: ${routeArray[j].platform_number}`;
+      listItem.classList.add('glassmorphism'); // Apply glassmorphism to listItem
+      colContentDiv.classList.add('glassmorphism');
       dFlexDiv.appendChild(flagImage);
       dFlexDiv.appendChild(platformSpan);
       colContentDiv.appendChild(stationCode);
