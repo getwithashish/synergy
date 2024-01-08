@@ -18,14 +18,14 @@ document.getElementById("confirmLogoutBtn").addEventListener("click", function (
     let timerInterval;
     Swal.fire({
       title: "Log out alert!",
-      html: "I will close in <b></b> milliseconds.",
+      html: "I will close in <b></b> seconds.",
       timer: 2000,
       timerProgressBar: true,
       didOpen: () => {
         Swal.showLoading();
         const timer = Swal.getPopup().querySelector("b");
         timerInterval = setInterval(() => {
-          timer.textContent = `${Swal.getTimerLeft()}`;
+          timer.textContent = `${Math.ceil(Swal.getTimerLeft()/1000)}`;
         }, 100);
       },
       willClose: () => {

@@ -51,6 +51,7 @@ function submitSignupForm() {
           closesignupForm();
 
           const parsedToken = parseJwt(data.token);
+          localStorage.setItem("jwt", data.token);
           storeInLocalStorage(parsedToken);
       } else {
         // Show failure message
@@ -133,14 +134,16 @@ function submitLoginForm() {
       if (response.status == "Success") {
         // Show success message
         messageContainer.innerHTML =
-          '<p style="color: green;">Registration successful!</p>';
-
+          '<p style="color: green;">Login successful!</p>';
+          closeLoginForm();
           const parsedToken = parseJwt(response.jwt);
+          localStorage.setItem("jwt", response.jwt);
           storeInLocalStorage(parsedToken);
+          location.reload();
       } else {
         // Show failure message
         messageContainer.innerHTML =
-          '<p style="color: red;">Registration failed. Please try again.</p>';
+          '<p style="color: red;">Login failed. Please try again.</p>';
       }
     })
     .catch((error) => {
