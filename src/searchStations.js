@@ -6,12 +6,12 @@ const autoCompleteSrcStationJS = new autoComplete({
   placeHolder: "Source Station...",
   data: {
     src: async (query) => {
-    //   const data = await searchStation({ query: query });
-        const data = await getStationsList({ q: query });
+      const data = await searchStation({ query: query });
+        // const data = await getStationsList({ q: query });
 
       return data;
     },
-    keys: ["stationName"],
+    keys: ["name"],
     cache: false,
   },
   resultsList: {
@@ -36,9 +36,9 @@ const autoCompleteSrcStationJS = new autoComplete({
     input: {
       selection: (event) => {
         const selection = event.detail.selection.value;
-        autoCompleteSrcStationJS.input.value = `${selection.stationName} (${selection.stationCode})`;
-        sourceStationCode = selection.stationCode;
-        addSourceMarker(selection.stationCode);
+        autoCompleteSrcStationJS.input.value = `${selection.name} (${selection.code})`;
+        sourceStationCode = selection.code;
+        addSourceMarker(selection.code);
         console.log("Selected: ", selection);
       },
     },
@@ -54,7 +54,7 @@ const autoCompleteDestStationJS = new autoComplete({
     const data = await getStationsList({ q: query });
       return data;
     },
-    keys: ["name", "code"],
+    keys: ["name"],
     cache: false,
   },
   resultsList: {

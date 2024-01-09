@@ -16,6 +16,8 @@ const paytmConfig = require("./paytmConfig");
 const PaytmChecksum = require("./PaytmChecksum");
 // const Paytm = require('paytmchecksum');
 
+const nodemailer = require('nodemailer');
+
 const agent = new https.Agent({
   rejectUnauthorized: false,
 });
@@ -606,8 +608,34 @@ app.post("/initiatePayment", (req, res) => {
   });
 });
 
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'synergyrailways@gmail.com',
+    pass: 'synergy@RAILWAYS90'
+  }
+});
 
-app.post("/sendContactMessage", (req, res) => {
-  const contactMessage = req.body;
-  
-})
+// clientID: 182531647044-61jafc36k428j0b939r8bhlk1dtqjtod.apps.googleusercontent.com
+// clientSecret: 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
+
+// app.post("/sendContactMessage", (req, res) => {
+//   const contactMessage = req.body;
+//   const mailOptions = {
+//     from: 'synergyrailways@gmail.com',
+//     to: 'astg4527@gmail.com',
+//     subject: 'Test Email',
+//     text: 'This is a test email from Node.js using Nodemailer.'
+//   };
+
+//   transporter.sendMail(mailOptions, (error, info) => {
+//     if (error) {
+//       console.error('Error:', error.message);
+//     } else {
+//       console.log('Email sent:', info.response);
+//       res.status(200).send();
+//     }
+//   });
+// })
+
+
