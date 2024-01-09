@@ -1,13 +1,13 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     /* background-color: #f5f5f5; */
-    background-image: url('../../../assets/devanshu-verma-HeAz1n6mVWE-unsplash.jpg');
+    /* background-image: url('../../../assets/devanshu-verma-HeAz1n6mVWE-unsplash.jpg'); */
     /* Other background properties to control size, position, etc. */
     background-size: cover; /* Cover the entire body */
     background-repeat: no-repeat; /* No repeating of the image */
