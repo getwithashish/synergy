@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Success</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="pdfStyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="success-message">
+        <h1>Payment Successful</h1>
+        <p>Thank you for your booking!</p>
+        <img src="checkicon.png">
+        <p>Your order has been successfully processed.</p>
+        <p>A confirmation email has been sent to your email address.</p>
+      </div>
+    </div>
+
+    <div id="ticketContainer">
+        <h2 style="text-align: center; color: #333; font-size: 16px;">Train Ticket Invoice</h2>
+        <div class="sealText" style="font-size: 8rem;">SYNERGY</div>
+        <table>
+            <tr>
+                <td><strong>Field</strong></td>
+                <td><strong>Value</strong></td>
+            </tr>
+            <!-- Details will be dynamically generated here -->
+        </table>
+    </div>
+
+
+    <script src="printPdf.js"></script>
+  </body>
+</html>

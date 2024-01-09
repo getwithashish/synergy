@@ -10,12 +10,11 @@ const axios = require("axios");
 
 const url = require("url");
 
-const https = require('https');
+const https = require("https");
 
-const paytmConfig = require('./paytmConfig');
-const PaytmChecksum = require('./PaytmChecksum');
+const paytmConfig = require("./paytmConfig");
+const PaytmChecksum = require("./PaytmChecksum");
 // const Paytm = require('paytmchecksum');
-
 
 const agent = new https.Agent({
   rejectUnauthorized: false,
@@ -462,7 +461,7 @@ app.get("/getTrainDetails", (req, res) => {
   });
 });
 
-app. get("/getSeatAvailability", (req, res) => {
+app.get("/getSeatAvailability", (req, res) => {
   fs.readFile("seatAvailabilityDummyData.json", "utf8", (err, data) => {
     if (err) {
       console.error("Error reading JSON file:", err);
@@ -474,9 +473,17 @@ app. get("/getSeatAvailability", (req, res) => {
   });
 });
 
+function objectToQueryString(obj) {
+  return Object.entries(obj)
+    .map(
+      ([key, value]) =>
+        encodeURIComponent(key) + "=" + encodeURIComponent(value)
+    )
+    .join("&");
+}
 
 // ====================== PayTm Payment ========================
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 app.post("/initiatePayment", (req, res) => {
   // var paytmParams = {};
   // paytmParams.body = {
@@ -509,7 +516,7 @@ app.post("/initiatePayment", (req, res) => {
   //   var paymentInitialLink = `https://securegw.paytm.in/theia/api/v1/initiateTransaction?mid=${paytmConfig.MID}&orderId=${paytmParams.body.orderId}`;
   //   console.log("Payment Link: ", paymentInitialLink)
 
-  //   await axios.post(paymentInitialLink, 
+  //   await axios.post(paymentInitialLink,
   //   {
   //     httpsAgent: agent,
   //     headers: {
@@ -523,75 +530,84 @@ app.post("/initiatePayment", (req, res) => {
 
   // })
 
+  var enteredBookingDetailsUriEncoded = objectToQueryString(req.body);
+  
   var initiatePaymentResponse = {};
 
+  var currentUnixTime = Date.now();
 
   var paytmParams = {};
 
-paytmParams.body = {
-    "requestType"   : "Payment",
-    "mid"           : "SApWAl73540535701479",
-    "websiteName"   : "DEFAULT",
-    "orderId"       : "ORDERID_98773",
-    "callbackUrl"   : "https://localhost:3000",
-    "txnAmount"     : {
-        "value"     : "1.00",
-        "currency"  : "INR",
+  paytmParams.body = {
+    requestType: "Payment",
+    mid: "SApWAl73540535701479",
+    websiteName: "DEFAULT",
+    orderId: `ORDER_${currentUnixTime}`,
+    callbackUrl: `http://127.0.0.1:5504/pages/payment-success-page/index.html?${enteredBookingDetailsUriEncoded}`,
+    txnAmount: {
+      value: "10.00",
+      currency: "INR",
     },
-    "userInfo"      : {
-        "custId"    : "CUST_001",
+    userInfo: {
+      custId: `CUST_${currentUnixTime}`,
     },
-};
+  };
 
-/*
-* Generate checksum by parameters we have in body
-* Find your Merchant Key in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys 
-*/
-PaytmChecksum.generateSignature(JSON.stringify(paytmParams.body), "37MuHFVCCXnpK1ER").then(function(checksum){
-
+  /*
+   * Generate checksum by parameters we have in body
+   * Find your Merchant Key in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys
+   */
+  PaytmChecksum.generateSignature(
+    JSON.stringify(paytmParams.body),
+    "37MuHFVCCXnpK1ER"
+  ).then(function (checksum) {
     paytmParams.head = {
-        "signature"    : checksum
+      signature: checksum,
     };
 
     var post_data = JSON.stringify(paytmParams);
 
     var options = {
+      /* for Staging */
+      // hostname: 'securegw-stage.paytm.in',
 
-        /* for Staging */
-        // hostname: 'securegw-stage.paytm.in',
+      /* for Production */
+      hostname: "securegw.paytm.in",
 
-        /* for Production */
-        hostname: 'securegw.paytm.in',
-
-        port: 443,
-        path: '/theia/api/v1/initiateTransaction?mid=SApWAl73540535701479&orderId=ORDERID_98773',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Content-Length': post_data.length
-        }
+      port: 443,
+      path: `/theia/api/v1/initiateTransaction?mid=SApWAl73540535701479&orderId=${paytmParams.body.orderId}`,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Content-Length": post_data.length,
+      },
     };
 
     var response = "";
-    var post_req = https.request(options, function(post_res) {
-        post_res.on('data', function (chunk) {
-            response += chunk;
-        });
+    var post_req = https.request(options, function (post_res) {
+      post_res.on("data", function (chunk) {
+        response += chunk;
+      });
 
-        post_res.on('end', function(){
-            console.log('Response: ', response);
+      post_res.on("end", function () {
+        console.log("Response: ", response);
 
-            var responseJson = JSON.parse(response);
-            initiatePaymentResponse.orderId = "ORDERID_98773";
-            initiatePaymentResponse.amount = "1.00";
-          initiatePaymentResponse.txnToken = responseJson.body.txnToken;
+        var responseJson = JSON.parse(response);
+        initiatePaymentResponse.orderId = `${paytmParams.body.orderId}`;
+        initiatePaymentResponse.amount = "10.00";
+        initiatePaymentResponse.txnToken = responseJson.body.txnToken;
 
-          res.status(200).send(initiatePaymentResponse);
-        });
+        res.status(200).send(initiatePaymentResponse);
+      });
     });
 
     post_req.write(post_data);
-    post_req.end();
-})
+    post_req.end();
+  });
+});
 
+
+app.post("/sendContactMessage", (req, res) => {
+  const contactMessage = req.body;
+  
 })
