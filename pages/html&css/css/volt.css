@@ -137,9 +137,9 @@ p {
 }
 #routeContainer .list-group-item {
     /* Styles for each list item */
-    backdrop-filter: blur(6px) saturate(171%);
+    /* backdrop-filter: blur(6px) saturate(171%);
     -webkit-backdrop-filter: blur(6px) saturate(171%);
-    -moz-backdrop-filter: blur(6px) saturate(171%);
+    -moz-backdrop-filter: blur(6px) saturate(171%); */
     background-color: transparent;
     border-style:none;
     border-radius: 3px; /* Add some border-radius */
@@ -147,9 +147,9 @@ p {
     color: white;
   }
   #trainLiveStatusList .list-group-item {
-    backdrop-filter: blur(6px) saturate(171%);
+    /* backdrop-filter: blur(6px) saturate(171%);
     -webkit-backdrop-filter: blur(6px) saturate(171%);
-    -moz-backdrop-filter: blur(6px) saturate(171%);
+    -moz-backdrop-filter: blur(6px) saturate(171%); */
     background-color: transparent;
     border-style:none;
     border-radius: 12px; /* Add some border-radius */
@@ -169,18 +169,19 @@ p {
     /* border: 1px solid rgba(255, 255, 255, 0.125);
 } */ 
 #seatButton {
-    width: 200px; /* Adjust the width as needed */  
+    width: 200px; /* Adjust the width as needed */ 
+    background-color: #cf2550; 
 }
 
 #navbar-search-main{
     padding-top: 140px;
 }
 #dashb{
-    background-image: url('../../../assets/pawel-czerwinski-JgWp9DNib3k-unsplash.jpg');
+    /* background-image: url('../../../assets/pawel-czerwinski-JgWp9DNib3k-unsplash.jpg'); */
     /* Other background properties to control size, position, etc. */
-    background-size: cover; /* Cover the entire body */
-    background-attachment: fixed;
-    background-repeat: no-repeat; /* No repeating of the image */
+    /* background-size: cover; Cover the entire body
+    background-attachment: fixed; */
+    /* background-repeat: no-repeat; No repeating of the image */
 }
 #seatForm{
     backdrop-filter: blur(6px) saturate(171%);

@@ -202,9 +202,9 @@ function displayLiveStatus(lvsContainer,previousStationsArray,upcomingStationsAr
     let iconShapeDiv = document.createElement('div');
     iconShapeDiv.classList.add('icon-shape', 'icon-xs');
     let iconImage = document.createElement('img');
-    iconImage.src = "icons8-round-48.png";
-    iconImage.style.width = "75px"; // Set the desired width
-    iconImage.style.height = "70px";
+    iconImage.src = "icons8-round-32.png";
+    // iconImage.style.width = "75px"; // Set the desired width
+    // iconImage.style.height = "70px";
     // let verticalLine = document.createElement('div');
     // verticalLine.classList.add('vertical-line'); // Create a class for styling
 

@@ -6,33 +6,20 @@
   justify-content: center;
   margin-top: 100px;
   color: rgb(233, 229, 229);
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
+  backdrop-filter: blur(7.5px) saturate(171%);
+  -webkit-backdrop-filter: blur(7.5px) saturate(171%);
+  -moz-backdrop-filter: blur(6px) saturate(171%);
   background-color: transparent;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
   box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-body {
-  background: linear-gradient(to bottom right, #0f0f0f, #a5a0a0);
-  animation: gradientAnimation 5s ease infinite;
-}
-
 #card1 {
   height: auto;
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
+  backdrop-filter: blur(7.5px) saturate(171%);
+  -webkit-backdrop-filter: blur(7.5px) saturate(171%);
+  -moz-backdrop-filter: blur(6px) saturate(171%);
   background-color: transparent;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -44,9 +31,9 @@ body {
 #card4,
 #card5, #card6, #palaceOnWheels, #deccan_odyssey,
 #golden_chariot, #maharajas {
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
+  backdrop-filter: blur(7.5px) saturate(171%);
+  -webkit-backdrop-filter: blur(7.5px) saturate(171%);
+  -moz-backdrop-filter: blur(6px) saturate(171%);
   background-color: transparent;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -123,9 +110,9 @@ body {
 
 #charterTrains {
   background-color: transparent;
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
+  backdrop-filter: blur(7.5px) saturate(171%);
+  -webkit-backdrop-filter: blur(7.5px) saturate(171%);
+  -moz-backdrop-filter: blur(6px) saturate(171%);
   background-color: transparent;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -146,9 +133,9 @@ body {
 }
 
 #trainCharter1 {
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
+  backdrop-filter: blur(7.5px) saturate(171%);
+  -webkit-backdrop-filter: blur(7.5px) saturate(171%);
+  -moz-backdrop-filter: blur(6px) saturate(171%);
   background-color: transparent;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -157,9 +144,9 @@ body {
 }
 
 #trainCharter2 {
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
+  backdrop-filter: blur(7.5px) saturate(171%);
+  -webkit-backdrop-filter: blur(7.5px) saturate(171%);
+  -moz-backdrop-filter: blur(6px) saturate(171%);
   background-color: transparent;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -168,9 +155,9 @@ body {
 }
 
 #trainCharter3 {
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
+  backdrop-filter: blur(7.5px) saturate(171%);
+  -webkit-backdrop-filter: blur(7.5px) saturate(171%);
+  -moz-backdrop-filter: blur(6px) saturate(171%);
   background-color: transparent;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -179,9 +166,9 @@ body {
 }
 
 #buddhaCard1, #buddhaCard2, #buddhaCard3, #buddhaCard4, #buddhaCard5 {
-  backdrop-filter: blur(16px) saturate(171%);
-  -webkit-backdrop-filter: blur(66px) saturate(181%);
-  -moz-backdrop-filter: blur(16px) saturate(171%);
+  backdrop-filter: blur(7.5px) saturate(171%);
+  -webkit-backdrop-filter: blur(7.5px) saturate(171%);
+  -moz-backdrop-filter: blur(6px) saturate(171%);
   background-color: transparent;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -190,9 +177,10 @@ body {
 
 .contactTable {
   border-radius: 10px;
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.75);
+  backdrop-filter: blur(7.5px) saturate(171%);
+  -webkit-backdrop-filter: blur(7.5px) saturate(171%);
+  -moz-backdrop-filter: blur(6px) saturate(171%);
+  background-color: transparent;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
@@ -245,4 +233,9 @@ body {
 /* Show the card body on hover */
 #nilgiriImgOverlay:hover {
   opacity: 1;
+}
+
+#nilgiriText {
+  margin-top: 30px;
+  margin-right: 20px;
 }/*# sourceMappingURL=topRoutes.css.map */

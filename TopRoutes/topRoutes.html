@@ -27,6 +27,7 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/newNavBar.css">
     <link rel="stylesheet" href="topRoutes.css">
+    <link rel="stylesheet" href="animate.css">
 
     <!-- JS -->
     <script src="src/validation.js"></script>
@@ -56,11 +57,12 @@
 <body id="toprouteBody">
  
     <div id="main-container">
+      
 
       <!-- <div class="navBar"> -->
       <header class="header">
 
-        <!-- <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a> -->
+        <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a>
 
         <input type="checkbox" id="check">
         <label for="check" class="icons">
@@ -69,6 +71,7 @@
         </label>
 
         <nav class="newnavbar">
+          
 
           <div class="autoComplete_wrapper">
             <input style="width: 100%;" id="autocompleteTrainSearch" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" placeholder="Search Train...">
@@ -90,11 +93,32 @@
 
     </header>
 
-    
+    <div class="row mb-5">
+      <div class="container-fluid px-0" >
+        <div class="animation d-flex justify-content-between w-100" id="navbarSupportedContent">
+          
+          <div class="d-flex align-items-center">
+            <!-- Search form -->
+            <form class="navbar-search form-inline mb-0" id="navbar-search-main">
+               <div class="input-group input-group-merge search-bar">
+                  <span class="input-group-text" id="topbar-addon">
+                    <svg class="icon icon-xs" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                    </svg>
+                  </span> 
+                  <!-- <input type="text" class="form-control" id="topbarInputIconLeft" placeholder="Enter train number" aria-label="Search" aria-describedby="topbar-addon">
+                     <a href="#" class="btn btn-sm btn-primary"  onclick="searchTrain1()">Search</a>                           -->
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <div class="container" id="topic_container">
        <div class="row">
         <div class="col-12 mt-3 text-center" id="title_text">
+      
            <h1>Top routes</h1>
            <h5>Indian Railway</h5>
         </div>
@@ -578,13 +602,10 @@
     </div>
   </div>
 
-
-
-
-
     </div>
 
     <script src="src/landingPage.js"></script>  
+    <script src="../pages/profile-page/animate.js"></script>
     <script src="topRoute.js"></script>       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRa/RzZDZBxj5E+8/2+iAe1lx2p1b8Q+jp7xjmwPr" crossorigin="anonymous"></script>
     </body>
