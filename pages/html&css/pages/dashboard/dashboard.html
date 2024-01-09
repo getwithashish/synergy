@@ -69,13 +69,14 @@ type="text/css"/>
 
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" href="../../../../css/newNavBar.css">
+<link rel="stylesheet" href="animate.css">
 </head>
 
 <body id="dashb">
 
   <header class="header">
 
-    <a href="http://127.0.0.1:5504/index.html" class="logo">Syn</a>
+    <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a>
 
     <input type="checkbox" id="check">
     <label for="check" class="icons">
@@ -86,7 +87,7 @@ type="text/css"/>
     <nav class="newnavbar">
         <a href="#" style="--i:0;">PNR Status</a>
         <a href="#" style="--i:1;">About</a>
-        <a href="#" style="--i:2;">Gallery</a>
+        <a href="#" style="--i:2;">Top Routes</a>
         <a href="#" style="--i:3;">Services</a>
         <a href="#" style="--i:4;">Contact</a>
     </nav>
@@ -95,21 +96,29 @@ type="text/css"/>
  
         <main class="content" id="main_container">
             <!-- <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0"> -->
+                
 <div class="row mb-5">
   <div class="container-fluid px-0" >
-    <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
+    <div class="animation d-flex justify-content-between w-100" id="navbarSupportedContent">
+        <span class="animate"></span>
+        <span class="animate"></span>
+        <span class="animate"></span>
+        <span class="animate"></span>
+        <span class="animate"></span>
+        <span class="animate"></span>
       <div class="d-flex align-items-center">
         <!-- Search form -->
         <form class="navbar-search form-inline mb-0" id="navbar-search-main">
-          <!-- <div class="input-group input-group-merge search-bar">
-              <span class="input-group-text" id="topbar-addon">
+           <div class="input-group input-group-merge search-bar">
+            
+              <!-- <span class="input-group-text" id="topbar-addon">
                 <svg class="icon icon-xs" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                 </svg>
-              </span>
-              <input type="text" class="form-control" id="topbarInputIconLeft" placeholder="Enter train number" aria-label="Search" aria-describedby="topbar-addon">
-                 <a href="#" class="btn btn-sm btn-primary"  onclick="searchTrain1()">Search</a>                          
-          </div> -->
+              </span>  -->
+              <!-- <input type="text" class="form-control" id="topbarInputIconLeft" placeholder="Enter train number" aria-label="Search" aria-describedby="topbar-addon">
+                 <a href="#" class="btn btn-sm btn-primary"  onclick="searchTrain1()">Search</a>                           -->
+          </div>
         </form>
       </div>
     </div>
@@ -124,6 +133,7 @@ type="text/css"/>
 
             <div class="row">
                 <div class="col-12 mb-3">
+                    
                     <div class="card bg-white-100 border-0 shadow">
                         <div class="card-header d-sm-flex flex-row align-items-center flex-0">
                             <div class="d-block mb-3 mb-sm-0">
@@ -326,7 +336,7 @@ type="text/css"/>
 
   <div class="row mb-3">
     <form class="navbar-search form-inline" id="seat_search_1">
-      <div class="input-group input-group-merge search-bar">
+      <div class="input-group input-group-merge search-bar" id="fieldSeat1">
           <!-- <span class="input-group-text" id="topbar-addon1">
           </span> -->
           <input type="text" class="form-control" id="from_station" placeholder="From Station" aria-label="Search" aria-describedby="topbar-addon">
@@ -338,12 +348,12 @@ type="text/css"/>
 
   <div class="row mb-3">
     <form class="navbar-search form-inline" id="seat_search_2">
-      <div class="input-group input-group-merge search-bar">
+      <div class="input-group input-group-merge search-bar" id="fieldSeat1">
           <!-- <span class="input-group-text" id="topbar-addon2">
           </span> -->
           <input type="text" class="form-control" id="enter_quota" placeholder="Quota" aria-label="Search" aria-describedby="topbar-addon">
           <input type="text" class="form-control" id="classtype" placeholder="Classtype" aria-label="Search" aria-describedby="topbar-addon">
-          <input type="text" class="form-control" id="enter_date" placeholder="Enter the Date: yyyy-mm-dd" aria-label="Search" aria-describedby="topbar-addon">                        
+          <input type="date" class="form-control" id="enter_date" placeholder="Enter the Date: yyyy-mm-dd" aria-label="Search" aria-describedby="topbar-addon">                        
       </div>
     </form>
   </div>
@@ -354,7 +364,7 @@ type="text/css"/>
         <div class="row justify-content-center" id="cardContainer">
             <div class="row mb-4">
                  <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">
-                    <div class="card" id="day1">
+                    <div class="card" id="day1" style="align-items: center;">
                         <h5><span class="word" id="day1seat" style="color:rgb(250, 249, 249)">date </span></h5>
                         <span class="word" id="cnf_seat1" style="color:rgb(250, 249, 249)">cnf</span>
                         <span class="word" id="tot_fare1" style="color:rgb(250, 249, 249)">fare</span>
@@ -363,7 +373,7 @@ type="text/css"/>
                     </div>
                 </div>   
                 <div class="col-12 col-sm-6 col-xl-4 col-md-4 mb-4">
-                    <div class="card" id="day2">
+                    <div class="card" id="day2" style="align-items: center;">
                         <h5><span class="word" id="day2seat" style="color:rgb(250, 249, 249)">date </span></h5>
                         <span class="word" id="cnf_seat2" style="color:rgb(250, 249, 249)">cnf</span>
                         <span class="word" id="tot_fare2" style="color:rgb(250, 249, 249)">fare</span>
@@ -372,7 +382,7 @@ type="text/css"/>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-xl-4 col-md-4 mb-4">
-                    <div class="card" id="day3">
+                    <div class="card" id="day3" style="align-items: center;">
                         <h5><span class="word" id="day3seat" style="color:rgb(250, 249, 249)">date </span></h5>
                         <span class="word" id="cnf_seat3" style="color:rgb(250, 249, 249)">cnf</span>
                         <span class="word" id="tot_fare3" style="color:rgb(250, 249, 249)">fare</span>
@@ -381,7 +391,7 @@ type="text/css"/>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
-                    <div class="card" id="day4">
+                    <div class="card" id="day4" style="align-items: center;">
                         <h5><span class="word" id="day4seat" style="color:rgb(250, 249, 249)">date </span></h5>
                         <span class="word" id="cnf_seat4" style="color:rgb(250, 249, 249)">cnf</span>
                         <span class="word" id="tot_fare4" style="color:rgb(250, 249, 249)">fare</span>
@@ -390,7 +400,7 @@ type="text/css"/>
                     </div>
                 </div>    
                 <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
-                    <div class="card" id="day5">
+                    <div class="card" id="day5" style="align-items: center;">
                         <h5><span class="word" id="day5seat" style="color:rgb(250, 249, 249)">date </span></h5>
                         <span class="word" id="cnf_seat5" style="color:rgb(250, 249, 249)">cnf</span>
                         <span class="word" id="tot_fare5" style="color:rgb(250, 249, 249)">fare</span>
@@ -399,7 +409,7 @@ type="text/css"/>
                     </div>
                 </div>  
                 <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
-                    <div class="card" id="day6">
+                    <div class="card" id="day6" style="align-items: center;">
                         <h5><span class="word" id="day6seat" style="color:rgb(250, 249, 249)">date </span></h5>
                         <span class="word" id="cnf_seat6" style="color:rgb(250, 249, 249)">cnf</span>
                         <span class="word" id="tot_fare6" style="color:rgb(250, 249, 249)">fare</span>
@@ -458,6 +468,8 @@ type="text/css"/>
 
 <!-- Volt JS -->
 <script src="../../assets/js/volt.js"></script>
+
+<script type="text/javascript" src="../../../profile-page/animate.js"></script>
 
     
 </body>

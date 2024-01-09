@@ -95,11 +95,11 @@ for (let s = 0; s< seatArray.length; s++){
     const probabilityElement = document.getElementById(`probability${s + 1}`);
     const currentStatusElement = document.getElementById(`current_stat${s + 1}`);
 
-    dateElement.textContent = seatArray[s].date;
+    dateElement.textContent ="Date: "+ seatArray[s].date;
     ticketFareElement.textContent = seatArray[s].confirm_probability;
-    altcnfElement.textContent = seatArray[s].ticket_fare;
+    altcnfElement.textContent ="Ticket Fare: "+ seatArray[s].ticket_fare;
     probabilityElement.textContent = seatArray[s].confirm_probability_percent;
-    currentStatusElement.textContent = seatArray[s].current_status;
+    currentStatusElement.textContent ="Status: "+ seatArray[s].current_status;
 
 }
   
@@ -202,9 +202,9 @@ function displayLiveStatus(lvsContainer,previousStationsArray,upcomingStationsAr
     let iconShapeDiv = document.createElement('div');
     iconShapeDiv.classList.add('icon-shape', 'icon-xs');
     let iconImage = document.createElement('img');
-    iconImage.src = "icons8-round-48.png";
-    iconImage.style.width = "75px"; // Set the desired width
-    iconImage.style.height = "70px";
+    iconImage.src = "icons8-round-32.png";
+    // iconImage.style.width = "75px"; // Set the desired width
+    // iconImage.style.height = "70px";
     // let verticalLine = document.createElement('div');
     // verticalLine.classList.add('vertical-line'); // Create a class for styling
 
