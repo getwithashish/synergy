@@ -75,7 +75,7 @@ type="text/css"/>
 
   <header class="header">
 
-    <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a>
+    <a href="http://127.0.0.1:5504/index.html" class="logo">Syn</a>
 
     <input type="checkbox" id="check">
     <label for="check" class="icons">
@@ -116,6 +116,11 @@ type="text/css"/>
   </div>
 </div>
 <!-- </nav> -->
+<!-- <div class="row mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Train No</label>
+    <input type="email" class="form-control" id="topbarInputIconLeft" placeholder="Train Number">
+    <a href="#" class="btn btn-sm btn-primary" id="trainButton" onclick="searchTrain()">Search</a> 
+</div> -->
 
             <div class="row">
                 <div class="col-12 mb-3">
@@ -146,7 +151,7 @@ type="text/css"/>
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="col-12 col-sm-6 col-md-6 col-xl-4 mb-4">
                     <div class="card border-0 shadow">
                         <div class="card-body">
                             <div class="row d-block d-xl-flex align-items-center">
@@ -162,11 +167,10 @@ type="text/css"/>
 
                                 <div class="col-12 col-xl-7 px-xl-0">    <!--p>Run Days</p-->
                                     <div class="d-none d-sm-block">
-                                        <h3 class="fs-5 fw-extrabold mb-0" style="color:rgb(250, 249, 249)">Run Days</h3>
+                                        <h3 class="fs-5 fw-extrabold mb-3" style="color:rgb(250, 249, 249);text-align: center;">Run Days</h3>
                                     </div>
                                     <small class="d-flex align-items-center text-gray-500" id="runDaysContainer">
-                                      <ul id="trainRunDay" style="color:rgb(250, 249, 249)">
-                                       
+                                      <ul id="trainRunDay" class="two-column-list" style="color:rgb(250, 249, 249)">
                                        
                                       </ul> 
                                         <!-- <svg class="icon icon-xxs text-gray-500 ms-2 me-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path></svg> -->
@@ -176,7 +180,7 @@ type="text/css"/>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="col-12 col-sm-6 col-md-6 col-xl-4 mb-4">
                     <div class="card border-0 shadow">
                         <div class="card-body">
                             <div class="row d-block d-xl-flex align-items-center">
@@ -192,11 +196,11 @@ type="text/css"/>
 
                                 <div class="col-12 col-xl-7 px-xl-0 text-center">     <!--p>Classes</p-->
                                     <div class="d-none d-sm-block">
-                                        <h3 class="fs-5 fw-extrabold mb-0" style="color:rgb(250, 249, 249)">Class</h3>
+                                        <h3 class="fs-5 fw-extrabold mb-3" style="color:rgb(250, 249, 249)">Class</h3>
                                     </div>
                                     <small class="d-flex align-items-center text-gray-500" id="classContainer">
                                         <!-- <svg class="icon icon-xxs text-gray-500 ms-2 me-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path></svg> -->
-                                        <ul id="trainList" style="color:rgb(250, 249, 249)">
+                                        <ul id="trainList" class="two-column-list" style="color:rgb(250, 249, 249)">
                                          
                                           
                                         </ul>
@@ -223,10 +227,10 @@ type="text/css"/>
 
                                 <div class="col-12 col-xl-7 px-xl-0 text-center">  <!--p>Quota</p-->
                                     <div class="d-none d-sm-block">
-                                        <h3 class="fs-5 fw-extrabold mb-0" style="color:rgb(250, 249, 249)">Quota</h3>
+                                        <h3 class="fs-5 fw-extrabold mb-3" style="color:rgb(250, 249, 249)">Quota</h3>
                                     </div>
                                     <small class="d-flex align-items-center text-gray-500" id="quotaContainer">
-                                      <ul id="trainQuota" style="color:rgb(250, 249, 249)">
+                                      <ul id="trainQuota" class="two-column-list" style="color:rgb(250, 249, 249)">
                                        
                                       </ul>
                                     </small> 
@@ -261,7 +265,7 @@ type="text/css"/>
                     </div>
              </div>
 
-            <div class="col-12 col-xl-6 mb-4" id="lvs">
+            <div class="col-12 col-xl-6 col-md-6 mb-4" id="lvs">
               <div class="row">
                       <div class="card border-0 shadow">
                           <div class="card-header">
@@ -348,61 +352,61 @@ type="text/css"/>
   </div>
   <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start "></div>
         <div class="row justify-content-center" id="cardContainer">
-            <!-- <div class="row mb-4"> -->
-                <!-- <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">
+            <div class="row mb-4">
+                 <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">
                     <div class="card" id="day1">
                         <h5><span class="word" id="day1seat" style="color:rgb(250, 249, 249)">date </span></h5>
-                        <span class="word" id="cnf_seat" style="color:rgb(250, 249, 249)">cnf</span>
-                        <span class="word" id="tot_fare" style="color:rgb(250, 249, 249)">fare</span>
-                        <span class="word" id="probability" style="color:rgb(250, 249, 249)">probability</span>
-                        <span class="word" id="current_stat" style="color:rgb(250, 249, 249)">current status</span>
+                        <span class="word" id="cnf_seat1" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare1" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability1" style="color:rgb(250, 249, 249)">probability</span>
+                        <h6><span class="word" id="current_stat1" style="color:rgb(250, 249, 249)">current status</span></h6>
                     </div>
-                </div>   -->
-                <!-- <div class="col-12 col-sm-6 col-xl-4 col-md-4 mb-4">
+                </div>   
+                <div class="col-12 col-sm-6 col-xl-4 col-md-4 mb-4">
                     <div class="card" id="day2">
                         <h5><span class="word" id="day2seat" style="color:rgb(250, 249, 249)">date </span></h5>
                         <span class="word" id="cnf_seat2" style="color:rgb(250, 249, 249)">cnf</span>
                         <span class="word" id="tot_fare2" style="color:rgb(250, 249, 249)">fare</span>
                         <span class="word" id="probability2" style="color:rgb(250, 249, 249)">probability</span>
-                        <span class="word" id="current_stat2" style="color:rgb(250, 249, 249)">current status</span>
+                        <h6><span class="word" id="current_stat2" style="color:rgb(250, 249, 249)">current status</span></h6>
                     </div>
-                </div> -->
-                <!-- <div class="col-12 col-sm-6 col-xl-4 col-md-4 mb-4">
+                </div>
+                <div class="col-12 col-sm-6 col-xl-4 col-md-4 mb-4">
                     <div class="card" id="day3">
                         <h5><span class="word" id="day3seat" style="color:rgb(250, 249, 249)">date </span></h5>
                         <span class="word" id="cnf_seat3" style="color:rgb(250, 249, 249)">cnf</span>
                         <span class="word" id="tot_fare3" style="color:rgb(250, 249, 249)">fare</span>
                         <span class="word" id="probability3" style="color:rgb(250, 249, 249)">probability</span>
-                        <span class="word" id="current_stat3" style="color:rgb(250, 249, 249)">current status</span>
+                        <h6><span class="word" id="current_stat3" style="color:rgb(250, 249, 249)">current status</span></h6>
                     </div>
-                </div> -->
-                <!-- <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
+                </div>
+                <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
                     <div class="card" id="day4">
                         <h5><span class="word" id="day4seat" style="color:rgb(250, 249, 249)">date </span></h5>
                         <span class="word" id="cnf_seat4" style="color:rgb(250, 249, 249)">cnf</span>
                         <span class="word" id="tot_fare4" style="color:rgb(250, 249, 249)">fare</span>
                         <span class="word" id="probability4" style="color:rgb(250, 249, 249)">probability</span>
-                        <span class="word" id="current_stat4" style="color:rgb(250, 249, 249)">current status</span>
+                        <h6><span class="word" id="current_stat4" style="color:rgb(250, 249, 249)">current status</span></h6>
                     </div>
-                </div>     -->
-                <!-- <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
-                    <div class="card" id="day4">
+                </div>    
+                <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
+                    <div class="card" id="day5">
                         <h5><span class="word" id="day5seat" style="color:rgb(250, 249, 249)">date </span></h5>
                         <span class="word" id="cnf_seat5" style="color:rgb(250, 249, 249)">cnf</span>
                         <span class="word" id="tot_fare5" style="color:rgb(250, 249, 249)">fare</span>
                         <span class="word" id="probability5" style="color:rgb(250, 249, 249)">probability</span>
-                        <span class="word" id="current_stat5" style="color:rgb(250, 249, 249)">current status</span>
+                        <h6><span class="word" id="current_stat5" style="color:rgb(250, 249, 249)">current status</span></h6>
                     </div>
-                </div>   -->
-                <!-- <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
-                    <div class="card" id="day4">
+                </div>  
+                <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
+                    <div class="card" id="day6">
                         <h5><span class="word" id="day6seat" style="color:rgb(250, 249, 249)">date </span></h5>
                         <span class="word" id="cnf_seat6" style="color:rgb(250, 249, 249)">cnf</span>
                         <span class="word" id="tot_fare6" style="color:rgb(250, 249, 249)">fare</span>
                         <span class="word" id="probability6" style="color:rgb(250, 249, 249)">probability</span>
-                        <span class="word" id="current_stat6" style="color:rgb(250, 249, 249)">current status</span>
+                        <h6><span class="word" id="current_stat6" style="color:rgb(250, 249, 249)">current status</span></h6>
                     </div>
-                </div>   -->
+                </div>  
         </div>
     </div>
 </div>
@@ -412,6 +416,7 @@ type="text/css"/>
         <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script defer src="../../../../src/api/api.js"></script>
         <script defer src="../../../../src/api/rapidapi-api.js"></script>
+        <script defer src="../../../../src/api/synergy-server-api.js"></script>
         <script defer src="trainListcopy.js"></script>
     <!-- Core -->
 <script src="../../vendor/@popperjs/core/dist/umd/popper.min.js"></script>

@@ -9,6 +9,16 @@ body{
 	margin-top: 7rem;
 }
 
+.newnavbar{
+	position: fixed;
+	top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.bulletTitle{
+	
+}
 
 .cd-faq__categories {
 	@media (min-width: 768px) {

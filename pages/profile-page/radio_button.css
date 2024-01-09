@@ -1,0 +1,49 @@
+ .form-check {
+        margin-bottom: 10px;
+    }
+
+    .form-check-input {
+        /* Hide the default radio button */
+        display: none;
+    }
+
+    /* Style the custom radio button */
+    .form-check-label {
+        position: relative;
+        padding-left: 30px; /* Adjust the padding based on your design */
+        cursor: pointer;
+        display: inline-block;
+        line-height: 1.5; /* Adjust line height for better alignment */
+
+        /* Default styling for the custom radio button */
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px; /* Adjust the size of the custom radio button */
+            height: 20px; /* Adjust the size of the custom radio button */
+            border: 2px solid #007bff; /* Border color for the custom radio button */
+            background-color: #fff; /* Background color for the custom radio button */
+            border-radius: 50%; /* Make it round */
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        /* Style the custom radio button when selected */
+        &:after {
+            content: '';
+            position: absolute;
+            left: 7px; /* Adjust the position based on the design */
+            top: 7px; /* Adjust the position based on the design */
+            width: 8px; /* Adjust the size of the inner circle */
+            height: 8px; /* Adjust the size of the inner circle */
+            border-radius: 50%; /* Make it round */
+            background-color: #007bff; /* Color when selected */
+            display: none; /* Initially hidden */
+        }
+    }
+
+    /* Style the custom radio button when the actual radio input is checked */
+    .form-check-input:checked + .form-check-label:after {
+        display: block;
+    }

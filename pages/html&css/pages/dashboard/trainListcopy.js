@@ -12,7 +12,8 @@ async function searchTrain1() {
   const trainNumber = urlParams.get('trainNumber');
   
     // const someSchedule = await getTrainSchedule({trainNo: trainInput})
-    const someSchedule = await getTrainSchedule({trainNo: trainNumber})
+    // const someSchedule = await getTrainSchedule({trainNo: trainNumber})
+    const someSchedule = await getDummyTrainDetails({trainNo: trainNumber})
     .then((response) => {
       console.log("Inside search train: ", response);
       let classArray =  response.class;
@@ -41,41 +42,66 @@ searchTrain1();
 
 async function searchSeat(){
   // seatAvailability.innerhtml = "";
-  const trainNoInput = document.getElementById("topbarInputIconLeft").value.trim();
+ // const trainNoInput = document.getElementById("topbarInputIconLeft").value.trim();
+
+ const elements = [
+  "day1seat", "cnf_seat1", "tot_fare1", "probability1", "current_stat1",
+  "day2seat", "cnf_seat2", "tot_fare2", "probability2", "current_stat2",
+  "day3seat", "cnf_seat3", "tot_fare3", "probability3", "current_stat3",
+  "day4seat", "cnf_seat4", "tot_fare4", "probability4", "current_stat4",
+  "day5seat", "cnf_seat5", "tot_fare5", "probability5", "current_stat5",
+  "day6seat", "cnf_seat6", "tot_fare6", "probability6", "current_stat6"
+];
+
+elements.forEach(id => {
+  document.getElementById(id).innerHTML = "";
+});
+
+
   const fromInput = document.getElementById("from_station").value.trim();
   const toInput = document.getElementById("to_station").value.trim();
   const dateInput = document.getElementById("enter_date").value.trim();
   const classTypeInput = document.getElementById("classtype").value.trim();
   const quotaInput = document.getElementById("enter_quota").value.trim();
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const trainNumber = urlParams.get('trainNumber');
   
-  const seatAva = await checkSeatAvailability({ classType:classTypeInput,fromStationCode:fromInput, quota:quotaInput,toStationCode:toInput,trainNo:trainNoInput, date:dateInput})
+  // const seatAva = await checkSeatAvailability({ classType:classTypeInput,fromStationCode:fromInput, quota:quotaInput,toStationCode:toInput,trainNo:trainNumber, date:dateInput})
+  const seatAva = await getDummySeatAvailability({ classType:classTypeInput,fromStationCode:fromInput, quota:quotaInput,toStationCode:toInput,trainNo:trainNumber, date:dateInput})
   .then((response) => {
     console.log("Inside seat availability: ", response);
-    const seatData = response.data;
+    let seatArray = response;
 
-    searchSeatAvail(response.data);
+    searchSeatAvail(seatArray);
   })
 }
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function searchSeatAvail(data){
+function searchSeatAvail(seatArray){
   // let seatAvailability = document.createElement('ul');
   const cardContainer = document.getElementById('cardContainer');
 
-  data.forEach((item, index) => {
-    const card = document.createElement('div');
-    card.classList.add('col-12', 'col-sm-6', 'col-xl-4', 'col-md-3', 'mb-4');
-    card.innerHTML = `
-        <div class="card" id="day${index + 1}">
-            <h5><span class="word" id="day${index + 1}seat" style="color:rgb(250, 249, 249)">${item.date}</span></h5>
-            <span class="word" id="cnf_seat${index + 1}" style="color:rgb(250, 249, 249)">${item.confirm_probability}</span>
-            <span class="word" id="tot_fare${index + 1}" style="color:rgb(250, 249, 249)">${item.total_fare}</span>
-            <span class="word" id="probability${index + 1}" style="color:rgb(250, 249, 249)">${item.confirm_probability_percent}</span>
-            <span class="word" id="current_stat${index + 1}" style="color:rgb(250, 249, 249)">${item.current_status}</span>
-        </div>
-    `;
-    cardContainer.appendChild(card);
-});
+for (let s = 0; s< seatArray.length; s++){
+
+  const cardId = `day${s + 1}`;
+  const childCard = document.getElementById(cardId);
+ 
+    const dateElement = document.getElementById(`day${s + 1}seat`);
+    const ticketFareElement = document.getElementById(`cnf_seat${s + 1}`);
+    const altcnfElement = document.getElementById(`tot_fare${s + 1}`);
+    const probabilityElement = document.getElementById(`probability${s + 1}`);
+    const currentStatusElement = document.getElementById(`current_stat${s + 1}`);
+
+    dateElement.textContent = seatArray[s].date;
+    ticketFareElement.textContent = seatArray[s].confirm_probability;
+    altcnfElement.textContent = seatArray[s].ticket_fare;
+    probabilityElement.textContent = seatArray[s].confirm_probability_percent;
+    currentStatusElement.textContent = seatArray[s].current_status;
+
+}
   
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -85,48 +111,32 @@ function searchSeatAvail(data){
 async function liveStatus(){
   const trainLiveStatusList = document.getElementById("trainLiveStatusList");
   trainLiveStatusList.innerHTML = "";
-  const trainInput2 = document.getElementById("topbarInputIconLeft").value.trim();
-  //const trainInput2 = document.getElementById("searchInput").value.trim();
+  //const trainInput2 = document.getElementById("topbarInputIconLeft").value.trim();
 
-  // const enteredDate = new Date(trainInput3);
-  // const currentDate = new Date();
-  // const differenceInTime = currentDate.getTime() - enteredDate.getTime();
-  // const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+  const urlParams = new URLSearchParams(window.location.search);
+  const trainNumber = urlParams.get('trainNumber');
 
-  // // Map the difference in days to the startDay range (0-4)
-  // let startDay = 0;
-  // if (differenceInDays === 0) {
-  //   startDay = 0;
-  // } else if (differenceInDays >= 1 && differenceInDays <= 4) {
-  //   startDay = differenceInDays;
-  // } else {
-  //   // Handle cases where the entered date is more than 4 days ago
-  //   startDay = 4;
-  // }
-
-  const someLiveStatus = await getTrainLiveStatus({trainNo: trainInput2})
+  const someLiveStatus = await getTrainLiveStatus({trainNo: trainNumber})
   .then ((response) => {
 
     console.log("live status of train:", response);
     let previousStationsArray  = response.previous_stations;
     let currentStationCode = response.current_station_code;
     let currentStationName = response.current_station_name;
-    let upcomingStationArray = response.upcoming_stations;
+    let plt_number = response.platform_number;
+    let upcomingStationsArray = response.upcoming_stations;
     let trainDuration = response.journey_time;
     let journeyTime = trainDuration/60;
     // let newMessage = response.new_message;
     // let spentTimeHour = response.spent_time;
     // let spentTimeMinute = spentTimeHour * 60;
 
-    displayLiveStatus(lvsContainer,previousStationsArray,journeyTime);
-    displayTrainDetail(journeyTime);
+    displayLiveStatus(lvsContainer,previousStationsArray,upcomingStationsArray,currentStationCode,currentStationName,journeyTime,plt_number);
+  //   displayTrainDetail(journeyTime);
   })
-
 }
 
-//   ///////////////////////////////////////////////////////////////////////////////////////////////
-
- function displayLiveStatus(lvsContainer,previousStationsArray,journeyTime){
+function displayLiveStatus(lvsContainer,previousStationsArray,upcomingStationsArray,currentStationCode,currentStationName,plt_number){
   let trainLiveStatusList = document.createElement('div');
   trainLiveStatusList.classList.add('list-group', 'list-group-flush', 'list-group-timeline');
 
@@ -143,17 +153,24 @@ async function liveStatus(){
     iconShapeDiv.classList.add('icon-shape', 'icon-xs');
     let iconImage = document.createElement('img');
     iconImage.src = "icons8-round-48.png";
+    // let verticalLine = document.createElement('div');
+    // verticalLine.classList.add('vertical-line'); // Create a class for styling
+
+  // Style the vertical line (adjust properties as needed)
+    // verticalLine.style.borderLeft = '4px solid blue'; // Example line style
+    // verticalLine.style.height = '35px'; 
     iconShapeDiv.appendChild(iconImage);
     colAutoDiv.appendChild(iconShapeDiv);
+    // colAutoDiv.appendChild(verticalLine);
 
     let colContentDiv = document.createElement('div');
     colContentDiv.classList.add('col', 'ms-n2', 'mb-3');
-    let currentStationCode1 = document.createElement('h3');
-    currentStationCode1.classList.add('fs-6', 'fw-bold', 'mb-1');
-    currentStationCode1.textContent = `Station Code: ${previousStationsArray[l].current_station_code}`;
-    let currentStationName1 = document.createElement('p');
-    currentStationName1.classList.add('mb-1');
-    currentStationName1.textContent = `Station Name: ${previousStationsArray[l].current_station_name}`;
+    let previousStationCode1 = document.createElement('h3');
+    previousStationCode1.classList.add('fs-6', 'fw-bold', 'mb-1');
+    previousStationCode1.textContent = `Station Code: ${previousStationsArray[l].station_code}`;
+    let previousStationName1 = document.createElement('p');
+    previousStationName1.classList.add('mb-1');
+    previousStationName1.textContent = `Station Name: ${previousStationsArray[l].station_name}`;
     let dFlexDiv = document.createElement('div');
     dFlexDiv.classList.add('d-flex', 'align-items-center');
     let flagImage = document.createElement('img');
@@ -163,8 +180,8 @@ async function liveStatus(){
     platformSpan1.textContent = `Platform: ${previousStationsArray[l].platform_number}`;
     dFlexDiv.appendChild(flagImage);
     dFlexDiv.appendChild(platformSpan1);
-    colContentDiv.appendChild(currentStationCode1);
-    colContentDiv.appendChild(currentStationName1);
+    colContentDiv.appendChild(previousStationCode1);
+    colContentDiv.appendChild(previousStationName1);
     colContentDiv.appendChild(dFlexDiv);
 
     rowDiv.appendChild(colAutoDiv);
@@ -174,8 +191,111 @@ async function liveStatus(){
     trainLiveStatusList.appendChild(listItem);
   }
 
-  const journeyDuration = document.getElementById = "duration";
-  journeyDuration.textContent =  journeyTime;
+  let listItem = document.createElement('div');
+    listItem.classList.add('list-group-item', 'border-0');
+
+    let rowDiv = document.createElement('div');
+    rowDiv.classList.add('row', 'ps-lg-1');
+
+    let colAutoDiv = document.createElement('div');
+    colAutoDiv.classList.add('col-auto');
+    let iconShapeDiv = document.createElement('div');
+    iconShapeDiv.classList.add('icon-shape', 'icon-xs');
+    let iconImage = document.createElement('img');
+    iconImage.src = "icons8-round-48.png";
+    iconImage.style.width = "75px"; // Set the desired width
+    iconImage.style.height = "70px";
+    // let verticalLine = document.createElement('div');
+    // verticalLine.classList.add('vertical-line'); // Create a class for styling
+
+  // Style the vertical line (adjust properties as needed)
+    // verticalLine.style.borderLeft = '2px solid grey'; // Example line style
+    // verticalLine.style.height = '80px'; 
+    // verticalLine.style.paddingLeft = '30px';
+    iconShapeDiv.appendChild(iconImage);
+    colAutoDiv.appendChild(iconShapeDiv);
+    // colAutoDiv.appendChild(verticalLine);
+
+    let colContentDiv = document.createElement('div');
+    colContentDiv.classList.add('col', 'ms-n2', 'mb-3');
+    let currentStationCode1 = document.createElement('h3');
+    currentStationCode1.classList.add('fs-6', 'fw-bold', 'mb-1');
+    currentStationCode1.textContent = `Station Code: ${currentStationCode}`;
+    let currentStationName1 = document.createElement('p');
+    currentStationName1.classList.add('mb-1');
+    currentStationName1.textContent = `Station Name: ${currentStationName}`;
+    let dFlexDiv = document.createElement('div');
+    dFlexDiv.classList.add('d-flex', 'align-items-center');  
+    let flagImage = document.createElement('img');
+    flagImage.src = "icons8-flag-30.png";
+    let platformSpan3 = document.createElement('span');
+    platformSpan3.classList.add('small');
+    platformSpan3.textContent = `Platform: ${plt_number}`;
+    dFlexDiv.appendChild(flagImage);
+    dFlexDiv.appendChild(platformSpan3);
+    colContentDiv.appendChild(currentStationCode1);
+    colContentDiv.appendChild(currentStationName1);
+    colContentDiv.appendChild(dFlexDiv);
+
+    rowDiv.appendChild(colAutoDiv);
+    rowDiv.appendChild(colContentDiv);
+    listItem.appendChild(rowDiv);
+
+    trainLiveStatusList.appendChild(listItem);
+
+  for (let u = 0; u < upcomingStationsArray.length; u++) {
+      let listItem2 = document.createElement('div');
+      listItem2.classList.add('list-group-item', 'border-0');
+  
+      let rowDiv = document.createElement('div');
+      rowDiv.classList.add('row', 'ps-lg-1');
+  
+      let colAutoDiv = document.createElement('div');
+      colAutoDiv.classList.add('col-auto');
+      let iconShapeDiv = document.createElement('div');
+      iconShapeDiv.classList.add('icon-shape', 'icon-xs');
+      let iconImage = document.createElement('img');
+      iconImage.src = "icons8-round-48.png";
+      // let verticalLine = document.createElement('div');
+      // verticalLine.classList.add('vertical-line'); // Create a class for styling
+
+  // Style the vertical line (adjust properties as needed)
+      // verticalLine.style.borderLeft = '2px solid grey'; 
+      // verticalLine.style.paddingLeft = '30px';// Example line style
+      // verticalLine.style.height = '80px'; 
+      iconShapeDiv.appendChild(iconImage);
+      colAutoDiv.appendChild(iconShapeDiv);
+      // colAutoDiv.appendChild(verticalLine);
+
+      let colContentDiv = document.createElement('div');
+      colContentDiv.classList.add('col', 'ms-n2', 'mb-3');
+      let upcomingStationCode2 = document.createElement('h3');
+      upcomingStationCode2.classList.add('fs-6', 'fw-bold', 'mb-1');
+      upcomingStationCode2.textContent = `Station Code: ${upcomingStationsArray[u].station_code}`;
+      let upcomingStationName2 = document.createElement('p');
+      upcomingStationName2.classList.add('mb-1');
+      upcomingStationName2.textContent = `Station Name: ${upcomingStationsArray[u].station_name}`;
+      let dFlexDiv = document.createElement('div');
+      dFlexDiv.classList.add('d-flex', 'align-items-center');
+      let flagImage = document.createElement('img');
+      flagImage.src = "icons8-flag-30.png";
+      let platformSpan2 = document.createElement('span');
+      platformSpan2.classList.add('small');
+      platformSpan2.textContent = `Platform: ${upcomingStationsArray[u].platform_number}`;
+      dFlexDiv.appendChild(flagImage);
+      dFlexDiv.appendChild(platformSpan2);
+      colContentDiv.appendChild(upcomingStationCode2);
+      colContentDiv.appendChild(upcomingStationName2);
+      colContentDiv.appendChild(dFlexDiv);
+  
+      rowDiv.appendChild(colAutoDiv);
+      rowDiv.appendChild(colContentDiv);
+      listItem2.appendChild(rowDiv);
+  
+      trainLiveStatusList.appendChild(listItem2);
+    }
+  // const journeyDuration = document.getElementById = "duration";
+  // journeyDuration.textContent =  journeyTime;
   lvsContainer.appendChild(trainLiveStatusList);
  }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -271,6 +391,8 @@ function displayRoute(routeArray,routeContainer){
       let platformSpan = document.createElement('span');
       platformSpan.classList.add('small');
       platformSpan.textContent = `Platform: ${routeArray[j].platform_number}`;
+      listItem.classList.add('glassmorphism'); // Apply glassmorphism to listItem
+      colContentDiv.classList.add('glassmorphism');
       dFlexDiv.appendChild(flagImage);
       dFlexDiv.appendChild(platformSpan);
       colContentDiv.appendChild(stationCode);
@@ -306,9 +428,6 @@ function displayRunDay(runDayArray,runDaysContainer){
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 

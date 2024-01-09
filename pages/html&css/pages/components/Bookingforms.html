@@ -20,6 +20,10 @@
 
 <head> 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="application/javascript" crossorigin="anonymous" src="paymentSubmit.js"></script> 
+    <script type="application/javascript" crossorigin="anonymous" src="
+    https://securegw.paytm.in/merchantpgpui/checkoutjs/merchants/SApWAl73540535701479.js"></script>
 <!-- Primary Meta Tags -->
 <!-- <title>Volt Premium Bootstrap Dashboard - Forms</title> -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -113,16 +117,45 @@
 <script src="../../../../src/api/synergy-server-api.js"></script>
 
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>  <!-- CreatePDF -->
+
 <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 
 
-    <script defer src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.01.min.css">
   
   <script defer src="../../../../src/searchTrains.js"></script>
   <script src="/synergy/pages/html&css/pages/components/bookingforms.js"></script>
 
 </head>
+
+<script>
+    // Function to extract query parameters from the URL
+    function getQueryParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return {
+            trainNumber: urlParams.get('trainNumber') || '',
+            trainName: decodeURIComponent(urlParams.get('trainName')) || '',
+            sourceStation: decodeURIComponent(urlParams.get('sourceStation')) || '',
+            destination: decodeURIComponent(urlParams.get('destination')) || '',
+        };
+    }
+
+    // Function to set default values in the form fields
+    function setDefaultValues() {
+        const queryParams = getQueryParams();
+        document.getElementById('trainNumber').value = queryParams.trainNumber;
+        document.getElementById('trainName').value = queryParams.trainName;
+        document.getElementById('source').value = queryParams.sourceStation;
+        document.getElementById('destination').value = queryParams.destination;
+    }
+
+    // Call the function to set default values when the page loads
+    window.onload = setDefaultValues;
+</script>
 
 <body  >
 
@@ -208,9 +241,20 @@
                                     </div>
                                     <!-- End of Form -->
 
-                                 
+                                    <div class="mb-4">
+                                        <label for="age">Train No:</label>
+                                        <input type="number" class="form-control" id="trainNumber"readonly required> 
+                                    </div>
+                                
+                                    <div class="mb-3">
+                                        <label for="source">Train Name</label>
+                                        <input type="text" class="form-control" id="trainName"readonly required>      
+                                    </div>
+                                
                                     <!-- Form -->
                                     <div class="mb-3">
+                                        <label for="source">From</label>
+                                        <input type="text" class="form-control" id="source"readonly required>      
                                          <label for="nationality">Nationality</label>
                                         <!-- <input type="" class="form-control " id="nationality"  required>  -->
                                         <select class="form-select" id="nationality" aria-label="Default select example" required>
@@ -444,6 +488,10 @@
                                           Please enter a value.
                                         </div>  
                                     </div>
+                                
+                                    <div class="mb-4">
+                                        <label class="my-1 me-2" for="destination">To</label>
+                                        <input type="text" class="form-control" id="destination"readonly required>      
                                     <!-- End of Form -->
                                     <!-- Form -->
                                      <div class="mb-3">
@@ -457,8 +505,11 @@
 
                                          
                                     </div>
+                                
+                                
                                     <!-- End of Form -->
                                     <!-- Form -->
+                                  
                                     <div class="mb-3">
                                          <label for="email">Email</label>
                                         <input type="text" class="form-control" id="email" aria-describedby="emailHelp" required> 
@@ -471,6 +522,7 @@
                                         <label class="my-1 me-2" for="id">Select Id Proof</label>                 
                                         <div class="mb-3">
                                         <select class="form-select" id="id" aria-label="Default select example" required>
+                                        <select class="form-select" id="idProof" aria-label="Default select example" required>
                                             <option selected></option>
                                             <option value="1">Aadhar card</option>
                                             <option value="2">Pan card</option>
@@ -507,6 +559,22 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="mb-3">
+                                        <div class="mb-3">
+                                        
+                                            <label for="number">Mobile Number</label>
+                                          <input type="tel"  class="form-control" id="number"  required>                                                
+   
+                                            
+                                       </div>
+                                       <!-- End of Form -->
+                                       <!-- Form -->
+                                       <div class="mb-3">
+                                            <label for="email">Email</label>
+                                           <input type="text" class="form-control" id="email" aria-describedby="emailHelp" required> 
+                                       </div>
+
+                                        <label class="my-1 me-2" for="selectClass">Select Class</label>
+                                        <select class="form-select" id="selectClass" aria-label="Default select example" required>
                                         <label class="my-1 me-2" for="class">Select Class</label>
                                         <select class="form-select" id="class" aria-label="Default select example" required>
                                             <option selected></option>
@@ -523,6 +591,9 @@
                                             <option value="11">Vistadome Non AC(VS)</option>
                                             <option value="12">Vistadome Chair Car(VC)</option>
                                             <option value="13">Vistadome AC(EV)</option>
+                                        </select><br>
+                                        <label class="my-1 me-2" for="selectQuota">Select Quota</label>
+                                        <select class="form-select" id="selectQuota" aria-label="Default select example" required>
                                         </select>
                                         <div class="invalid-feedback" id="classInValidFeedback">
                                           Please select an option.
@@ -536,6 +607,11 @@
                                             <option value="4">Premeium Tatkal</option>
                                             <option value="5">Sr.Citizen</option>
                                             <option value="6">Person with disability</option>
+                                        </select><br>
+                                        <label class="my-1 me-2" for="berthPreference">Berth  Preference</label>
+                                        <select class="form-select" id="berthPreference" aria-label="Default select example" required>
+                                            <option selected>No preference</option>
+                                            <option value="1">Lower</option>
                                         </select>
                                         <div class="invalid-feedback" id="quotaInValidFeedback">
                                           Please select an option.
@@ -556,8 +632,8 @@
                                           Please select an option.
                                         </div> 
                                         <br>
-                                        <label class="my-1 me-2" for="meal">Meal  Preference</label>
-                                     <select class="form-select" id="meal" aria-label="Default select example" required>
+                                        <label class="my-1 me-2" for="mealPreference">Meal  Preference</label>
+                                     <select class="form-select" id="mealPreference" aria-label="Default select example" required>
                                         <option selected>No preference</option>
                                         <option value="1">Veg</option>
                                         <option value="2">Non-Veg</option>
@@ -611,6 +687,8 @@
                                         </div> <br>
                                         
                                     
+                                        <label class="my-1 me-2" for="reservationChoice">Reservation Choice</label>
+                                        <select class="form-select" id="reservationChoice" aria-label="Default select example">
                                         <label class="my-1 me-2" for="reservation">Reservation Choice</label>
                                         <select class="form-select" id="reservation" aria-label="Default select example" required>
                                             <option selected></option>
@@ -625,6 +703,13 @@
                                     </div>
                                     <!-- End of Form -->
                                     <!-- Form -->
+                                  
+                                    <br>
+                                    <button id="submitButton" onclick="initiatePayment()" class="btn btn-primary" type="button">Submit</button>
+
+                                   
+                            </div>
+             
                                     <div class="mb-4">
                                         <label class="my-1 me-2" for="">Payment Mode</label>
                                         <select class="form-select" id="payment" aria-label="Default select example" required>

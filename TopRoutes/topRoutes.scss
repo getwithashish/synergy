@@ -1,0 +1,257 @@
+$bg-color-1: black;
+$bg-color-2:rgb(233, 229, 229);
+$bg-color-3:#a5a0a0;
+$bg-color-4:#cf2550;
+$gradient-start: #0f0f0f; // Define start color
+$gradient-end: #a5a0a0; // Define end color
+$element-height-1:200px;
+$element-height-2:400px;
+$element-height-3:300px;
+
+
+@mixin glassmorphism{
+    backdrop-filter: blur(16px) saturate(171%);
+    -webkit-backdrop-filter: blur(66px) saturate(181%);
+    -moz-backdrop-filter: blur(16px) saturate(171%);
+    background-color:transparent;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+@mixin glassmorphism2{
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+@mixin flexProperty{
+    display: flex;
+    width:100%;
+    gap:10px;
+}
+
+@mixin title_cont_property{
+  background-color: $bg-color-2;
+  height: 450px;
+  padding-top: 140px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  color: $bg-color-2;
+}
+
+@mixin container_property{
+    align-items: center;
+    justify-content: center;
+    height: 900px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin card_property{
+    border-radius: 20px;
+    // background-size: cover; /* Ensure the background image covers the entire card */
+    background-position: center; /* Center the background image */
+    background-size: contain;
+    border: solid 2px $bg-color-3;
+    box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+
+@mixin shadow_property{
+    box-shadow: 0 15px 10px rgba(5, 5, 5, 0.1);
+}
+@mixin img_property{
+    border-radius: 20px;
+}
+@mixin animation{
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the background color and opacity */
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+#topic_container{
+    @include title_cont_property();
+    @include glassmorphism();
+    @include shadow_property();
+    
+}
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+  }
+body{
+    background: linear-gradient(to bottom right, $gradient-start, $gradient-end); 
+    // background: linear-gradient(45deg, red, yellow, blue);
+    animation: gradientAnimation 5s ease infinite;
+}
+
+#card1{
+    height:auto;   
+    @include glassmorphism();  
+    @include shadow_property();
+}
+
+#card2,
+#card3,
+#card4,
+#card5,#card6,#palaceOnWheels,#deccan_odyssey,
+#golden_chariot,#maharajas
+{
+    @include glassmorphism();   
+    @include shadow_property();
+}
+
+.img-fluid1{
+    width: 100%;
+    height: 300px;
+    @include img_property();
+}
+.img-fluid{
+    width: 100%;
+    height: 398px;
+    @include img_property();
+}
+.img-fluid3{
+    width: 100%;
+    height: 300px;
+    @include img_property();
+}
+.img-fluid4{
+    max-width: 100%;
+    height: 300px;
+    @include img_property();
+}
+.img-fluid5{
+    width: 100%;
+    height: 300px;
+    @include img_property();
+}
+.img-fluid6{
+    width: 100%;
+    height: 300px;
+    @include img_property();
+}
+.card-img-top{
+    @include img_property();
+}
+
+#luxury_train{
+    @include container_property();
+    margin-bottom: 60px;
+    height: auto;
+}
+#luxuryTrain_title{
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 90px;
+}
+#buddistTrain_title{
+    text-align: center;
+    margin-top: 60px;
+    padding-bottom: 40px;
+}
+#charterTrain_title{
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    // margin-top: 90px;
+}
+#charterTrains{
+    background-color: transparent;
+    @include glassmorphism(); 
+    @include shadow_property();   
+}
+#charter_container{
+padding-bottom: 60px;
+}
+
+.nav-pills .nav-link {
+    color: $bg-color-2; /* Change this to your preferred color */
+  }
+
+  .nav-pills .nav-link.active {
+     color: white; /* Change this to your preferred active color */
+    background-color: $bg-color-4; /* Change this to your preferred active background color */
+  }
+
+#trainCharter1{
+    @include glassmorphism();
+    background-color: transparent;
+    @include shadow_property();
+}
+#trainCharter2{
+    @include glassmorphism();
+    background-color: transparent;
+    @include shadow_property();
+}
+#trainCharter3{
+    @include glassmorphism();
+    background-color: transparent;
+    @include shadow_property();
+}
+#buddhaCard1,#buddhaCard2,#buddhaCard3,#buddhaCard4,#buddhaCard5{
+    @include glassmorphism();
+    @include shadow_property();
+}
+
+.contactTable{
+    border-radius: 10px;
+    @include glassmorphism2();
+}
+/* Add this CSS in your stylesheet or style section */
+.table-glassmorphism {
+    background-color: rgba(255, 255, 255, 0.2); /* Adjust the transparency as needed */
+    backdrop-filter: blur(10px); /* Adjust the blur effect as needed */
+    color: white;
+  }
+  
+  .table-glassmorphism thead th {
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust the transparency of the header */
+    color: white;
+  }
+  #field1, #field2, #field3,#field4{
+    @include flexProperty();
+  }
+ 
+  .mobile, 
+  .email,
+  .nameField,
+  .orgField,
+  .address,
+  .requestFor,
+  .purpose,
+  .additionalService
+  {
+    flex: 1;
+  }
+
+  #enquiryButton{
+    background-color: $bg-color-4;
+    border-color: $bg-color-4;
+  }
+
+/* Positioning the card body and hiding it initially */
+#nilgiriImgOverlay{
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the background color and opacity */
+    text-align: center;
+    color: white;
+    opacity: 0;
+    margin-top: 30px;
+    margin-right: 20px;
+    transition: opacity 0.3s ease;
+    border:2px groove;
+    
+  }
+  
+  /* Show the card body on hover */
+ #nilgiriImgOverlay:hover{
+    opacity: 1;
+    
+  }
+//   #nilgiriText{
+//     margin-top: 30px;
+//      margin-right: 20px;
+//   }
+
+  

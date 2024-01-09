@@ -1,0 +1,67 @@
+{
+  "status": true,
+  "message": "Success",
+  "timestamp": 1704688491057,
+  "data": [
+    {
+      "ticket_fare": 710,
+      "catering_charge": 0,
+      "alt_cnf_seat": null,
+      "total_fare": 710,
+      "date": "10-1-2024",
+      "confirm_probability_percent": "",
+      "confirm_probability": "",
+      "current_status": "WL1."
+    },
+    {
+      "ticket_fare": 710,
+      "catering_charge": 0,
+      "alt_cnf_seat": null,
+      "total_fare": 710,
+      "date": "11-1-2024",
+      "confirm_probability_percent": "",
+      "confirm_probability": "",
+      "current_status": "WL6."
+    },
+    {
+      "ticket_fare": 710,
+      "catering_charge": 0,
+      "alt_cnf_seat": null,
+      "total_fare": 710,
+      "date": "12-1-2024",
+      "confirm_probability_percent": "",
+      "confirm_probability": "",
+      "current_status": "WL4."
+    },
+    {
+      "ticket_fare": 710,
+      "catering_charge": 0,
+      "alt_cnf_seat": null,
+      "total_fare": 710,
+      "date": "13-1-2024",
+      "confirm_probability_percent": "",
+      "confirm_probability": "",
+      "current_status": "WL4."
+    },
+    {
+      "ticket_fare": 710,
+      "catering_charge": 0,
+      "alt_cnf_seat": null,
+      "total_fare": 710,
+      "date": "14-1-2024",
+      "confirm_probability_percent": "",
+      "confirm_probability": "",
+      "current_status": "WL9."
+    },
+    {
+      "ticket_fare": 710,
+      "catering_charge": 0,
+      "alt_cnf_seat": null,
+      "total_fare": 710,
+      "date": "15-1-2024",
+      "confirm_probability_percent": "",
+      "confirm_probability": "",
+      "current_status": "WL2."
+    }
+  ]
+}
