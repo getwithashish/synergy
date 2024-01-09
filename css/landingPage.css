@@ -9,7 +9,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: white;
+  /* width: 100vw; */
+  /* background-color: white; */
   font-family: "Orbitron", sans-serif;
 }
 
@@ -19,6 +20,10 @@ body {
   text-align: center;
   text-shadow: #c4c4c4;
   animation: popupAnimation 1s ease-out;
+}
+
+.popup p{
+  color: black;
 }
 
 h1 {
@@ -50,9 +55,9 @@ p {
 #line-cut {
   display: block;
   position: absolute;
-  top: 40%;
+  top: 20%;
   left: 50%;
-  border-bottom: 0.8vw solid white;
+  border-bottom: 0.2vw solid #f5f5f5;
   width: 0%;
   text-align: center;
   transform: rotate(-2deg);
