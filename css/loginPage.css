@@ -126,4 +126,27 @@ body {
   }
 
 
- 
+ /* Define the shaking animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+  }
+  
+  /* Apply the shaking animation to the invalid input */
+  .invalid-feedback {
+  display: none; /* Initially hide the message */
+  color: red;
+  animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+  }
+  
+  
+  .shake-input {
+  animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+  }
+  input.is-invalid {
+  animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+  }

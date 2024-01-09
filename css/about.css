@@ -1,0 +1,180 @@
+.carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card {
+    transition: transform 0.3s ease-in-out;
+  }
+  .card:hover {
+    transform: scale(1.1);
+  }
+  .card{
+    
+background: linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+border-radius: 20px;
+  }
+
+/* Apply background animation to the body */
+body {
+    background: linear-gradient(135deg, #7746e8, #839618); /* Set initial background colors */
+    background-size: 400% 400%;
+    animation: gradientChange 15s ease infinite; /* Apply animation infinitely */
+  }
+
+  /* Create keyframes for background color change */
+  @keyframes gradientChange {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .carousel-item img {
+/* border-radius: 15px; Adjust the value to change the roundness of the corners */
+}
+  
+.description-container {
+display: none;
+position: absolute;
+top: 0;
+left: 0;
+background-color: #fff;
+padding: 10px;
+border: 1px solid #ccc;
+transition: all 0.7s ease-in-out;
+transform-origin: top right;
+}
+
+.card-body:hover .description-container {
+display: block;
+}
+
+/* Animation on hover */
+.description-container {
+transform: rotateY(180deg);
+}
+
+.card-body:hover .description-container {
+transform: rotateY(0);
+}
+
+.custom-carousel {
+width: 600px;
+margin-left: -40px;
+position: relative; /* Position relative to contain the pseudo-element */
+overflow: hidden; /* Hide overflow to fit the blur effect */
+}
+.custom-carousel::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); /* Gradient to create the blur effect */
+mask-image: radial-gradient(circle closest-side, transparent 0%, black 100%); /* Mask to create the blur */
+-webkit-mask-image: radial-gradient(circle closest-side, transparent 0%, black 100%); /* For Safari support */
+}
+
+
+
+
+text-container {
+font-size: 18px; /* Adjust font size as needed */
+line-height: 1.5; /* Adjust line height as needed */
+}
+
+.line {
+margin-left: 10px; /* Adjust the starting point of each line */
+}
+.line:nth-child(2) {
+margin-left: 20px; /* Increase starting point for the second line */
+}
+.line:nth-child(3) {
+margin-left: 30px; /* Increase starting point for the third line */
+}
+.line:nth-child(4) {
+margin-left: 40px; /* Increase starting point for the fourth line */
+}
+
+
+
+/* Additional styling if needed */
+.services {
+text-align: center;
+padding: 40px 0;
+} */
+
+.service-item {
+text-align: center;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color: #f8f8f8;
+}
+
+
+
+.service-item p {
+font-size: 14px;
+color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes shake {
+0% { transform: translateX(0); }
+25% { transform: translateX(-5px); }
+50% { transform: translateX(5px); }
+75% { transform: translateX(-5px); }
+100% { transform: translateX(0); }
+}
+
+/* Apply the shake animation to service items */
+.service-item {
+animation: shake 2.2s ease-in-out infinite; /* Apply the shake animation */
+}
+
+/* Additional styling if needed */
+.services {
+text-align: center;
+padding: 40px 0;
+}
+
+.service-item {
+text-align: center;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 10px;
+background-color: #f8f8f8;
+margin-left:450px;
+width:300px;
+/* margin: 10px; */
+}
+
+.service-item i {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.service-item h4 {
+font-size: 18px;
+margin-bottom: 10px;
+}
+
+.service-item p {
+font-size: 14px;
+color: #666;
+}

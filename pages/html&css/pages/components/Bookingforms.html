@@ -95,6 +95,15 @@
     overflow: clip;
     width: 30px; /* Adjust the width of the image */
     height: 30px; /* Adjust the height of the image */
+
+    .valid-feedback {
+    display: none;/* initially hide*/
+    color: green;
+  }
+  .invalid-feedback {
+    display: none; /* initially hide */
+    color: red;
+  }
 }
 
 .bookingForm {
@@ -164,12 +173,14 @@ transform: scale(1.05) rotate(-1deg);
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>  <!-- CreatePDF -->
 
+<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 
 
   <script defer src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.01.min.css">
   
   <script defer src="../../../../src/searchTrains.js"></script>
+  <script src="/synergy/pages/html&css/pages/components/bookingforms.js"></script>
 
 </head>
 
@@ -253,15 +264,22 @@ transform: scale(1.05) rotate(-1deg);
                                   
                                     <!-- Form -->
                                     
-                                     <div class="mb-4">
+                                     <div class="mb-4" id="name">
                                          <label for="firstName">Name of passenger</label>
-                                        <input type="text" class="form-control " id="firstName"  required> 
+                                        <input type="text" class="form-control " id="firstName"  > 
+                                       
+                                        <div class="invalid-feedback" id="firstNameInvalidFeedback">
+                                          Please enter a valid name .
+                                      </div>
                                     </div> 
                                     <!-- End of Form -->
                                     <!-- Form -->
                                     <div class="mb-4">
                                         <label for="age">Age</label>
-                                        <input type="number" class="form-control" id="age"  required> 
+                                        <input type="number" class="form-control" id="age" >
+                                        <div class="invalid-feedback" id="ageInValidFeedback">
+                                          Please enter a valid age.
+                                        </div>
                                     </div>
                                     <!-- End of Form -->
 
@@ -276,6 +294,9 @@ transform: scale(1.05) rotate(-1deg);
                                         
                                         <label for="others">Others</label>
                                         <input type="radio" id="others" name="gender" value="others">
+                                        <div class="invalid-feedback" id="genderInvalidFeedback">
+                                          Please select an option!
+                                        </div>
                                     </div>
                                     <!-- End of Form -->
 
@@ -293,11 +314,255 @@ transform: scale(1.05) rotate(-1deg);
                                     <div class="mb-3">
                                         <label for="source">From</label>
                                         <input type="text" class="form-control" id="source"readonly required>      
+                                         <label for="nationality">Nationality</label>
+                                        <!-- <input type="" class="form-control " id="nationality"  required>  -->
+                                        <select class="form-select" id="nationality" aria-label="Default select example" required>
+                                            <option value=""></option>
+                                            <option value='afghan'>Afghan</option>
+                                            <option value='albanian'>Albanian</option>
+                                            <option value='algerian'>Algerian</option>
+                                            <option value='american'>American</option>
+                                            <option value='andorran'>Andorran</option>
+                                            <option value='angolan'>Angolan</option>
+                                            <option value='anguillan'>Anguillan</option>
+                                            <option value='citizen-of-antigua-and-barbuda'>Citizen of Antigua and Barbuda</option>
+                                            <option value='argentine'>Argentine</option>
+                                            <option value='armenianaustralian'>ArmenianAustralian</option>
+                                            <option value='austrian'>Austrian</option>
+                                            <option value='azerbaijani'>Azerbaijani</option>
+                                            <option value='bahamian'>Bahamian</option>
+                                            <option value='bahraini'>Bahraini</option>
+                                            <option value='bangladeshi'>Bangladeshi</option>
+                                            <option value='barbadian'>Barbadian</option>
+                                            <option value='belarusian'>Belarusian</option>
+                                            <option value='belgian'>Belgian</option>
+                                            <option value='belizean'>Belizean</option>
+                                            <option value='beninese'>Beninese</option>
+                                            <option value='bermudian'>Bermudian</option>
+                                            <option value='bhutanese'>Bhutanese</option>
+                                            <option value='bolivian'>Bolivian</option>
+                                            <option value='citizen-of-bosnia-and-herzegovina'>Citizen of Bosnia and Herzegovina</option>
+                                            <option value='botswanan'>Botswanan</option>
+                                            <option value='brazilian'>Brazilian</option>
+                                            <option value='british'>British</option>
+                                            <option value='british-virgin-islander'>British Virgin Islander</option>
+                                            <option value='bruneian'>Bruneian</option>
+                                            <option value='bulgarian'>Bulgarian</option>
+                                            <option value='burkinan'>Burkinan</option>
+                                            <option value='burmese'>Burmese</option>
+                                            <option value='burundian'>Burundian</option>
+                                            <option value='cambodian'>Cambodian</option>
+                                            <option value='cameroonian'>Cameroonian</option>
+                                            <option value='canadian'>Canadian</option>
+                                            <option value='cape-verdean'>Cape Verdean</option>
+                                            <option value='cayman-islander'>Cayman Islander</option>
+                                            <option value='central-african'>Central African</option>
+                                            <option value='chadian'>Chadian</option>
+                                            <option value='chilean'>Chilean</option>
+                                            <option value='chinese'>Chinese</option>
+                                            <option value='colombian'>Colombian</option>
+                                            <option value='comoran'>Comoran</option>
+                                            <option value='congolese-(congo)'>Congolese (Congo)</option>
+                                            <option value='congolese-(drc)'>Congolese (DRC)</option>
+                                            <option value='cook-islander'>Cook Islander</option>
+                                            <option value='costa-rican'>Costa Rican</option>
+                                            <option value='croatian'>Croatian</option>
+                                            <option value='cuban'>Cuban</option>
+                                            <option value='cymraes'>Cymraes</option>
+                                            <option value='cymro'>Cymro</option>
+                                            <option value='cypriot'>Cypriot</option>
+                                            <option value='czech'>Czech</option>
+                                            <option value='danish'>Danish</option>
+                                            <option value='djiboutian'>Djiboutian</option>
+                                            <option value='dominican'>Dominican</option>
+                                            <option value='citizen-of-the-dominican-republic'>Citizen of the Dominican Republic</option>
+                                            <option value='dutch'>Dutch</option>
+                                            <option value='east-timorese'>East Timorese</option>
+                                            <option value='ecuadorean'>Ecuadorean</option>
+                                            <option value='egyptian'>Egyptian</option>
+                                            <option value='emirati'>Emirati</option>
+                                            <option value='english'>English</option>
+                                            <option value='equatorial-guinean'>Equatorial Guinean</option>
+                                            <option value='eritrean'>Eritrean</option>
+                                            <option value='estonian'>Estonian</option>
+                                            <option value='ethiopian'>Ethiopian</option>
+                                            <option value='faroese'>Faroese</option>
+                                            <option value='fijian'>Fijian</option>
+                                            <option value='filipino'>Filipino</option>
+                                            <option value='finnish'>Finnish</option>
+                                            <option value='french'>French</option>
+                                            <option value='gabonese'>Gabonese</option>
+                                            <option value='gambian'>Gambian</option>
+                                            <option value='georgian'>Georgian</option>
+                                            <option value='german'>German</option>
+                                            <option value='ghanaian'>Ghanaian</option>
+                                            <option value='gibraltarian'>Gibraltarian</option>
+                                            <option value='greek'>Greek</option>
+                                            <option value='greenlandic'>Greenlandic</option>
+                                            <option value='grenadian'>Grenadian</option>
+                                            <option value='guamanian'>Guamanian</option>
+                                            <option value='guatemalan'>Guatemalan</option>
+                                            <option value='citizen-of-guinea-bissau'>Citizen of Guinea-Bissau</option>
+                                            <option value='guinean'>Guinean</option>
+                                            <option value='guyanese'>Guyanese</option>
+                                            <option value='haitian'>Haitian</option>
+                                            <option value='honduran'>Honduran</option>
+                                            <option value='hong-konger'>Hong Konger</option>
+                                            <option value='hungarian'>Hungarian</option>
+                                            <option value='icelandic'>Icelandic</option>
+                                            <option value='indian'>Indian</option>
+                                            <option value='indonesian'>Indonesian</option>
+                                            <option value='iranian'>Iranian</option>
+                                            <option value='iraqi'>Iraqi</option>
+                                            <option value='irish'>Irish</option>
+                                            <option value='israeli'>Israeli</option>
+                                            <option value='italian'>Italian</option>
+                                            <option value='ivorian'>Ivorian</option>
+                                            <option value='jamaican'>Jamaican</option>
+                                            <option value='japanese'>Japanese</option>
+                                            <option value='jordanian'>Jordanian</option>
+                                            <option value='kazakh'>Kazakh</option>
+                                            <option value='kenyan'>Kenyan</option>
+                                            <option value='kittitian'>Kittitian</option>
+                                            <option value='citizen-of-kiribati'>Citizen of Kiribati</option>
+                                            <option value='kosovan'>Kosovan</option>
+                                            <option value='kuwaiti'>Kuwaiti</option>
+                                            <option value='kyrgyz'>Kyrgyz</option>
+                                            <option value='lao'>Lao</option>
+                                            <option value='latvian'>Latvian</option>
+                                            <option value='lebanese'>Lebanese</option>
+                                            <option value='liberian'>Liberian</option>
+                                            <option value='libyan'>Libyan</option>
+                                            <option value='liechtenstein-citizen'>Liechtenstein citizen</option>
+                                            <option value='lithuanian'>Lithuanian</option>
+                                            <option value='luxembourger'>Luxembourger</option>
+                                            <option value='macanese'>Macanese</option>
+                                            <option value='macedonian'>Macedonian</option>
+                                            <option value='malagasy'>Malagasy</option>
+                                            <option value='malawian'>Malawian</option>
+                                            <option value='malaysian'>Malaysian</option>
+                                            <option value='maldivian'>Maldivian</option>
+                                            <option value='malian'>Malian</option>
+                                            <option value='maltese'>Maltese</option>
+                                            <option value='marshallese'>Marshallese</option>
+                                            <option value='martiniquais'>Martiniquais</option>
+                                            <option value='mauritanian'>Mauritanian</option>
+                                            <option value='mauritian'>Mauritian</option>
+                                            <option value='mexican'>Mexican</option>
+                                            <option value='micronesian'>Micronesian</option>
+                                            <option value='moldovan'>Moldovan</option>
+                                            <option value='monegasque'>Monegasque</option>
+                                            <option value='mongolian'>Mongolian</option>
+                                            <option value='montenegrin'>Montenegrin</option>
+                                            <option value='montserratian'>Montserratian</option>
+                                            <option value='moroccan'>Moroccan</option>
+                                            <option value='mosotho'>Mosotho</option>
+                                            <option value='mozambican'>Mozambican</option>
+                                            <option value='namibian'>Namibian</option>
+                                            <option value='nauruan'>Nauruan</option>
+                                            <option value='nepalese'>Nepalese</option>
+                                            <option value='new-zealander'>New Zealander</option>
+                                            <option value='nicaraguan'>Nicaraguan</option>
+                                            <option value='nigerian'>Nigerian</option>
+                                            <option value='nigerien'>Nigerien</option>
+                                            <option value='niuean'>Niuean</option>
+                                            <option value='north-korean'>North Korean</option>
+                                            <option value='northern-irish'>Northern Irish</option>
+                                            <option value='norwegian'>Norwegian</option>
+                                            <option value='omani'>Omani</option>
+                                            <option value='pakistani'>Pakistani</option>
+                                            <option value='palauan'>Palauan</option>
+                                            <option value='palestinian'>Palestinian</option>
+                                            <option value='panamanian'>Panamanian</option>
+                                            <option value='papua-new-guinean'>Papua New Guinean</option>
+                                            <option value='paraguayan'>Paraguayan</option>
+                                            <option value='peruvian'>Peruvian</option>
+                                            <option value='pitcairn-islander'>Pitcairn Islander</option>
+                                            <option value='polish'>Polish</option>
+                                            <option value='portuguese'>Portuguese</option>
+                                            <option value='prydeinig'>Prydeinig</option>
+                                            <option value='puerto-rican'>Puerto Rican</option>
+                                            <option value='qatari'>Qatari</option>
+                                            <option value='romanian'>Romanian</option>
+                                            <option value='russian'>Russian</option>
+                                            <option value='rwandan'>Rwandan</option>
+                                            <option value='salvadorean'>Salvadorean</option>
+                                            <option value='sammarinese'>Sammarinese</option>
+                                            <option value='samoan'>Samoan</option>
+                                            <option value='sao-tomean'>Sao Tomean</option>
+                                            <option value='saudi-arabian'>Saudi Arabian</option>
+                                            <option value='scottish'>Scottish</option>
+                                            <option value='senegalese'>Senegalese</option>
+                                            <option value='serbian'>Serbian</option>
+                                            <option value='citizen-of-seychelles'>Citizen of Seychelles</option>
+                                            <option value='sierra-leonean'>Sierra Leonean</option>
+                                            <option value='singaporean'>Singaporean</option>
+                                            <option value='slovak'>Slovak</option>
+                                            <option value='slovenian'>Slovenian</option>
+                                            <option value='solomon-islander'>Solomon Islander</option>
+                                            <option value='somali'>Somali</option>
+                                            <option value='south-african'>South African</option>
+                                            <option value='south-korean'>South Korean</option>
+                                            <option value='south-sudanese'>South Sudanese</option>
+                                            <option value='spanish'>Spanish</option>
+                                            <option value='sri-lankan'>Sri Lankan</option>
+                                            <option value='st-helenian'>St Helenian</option>
+                                            <option value='st-lucian'>St Lucian</option>
+                                            <option value='stateless'>Stateless</option>
+                                            <option value='sudanese'>Sudanese</option>
+                                            <option value='surinamese'>Surinamese</option>
+                                            <option value='swazi'>Swazi</option>
+                                            <option value='swedish'>Swedish</option>
+                                            <option value='swiss'>Swiss</option>
+                                            <option value='syrian'>Syrian</option>
+                                            <option value='taiwanese'>Taiwanese</option>
+                                            <option value='tajik'>Tajik</option>
+                                            <option value='tanzanian'>Tanzanian</option>
+                                            <option value='thai'>Thai</option>
+                                            <option value='togolese'>Togolese</option>
+                                            <option value='tongan'>Tongan</option>
+                                            <option value='trinidadian'>Trinidadian</option>
+                                            <option value='tristanian'>Tristanian</option>
+                                            <option value='tunisian'>Tunisian</option>
+                                            <option value='turkish'>Turkish</option>
+                                            <option value='turkmen'>Turkmen</option>
+                                            <option value='turks-and-caicos-islander'>Turks and Caicos Islander</option>
+                                            <option value='tuvaluan'>Tuvaluan</option>
+                                            <option value='ugandan'>Ugandan</option>
+                                            <option value='ukrainian'>Ukrainian</option>
+                                            <option value='uruguayan'>Uruguayan</option>
+                                            <option value='uzbek'>Uzbek</option>
+                                            <option value='vatican-citizen'>Vatican citizen</option>
+                                            <option value='citizen-of-vanuatu'>Citizen of Vanuatu</option>
+                                            <option value='venezuelan'>Venezuelan</option>
+                                            <option value='vietnamese'>Vietnamese</option>
+                                            <option value='vincentian'>Vincentian</option>
+                                            <option value='wallisian'>Wallisian</option>
+                                            <option value='welsh'>Welsh</option>
+                                            <option value='yemeni'>Yemeni</option>
+                                            <option value='zambian'>Zambian</option>
+                                            <option value='zimbabwean'>Zimbabwean</option>
+                                        </select>
+                                        <div class="invalid-feedback" id="nationalityInValidFeedback">
+                                          Please enter a value.
+                                        </div>  
                                     </div>
                                 
                                     <div class="mb-4">
                                         <label class="my-1 me-2" for="destination">To</label>
                                         <input type="text" class="form-control" id="destination"readonly required>      
+                                    <!-- End of Form -->
+                                    <!-- Form -->
+                                     <div class="mb-3">
+                                        
+                                         <label for="number">Mobile Number</label>
+                                       <input type="tel"  class="form-control" id="number"  required>  
+                                       
+                                       <div class="invalid-feedback" id="mobileNumberInValidFeedback">
+                                        Please enter a valid Mobile Number.
+                                      </div>                                              
+
+                                         
                                     </div>
                                 
                                 
@@ -305,19 +570,35 @@ transform: scale(1.05) rotate(-1deg);
                                     <!-- Form -->
                                   
                                     <div class="mb-3">
-                                        <label class="my-1 me-2" for="country">Select Id Proof</label>                 
+                                         <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" aria-describedby="emailHelp" required> 
+                                        
+                                        <div class="invalid-feedback" id="emailInValidFeedback">
+                                          Please enter a valid email.
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="my-1 me-2" for="id">Select Id Proof</label>                 
                                         <div class="mb-3">
+                                        <select class="form-select" id="id" aria-label="Default select example" required>
                                         <select class="form-select" id="idProof" aria-label="Default select example" required>
                                             <option selected></option>
                                             <option value="1">Aadhar card</option>
                                             <option value="2">Pan card</option>
                                             <option value="3">Driving license </option>
                                         </select>
+                                        <div class="invalid-feedback" id="emailInValidFeedback">
+                                          Please select an option.
+                                        </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="fileUpload">Upload </label>
-                                            <input type="file" class="form-control-file" id="fileUpload">
+                                            <input type="file" class="form-control-file" id="fileUpload" required>
+                                            <div class="invalid-feedback" id="fileInValidFeedback">
+                                              Please upload a file!
+                                            </div>
                                         </div>
+
 
                                     </div><br>
                                     <div class="form-check">
@@ -353,6 +634,8 @@ transform: scale(1.05) rotate(-1deg);
 
                                         <label class="my-1 me-2" for="selectClass">Select Class</label>
                                         <select class="form-select" id="selectClass" aria-label="Default select example" required>
+                                        <label class="my-1 me-2" for="class">Select Class</label>
+                                        <select class="form-select" id="class" aria-label="Default select example" required>
                                             <option selected></option>
                                             <option value="1">All classes</option>
                                             <option value="2">AC First Class(1A)</option>
@@ -370,6 +653,12 @@ transform: scale(1.05) rotate(-1deg);
                                         </select><br>
                                         <label class="my-1 me-2" for="selectQuota">Select Quota</label>
                                         <select class="form-select" id="selectQuota" aria-label="Default select example" required>
+                                        </select>
+                                        <div class="invalid-feedback" id="classInValidFeedback">
+                                          Please select an option.
+                                        </div> 
+                                        <label class="my-1 me-2" for="quota">Select Quota</label>
+                                        <select class="form-select" id="quota" aria-label="Default select example" required>
                                             <option selected></option>
                                             <option value="1">General</option>
                                             <option value="2">Ladies</option>
@@ -382,11 +671,25 @@ transform: scale(1.05) rotate(-1deg);
                                         <select class="form-select" id="berthPreference" aria-label="Default select example" required>
                                             <option selected>No preference</option>
                                             <option value="1">Lower</option>
+                                        </select>
+                                        <div class="invalid-feedback" id="quotaInValidFeedback">
+                                          Please select an option.
+                                        </div> <br>
+
+                                        <label class="my-1 me-2" for="berth">Berth  Preference</label>
+                                        <select class="form-select" id="berth" aria-label="Default select example" required>
+                                            <option selected></option>
+                                            <option value="1">No preference</option>
                                             <option value="2">Upper</option>
                                             <option value="3">Middle</option>
-                                            <option value="4">Side lower</option>
+                                            <option value="4"> lower</option>
                                             <option value="5">Side Upper</option>
+                                            <option value="6">Side Lower</option>
+
                                         </select>
+                                        <div class="invalid-feedback" id="berthInValidFeedback">
+                                          Please select an option.
+                                        </div> 
                                         <br>
                                         <label class="my-1 me-2" for="mealPreference">Meal  Preference</label>
                                      <select class="form-select" id="mealPreference" aria-label="Default select example" required>
@@ -395,6 +698,9 @@ transform: scale(1.05) rotate(-1deg);
                                         <option value="2">Non-Veg</option>
                                         <option value="3">No food</option> 
                                         </select>
+                                        <div class="invalid-feedback" id="mealInValidFeedback">
+                                          Please select an option.
+                                        </div> 
                                     </div>
                                     <div class="mb-3">
 
@@ -405,19 +711,54 @@ transform: scale(1.05) rotate(-1deg);
                                    
                                     <div class="mb-3">
                                         <!-- <label for="disabledSelect">Other Preferences:</label><br>&nbsp; -->
-                                        <label for="disabledSelect">Enter the Preferred coach number</label>&nbsp;
+                                        <label for="coach">Enter the Preferred coach number</label>&nbsp;
                                         <!-- <p><label>Enter the Preffered coach number</label></p> -->
-                                        <input type="number" id="disabledSelect" class="form-control" ><br>
+                                        <!-- <input type="number" id="coach" class="form-control" > -->
+                                        <select class="form-select" id="coach" aria-label="Default select example" required>                                            <option selected></option>
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>
+                                          <option value="6">6</option>
+                                          <option value="7">7</option>
+                                          <option value="8">8</option>
+                                          <option value="9">9</option>
+                                          <option value="10">10</option>
+                                          <option value="11">11</option>
+                                          <option value="12">12</option>
+                                          <option value="13">13</option>
+                                          <option value="14">14</option>
+                                          <option value="15">15</option>
+                                          <option value="16">16</option>
+                                          <option value="17">17</option>
+                                          <option value="18">18</option>
+                                          <option value="19">19</option>
+                                          <option value="20">20</option>
+                                          <option value="21">21</option>
+                                          <option value="22">22</option>
+                                          <option value="23">23</option>
+                                          <option value="24">24</option>
+                                          <option value="25">25</option><br>
+                                          </select>
+                                        <div class="invalid-feedback" id="coachInValidFeedback">
+                                          Please select an option.
+                                        </div> <br>
                                         
                                     
                                         <label class="my-1 me-2" for="reservationChoice">Reservation Choice</label>
                                         <select class="form-select" id="reservationChoice" aria-label="Default select example">
+                                        <label class="my-1 me-2" for="reservation">Reservation Choice</label>
+                                        <select class="form-select" id="reservation" aria-label="Default select example" required>
                                             <option selected></option>
                                             <option value="1">None</option>
                                             <option value="2">Book only if all berths are in the same coach</option>
                                             <option value="3">Book only if atleast one lower berth is allocated</option>
 
                                         </select>
+                                        <div class="invalid-feedback" id="reservationInValidFeedback">
+                                          Please select an option.
+                                        </div> 
                                     </div>
                                     <!-- End of Form -->
                                     <!-- Form -->
@@ -428,6 +769,23 @@ transform: scale(1.05) rotate(-1deg);
                                    
                             </div>
              
+                                    <div class="mb-4">
+                                        <label class="my-1 me-2" for="">Payment Mode</label>
+                                        <select class="form-select" id="payment" aria-label="Default select example" required>
+                                            <option selected></option>
+                                            <option value="1">Payment through credit&debit cards/Net Banking/wallet/others</option>
+                                            <option value="2">Pay through BHIM/UPI</option>
+                                        </select>
+                                        <div class="invalid-feedback" id="paymentInValidFeedback">
+                                          Please select an option.
+                                        </div> 
+                                    </div>
+                                    <br>
+                                    <button  onclick="submitBookingForm(event);"   id="submitButton" class="btn btn-primary" type="button">Submit</button>
+                                  </div>
+                          
+                          
+
         </main>
         </div>
 
@@ -439,7 +797,7 @@ transform: scale(1.05) rotate(-1deg);
 <script src="../../vendor/onscreen/dist/on-screen.umd.min.js"></script>
 
 <!-- Slider -->
-<script src="../../vendor/nouislider/distribute/nouislider.min.js"></script>
+<!-- <script src="../../vendor/nouislider/distribute/nouislider.min.js"></script> -->
 
 <!-- Smooth scroll -->
 <script src="../../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
@@ -467,7 +825,7 @@ transform: scale(1.05) rotate(-1deg);
 <script src="../../vendor/simplebar/dist/simplebar.min.js"></script>
 
 <!-- Github buttons -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
 
 <!-- Volt JS -->
 <script src="../../assets/js/volt.js"></script>
