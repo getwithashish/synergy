@@ -1,7 +1,7 @@
 
 
 // Check if the user is signed in (JWT token is present in localStorage)
-var jwtToken = localStorage.getItem("iat");
+var jwtToken = localStorage.getItem("jwt");
 
 console.log("jwt token is ",jwtToken);
 
