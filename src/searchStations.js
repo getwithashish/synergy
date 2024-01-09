@@ -50,8 +50,8 @@ const autoCompleteDestStationJS = new autoComplete({
   placeHolder: "Destination Station...",
   data: {
     src: async (query) => {
-    //   const data = await searchStation({ query: query });
-    const data = await getStationsList({ q: query });
+      const data = await searchStation({ query: query });
+    // const data = await getStationsList({ q: query });
       return data;
     },
     keys: ["name"],

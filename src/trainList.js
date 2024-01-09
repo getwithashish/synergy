@@ -17,8 +17,13 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
             toStationCode: 'KZK',
             dateOfJourney: '2024-01-04'
         },
+        // params: {
+        //     fromStationCode: fromStationCode,
+        //     toStationCode: toStationCode,
+        //     dateOfJourney: dateOfJourney
+        // },
          headers: {
-            'X-RapidAPI-Key': '19c525f862msh163c37232a972aep132fd7jsn76b66f818ea2',
+            'X-RapidAPI-Key': '7c74588017msh58f0e857b7902aap173881jsnc48c3a74db49',
             'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
         }
     };
@@ -134,7 +139,7 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
             const seatTypeHeading = document.createElement('h3');
             seatTypeHeading.textContent = classType;
 
-            seatTypeHeading.style.fontSize = '14px'; // Adjust the size as needed
+            seatTypeHeading.style.fontSize = '10px'; // Adjust the size as needed
             seatTypeHeading.style.color = 'black'; // Adjust the size as needed
 
 
@@ -256,7 +261,9 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
 
 
 const showTrainList = async () => {
-    await getTrainBetweenStations()
+    var dateValue = document.getElementById("departure_date").value;
+    console.log("Obtained Date: ", dateValue)
+    await getTrainBetweenStations(sourceStationCode, destinationStationCode, dateValue)
     .then((container) => {
         openSweetAlert(container.outerHTML);
     })
