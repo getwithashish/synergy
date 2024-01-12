@@ -1,0 +1,481 @@
+<!--
+
+=========================================================
+* Volt Free - Bootstrap 5 Dashboard
+=========================================================
+
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+* License (https://themesberg.com/licensing)
+
+* Designed and coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Primary Meta Tags -->
+<title>Train details</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="Volt - Free Bootstrap 5 Dashboard">
+<meta name="author" content="Themesberg">
+<meta name="description" content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS.">
+<meta name="keywords" content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard" />
+<link rel="canonical" href="https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://demo.themesberg.com/volt-pro">
+<meta property="og:title" content="Volt - Free Bootstrap 5 Dashboard">
+<meta property="og:description" content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS.">
+<!-- <meta property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg"> -->
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://demo.themesberg.com/volt-pro">
+<meta property="twitter:title" content="Volt - Free Bootstrap 5 Dashboard">
+<meta property="twitter:description" content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS.">
+<meta property="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg">
+
+<!-- Favicon -->
+<!-- <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/favicon/apple-touch-icon.png"> -->
+<!-- <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon/favicon-16x16.png"> -->
+<!-- <link rel="manifest" href="../../assets/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="../../assets/img/favicon/safari-pinned-tab.svg" color="#ffffff"> -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Sweet Alert -->
+<link type="text/css" href="../../vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- Notyf -->
+<link type="text/css" href="../../vendor/notyf/notyf.min.css" rel="stylesheet">
+
+<!-- Volt CSS -->
+<link type="text/css" href="../../css/volt.css" rel="stylesheet">
+
+<!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+<link
+rel="stylesheet"
+href="https://openlayers.org/en/v3.20.1/css/ol.css"
+type="text/css"/>
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="../../../../css/newNavBar.css">
+<link rel="stylesheet" href="animate.css">
+</head>
+
+<body id="dashb">
+
+  <header class="header">
+
+    <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a>
+    
+
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <i class="bx bx-x" id="close-icon"></i>
+    </label>
+
+    <nav class="newnavbar">
+        
+        <a href="#" style="--i:0;">PNR Status</a>
+        <a href="#" style="--i:1;">About</a>
+        <a href="#" style="--i:2;">Top Routes</a>
+        <a href="#" style="--i:3;">Services</a>
+        <a href="#" style="--i:4;">Contact</a>
+    </nav>
+
+</header>
+ 
+        <main class="content" id="main_container">
+            <!-- <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0"> -->
+                
+<div class="row mb-5">
+  <div class="container-fluid px-0" >
+    <div class="animation d-flex justify-content-between w-100" id="navbarSupportedContent">
+        <span class="animate"></span>
+        <span class="animate"></span>
+        <span class="animate"></span>
+        <span class="animate"></span>
+        <span class="animate"></span>
+        <span class="animate"></span>
+      <div class="d-flex align-items-center">
+        <!-- Search form -->
+        <form class="navbar-search form-inline mb-0" id="navbar-search-main">
+           <div class="input-group input-group-merge search-bar">
+            
+              <!-- <span class="input-group-text" id="topbar-addon">
+                <svg class="icon icon-xs" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                </svg>
+              </span>  -->
+              <!-- <input type="text" class="form-control" id="topbarInputIconLeft" placeholder="Enter train number" aria-label="Search" aria-describedby="topbar-addon">
+                 <a href="#" class="btn btn-sm btn-primary"  onclick="searchTrain1()">Search</a>                           -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </nav> -->
+<!-- <div class="row mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Train No</label>
+    <input type="email" class="form-control" id="topbarInputIconLeft" placeholder="Train Number">
+    <a href="#" class="btn btn-sm btn-primary" id="trainButton" onclick="searchTrain()">Search</a> 
+</div> -->
+
+            <div class="row">
+                <div class="col-12 mb-3">
+                    
+                    <div class="card bg-white-100 border-0 shadow">
+                        <div class="card-header d-sm-flex flex-row align-items-center flex-0">
+                            <div class="d-block mb-3 mb-sm-0">
+                                <div class="fs-5 fw-extrabold mb-0" style="color:rgb(250, 249, 249)">Train Details</div>
+                            </div>
+                        </div>
+                        <div class="card-body p-2">   <!--p>Train details</p-->
+                            <div class="trainContainer">
+                              <div class="trainDetailsFlex">
+                                 <ul id="trainDetails" style="color:rgb(250, 249, 249)"></ul>
+                                </div>
+                                <div class="trainSrc">
+                                  <p>
+                                    <span class="word" id="source" style="color:rgb(250, 249, 249)">First</span>
+                                    <span class="line" style="color:rgb(250, 249, 249)"></span>
+                                    <span class="word" id="destination" style="color:rgb(250, 249, 249)">Second</span>
+                                  </p>
+                                  <p>
+                                    <span class="word" style="color:rgb(250, 249, 249)">Duration: </span>
+                                    <span class="word" id="duration" style="color:rgb(250, 249, 249)"></span>
+                                  </p>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-4 mb-4">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row d-block d-xl-flex align-items-center">
+                                <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                    <!-- <div class="icon-shape icon-shape-primary rounded me-4 me-sm-0">
+                                        <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path></svg>
+                                    </div> -->
+                                    <!-- <div class="d-sm-none">
+                                        <h2 class="h5">Customers</h2>
+                                        <h3 class="fw-bold mb-1">345,678</h3>
+                                    </div> -->
+                                </div>
+
+                                <div class="col-12 col-xl-7 px-xl-0">    <!--p>Run Days</p-->
+                                    <div class="d-none d-sm-block">
+                                        <h3 class="fs-5 fw-extrabold mb-3" style="color:rgb(250, 249, 249);text-align: center;">Run Days</h3>
+                                    </div>
+                                    <small class="d-flex align-items-center text-gray-500" id="runDaysContainer">
+                                      <ul id="trainRunDay" class="two-column-list" style="color:rgb(250, 249, 249)">
+                                       
+                                      </ul> 
+                                        <!-- <svg class="icon icon-xxs text-gray-500 ms-2 me-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path></svg> -->
+                                    </small> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-xl-4 mb-4">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row d-block d-xl-flex align-items-center">
+                                <!-- <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                    <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
+                                        <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                    <div class="d-sm-none">
+                                        <h2 class="fw-extrabold h5">Revenue</h2>
+                                        <h3 class="mb-1">$43,594</h3>
+                                    </div>
+                                </div> -->
+
+                                <div class="col-12 col-xl-7 px-xl-0 text-center">     <!--p>Classes</p-->
+                                    <div class="d-none d-sm-block">
+                                        <h3 class="fs-5 fw-extrabold mb-3" style="color:rgb(250, 249, 249)">Class</h3>
+                                    </div>
+                                    <small class="d-flex align-items-center text-gray-500" id="classContainer">
+                                        <!-- <svg class="icon icon-xxs text-gray-500 ms-2 me-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path></svg> -->
+                                        <ul id="trainList" class="two-column-list" style="color:rgb(250, 249, 249)">
+                                         
+                                          
+                                        </ul>
+                                    </small> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-4 mb-4">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row d-block d-xl-flex align-items-center">
+                                <!-- <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                     <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
+                                        <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                    <div class="d-sm-none">
+                                        <h2 class="fw-extrabold h5"> Bounce Rate</h2>
+                                        <h3 class="mb-1">50.88%</h3>
+                                    </div>
+                                </div> -->
+
+                                <div class="col-12 col-xl-7 px-xl-0 text-center">  <!--p>Quota</p-->
+                                    <div class="d-none d-sm-block">
+                                        <h3 class="fs-5 fw-extrabold mb-3" style="color:rgb(250, 249, 249)">Quota</h3>
+                                    </div>
+                                    <small class="d-flex align-items-center text-gray-500" id="quotaContainer">
+                                      <ul id="trainQuota" class="two-column-list" style="color:rgb(250, 249, 249)">
+                                       
+                                      </ul>
+                                    </small> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 col-xl-6 col-md-6 mb-4" id="tr">
+                    <div class="row">
+                            <div class="card border-0 shadow ">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <h1 class="fs-5 fw-extrabold mb-0" style="color:rgb(250, 249, 249)">Train Route</h1>    <!--p>Train Route</p-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <div class="card notification-card border-0 shadow">
+                                           <div class="card-body">
+                                              <div class="list-group list-group-flush list-group-timeline" id="routeContainer">
+                                                          <div class="col ms-n2 mb-3" id="trainRoute" style="color:rgb(250, 249, 249)"> </div> <!--Train Route Container-->   
+                                               </div>
+                                          </div> 
+                                       </div>
+                                </div>
+                            </div>
+                    </div>
+             </div>
+
+            <div class="col-12 col-xl-6 col-md-6 mb-4" id="lvs">
+              <div class="row">
+                      <div class="card border-0 shadow">
+                          <div class="card-header">
+                              <div class="row align-items-center">
+                                  <div class="col">
+                                      <h1 class="fs-5 fw-extrabold mb-0" style="color:rgb(250, 249, 249)">Live Status</h1>    
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                                  <div class="card notification-card border-0 shadow">
+                                     <div class="card-body">
+                                        <div class="list-group list-group-flush list-group-timeline" id="lvsContainer">
+                                                    <div class="col ms-n2 mb-3" id="trainLiveStatusList">
+                                                        <ul id="newLiveStatus" style="color: white;"></ul>
+                                                         </div> <!--Train Route Container-->   
+                                         </div>
+                                         <!-- <p id="duration"></p> -->
+                                    </div> 
+                                 </div>
+                          </div>
+                      </div>
+                 </div>
+               </div>
+            </div>
+
+                <div class="col-12 col-xl-4">
+                    <div class="col-12 px-0 mb-4"> 
+                    <div class="col-12 px-0 mb-4">
+                       
+                                <div class="d-flex align-items-center justify-content-between pt-3">
+                                    <!-- <div> -->
+                                        <!-- <div class="h6 mb-0 d-flex align-items-center">
+                                            <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z" clip-rule="evenodd"></path><path d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"></path></svg>
+                                            Category Rank
+                                        </div> -->
+                                        <!-- <div class="small card-stats">
+                                            Computers Electronics > Technology
+                                            <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                                        </div> -->
+                                    <!-- </div> -->
+                                    <!-- <div> -->
+                                        <!-- <a href="#" class="d-flex align-items-center fw-bold">
+                                            #11
+                                            <svg class="icon icon-xs text-gray-500 ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                        </a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+<div class="bg-white rounded shadow p-5 mb-4 mt-4" id="seatForm">
+  <div class="row" >
+    <h1 class="fs-5 fw-extrabold mb-3" style="color:rgb(250, 249, 249)">Seat Availability</h1>   
+  </div>
+
+  <div class="row mb-3">
+    <form class="navbar-search form-inline" id="seat_search_1">
+      <div class="input-group input-group-merge search-bar" id="fieldSeat1">
+          <!-- <span class="input-group-text" id="topbar-addon1">
+          </span> -->
+          <input type="text" class="form-control" id="from_station" placeholder="From Station" aria-label="Search" aria-describedby="topbar-addon">
+          <input type="text" class="form-control" id="to_station" placeholder="To Station" aria-label="Search" aria-describedby="topbar-addon">
+                                     
+      </div>
+    </form>
+  </div>
+
+  <div class="row mb-3">
+    <form class="navbar-search form-inline" id="seat_search_2">
+      <div class="input-group input-group-merge search-bar" id="fieldSeat1">
+          <!-- <span class="input-group-text" id="topbar-addon2">
+          </span> -->
+          <input type="text" class="form-control" id="enter_quota" placeholder="Quota" aria-label="Search" aria-describedby="topbar-addon">
+          <input type="text" class="form-control" id="classtype" placeholder="Classtype" aria-label="Search" aria-describedby="topbar-addon">
+          <input type="date" class="form-control" id="enter_date" placeholder="Enter the Date: yyyy-mm-dd" aria-label="Search" aria-describedby="topbar-addon">                        
+      </div>
+    </form>
+  </div>
+  <div class="row justify-content-center">
+    <a href="#" class="btn btn-sm btn-primary ms-2"  onclick="searchSeat()" id="seatButton">Search</a> 
+  </div>
+  <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start "></div>
+        <div class="row justify-content-center" id="cardContainer">
+            <div class="row mb-4">
+                 <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">
+                    <div class="card" id="day1" style="align-items: center;">
+                        <h5><span class="word" id="day1seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat1" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare1" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability1" style="color:rgb(250, 249, 249)">probability</span>
+                        <h6><span class="word" id="current_stat1" style="color:rgb(250, 249, 249)">current status</span></h6>
+                    </div>
+                </div>   
+                <div class="col-12 col-sm-6 col-xl-4 col-md-4 mb-4">
+                    <div class="card" id="day2" style="align-items: center;">
+                        <h5><span class="word" id="day2seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat2" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare2" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability2" style="color:rgb(250, 249, 249)">probability</span>
+                        <h6><span class="word" id="current_stat2" style="color:rgb(250, 249, 249)">current status</span></h6>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-xl-4 col-md-4 mb-4">
+                    <div class="card" id="day3" style="align-items: center;">
+                        <h5><span class="word" id="day3seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat3" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare3" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability3" style="color:rgb(250, 249, 249)">probability</span>
+                        <h6><span class="word" id="current_stat3" style="color:rgb(250, 249, 249)">current status</span></h6>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
+                    <div class="card" id="day4" style="align-items: center;">
+                        <h5><span class="word" id="day4seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat4" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare4" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability4" style="color:rgb(250, 249, 249)">probability</span>
+                        <h6><span class="word" id="current_stat4" style="color:rgb(250, 249, 249)">current status</span></h6>
+                    </div>
+                </div>    
+                <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
+                    <div class="card" id="day5" style="align-items: center;">
+                        <h5><span class="word" id="day5seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat5" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare5" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability5" style="color:rgb(250, 249, 249)">probability</span>
+                        <h6><span class="word" id="current_stat5" style="color:rgb(250, 249, 249)">current status</span></h6>
+                    </div>
+                </div>  
+                <div class="col-12 col-sm-6 col-xl-4 col-md-3 mb-4">    
+                    <div class="card" id="day6" style="align-items: center;">
+                        <h5><span class="word" id="day6seat" style="color:rgb(250, 249, 249)">date </span></h5>
+                        <span class="word" id="cnf_seat6" style="color:rgb(250, 249, 249)">cnf</span>
+                        <span class="word" id="tot_fare6" style="color:rgb(250, 249, 249)">fare</span>
+                        <span class="word" id="probability6" style="color:rgb(250, 249, 249)">probability</span>
+                        <h6><span class="word" id="current_stat6" style="color:rgb(250, 249, 249)">current status</span></h6>
+                    </div>
+                </div>  
+        </div>
+    </div>
+</div>
+        </main>
+      </div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script defer src="../../../../src/api/api.js"></script>
+        <script defer src="../../../../src/api/rapidapi-api.js"></script>
+        <script defer src="../../../../src/api/synergy-server-api.js"></script>
+        <script defer src="trainListcopy.js"></script>
+    <!-- Core -->
+<script src="../../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="../../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="../../vendor/onscreen/dist/on-screen.umd.min.js"></script>
+
+<!-- Slider -->
+<!-- <script src="../../vendor/nouislider/distribute/nouislider.min.js"></script> -->
+
+<!-- Smooth scroll -->
+<script src="../../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+<!-- Charts -->
+<script src="../../vendor/chartist/dist/chartist.min.js"></script>
+<script src="../../vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+
+<!-- Datepicker -->
+<script src="../../vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+
+<!-- Sweet Alerts 2 -->
+<script src="../../vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+<!-- Moment JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+
+<!-- Vanilla JS Datepicker -->
+<script src="../../vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+
+<!-- Notyf -->
+<script src="../../vendor/notyf/notyf.min.js"></script>
+
+<!-- Simplebar -->
+<script src="../../vendor/simplebar/dist/simplebar.min.js"></script>
+
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Volt JS -->
+<script src="../../assets/js/volt.js"></script>
+
+<script type="text/javascript" src="../../../profile-page/animate.js"></script>
+
+    
+</body>
+
+</html>

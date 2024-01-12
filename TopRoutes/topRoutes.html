@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+		content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet"> 
+  
+  <!-- CSS -->
+  <link href="css/landingPage.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/loginPage.css">
+  <!-- <link rel="stylesheet" href="css/navBar.css"> -->
+  <link rel="stylesheet" href="css/createAccount.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+      <link rel="stylesheet" href="css/map.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link
+      rel="stylesheet"
+      href="https://openlayers.org/en/v3.20.1/css/ol.css"
+      type="text/css"/>
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/newNavBar.css">
+    <link rel="stylesheet" href="topRoutes.css">
+    <link rel="stylesheet" href="animate.css">
+
+    <!-- JS -->
+    <script src="src/validation.js"></script>
+    <script src="src/authenticate_login.js"></script>
+
+    <script src="src/api/api.js"></script>
+    <script src="src/api/rapidapi-api.js"></script>
+    <script src="src/api/railwayapi-api.js"></script>
+    <script src="src/api/synergy-server-api.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.01.min.css">
+  <script src= 
+"https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" async> 
+	</script> 
+
+  <script defer src="src/searchStations.js"></script>
+  <script defer src="src/searchTrains.js"></script>
+
+  <title>Top Routes</title>
+
+</head>
+
+<body id="toprouteBody">
+ 
+    <div id="main-container">
+      
+
+      <!-- <div class="navBar"> -->
+      <header class="header">
+
+        <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+        <nav class="newnavbar">
+          
+
+          <div class="autoComplete_wrapper">
+            <input style="width: 100%;" id="autocompleteTrainSearch" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" placeholder="Search Train...">
+         </div>
+
+            <a href="http://127.0.0.1:5503/pages/pnr_status.html" style="--i:0;">PNR Status</a>
+            <a href="FAQ/index.html" style="--i:3;">FAQ</a>
+            <a href="pages/contact-page/index.html" style="--i:4;">Contact</a>
+            <a href="#" style="--i:5;" onclick="toggleLoginForm()">LogIn/SignUp</a>
+        </nav>
+
+        <!-- class="nav-link dropdown-toggle" -->
+
+        <a class="nav-link " href="http://127.0.0.1:5503/pages/profile-page/profile-page-copy.html" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <!-- <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span> -->
+          <img class="img-profile rounded-circle" src="../assets/undraw_profile.svg">
+        </a>
+
+    </header>
+
+    <div class="row mb-5">
+      <div class="container-fluid px-0" >
+        <div class="animation d-flex justify-content-between w-100" id="navbarSupportedContent">
+          <span class="animate"></span>
+          <span class="animate"></span>
+          <span class="animate"></span>
+          <span class="animate"></span>
+          <span class="animate"></span>
+          <span class="animate"></span>
+          <div class="d-flex align-items-center">
+            <!-- Search form -->
+            <form class="navbar-search form-inline mb-0" id="navbar-search-main">
+               <div class="input-group input-group-merge search-bar">
+                  <span class="input-group-text" id="topbar-addon">
+                    <svg class="icon icon-xs" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                    </svg>
+                  </span> 
+                  <!-- <input type="text" class="form-control" id="topbarInputIconLeft" placeholder="Enter train number" aria-label="Search" aria-describedby="topbar-addon">
+                     <a href="#" class="btn btn-sm btn-primary"  onclick="searchTrain1()">Search</a>                           -->
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container" id="topic_container">
+       <div class="row">
+        <div class="col-12 mt-3 text-center" id="title_text">
+      
+           <h1>Top routes</h1>
+           <h5>Indian Railway</h5>
+        </div>
+       </div>
+    </div>
+
+    <div class="row mb-5" id="luxuryTrain_title">
+      <h3 style="color: white;">Hill Railway</h3>
+    </div>
+    <div class="container mt-5" id="card_container">
+     
+      <div class="row" data-masonry='{"percentPosition": true }'>
+
+          <div class="col-md-4 mb-4">
+
+              <div class="card " id="card1">
+                <div class="card-body">
+                  <img src="../assets/nilgiri.jpg" class="img-fluid1" alt="..."> 
+                </div>
+                <div class="card-img-overlay justify-content-center d-flex align-items-center col-md-4 mb-4" id="nilgiriImgOverlay">
+                  <ul style="color: white;" id="nilgiriText">
+                    <h6>Mettupalayam to Ooty</h6>
+                    <li> 06136 | Mettupalayam Ooty Special</li>
+                    <hr>
+                    <h6>Coonoor to Ooty</h6>
+                    <li>06141 | Coonoor Udayamangalam special</li>
+                    <li>06136 | Mettupalayam Ooty special</li>
+                    <li>06143 | Coonoor Udayamangalam special</li>
+                    <hr>
+                    <h6>Rundays: M,T,W,T,F,S,S</h6>
+                  </ul>
+                </div>
+                <div class="card-header" style="color: white;">
+                  Nilgiri Mountain Railway
+                </div>            
+              </div>
+
+              <div class="card mt-4" id="card3">
+                <div class="card-body">
+                  <img src="../assets/kalka-shimla.jpg" class="img-fluid3" alt="...">
+                </div>
+                <div class="card-img-overlay justify-content-center d-flex align-items-center" id="nilgiriImgOverlay">
+                  <ul style="color: white;" id="nilgiriText">
+                    <h6>Kalka to Shimla</h6>
+                    <li>52459 | KLK SML EXPRESS</li>                  
+                    <li>72451 | RAIL MOTOR</li>               
+                    <li>52453 | KLK SML EXP</li>           
+                    <li>52455 | HIMALYAN QUEEN</li>              
+                    <li>52451 | SHIVALK DLX EXP</li>
+                    <hr>
+                    <h6>Rundays: M,T,W,T,F,S,S</h6> 
+                  </ul>
+                </div>
+                <div class="card-header" style="color: white;">
+                  Kalka-Shimla Railway
+                </div>              
+              </div>
+
+          </div>
+
+          <div class="col-4">
+
+              <div class="card" id="card2">
+                <div class="card-body">
+                  <img src="../assets/Darjeeling_Himalayan_Railway.jpg" class="img-fluid" alt="...">
+                </div>
+                <div class="card-img-overlay justify-content-center d-flex align-items-center" id="nilgiriImgOverlay">
+                  <ul style="color: white;" id="nilgiriText">
+                    <h6>Kurseong to Darjeeling</h6>
+                    <li>52587 | River View Passenger</li> 
+                    <hr>
+                    <h6>Mahanadi to Darjeeling</h6>                 
+                    <li>52545 | Teesta-Rangeet  Passenger</li>  
+                    <hr>
+                    <h6>Silguri to Gayabari</h6>             
+                    <li>52551 | Jungle Safari</li>           
+                    <hr>
+                    <h6>Rundays: M,T,W,T,F,S,S</h6> 
+                  </ul>
+                </div>
+               <div class="card-header" style="color: white;">
+                Darjeeling Himalayan Railway
+               </div>
+              </div>
+
+          </div>
+
+
+          <div class="col-4">
+
+            <div class="card" id="card6">
+              <div class="card-body">
+                <img src="../assets/jammu_baramulla.jpg" class="img-fluid6" alt="...">
+              </div>
+              <div class="card-img-overlay justify-content-center d-flex align-items-center" id="nilgiriImgOverlay">
+                <ul style="color: white;" id="nilgiriText">
+                  <h6>Baramulla to Banihal</h6>
+                  <li>04474 | Baramulla Banihal DEMU Express</li>                
+                  <li>04618 | Baramulla Banihal DEMU Express</li>              
+                  <li>04614 | Baramulla Banihal DEMU Express</li>   
+                  <li>04484 | Baramulla Banihal DEMU Express</li>      
+                  <hr>
+                  <h6>Rundays: M,T,W,T,F,S,S</h6> 
+                </ul>
+              </div>
+              <div class="card-header" style="color: white;">
+                Jammu-Baramulla Railway
+              </div>             
+            </div>
+
+            <div class="card mt-4" id="card4">
+              <div class="card-body">
+                <img src="../assets/kangara.jpg" class="img-fluid4" alt="...">
+              </div>
+              <div class="card-img-overlay justify-content-center d-flex align-items-center" id="nilgiriImgOverlay">
+                <ul style="color: white;" id="nilgiriText">
+                  <h6>Pathankot to Joginder Nagar</h6>
+                  <li>52471 | Pathankot - Joginder NAGAR Passenger </li> 
+                  <hr>
+                  <h6>Pathankot to Baijnath</h6>             
+                  <li>01607 | Pathankot-Baijnath Express</li>  
+                  <hr>
+                  <h6>Pathankot to Jwalamukhi</h6>
+                  <li>01605 | Pathankot - Jwalamukhi Road Express</li>                     
+                  <hr>
+                  <h6>Rundays: M,T,W,T,F,S,S</h6> 
+                </ul>
+              </div>
+              <div class="card-header" style="color: white;">
+                Kangara Railway
+              </div>           
+            </div>
+
+        </div>
+          
+        <div class="col-4 mt-4">
+          
+          <div class="card" id="card5">
+            <div class="card-body">
+              <img src="../assets/matheran.jpg" class="img-fluid5" alt="...">
+            </div>
+            <div class="card-img-overlay justify-content-center d-flex align-items-center" id="nilgiriImgOverlay">
+              <ul style="color: white;" id="nilgiriText">
+                <h6>Neral to Matheran</h6>
+                <li>52103 | Matheran Neral Toy Train </li>             
+                <li>52105 | Matheran Neral Toy Train</li>  
+                <hr> 
+                <h6>Rundays: M,T,W,T,F,S,S</h6> 
+              </ul>
+            </div>
+            <div class="card-header" style="color: white;">
+              Matheran Railway
+            </div>         
+          </div>
+
+        </div>         
+      </div>
+  </div>
+
+  <div class="row mb-5" id="luxuryTrain_title">
+    <h3 style="color: white;">Luxury Trains</h3>
+  </div>
+  <div class="container mb-5" id="luxury_train">
+    
+      <div class="row mb-5">
+ 
+        <div class="col-md-4 mb-4">
+          <div class="card" id="maharajas">       
+            <div class="card-body">
+              <img src="../assets/maharaja.jpg" class="card-img-top" alt="Card image">
+            </div>
+            <div class="card-img-overlay justify-content-center d-flex align-items-center" id="nilgiriImgOverlay">
+              <ul style="color: white;" id="nilgiriText">
+                <li>Delhi, Agra</li>             
+                <li>Ranthambore</li> 
+                <li>Jaipur, Bikaner</li>
+                <li> Jodhpur, Udaipur</li>
+                <li>Mumbai</li>           
+              </ul>
+            </div>
+            <div class="card-header" style="color: white;">
+              Maharaja's Express
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card" id="golden_chariot"> 
+            <div class="card-body">
+              <img src="../assets/goiden_chariot.jpg" class="card-img-top" alt="Card image">
+            </div>
+            <div class="card-img-overlay justify-content-center d-flex align-items-center" id="nilgiriImgOverlay">
+              <ul style="color: white;" id="nilgiriText">
+                <li>Bangalore</li>             
+                <li>Bandipur, Mysore</li> 
+                <li>Halebidu</li>
+                <li>Chikmagalur, Hampi</li>
+                <li>Badami, Goa</li>           
+              </ul>
+            </div>
+            <div class="card-header" style="color: white;">
+              Golden Chariot
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card" id="deccan_odyssey">        
+            <div class="card-body">
+              <img src="../assets/deccan3.jpg" class="card-img-top" alt="Card image">
+            </div>
+            <div class="card-img-overlay justify-content-center d-flex align-items-center" id="nilgiriImgOverlay">
+              <ul style="color: white;" id="nilgiriText">
+                <li>Delhi - Sawai Madhopur</li>             
+                <li>Sawai Madhopur - Ranthambore National Park</li> 
+                <li>Agra, Jaipur</li>
+                <li>Udaipur,Vadodara</li>   
+                <li>Aurangabad Ellora Caves</li>  
+                <li>Mumbai</li>      
+              </ul>
+            </div>
+            <div class="card-header" style="color: white;">
+              Deccan Odyssey
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 offset-md-4">
+          <div class="card" id="palaceOnWheels"> 
+            <div class="card-body">
+              <img src="../assets/palaceonwheels.jpg" class="card-img-top" alt="Card image">
+            </div>
+            <div class="card-img-overlay justify-content-center d-flex align-items-center" id="nilgiriImgOverlay">
+              <ul style="color: white;" id="nilgiriText">
+                <li>Jaipur</li>             
+                <li>Chittorgarh</li> 
+                <li>Udaipur</li>
+                <li>Jaisalmer</li>   
+                <li>Jodhpur</li>  
+                <li>Bharatpur</li>   
+                <li>Agra</li>   
+              </ul>
+            </div>
+            <div class="card-header" style="color: white;">
+              Palace on Wheels
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
+ 
+  <div class="row mb-5" id="buddistTrain_title">
+    <h3 style="color: white;">Buddhist Circuit Tourist Train</h3>
+  </div>
+  <div class="container" id="buddhistTrain_container">
+    <div class="row mb-5"
+			data-masonry='{"percentPosition": true }'> 
+
+			<div class="col-4"> 
+				<div class="card" id="buddhaCard1">        
+					<div class="card-body"> 
+            <img src="../assets/buddha2.jpg" class="card-img-top" alt="Card image">
+					</div> 
+				</div> 
+
+				<div class="card mt-4" id="buddhaCard2">  
+					<div class="card-body"> 
+            <img src="../assets/buddha1.jpg" class="card-img-top" alt="Card image">
+					</div> 
+				</div> 
+			</div> 
+
+			<div class="col-4"> 
+				<div class="card" id="buddhaCard3"> 
+					<div class="card-body"> 
+            <img src="../assets/buddhaAC1.jpg" class="card-img-top" alt="Card image">					
+					</div> 
+          <div class="card-header" style="color: white;">
+            AC First Class
+          </div>
+				</div> 
+
+				<div class="card mt-4" id="buddhaCard4">         
+					<div class="card-body"> 
+            <img src="../assets/AC-First-coupe.jpg" class="card-img-top" alt="Card image">					
+					</div> 
+          <div class="card-header" style="color: white;">
+            AC First Coupe
+          </div>
+				</div> 
+			</div> 
+
+			<div class="col-4"> 
+				<div class="card" id="buddhaCard5">       
+					<div class="card-body"> 
+            <img src="../assets/buddhaRoute.jpg" class="card-img-top" alt="Card image">
+					</div> 
+				</div> 
+	
+			</div> 
+		</div> 
+
+  </div>
+       
+  <div class="row mb-5" id="charterTrain_title">
+    <div class="col text-center mb-4">
+      <h3 style="color: white;">Charter Train</h3>
+    </div>
+  </div>
+  <div class="container mb-4" id="charter_container">
+    <div class="card text-center" id="charterTrains">
+      <div class="card-header">
+        <ul class="nav nav-pills justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="#descriptionContent">Description</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#enquiryContent">Enquiry Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contactContent">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-body">
+        <div id="descriptionContent">
+         
+         <div class="row">
+          <div class="col-12 mb-3">
+
+            <div class="d-flex justify-content-between">
+
+              <div class="card mr-2" id="trainCharter1" style="width: 30%;">
+                <div class="card-body">
+                  <img src="../assets/charterTrain1.jpg" class="card-img-top" alt="Card image">
+                </div>
+                <div class="card-header" style="color: white;">
+                  Train Charter
+                </div>
+              </div>
+  
+              <div class="card mr-2" id="trainCharter2" style="width: 30%;">
+                <div class="card-body">
+                  <img src="../assets/charter2.jpg" class="card-img-top" alt="Card image">
+                </div>
+                <div class="card-header" style="color: white;">
+                  Coach Charter
+                </div>
+              </div>
+  
+              <div class="card ml-2" id="trainCharter3" style="width: 30%;">
+                <div class="card-body">
+                  <img src="../assets/saloonCharter.jpg" class="card-img-top" alt="Card image">
+                </div>
+                <div class="card-header" style="color: white;">
+                  Saloon Charter
+                </div>
+              </div>
+            </div>
+
+          </div>
+         </div>
+        </div>
+
+        <div id="enquiryContent" style="display: none;">
+          <form action="#" method="post">
+            <div class="mb-3" id="field1">
+
+              <div class="nameField">
+                <label for="nameOfApplicant" class="form-label" style="color: white;">Name of Applicant*</label>
+                <input type="text" class="form-control" id="nameOfApplicant" name="nameOfApplicant" placeholder="Name of Applicant">
+              </div>
+              <div class="orgField">
+                <label for="nameOfOrganization" class="form-label" style="color: white;">Name of Organisation*</label>
+                <input type="text" class="form-control" id="nameOfOrganization" name="nameOfOrganization" placeholder="Name of Organisation">
+              </div>
+                
+            </div>
+
+            <div class="mb-3" id="field2">
+
+              <div class="mobile">
+                <label for="mobile" class="form-label" style="color: white;">Mobile*</label>
+                <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Mobile">
+              </div>
+                
+              <div class="email">
+                <label for="email" class="form-label" style="color: white;">Email*</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+              </div>
+               
+            </div>
+    
+            
+            <div class="mb-3" id="field3">
+
+              <div class="address">
+                <label for="address" class="form-label" style="color: white;">Address*</label>
+                <input type="tel" class="form-control" id="address" name="address" placeholder="Address">
+              </div>
+               
+              <div class="requestFor">
+                <label for="requestFor" class="form-label" style="color: white;">Request for*</label>
+                <select class="form-select" id="requestFor" name="requestFor" style="color: gray;">
+                  <option value="" selected>Select</option>
+                  <option value="charterPurpose">Saloon</option>
+                  <option value="additionalServices">Train</option>
+                </select>
+              </div>  
+               
+            </div>
+            
+            <div class="mb-3" id="field4">
+
+              <div class="purpose">
+                <label for="charterPurpose" class="form-label" style="color: white;">Purpose of Charter</label>
+                <textarea class="form-control" id="charterPurpose" name="charterPurpose" placeholder="Purpose of Charter" rows="3"></textarea>
+              </div>
+              
+              <div class="additionalService">
+                <label for="additionalServices" class="form-label" style="color: white;">Additional Services Required</label>
+                <textarea class="form-control" id="additionalServices" name="additionalServices" placeholder="Additional Services Required" rows="3"></textarea>
+              </div>
+                
+            </div>
+           
+            <button type="submit" class="btn btn-primary" id="enquiryButton">Submit</button>
+          </form>
+        </div>
+
+        <div id="contactContent" style="display: none;">
+          <table class="table table-glassmorphism table-hover" id="contactTable">
+            <thead>
+              <tr>
+                <th scope="col">S.No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email Id</th>
+                <th scope="col">Mobile Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Ashish</td>
+                <td>ashish@gmail.com</td>
+                <td>7568369876</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Arjun</td>
+                <td>arjun@gmail.com</td>
+                <td>7854670023</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Archa</td>
+                <td>archa@gmail.com</td>
+                <td>7024670027</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Dantus</td>
+                <td>dantus@gmail.com</td>
+                <td>7443670023</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Devapriya</td>
+                <td>devapriya@gmail.com</td>
+                <td>7854670000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+    </div>
+
+    <script src="src/landingPage.js"></script>  
+    <script src="../pages/profile-page/animate.js"></script>
+    <script src="topRoute.js"></script>       
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRa/RzZDZBxj5E+8/2+iAe1lx2p1b8Q+jp7xjmwPr" crossorigin="anonymous"></script>
+    </body>
+
+</html>

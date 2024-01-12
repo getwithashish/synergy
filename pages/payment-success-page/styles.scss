@@ -1,0 +1,51 @@
+// Mixin for box shadow
+@mixin box-shadow($x, $y, $blur, $color) {
+    box-shadow: $x $y $blur $color;
+  }
+  
+  // Mixin for font styling
+  @mixin font-styles($size, $color, $weight) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .success-message {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    // @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.1));
+  }
+  
+  h1 {
+    @include font-styles(24px, #4caf50, bold);
+  }
+  
+  img {
+    width: 300px;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+  a {
+    @include font-styles(16px, #2196F3, bold);
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+  }
+  

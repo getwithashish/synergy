@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  /* font-family: 'Lateef', cursive, Arial, sans-serif; */
+}
+
+.popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* width: 100vw; */
+  /* background-color: white; */
+  font-family: "Orbitron", sans-serif;
+}
+
+.popup {
+  display: none;
+  color: black;
+  text-align: center;
+  text-shadow: #c4c4c4;
+  animation: popupAnimation 1s ease-out;
+}
+
+.popup p{
+  color: black;
+}
+
+h1 {
+  font-size: 8vw; /* Adjust the font size as needed */
+  font-weight: 400; /* Slightly less bold */
+  margin-bottom: 5vw; /* Reduce the gap between IRCTC and the tagline */
+}
+
+p {
+  font-size: 2vw; /* Adjust the font size for the tagline */
+  margin-top: 1px; /* Reduce the gap between IRCTC and the tagline */
+}
+
+@keyframes popupAnimation {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+#line-cut {
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  border-bottom: 0.2vw solid #f5f5f5;
+  width: 0%;
+  text-align: center;
+  transform: rotate(-2deg);
+  animation: line 0.3s linear forwards;
+}
+
+@keyframes line {
+  from {
+    left: 50%;
+    width: 0%;
+  }
+  to {
+    left: 2%;
+    width: 100%;
+  }
+}
+
+#main-container {
+  width: 100%;
+}
+
+.form {
+  border-radius: 10px;
+  margin-top: 40px;
+  width: 75%;
+  background-color: rgb(227, 241, 250);
+
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+  border-radius: 10px;
+}
+input {
+  height: 35px;
+}
+#form_container {
+  position: fixed;
+  bottom: 20%;
+  left: 0;
+  margin-left: 40px;
+  /* margin-top: 150px; */
+  width: 30%;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+/* .form-label{
+  padding-right: 60px;
+} */
+#depart_form{
+padding-right: 50px;
+/* margin-left: 20px; */
+}
+#arrival_form{
+padding-right: 80px;
+/* margin-left: 20px; */
+}
+#autoComplete_wrapper{
+  width: 150px;
+}
+/* #dep_date{
+  margin-left: 2px;
+} */
+#departure_date{
+  width:220px;
+  /* margin-left: 22px; */
+}
+/* .btn btn-primary{
+  width:120px;
+} */
+/* #autocompleteSrcStation{
+  margin-left: 15px;
+}
+#autocompleteDestStation{
+  margin-left: 15px;
+} */
+

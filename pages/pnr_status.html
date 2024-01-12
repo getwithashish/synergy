@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNR Status</title>
+    <link rel="stylesheet" href="../css/pnr_status.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <!-- <script src="../src/authentication.js"></script> -->
+    <script src="../src/validation.js"></script>
+    <script src="pnr_status.js"></script>
+    <script src="../src/api/api.js"></script>
+    <script src="../src/api/rapidapi-api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="profile-page/css/animate.css";>
+
+    <style>
+      .animation{
+        background: #3E1E68;
+      }
+
+      .create-account-container{
+        background: rgba(255, 255, 255, 0.4);
+        padding-top: 24px;
+      }
+    </style>
+</head>
+<body class="animation">
+    <span class="animate"></span>
+    <span class="animate"></span>
+    <span class="animate"></span>
+    <span class="animate"></span>
+    <span class="animate"></span>
+    <div class="create-account-container" id="pnr_container_id">
+        <div class="close-btn" id="closeContainer">
+          <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="row">
+            <form onsubmit="event.preventDefault();" class="row g-3 needs-validation " id="create-account-form" novalidate>
+          
+              <h3 style="text-align: center;" style="color:rgb(250, 249, 249)">PNR STATUS</h3>
+              <!-- <P style="color: gray;text-align: center;">Welcome!</P> -->
+      
+              <div class="mb-6" id="name-input-group">
+                  <label for="userName" class="form-label" style="color:rgb(250, 249, 249)">PNR number</label>
+                  <div class="input-group">
+                      <input type="text" class="form-control" id="checkPNR" placeholder="Enter your 10 digit PNR number"   name="userName" required>
+                      <a href="#" onclick="checkPnr();" class="btn btn-primary"  id="checkpnrBtn">Search</a>
+                    </div>    
+                  <div class="valid-feedback" id="nameValidFeedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback" id="signupnameInValidFeedback">
+                    Please enter a valid PNR number.
+                  </div>
+                </div>   
+            </form>
+            <div class="row mb-4" id="pnrResultContainer">
+
+              <div class="col-md-12 mb-4" id="pnrResult">
+
+                <div class="row" id="first">
+                
+                  <div class="col-md-6">
+                    <span class="word1" id="trainNumber"style="color:rgb(250, 249, 249)">Train Number: </span>
+                  </div> 
+
+                  <div class="col-md-6">
+                    <span class="word" id="trainName" style="color:rgb(250, 249, 249)">TrainName: </span>
+                  </div>
+
+                </div>
+
+                <div class="row" id="second">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="boardingStation" style="color:rgb(250, 249, 249)">Boarding Station: </span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="reservUpto" style="color:rgb(250, 249, 249)">Reservation Upto: </span>
+                  </div>  
+
+                </div>
+
+                <div class="row" id="three">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="passStatus" style="color:rgb(250, 249, 249)">Passenger Status: </span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="timeTaken" style="color:rgb(250, 249, 249)">Duration: </span>
+                  </div>  
+
+                </div>
+
+                <div class="row" id="four">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="departureTime" style="color:rgb(250, 249, 249)">Departure Time: </span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="arrivalTime" style="color:rgb(250, 249, 249)">Arrival Time</span>
+                  </div>  
+
+                </div>
+                <div class="row" id="five">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="bookingFare" style="color:rgb(250, 249, 249)">Booking Fare: </span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="ticketFare" style="color:rgb(250, 249, 249)">Ticket Fare</span>
+                  </div>  
+
+                </div>
+
+                <div class="row" id="six">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="coachPostn" style="color:rgb(250, 249, 249)">Date</span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="quota" style="color:rgb(250, 249, 249)">Quota</span>
+                  </div>
+
+                  <!-- <div class="col-md-6">  
+                    <span class="word" id="platform">platform</span>
+                  </div>  -->
+
+                </div>
+                <div class="row" id="seven">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="class" style="color:rgb(250, 249, 249)">Class:</span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="platformNo" style="color:rgb(250, 249, 249)">Platform No:</span>
+                  </div>
+
+                  <!-- <div class="col-md-6">  
+                    <span class="word" id="platform">platform</span>
+                  </div>  -->
+
+                </div>
+                
+              </div>
+            </div>  
+          </div>  
+
+      </div>
+      </div>
+    
+</body>
+</html>

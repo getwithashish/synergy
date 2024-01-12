@@ -1,0 +1,9 @@
+# .gitignore
+
+# Ignore Node.js-related files and directories
+node_modules/
+
+# Ignore Parcel cache and build artifacts
+.parcel-cache/  
+
+.vscode/

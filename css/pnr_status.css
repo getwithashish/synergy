@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #f5f5f5; */
+    /* background-image: url('../../../assets/devanshu-verma-HeAz1n6mVWE-unsplash.jpg'); */
+    /* Other background properties to control size, position, etc. */
+    background-size: cover; /* Cover the entire body */
+    background-repeat: no-repeat; /* No repeating of the image */
+    
+  }
+  
+  .create-account-container {
+    position: relative;
+    width: 950px;
+    height: 210px;
+    /* background-color: #fff; */
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px) saturate(171%);
+    -webkit-backdrop-filter: blur(6px) saturate(171%);
+    -moz-backdrop-filter: blur(6px) saturate(171%);
+    background-color: transparent;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    
+  }
+
+  #name-input-group{
+    margin-left: 10px;
+  }
+
+  .signup-container {
+         position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: auto;
+  max-height: 600px;
+  min-height: 200px;
+  overflow-y: auto;
+  }
+
+  /* .mb-3 {
+    margin-bottom: 2px; /* You can reduce this value to decrease the space 
+  } */
+
+  #create-account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .create-account-form h2 {
+    text-align: center;
+    margin-bottom: 2px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+  }
+  
+  #closeBtn {
+    background: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-size: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    line-height: 1;
+  }
+
+  .valid-feedback {
+    display: none; /* initially hide */
+    color: green;
+  }
+  .invalid-feedback {
+    display: none; /* initially hide */
+    color: red;
+  }
+  
+  
+  #checkpnrBtn {
+    padding: 5px;
+    border: none;
+    /* border-radius: 10px; */
+    width:180px;
+    background-color: #cf2550;
+    color: #fff;
+    cursor: pointer;
+    
+  }
+  
+  #signInGoogleBtn {
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+   
+  }
+  
+  #checkpnrBtn:hover {
+    background-color: #a11034;
+  }
+
+  /* #closeContainer{
+    height: 60px;
+  } */
+
+  #pnrResultContainer{
+    margin-top: 20px;
+  }
+
+  #first, #second, #three, #four, #five, #six, #seven {
+    display: flex;
+    justify-content: space-between; /* This will add space between the spans */
+    width: 100%;
+    margin-bottom: 10px; 
+    
+  }
+
+  .word {
+    flex: 1; /* This will distribute space evenly between the spans */
+    text-align: left; /* Optional: to center-align text within each span */
+    /* You can adjust additional styles as needed */
+  }
+  .word1{
+    flex: 1; /* This will distribute space evenly between the spans */
+    text-align: left; /* Optional: to center-align text within each span */
+    margin-left: 70px;
+  }
+
+  .create-account-container {
+    overflow: hidden;
+    height: 210px;
+    transition: height 0.5s ease; /* Set the transition property for the height */
+}
+
+  

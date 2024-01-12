@@ -1,0 +1,38 @@
+body{
+	background-image: url('../assets/faq_bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat; 
+}
+
+
+.belowNav{
+	margin-top: 7rem;
+}
+
+.newnavbar{
+	position: fixed;
+	top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.bulletTitle{
+	
+}
+
+.cd-faq__categories {
+	@media (min-width: 768px) {
+	  position: sticky;
+	  align-self: flex-start;
+	  flex-shrink: 0;
+	  top: 20px;
+	  width: 20%;
+	  box-shadow: var(--shadow-sm);
+	  margin-top: var(--space-md);
+	}
+  
+	
+	@media (min-width: 1200px) {
+	  width: 200px;
+	}
+  }
