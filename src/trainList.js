@@ -23,7 +23,7 @@ async function getTrainBetweenStations(fromStationCode, toStationCode, dateOfJou
         //     dateOfJourney: dateOfJourney
         // },
          headers: {
-            'X-RapidAPI-Key': '7c74588017msh58f0e857b7902aap173881jsnc48c3a74db49',
+            'X-RapidAPI-Key': '268327b2aemsh212d52a11b8518fp104215jsnce91147d0a4d',
             'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
         }
     };

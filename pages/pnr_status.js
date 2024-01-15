@@ -32,6 +32,8 @@ function checkPnr(){
     const pnrPltf = document.getElementById("platformNo");
     pnrPltf.innerHTML = "";
 
+    expandBox(createAccountContainer);
+
     const somePnr = getPNRStatus({pnrNumber: pnrInput})
     .then ((response) =>{
         console.log("Inside pnr status: ", response);
@@ -51,7 +53,7 @@ function checkPnr(){
       let classPNR = response.Class;
       let pltfPNR = response.ExpectedPlatformNo;
 
-      expandBox(createAccountContainer);
+      // expandBox(createAccountContainer);
 
       displayPNR(pnrTName,pnrTNo,bStation,reservStation,passenger,time,depTime,arrTime,bookFare,tickFare,coachPosition,quotaPnr,classPNR,pltfPNR);
          
