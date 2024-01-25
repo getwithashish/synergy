@@ -9,6 +9,14 @@
 	<link rel="stylesheet" href="faqanimate.css" >
 	<!-- <script src="../pages/profile-page/animate.js" ></script> -->
   <title>FAQ</title>
+
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.01.min.css">
+  
 </head>
 
 <!-- <body style="margin-top: 5rem; margin: 0;
@@ -28,20 +36,26 @@ background-image: url('assets/images/faq_bg.jpg');background-repeat: no-repeat;b
 
 	<header class="header" style="margin-bottom: 20px;">
     
-        <a href="http://127.0.0.1:5503/index.html" class="logo">Syn</a>
+        <a href="/index.html" class="logo">Syn</a>
 
         <input type="checkbox" id="check">
         <label for="check" class="icons">
             <i class="bx bx-menu" id="menu-icon"></i>
             <i class="bx bx-x" id="close-icon"></i>
         </label>
+		
 
         <nav class="newnavbar">
+
+			<div class="autoComplete_wrapper">
+				<input style="width: 100%;" id="autocompleteTrainSearch" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off">
+			</div>
+
             <a href="#" style="--i:0;">PNR Status</a>
-            <a href="#" style="--i:1;">About</a>
-            <a href="#" style="--i:2;">Gallery</a>
-            <a href="#" style="--i:3;">Services</a>
-            <a href="#" style="--i:4;">Contact</a>
+            <!-- <a href="#" style="--i:1;">Top Routes</a> -->
+            <a href="#" style="--i:2;">FAQ</a>
+            <a href="/pages/contact-page/index.html" style="--i:3;">Contact</a>
+			<a href="#" style="--i:5;" onclick="toggleLoginForm()">LogIn/SignUp</a>
         </nav>
 
     </header>

@@ -26,6 +26,8 @@
 
     <link rel="stylesheet" href="css/trainList.css" />
 
+    <link rel="stylesheet" href="/css/pnr_status.css">
+
     <style>
       .map {
         width: 100%;
@@ -66,6 +68,10 @@
 
       label {
         color: white;
+      }
+
+      #departure_date{
+        width: 100%;
       }
     </style>
 
@@ -180,7 +186,142 @@
             }
           });
         };
+
+        const openPnr = () => {
+          Swal.fire({
+            title: "<p style='color: white'>PNR Status</p>",
+            html: `
+            <div class="create-account-container" id="pnr_container_id">
+        
+          <div class="row">
+            <form onsubmit="event.preventDefault();" class="row g-3 needs-validation " id="create-account-form" novalidate>
+
+              <div class="mb-6" id="name-input-group">
+                 <div class="input-group">
+                      <input type="text" class="form-control" id="checkPNR" placeholder="Enter your 10 digit PNR number"   name="userName" required>
+                      <a href="#" onclick="checkPnr();" class="btn btn-primary"  id="checkpnrBtn">Search</a>
+                    </div>    
+                  <div class="valid-feedback" id="nameValidFeedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback" id="signupnameInValidFeedback">
+                    Please enter a valid PNR number.
+                  </div>
+                </div>   
+            </form>
+            <div class="row mb-4" id="pnrResultContainer">
+
+              <div class="col-md-12 mb-4" id="pnrResult">
+
+                <div class="row" id="first">
+                
+                  <div class="col-md-6">
+                    <span class="word1" id="trainNumber"style="color:rgb(250, 249, 249)">Train Number: </span>
+                  </div> 
+
+                  <div class="col-md-6">
+                    <span class="word" id="trainName" style="color:rgb(250, 249, 249)">TrainName: </span>
+                  </div>
+
+                </div>
+
+                <div class="row" id="second">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="boardingStation" style="color:rgb(250, 249, 249)">Boarding Station: </span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="reservUpto" style="color:rgb(250, 249, 249)">Reservation Upto: </span>
+                  </div>  
+
+                </div>
+
+                <div class="row" id="three">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="passStatus" style="color:rgb(250, 249, 249)">Passenger Status: </span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="timeTaken" style="color:rgb(250, 249, 249)">Duration: </span>
+                  </div>  
+
+                </div>
+
+                <div class="row" id="four">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="departureTime" style="color:rgb(250, 249, 249)">Departure Time: </span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="arrivalTime" style="color:rgb(250, 249, 249)">Arrival Time</span>
+                  </div>  
+
+                </div>
+                <div class="row" id="five">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="bookingFare" style="color:rgb(250, 249, 249)">Booking Fare: </span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="ticketFare" style="color:rgb(250, 249, 249)">Ticket Fare</span>
+                  </div>  
+
+                </div>
+
+                <div class="row" id="six">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="coachPostn" style="color:rgb(250, 249, 249)">Date</span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="quota" style="color:rgb(250, 249, 249)">Quota</span>
+                  </div>
+                </div>
+                <div class="row" id="seven">
+
+                  <div class="col-md-6">
+                    <span class="word1" id="class" style="color:rgb(250, 249, 249)">Class:</span>
+                  </div>
+
+                  <div class="col-md-6">  
+                    <span class="word" id="platformNo" style="color:rgb(250, 249, 249)">Platform No:</span>
+                  </div>
+                </div>
+                
+              </div>
+            </div>  
+          </div>  
+
+      </div>
+            `,
+            timerProgressBar: true,
+            width: "75%",
+            customClass: {
+              popup: "pnr-popup",
+            },
+            didOpen: () => {
+
+            },
+            // willClose: () => {
+
+            // },
+          })
+          // .then((result) => {
+          //   if (result.dismiss === Swal.DismissReason.timer) {
+          //     console.log("I was closed by the timer");
+          //     localStorage.clear();
+          //     window.location.href = "/index.html";
+          //   }
+          // });
+        }
       </script>
+
+      <script src="/pages/pnr_status.js"></script>
 
       <div id="map" class="map"></div>
 
